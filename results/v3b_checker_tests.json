@@ -1,0 +1,50 @@
+[
+  {
+    "test": "checker/test_alignment.py",
+    "exit_code": 0,
+    "output": "Aligned height, recomputed Fit width, tolerance boundaries, and rotation disagreement pass\n78 native Aligned/Fit TEXT, ATTDEF, and ATTRIB entities retain authored dimensions and consistent rotation\n",
+    "error": ""
+  },
+  {
+    "test": "checker/test_digest.py",
+    "exit_code": 0,
+    "output": "13 two-save equality and one-field sensitivity cases completed.\n",
+    "error": "Drawing units ($INSUNITS) are not exported for DXF R12.\n"
+  },
+  {
+    "test": "checker/test_oda_2000_digest.py",
+    "exit_code": 0,
+    "output": "      [\n          330,\n          \"A\"\n        ],\n        [\n          102,\n          \"}\"\n        ],\n        [\n          330,\n          \"A\"\n        ],\n        [\n          100,\n          \"AcDbXrecord\"\n        ],\n        [\n          280,\n          1\n        ],\n        [\n          1,\n          \"DWGPROPS COOKIE\"\n        ],\n        [\n          2,\n          \"\"\n        ],\n        [\n          3,\n          \"\"\n        ],\n        [\n          4,\n          \"\"\n        ],\n        [\n          6,\n          \"\"\n        ],\n        [\n          7,\n          \"\"\n        ],\n        [\n          8,\n          \"ZEV_OPERATOR\"\n        ],\n        [\n          9,\n          \"\"\n        ],\n        [\n          300,\n          \"=\"\n        ],\n        [\n          301,\n          \"=\"\n        ],\n        [\n          302,\n          \"=\"\n        ],\n        [\n          303,\n          \"=\"\n        ],\n        [\n          304,\n          \"=\"\n        ],\n        [\n          305,\n          \"=\"\n        ],\n        [\n          306,\n          \"=\"\n        ],\n        [\n          307,\n          \"=\"\n        ],\n        [\n          308,\n          \"=\"\n        ],\n        [\n          309,\n          \"=\"\n        ],\n        [\n          40,\n          0.0\n        ],\n        [\n          41,\n          2458532.153996887\n        ],\n        [\n          42,\n          2461367.935726412\n        ],\n        [\n          1,\n          \"\"\n        ],\n        [\n          90,\n          0\n        ]\n      ]\n    ]\n  },\n  \"equal\": true,\n  \"one_field_changes_digest\": true\n}\n",
+    "error": ""
+  },
+  {
+    "test": "checker/test_oda_digest.py",
+    "exit_code": 0,
+    "output": "{\n  \"build\": \"27.1.0.143450\",\n  \"input\": \"native/ezdxf/metadata_2018_ASCII.dxf\",\n  \"header_changes\": {\n    \"$TDUPDATE\": [\n      \"2461367.685778507\",\n      \"2461367.685844167\"\n    ],\n    \"$TDUUPDATE\": [\n      \"2461367.935778507\",\n      \"2461367.935844167\"\n    ]\n  },\n  \"entity_changes\": {},\n  \"equal\": true,\n  \"one_field_changes_digest\": true\n}\n",
+    "error": ""
+  },
+  {
+    "test": "checker/test_phase2.py",
+    "exit_code": 0,
+    "output": "{\"status_counts\": {\"derived\": 20, \"blocked\": 5, \"planned\": 4, \"wanted\": 1}, \"native_feature_files\": 156, \"fields_same\": 5069, \"documented_rotation_changes\": 0, \"audit_errors\": 0, \"audit_fixes\": 0, \"all_intents_in_map\": true}\n",
+    "error": ""
+  },
+  {
+    "test": "checker/test_privacy.py",
+    "exit_code": 0,
+    "output": "1437 drawings scanned; 0 with hits\n",
+    "error": ""
+  },
+  {
+    "test": "checker/test_regenerate.py",
+    "exit_code": 0,
+    "output": "52 stale BricsCAD targets listed with no adapter construction, subprocess, or filesystem writes\n",
+    "error": ""
+  },
+  {
+    "test": "checker/test_volatile_new.py",
+    "exit_code": 0,
+    "output": "Saved two-save digest and sensitivity evidence passed (no fresh CAD saves)\n",
+    "error": ""
+  }
+]

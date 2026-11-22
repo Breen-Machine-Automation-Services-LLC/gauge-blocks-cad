@@ -1,0 +1,168 @@
+{
+  "intent_id": "background_metadata",
+  "representation_id": "reference_1",
+  "features": [
+    "registered application",
+    "extended data",
+    "extension dictionary with XRECORD",
+    "DICTIONARYVAR"
+  ],
+  "expected": [
+    {
+      "id": "identity",
+      "value": [
+        "background_metadata",
+        "reference_1"
+      ],
+      "selector": {
+        "kind": "identity"
+      },
+      "reference": {
+        "section": "BLOCK extended data; APPID; codes 1001,1000",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_APP.name",
+      "value": "ZEV_APP",
+      "selector": {
+        "kind": "table",
+        "table": "appids",
+        "name": "ZEV_APP",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "APPID code 2",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "xdata",
+      "value": [
+        [
+          1000,
+          "ZEV_DATA"
+        ],
+        [
+          1040,
+          12.5
+        ]
+      ],
+      "selector": {
+        "kind": "xdata"
+      },
+      "reference": {
+        "section": "Extended Data codes 1000,1040",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "xrecord",
+      "value": [
+        [
+          1,
+          "ZEV_RECORD_VALUE"
+        ],
+        [
+          90,
+          42
+        ]
+      ],
+      "selector": {
+        "kind": "xrecord"
+      },
+      "reference": {
+        "section": "XRECORD codes 1,90; extension dictionary code 360",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "dictionaryvar",
+      "value": "ZEV_VAR_VALUE",
+      "selector": {
+        "kind": "object",
+        "dictionary": "ZEV_DICT",
+        "name": "ZEV_VAR",
+        "attr": "value"
+      },
+      "reference": {
+        "section": "DICTIONARYVAR code 1",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "title": "Background Metadata",
+  "description": "Synthetic background content defined by the referenced DXF fields.",
+  "feature_fields": {
+    "registered application": [
+      "ZEV_APP.name"
+    ],
+    "extended data": [
+      "xdata"
+    ],
+    "extension dictionary with XRECORD": [
+      "xrecord"
+    ],
+    "DICTIONARYVAR": [
+      "dictionaryvar"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "intent_id": "future_unicode",
+  "title": "UTF-8 versus escaped text",
+  "status": "planned",
+  "description": "Compare literal UTF-8 and escaped Unicode at 2007 and later."
+}

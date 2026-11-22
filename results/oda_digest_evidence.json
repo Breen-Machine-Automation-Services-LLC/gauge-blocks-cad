@@ -1,0 +1,17 @@
+{
+  "build": "27.1.0.143450",
+  "input": "native/ezdxf/metadata_2018_ASCII.dxf",
+  "header_changes": {
+    "$TDUPDATE": [
+      "2461367.719880174",
+      "2461367.719946238"
+    ],
+    "$TDUUPDATE": [
+      "2461367.969880174",
+      "2461367.969946238"
+    ]
+  },
+  "entity_changes": {},
+  "equal": true,
+  "one_field_changes_digest": true
+}

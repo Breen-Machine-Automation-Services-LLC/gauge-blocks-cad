@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_l_proxy",
+  "representation_id": "reference_1",
+  "program": "ezdxf",
+  "build": "1.4.4",
+  "format": "DXF",
+  "version": "2004",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_features.py",
+    "input_digest": "abd2dc47265d1ac739dbcc651aaea9fa772b055db3c27e73b9d439f2e33e8f07"
+  },
+  "content_digest": "74607d60d988f2683c0b02fcd43ed0207a8bbc47a0c3646befa76046622cab22",
+  "ezdxf_based": true
+}

@@ -1,0 +1,15 @@
+{
+  "intent_id": "future_k_regions_solids",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DXF",
+  "version": "2007",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "9e0f3ee1859a8854a576ecc5805f7a2016940bd52452d86a8e87780341e86354"
+  },
+  "content_digest": "8e56ca503c56982196b47fee1308681125ff386b31fd93cf37725312d9a106da",
+  "ezdxf_based": false
+}

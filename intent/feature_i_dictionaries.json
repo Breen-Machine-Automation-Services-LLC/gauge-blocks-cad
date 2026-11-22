@@ -1,0 +1,492 @@
+{
+  "intent_id": "feature_i_dictionaries",
+  "title": "Dictionaries",
+  "description": "Ported synthetic master I. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F130_sortents_a",
+    "F130_sortents_b",
+    "F130_sortents_c",
+    "F130_sortents_d",
+    "F131_insert_sorted_block",
+    "F131_sortents_block_a",
+    "F131_sortents_block_b",
+    "F131_sortents_block_c",
+    "F132_xdict_circle",
+    "F132_xdict_line",
+    "F133_dictionary_marker",
+    "F134_xdict_owners"
+  ],
+  "expected": [
+    {
+      "id": "F132_xdict_circle.radius",
+      "value": 4,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F132_xdict_circle",
+        "table": "CIRCLE",
+        "attr": "radius"
+      },
+      "reference": {
+        "section": "CIRCLE group codes for radius",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F131_insert_sorted_block.layer",
+      "value": "F131_insert_sorted_block",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F131_insert_sorted_block",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F132_xdict_circle.layer",
+      "value": "F132_xdict_circle",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F132_xdict_circle",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F132_xdict_line.layer",
+      "value": "F132_xdict_line",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F132_xdict_line",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F133_dictionary_marker.layer",
+      "value": "F133_dictionary_marker",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F133_dictionary_marker",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F134_xdict_owners.layer",
+      "value": "F134_xdict_owners",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F134_xdict_owners",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F131_sortents_block_a.color",
+      "value": 256,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F131_sortents_block_a",
+        "table": "SOLID",
+        "attr": "color"
+      },
+      "reference": {
+        "section": "SOLID; color",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F131_sortents_block_b.color",
+      "value": 256,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F131_sortents_block_b",
+        "table": "SOLID",
+        "attr": "color"
+      },
+      "reference": {
+        "section": "SOLID; color",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F131_sortents_block_c.color",
+      "value": 256,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F131_sortents_block_c",
+        "table": "SOLID",
+        "attr": "color"
+      },
+      "reference": {
+        "section": "SOLID; color",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F132_xdict_line.extension_record",
+      "value": [
+        [
+          1,
+          "entity xrecord string"
+        ],
+        [
+          40,
+          3.25
+        ],
+        [
+          70,
+          7
+        ]
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F132_xdict_line",
+        "table": "LINE",
+        "attr": "extension_record"
+      },
+      "reference": {
+        "section": "LINE; extension_record",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F130_sortents_a.color",
+      "value": 256,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F130_sortents_a",
+        "table": "SOLID",
+        "attr": "color"
+      },
+      "reference": {
+        "section": "SOLID; color",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F130_sortents_b.color",
+      "value": 256,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F130_sortents_b",
+        "table": "SOLID",
+        "attr": "color"
+      },
+      "reference": {
+        "section": "SOLID; color",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F130_sortents_c.color",
+      "value": 256,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F130_sortents_c",
+        "table": "SOLID",
+        "attr": "color"
+      },
+      "reference": {
+        "section": "SOLID; color",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F130_sortents_d.color",
+      "value": 256,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F130_sortents_d",
+        "table": "SOLID",
+        "attr": "color"
+      },
+      "reference": {
+        "section": "SOLID; color",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F130_sortents_a.redraw_order",
+      "value": [
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F130_sortents_a",
+        "table": "SOLID",
+        "attr": "redraw_order"
+      },
+      "reference": {
+        "section": "SOLID; redraw_order",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F131_sortents_block_a.redraw_order",
+      "value": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F131_sortents_block_a",
+        "table": "SOLID",
+        "attr": "redraw_order"
+      },
+      "reference": {
+        "section": "SOLID; redraw_order",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F130_sortents_a": [
+      "F130_sortents_a.color",
+      "F130_sortents_a.redraw_order"
+    ],
+    "F130_sortents_b": [
+      "F130_sortents_b.color"
+    ],
+    "F130_sortents_c": [
+      "F130_sortents_c.color"
+    ],
+    "F130_sortents_d": [
+      "F130_sortents_d.color"
+    ],
+    "F131_insert_sorted_block": [
+      "F131_insert_sorted_block.layer"
+    ],
+    "F131_sortents_block_a": [
+      "F131_sortents_block_a.color",
+      "F131_sortents_block_a.redraw_order"
+    ],
+    "F131_sortents_block_b": [
+      "F131_sortents_block_b.color"
+    ],
+    "F131_sortents_block_c": [
+      "F131_sortents_block_c.color"
+    ],
+    "F132_xdict_circle": [
+      "F132_xdict_circle.radius",
+      "F132_xdict_circle.layer"
+    ],
+    "F132_xdict_line": [
+      "F132_xdict_line.layer",
+      "F132_xdict_line.extension_record"
+    ],
+    "F133_dictionary_marker": [
+      "F133_dictionary_marker.layer"
+    ],
+    "F134_xdict_owners": [
+      "F134_xdict_owners.layer"
+    ]
+  }
+}

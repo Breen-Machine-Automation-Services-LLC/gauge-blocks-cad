@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_c_layouts",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DWG",
+  "version": "2004",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "4a2be9299d02c068c07347a2f0d03d59f89f286411c346083d73b2445777a317"
+  },
+  "content_digest": "4c89f67478f5b5eac3641218e4035b8f78616613db92e1d5f7aad2a8defd57b5",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

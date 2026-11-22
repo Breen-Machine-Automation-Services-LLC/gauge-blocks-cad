@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_f_extents",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DXF",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "7e94b53c2f5e63979ee26af08b235bc149bdbfd05ca70572e1ccd18c19e5a113"
+  },
+  "content_digest": "441889eb1ac2a9c3aab66c247fd8edfebab87561443f890dce8cce17d495fdd3",
+  "ezdxf_based": true
+}

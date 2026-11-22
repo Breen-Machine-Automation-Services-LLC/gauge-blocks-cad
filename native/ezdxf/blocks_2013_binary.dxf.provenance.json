@@ -1,0 +1,15 @@
+{
+  "intent_id": "background_blocks",
+  "representation_id": "reference_1",
+  "program": "ezdxf",
+  "build": "1.4.4",
+  "format": "DXF",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "regenerate.py",
+    "input_digest": "f06f230403d8906f5d4632819fa5e4e3934fd52a1ddb49ab408528e07c378c8e"
+  },
+  "content_digest": "52456867323d81791cb7a114c35a47e781ff19426dff8f6ec7ee01e3c5e9cfe0",
+  "ezdxf_based": true
+}

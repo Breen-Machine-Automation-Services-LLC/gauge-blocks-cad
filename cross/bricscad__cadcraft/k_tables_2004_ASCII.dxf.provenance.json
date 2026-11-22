@@ -1,0 +1,15 @@
+{
+  "intent_id": "future_k_tables",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DXF",
+  "version": "2004",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "a69150948c96e172312091877273fa66ba3bfb4ff8a2fe5ee5e021d4a95e2dae"
+  },
+  "content_digest": "fe9325c1259cb4e889a68ff51d70768035a0b545a16cd20d5223b6c51511fca3",
+  "ezdxf_based": false
+}

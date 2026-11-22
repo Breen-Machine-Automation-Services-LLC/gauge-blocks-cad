@@ -1,0 +1,6 @@
+{
+  "intent_id": "future_codepages",
+  "title": "Pre-2007 code-page text",
+  "status": "planned",
+  "description": "Accented, Cyrillic and East Asian strings with explicit code pages."
+}

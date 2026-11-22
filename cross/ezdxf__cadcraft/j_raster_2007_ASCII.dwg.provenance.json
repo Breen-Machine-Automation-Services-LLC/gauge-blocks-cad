@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_j_raster",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DWG",
+  "version": "2007",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "ae0ae39c44c8b64c138ccc9ec5a1911f65c2076673b518f6040fea030ee72edb"
+  },
+  "content_digest": "b6e64746c8875afacbe2d7317fbd787909d4a2076c01da5bcc277f564ace6103",
+  "ezdxf_based": true,
+  "digest_reader": "oda Build 27.1.0.143450"
+}

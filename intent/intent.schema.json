@@ -1,0 +1,345 @@
+{
+  "type": "object",
+  "properties": {
+    "intent_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "representation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "feature_fields": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      }
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "wanted",
+        "planned",
+        "blocked"
+      ]
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "expected": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {},
+          "selector": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "identity",
+                  "query_count",
+                  "insert_attributes",
+                  "linetype_pattern",
+                  "complex_pattern",
+                  "table",
+                  "block",
+                  "layer_count",
+                  "layout_count",
+                  "viewport_freeze",
+                  "viewport_color",
+                  "object",
+                  "xdata",
+                  "xrecord",
+                  "group",
+                  "feature_attr"
+                ]
+              },
+              "table": {
+                "type": "string",
+                "minLength": 1
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "attr": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dictionary": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "kind"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "feature_attr"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "table",
+                    "name",
+                    "attr"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "table"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "table",
+                    "name",
+                    "attr"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "block"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "name",
+                    "attr"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "layout_count"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "viewport_color"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "object"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "dictionary",
+                    "name",
+                    "attr"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "group"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "query_count"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "linetype_pattern"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "complex_pattern"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "name",
+                    "attr"
+                  ]
+                }
+              }
+            ]
+          },
+          "reference": {
+            "type": "object",
+            "properties": {
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "basis": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "section",
+              "source",
+              "url",
+              "basis"
+            ],
+            "additionalProperties": false
+          },
+          "tolerance": {
+            "type": "number",
+            "minimum": 0
+          },
+          "versions": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "AC1009",
+                "AC1015",
+                "AC1018",
+                "AC1021",
+                "AC1024",
+                "AC1027",
+                "AC1032"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "recomputed_width_relative_tolerance": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "id",
+          "value",
+          "selector",
+          "reference",
+          "tolerance",
+          "versions"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "intent_id",
+    "title",
+    "description"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "not": {
+          "required": [
+            "status"
+          ]
+        }
+      },
+      "then": {
+        "required": [
+          "representation_id",
+          "features",
+          "expected"
+        ]
+      }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

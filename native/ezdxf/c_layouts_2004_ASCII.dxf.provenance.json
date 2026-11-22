@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_c_layouts",
+  "representation_id": "reference_1",
+  "program": "ezdxf",
+  "build": "1.4.4",
+  "format": "DXF",
+  "version": "2004",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_features.py",
+    "input_digest": "fa7641aa360524577cdab8257324480bb985128f4760f1c65abd0fe8609f2e7f"
+  },
+  "content_digest": "4a2be9299d02c068c07347a2f0d03d59f89f286411c346083d73b2445777a317",
+  "ezdxf_based": true
+}

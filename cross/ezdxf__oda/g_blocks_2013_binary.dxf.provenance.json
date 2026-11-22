@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_g_blocks",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DXF",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "21136ec37e43b1d642bdf5cf1d1551ce78cb976e6e4807800891c9fc719e1c2e"
+  },
+  "content_digest": "2e5665909ba47682d0ff8c0e0c660a2721014188af277eea1bb260044c445f05",
+  "ezdxf_based": true
+}

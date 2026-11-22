@@ -1,0 +1,15 @@
+{
+  "intent_id": "future_k_regions_solids",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "Build 27.1.0.143450",
+  "format": "DXF",
+  "version": "2013",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "325f1952cf3881b6a9c68160a5f364be63e0bc3876f36e9411fa76aa7bdd5ddd"
+  },
+  "content_digest": "7ca1b25244e74fb0516fefd59ec3e410f9743be2d755ee59ff5b52c539a8ec71",
+  "ezdxf_based": false
+}

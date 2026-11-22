@@ -1,0 +1,458 @@
+{
+  "intent_id": "background_styles",
+  "representation_id": "reference_1",
+  "features": [
+    "unused linetype",
+    "unused text style",
+    "unused dimension style",
+    "unused text-bearing linetype"
+  ],
+  "expected": [
+    {
+      "id": "identity",
+      "value": [
+        "background_styles",
+        "reference_1"
+      ],
+      "selector": {
+        "kind": "identity"
+      },
+      "reference": {
+        "section": "BLOCK extended data; APPID; codes 1001,1000",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_DASH.description",
+      "value": "ZEV pattern",
+      "selector": {
+        "kind": "table",
+        "table": "linetypes",
+        "name": "ZEV_DASH",
+        "attr": "description"
+      },
+      "reference": {
+        "section": "LTYPE code 3; pattern codes 40,49",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_TEXT.font",
+      "value": "txt",
+      "selector": {
+        "kind": "table",
+        "table": "styles",
+        "name": "ZEV_TEXT",
+        "attr": "font"
+      },
+      "reference": {
+        "section": "STYLE codes 3,40,41",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_TEXT.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "table",
+        "table": "styles",
+        "name": "ZEV_TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "STYLE codes 3,40,41",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_TEXT.width",
+      "value": 0.8,
+      "selector": {
+        "kind": "table",
+        "table": "styles",
+        "name": "ZEV_TEXT",
+        "attr": "width"
+      },
+      "reference": {
+        "section": "STYLE codes 3,40,41",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_DIM.dimscale",
+      "value": 2.0,
+      "selector": {
+        "kind": "table",
+        "table": "dimstyles",
+        "name": "ZEV_DIM",
+        "attr": "dimscale"
+      },
+      "reference": {
+        "section": "DIMSTYLE codes 40,41",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_DIM.dimasz",
+      "value": 3.0,
+      "selector": {
+        "kind": "table",
+        "table": "dimstyles",
+        "name": "ZEV_DIM",
+        "attr": "dimasz"
+      },
+      "reference": {
+        "section": "DIMSTYLE codes 40,41",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "style_usage",
+      "value": 0,
+      "selector": {
+        "kind": "query_count",
+        "name": "TEXT MTEXT DIMENSION"
+      },
+      "reference": {
+        "section": "TEXT; MTEXT; DIMENSION table references",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "dash_pattern",
+      "value": [
+        [
+          72,
+          65
+        ],
+        [
+          73,
+          2
+        ],
+        [
+          40,
+          1.0
+        ],
+        [
+          49,
+          0.5
+        ],
+        [
+          49,
+          -0.5
+        ]
+      ],
+      "selector": {
+        "kind": "linetype_pattern",
+        "name": "ZEV_DASH"
+      },
+      "reference": {
+        "section": "LTYPE codes 72,73,40,49,74",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "complex.text",
+      "value": "ZEV",
+      "selector": {
+        "kind": "complex_pattern",
+        "name": "ZEV_TEXT_PATTERN",
+        "attr": "text"
+      },
+      "reference": {
+        "section": "LTYPE codes 9,340,46,50,44,45,74",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "complex.style",
+      "value": "ZEV_TEXT",
+      "selector": {
+        "kind": "complex_pattern",
+        "name": "ZEV_TEXT_PATTERN",
+        "attr": "style"
+      },
+      "reference": {
+        "section": "LTYPE codes 9,340,46,50,44,45,74",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "complex.scale",
+      "value": 0.1,
+      "selector": {
+        "kind": "complex_pattern",
+        "name": "ZEV_TEXT_PATTERN",
+        "attr": "scale"
+      },
+      "reference": {
+        "section": "LTYPE codes 9,340,46,50,44,45,74",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "complex.rotation",
+      "value": 0.0,
+      "selector": {
+        "kind": "complex_pattern",
+        "name": "ZEV_TEXT_PATTERN",
+        "attr": "rotation"
+      },
+      "reference": {
+        "section": "LTYPE codes 9,340,46,50,44,45,74",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "complex.xoffset",
+      "value": 0.0,
+      "selector": {
+        "kind": "complex_pattern",
+        "name": "ZEV_TEXT_PATTERN",
+        "attr": "xoffset"
+      },
+      "reference": {
+        "section": "LTYPE codes 9,340,46,50,44,45,74",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "complex.yoffset",
+      "value": 0.0,
+      "selector": {
+        "kind": "complex_pattern",
+        "name": "ZEV_TEXT_PATTERN",
+        "attr": "yoffset"
+      },
+      "reference": {
+        "section": "LTYPE codes 9,340,46,50,44,45,74",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "complex.element_type",
+      "value": 2,
+      "selector": {
+        "kind": "complex_pattern",
+        "name": "ZEV_TEXT_PATTERN",
+        "attr": "element_type"
+      },
+      "reference": {
+        "section": "LTYPE codes 9,340,46,50,44,45,74",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "title": "Background Styles",
+  "description": "Synthetic background content defined by the referenced DXF fields.",
+  "feature_fields": {
+    "unused linetype": [
+      "ZEV_DASH.description",
+      "dash_pattern"
+    ],
+    "unused text style": [
+      "ZEV_TEXT.font",
+      "ZEV_TEXT.height",
+      "ZEV_TEXT.width",
+      "style_usage"
+    ],
+    "unused dimension style": [
+      "ZEV_DIM.dimscale",
+      "ZEV_DIM.dimasz"
+    ],
+    "unused text-bearing linetype": [
+      "complex.text",
+      "complex.style",
+      "complex.scale",
+      "complex.rotation",
+      "complex.xoffset",
+      "complex.yoffset",
+      "complex.element_type"
+    ]
+  }
+}

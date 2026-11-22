@@ -1,0 +1,5883 @@
+{
+  "intent_id": "feature_a_text",
+  "title": "Text",
+  "description": "Ported synthetic master A. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F01_text_aligned",
+    "F01_text_bottom_center",
+    "F01_text_bottom_left",
+    "F01_text_bottom_right",
+    "F01_text_center",
+    "F01_text_fit",
+    "F01_text_left",
+    "F01_text_middle",
+    "F01_text_middle_center",
+    "F01_text_middle_left",
+    "F01_text_middle_right",
+    "F01_text_right",
+    "F01_text_top_center",
+    "F01_text_top_left",
+    "F01_text_top_right",
+    "F02_insert",
+    "F03_attdef_aligned",
+    "F03_attdef_bottom_center",
+    "F03_attdef_bottom_left",
+    "F03_attdef_bottom_right",
+    "F03_attdef_center",
+    "F03_attdef_fit",
+    "F03_attdef_left",
+    "F03_attdef_middle",
+    "F03_attdef_middle_center",
+    "F03_attdef_middle_left",
+    "F03_attdef_middle_right",
+    "F03_attdef_right",
+    "F03_attdef_top_center",
+    "F03_attdef_top_left",
+    "F03_attdef_top_right",
+    "F04_attdef_multiline",
+    "F04_attrib_multiline",
+    "F05_attrib_aligned",
+    "F05_attrib_bottom_center",
+    "F05_attrib_bottom_left",
+    "F05_attrib_bottom_right",
+    "F05_attrib_center",
+    "F05_attrib_fit",
+    "F05_attrib_left",
+    "F05_attrib_middle",
+    "F05_attrib_middle_center",
+    "F05_attrib_middle_left",
+    "F05_attrib_middle_right",
+    "F05_attrib_right",
+    "F05_attrib_top_center",
+    "F05_attrib_top_left",
+    "F05_attrib_top_right",
+    "F07_style_widthobl",
+    "F10_mtext_tl_width",
+    "F11_mtext_mc_nowidth",
+    "F12_mtext_tl_nowidth",
+    "F13_mtext_mc_width",
+    "F14_text_rotated"
+  ],
+  "expected": [
+    {
+      "id": "F14_text_rotated.rotation",
+      "value": 33,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F14_text_rotated",
+        "table": "TEXT",
+        "attr": "rotation"
+      },
+      "reference": {
+        "section": "TEXT group codes for rotation",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F07_style_widthobl.text",
+      "value": "Wide oblique",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F07_style_widthobl",
+        "table": "TEXT",
+        "attr": "text"
+      },
+      "reference": {
+        "section": "TEXT group codes for text",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_left",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_left.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_left",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_left",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_left",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_left.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_left",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_left",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_left",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_left.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_left",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_left",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_center",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_center.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_center",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_center",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_center",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_center.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_center",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_center",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_center",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_center.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_center",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_center",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_right",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_right.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_right",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_right",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_right",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_right.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_right",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_right",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_right",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_right.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_right",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_right",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_aligned.halign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_aligned",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_aligned.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_aligned",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_aligned.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_aligned",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Groups 10 and 11 define the two-point span, 72=3 selects Aligned, 40 stores height, 41 width scale, and 50 rotation. Font measurement may recompute height. Dataset policy accepts height 2.5 +/- 1.0 drawing units (40 percent); this tolerance is a dataset choice, not a Reference limit. Rotation must agree with the alignment-point vector within 0.000001 degrees."
+      },
+      "tolerance": 1.0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_aligned.halign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_aligned",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_aligned.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_aligned",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_aligned.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_aligned",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Groups 10 and 11 define the two-point span, 72=3 selects Aligned, 40 stores height, 41 width scale, and 50 rotation. Font measurement may recompute height. Dataset policy accepts height 2.5 +/- 1.0 drawing units (40 percent); this tolerance is a dataset choice, not a Reference limit. Rotation must agree with the alignment-point vector within 0.000001 degrees."
+      },
+      "tolerance": 1.0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_aligned.halign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_aligned",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_aligned.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_aligned",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_aligned.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_aligned",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Groups 10 and 11 define the two-point span, 72=3 selects Aligned, 40 stores height, 41 width scale, and 50 rotation. Font measurement may recompute height. Dataset policy accepts height 2.5 +/- 1.0 drawing units (40 percent); this tolerance is a dataset choice, not a Reference limit. Rotation must agree with the alignment-point vector within 0.000001 degrees."
+      },
+      "tolerance": 1.0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle.halign",
+      "value": 4,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle.halign",
+      "value": 4,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle.halign",
+      "value": 4,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_fit.halign",
+      "value": 5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_fit",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_fit.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_fit",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_fit.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_fit",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_fit.halign",
+      "value": 5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_fit",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_fit.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_fit",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_fit.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_fit",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_fit.halign",
+      "value": 5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_fit",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_fit.valign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_fit",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_fit.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_fit",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_bottom_left",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_left.valign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_bottom_left",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_bottom_left",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_bottom_left",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_left.valign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_bottom_left",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_bottom_left",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_bottom_left",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_left.valign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_bottom_left",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_bottom_left",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_bottom_center",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_center.valign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_bottom_center",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_bottom_center",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_bottom_center",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_center.valign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_bottom_center",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_bottom_center",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_bottom_center",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_center.valign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_bottom_center",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_bottom_center",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_bottom_right",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_right.valign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_bottom_right",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_bottom_right",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_bottom_right",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_right.valign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_bottom_right",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_bottom_right",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_bottom_right",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_right.valign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_bottom_right",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_bottom_right",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle_left",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_left.valign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle_left",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle_left",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle_left",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_left.valign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle_left",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle_left",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle_left",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_left.valign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle_left",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle_left",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle_center",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_center.valign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle_center",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle_center",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle_center",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_center.valign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle_center",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle_center",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle_center",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_center.valign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle_center",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle_center",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle_right",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_right.valign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle_right",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_middle_right",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle_right",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_right.valign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle_right",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_middle_right",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle_right",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_right.valign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle_right",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_middle_right",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_top_left",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_left.valign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_top_left",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_top_left",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_top_left",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_left.valign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_top_left",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_top_left",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_left.halign",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_top_left",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_left.valign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_top_left",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_left.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_top_left",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_top_center",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_center.valign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_top_center",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_top_center",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_top_center",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_center.valign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_top_center",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_top_center",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_center.halign",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_top_center",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_center.valign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_top_center",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_center.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_top_center",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_top_right",
+        "table": "TEXT",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "TEXT; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_right.valign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_top_right",
+        "table": "TEXT",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "TEXT; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_top_right",
+        "table": "TEXT",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_top_right",
+        "table": "ATTDEF",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTDEF; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_right.valign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_top_right",
+        "table": "ATTDEF",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTDEF; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_top_right",
+        "table": "ATTDEF",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_right.halign",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_top_right",
+        "table": "ATTRIB",
+        "attr": "halign"
+      },
+      "reference": {
+        "section": "ATTRIB; halign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_right.valign",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_top_right",
+        "table": "ATTRIB",
+        "attr": "valign"
+      },
+      "reference": {
+        "section": "ATTRIB; valign",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_right.height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_top_right",
+        "table": "ATTRIB",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F10_mtext_tl_width.attachment_point",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F10_mtext_tl_width",
+        "table": "MTEXT",
+        "attr": "attachment_point"
+      },
+      "reference": {
+        "section": "MTEXT; attachment_point",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F10_mtext_tl_width.width",
+      "value": 40,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F10_mtext_tl_width",
+        "table": "MTEXT",
+        "attr": "width"
+      },
+      "reference": {
+        "section": "MTEXT; width",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F10_mtext_tl_width.char_height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F10_mtext_tl_width",
+        "table": "MTEXT",
+        "attr": "char_height"
+      },
+      "reference": {
+        "section": "MTEXT; char_height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F11_mtext_mc_nowidth.attachment_point",
+      "value": 5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F11_mtext_mc_nowidth",
+        "table": "MTEXT",
+        "attr": "attachment_point"
+      },
+      "reference": {
+        "section": "MTEXT; attachment_point",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F11_mtext_mc_nowidth.width",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F11_mtext_mc_nowidth",
+        "table": "MTEXT",
+        "attr": "width"
+      },
+      "reference": {
+        "section": "MTEXT; width",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F11_mtext_mc_nowidth.char_height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F11_mtext_mc_nowidth",
+        "table": "MTEXT",
+        "attr": "char_height"
+      },
+      "reference": {
+        "section": "MTEXT; char_height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F12_mtext_tl_nowidth.attachment_point",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F12_mtext_tl_nowidth",
+        "table": "MTEXT",
+        "attr": "attachment_point"
+      },
+      "reference": {
+        "section": "MTEXT; attachment_point",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F12_mtext_tl_nowidth.width",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F12_mtext_tl_nowidth",
+        "table": "MTEXT",
+        "attr": "width"
+      },
+      "reference": {
+        "section": "MTEXT; width",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F12_mtext_tl_nowidth.char_height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F12_mtext_tl_nowidth",
+        "table": "MTEXT",
+        "attr": "char_height"
+      },
+      "reference": {
+        "section": "MTEXT; char_height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F13_mtext_mc_width.attachment_point",
+      "value": 5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F13_mtext_mc_width",
+        "table": "MTEXT",
+        "attr": "attachment_point"
+      },
+      "reference": {
+        "section": "MTEXT; attachment_point",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F13_mtext_mc_width.width",
+      "value": 35,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F13_mtext_mc_width",
+        "table": "MTEXT",
+        "attr": "width"
+      },
+      "reference": {
+        "section": "MTEXT; width",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F13_mtext_mc_width.char_height",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F13_mtext_mc_width",
+        "table": "MTEXT",
+        "attr": "char_height"
+      },
+      "reference": {
+        "section": "MTEXT; char_height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F04_attdef_multiline.has_embedded_mtext",
+      "value": true,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F04_attdef_multiline",
+        "table": "ATTDEF",
+        "attr": "has_embedded_mtext"
+      },
+      "reference": {
+        "section": "ATTDEF; has_embedded_mtext",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F04_attrib_multiline.has_embedded_mtext",
+      "value": true,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F04_attrib_multiline",
+        "table": "ATTRIB",
+        "attr": "has_embedded_mtext"
+      },
+      "reference": {
+        "section": "ATTRIB; has_embedded_mtext",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_aligned.layer",
+      "value": "F01_text_aligned",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_aligned",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_center.layer",
+      "value": "F01_text_bottom_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_bottom_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_left.layer",
+      "value": "F01_text_bottom_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_bottom_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_bottom_right.layer",
+      "value": "F01_text_bottom_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_bottom_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_center.layer",
+      "value": "F01_text_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_fit.layer",
+      "value": "F01_text_fit",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_fit",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_left.layer",
+      "value": "F01_text_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle.layer",
+      "value": "F01_text_middle",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_middle",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_center.layer",
+      "value": "F01_text_middle_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_middle_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_left.layer",
+      "value": "F01_text_middle_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_middle_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_middle_right.layer",
+      "value": "F01_text_middle_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_middle_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_right.layer",
+      "value": "F01_text_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_center.layer",
+      "value": "F01_text_top_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_top_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_left.layer",
+      "value": "F01_text_top_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_top_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_top_right.layer",
+      "value": "F01_text_top_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F01_text_top_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F02_insert.layer",
+      "value": "F02_insert",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F02_insert",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_aligned.layer",
+      "value": "F03_attdef_aligned",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_aligned",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_center.layer",
+      "value": "F03_attdef_bottom_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_bottom_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_left.layer",
+      "value": "F03_attdef_bottom_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_bottom_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_bottom_right.layer",
+      "value": "F03_attdef_bottom_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_bottom_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_center.layer",
+      "value": "F03_attdef_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_fit.layer",
+      "value": "F03_attdef_fit",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_fit",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_left.layer",
+      "value": "F03_attdef_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle.layer",
+      "value": "F03_attdef_middle",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_middle",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_center.layer",
+      "value": "F03_attdef_middle_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_middle_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_left.layer",
+      "value": "F03_attdef_middle_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_middle_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_middle_right.layer",
+      "value": "F03_attdef_middle_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_middle_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_right.layer",
+      "value": "F03_attdef_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_center.layer",
+      "value": "F03_attdef_top_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_top_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_left.layer",
+      "value": "F03_attdef_top_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_top_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_top_right.layer",
+      "value": "F03_attdef_top_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F03_attdef_top_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F04_attdef_multiline.layer",
+      "value": "F04_attdef_multiline",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F04_attdef_multiline",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F04_attrib_multiline.layer",
+      "value": "F04_attrib_multiline",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F04_attrib_multiline",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_aligned.layer",
+      "value": "F05_attrib_aligned",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_aligned",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_center.layer",
+      "value": "F05_attrib_bottom_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_bottom_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_left.layer",
+      "value": "F05_attrib_bottom_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_bottom_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_bottom_right.layer",
+      "value": "F05_attrib_bottom_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_bottom_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_center.layer",
+      "value": "F05_attrib_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_fit.layer",
+      "value": "F05_attrib_fit",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_fit",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_left.layer",
+      "value": "F05_attrib_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle.layer",
+      "value": "F05_attrib_middle",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_middle",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_center.layer",
+      "value": "F05_attrib_middle_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_middle_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_left.layer",
+      "value": "F05_attrib_middle_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_middle_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_middle_right.layer",
+      "value": "F05_attrib_middle_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_middle_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_right.layer",
+      "value": "F05_attrib_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_center.layer",
+      "value": "F05_attrib_top_center",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_top_center",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_left.layer",
+      "value": "F05_attrib_top_left",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_top_left",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_top_right.layer",
+      "value": "F05_attrib_top_right",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F05_attrib_top_right",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F07_style_widthobl.layer",
+      "value": "F07_style_widthobl",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F07_style_widthobl",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F10_mtext_tl_width.layer",
+      "value": "F10_mtext_tl_width",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F10_mtext_tl_width",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F11_mtext_mc_nowidth.layer",
+      "value": "F11_mtext_mc_nowidth",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F11_mtext_mc_nowidth",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F12_mtext_tl_nowidth.layer",
+      "value": "F12_mtext_tl_nowidth",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F12_mtext_tl_nowidth",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F13_mtext_mc_width.layer",
+      "value": "F13_mtext_mc_width",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F13_mtext_mc_width",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F14_text_rotated.layer",
+      "value": "F14_text_rotated",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F14_text_rotated",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_aligned.alignment_rotation_error",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_aligned",
+        "table": "TEXT",
+        "attr": "alignment_rotation_error"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Groups 10 and 11 define the baseline direction for group 72 Aligned (3) or Fit (5). Group 50 must agree within 0.000001 degrees, modulo 360."
+      },
+      "tolerance": 1e-06,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_aligned.alignment_rotation_error",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_aligned",
+        "table": "ATTDEF",
+        "attr": "alignment_rotation_error"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Groups 10 and 11 define the baseline direction for group 72 Aligned (3) or Fit (5). Group 50 must agree within 0.000001 degrees, modulo 360."
+      },
+      "tolerance": 1e-06,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_aligned.alignment_rotation_error",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_aligned",
+        "table": "ATTRIB",
+        "attr": "alignment_rotation_error"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Groups 10 and 11 define the baseline direction for group 72 Aligned (3) or Fit (5). Group 50 must agree within 0.000001 degrees, modulo 360."
+      },
+      "tolerance": 1e-06,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_fit.alignment_rotation_error",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_fit",
+        "table": "TEXT",
+        "attr": "alignment_rotation_error"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Groups 10 and 11 define the baseline direction for group 72 Aligned (3) or Fit (5). Group 50 must agree within 0.000001 degrees, modulo 360."
+      },
+      "tolerance": 1e-06,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F01_text_fit.width",
+      "value": 1.0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F01_text_fit",
+        "table": "TEXT",
+        "attr": "width"
+      },
+      "reference": {
+        "section": "TEXT; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Group 41 may be recomputed for Fit (72=5) to span groups 10 and 11 at group-40 height. Accept the authored width factor or the span divided by the unscaled text width measured with the reader font, within 40 percent for font-metric differences. Rotation must still agree with the alignment points within 0.000001 degrees. The 40 percent tolerance is dataset policy, not a Reference limit."
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ],
+      "recomputed_width_relative_tolerance": 0.4
+    },
+    {
+      "id": "F03_attdef_fit.alignment_rotation_error",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_fit",
+        "table": "ATTDEF",
+        "attr": "alignment_rotation_error"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Groups 10 and 11 define the baseline direction for group 72 Aligned (3) or Fit (5). Group 50 must agree within 0.000001 degrees, modulo 360."
+      },
+      "tolerance": 1e-06,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F03_attdef_fit.width",
+      "value": 1.0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F03_attdef_fit",
+        "table": "ATTDEF",
+        "attr": "width"
+      },
+      "reference": {
+        "section": "ATTDEF; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Group 41 may be recomputed for Fit (72=5) to span groups 10 and 11 at group-40 height. Accept the authored width factor or the span divided by the unscaled text width measured with the reader font, within 40 percent for font-metric differences. Rotation must still agree with the alignment points within 0.000001 degrees. The 40 percent tolerance is dataset policy, not a Reference limit."
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ],
+      "recomputed_width_relative_tolerance": 0.4
+    },
+    {
+      "id": "F05_attrib_fit.alignment_rotation_error",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_fit",
+        "table": "ATTRIB",
+        "attr": "alignment_rotation_error"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Groups 10 and 11 define the baseline direction for group 72 Aligned (3) or Fit (5). Group 50 must agree within 0.000001 degrees, modulo 360."
+      },
+      "tolerance": 1e-06,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F05_attrib_fit.width",
+      "value": 1.0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F05_attrib_fit",
+        "table": "ATTRIB",
+        "attr": "width"
+      },
+      "reference": {
+        "section": "ATTRIB; height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "Group 41 may be recomputed for Fit (72=5) to span groups 10 and 11 at group-40 height. Accept the authored width factor or the span divided by the unscaled text width measured with the reader font, within 40 percent for font-metric differences. Rotation must still agree with the alignment points within 0.000001 degrees. The 40 percent tolerance is dataset policy, not a Reference limit."
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ],
+      "recomputed_width_relative_tolerance": 0.4
+    }
+  ],
+  "feature_fields": {
+    "F01_text_aligned": [
+      "F01_text_aligned.halign",
+      "F01_text_aligned.valign",
+      "F01_text_aligned.height",
+      "F01_text_aligned.layer",
+      "F01_text_aligned.alignment_rotation_error"
+    ],
+    "F01_text_bottom_center": [
+      "F01_text_bottom_center.halign",
+      "F01_text_bottom_center.valign",
+      "F01_text_bottom_center.height",
+      "F01_text_bottom_center.layer"
+    ],
+    "F01_text_bottom_left": [
+      "F01_text_bottom_left.halign",
+      "F01_text_bottom_left.valign",
+      "F01_text_bottom_left.height",
+      "F01_text_bottom_left.layer"
+    ],
+    "F01_text_bottom_right": [
+      "F01_text_bottom_right.halign",
+      "F01_text_bottom_right.valign",
+      "F01_text_bottom_right.height",
+      "F01_text_bottom_right.layer"
+    ],
+    "F01_text_center": [
+      "F01_text_center.halign",
+      "F01_text_center.valign",
+      "F01_text_center.height",
+      "F01_text_center.layer"
+    ],
+    "F01_text_fit": [
+      "F01_text_fit.halign",
+      "F01_text_fit.valign",
+      "F01_text_fit.height",
+      "F01_text_fit.layer",
+      "F01_text_fit.alignment_rotation_error",
+      "F01_text_fit.width"
+    ],
+    "F01_text_left": [
+      "F01_text_left.halign",
+      "F01_text_left.valign",
+      "F01_text_left.height",
+      "F01_text_left.layer"
+    ],
+    "F01_text_middle": [
+      "F01_text_middle.halign",
+      "F01_text_middle.valign",
+      "F01_text_middle.height",
+      "F01_text_middle.layer"
+    ],
+    "F01_text_middle_center": [
+      "F01_text_middle_center.halign",
+      "F01_text_middle_center.valign",
+      "F01_text_middle_center.height",
+      "F01_text_middle_center.layer"
+    ],
+    "F01_text_middle_left": [
+      "F01_text_middle_left.halign",
+      "F01_text_middle_left.valign",
+      "F01_text_middle_left.height",
+      "F01_text_middle_left.layer"
+    ],
+    "F01_text_middle_right": [
+      "F01_text_middle_right.halign",
+      "F01_text_middle_right.valign",
+      "F01_text_middle_right.height",
+      "F01_text_middle_right.layer"
+    ],
+    "F01_text_right": [
+      "F01_text_right.halign",
+      "F01_text_right.valign",
+      "F01_text_right.height",
+      "F01_text_right.layer"
+    ],
+    "F01_text_top_center": [
+      "F01_text_top_center.halign",
+      "F01_text_top_center.valign",
+      "F01_text_top_center.height",
+      "F01_text_top_center.layer"
+    ],
+    "F01_text_top_left": [
+      "F01_text_top_left.halign",
+      "F01_text_top_left.valign",
+      "F01_text_top_left.height",
+      "F01_text_top_left.layer"
+    ],
+    "F01_text_top_right": [
+      "F01_text_top_right.halign",
+      "F01_text_top_right.valign",
+      "F01_text_top_right.height",
+      "F01_text_top_right.layer"
+    ],
+    "F02_insert": [
+      "F02_insert.layer"
+    ],
+    "F03_attdef_aligned": [
+      "F03_attdef_aligned.halign",
+      "F03_attdef_aligned.valign",
+      "F03_attdef_aligned.height",
+      "F03_attdef_aligned.layer",
+      "F03_attdef_aligned.alignment_rotation_error"
+    ],
+    "F03_attdef_bottom_center": [
+      "F03_attdef_bottom_center.halign",
+      "F03_attdef_bottom_center.valign",
+      "F03_attdef_bottom_center.height",
+      "F03_attdef_bottom_center.layer"
+    ],
+    "F03_attdef_bottom_left": [
+      "F03_attdef_bottom_left.halign",
+      "F03_attdef_bottom_left.valign",
+      "F03_attdef_bottom_left.height",
+      "F03_attdef_bottom_left.layer"
+    ],
+    "F03_attdef_bottom_right": [
+      "F03_attdef_bottom_right.halign",
+      "F03_attdef_bottom_right.valign",
+      "F03_attdef_bottom_right.height",
+      "F03_attdef_bottom_right.layer"
+    ],
+    "F03_attdef_center": [
+      "F03_attdef_center.halign",
+      "F03_attdef_center.valign",
+      "F03_attdef_center.height",
+      "F03_attdef_center.layer"
+    ],
+    "F03_attdef_fit": [
+      "F03_attdef_fit.halign",
+      "F03_attdef_fit.valign",
+      "F03_attdef_fit.height",
+      "F03_attdef_fit.layer",
+      "F03_attdef_fit.alignment_rotation_error",
+      "F03_attdef_fit.width"
+    ],
+    "F03_attdef_left": [
+      "F03_attdef_left.halign",
+      "F03_attdef_left.valign",
+      "F03_attdef_left.height",
+      "F03_attdef_left.layer"
+    ],
+    "F03_attdef_middle": [
+      "F03_attdef_middle.halign",
+      "F03_attdef_middle.valign",
+      "F03_attdef_middle.height",
+      "F03_attdef_middle.layer"
+    ],
+    "F03_attdef_middle_center": [
+      "F03_attdef_middle_center.halign",
+      "F03_attdef_middle_center.valign",
+      "F03_attdef_middle_center.height",
+      "F03_attdef_middle_center.layer"
+    ],
+    "F03_attdef_middle_left": [
+      "F03_attdef_middle_left.halign",
+      "F03_attdef_middle_left.valign",
+      "F03_attdef_middle_left.height",
+      "F03_attdef_middle_left.layer"
+    ],
+    "F03_attdef_middle_right": [
+      "F03_attdef_middle_right.halign",
+      "F03_attdef_middle_right.valign",
+      "F03_attdef_middle_right.height",
+      "F03_attdef_middle_right.layer"
+    ],
+    "F03_attdef_right": [
+      "F03_attdef_right.halign",
+      "F03_attdef_right.valign",
+      "F03_attdef_right.height",
+      "F03_attdef_right.layer"
+    ],
+    "F03_attdef_top_center": [
+      "F03_attdef_top_center.halign",
+      "F03_attdef_top_center.valign",
+      "F03_attdef_top_center.height",
+      "F03_attdef_top_center.layer"
+    ],
+    "F03_attdef_top_left": [
+      "F03_attdef_top_left.halign",
+      "F03_attdef_top_left.valign",
+      "F03_attdef_top_left.height",
+      "F03_attdef_top_left.layer"
+    ],
+    "F03_attdef_top_right": [
+      "F03_attdef_top_right.halign",
+      "F03_attdef_top_right.valign",
+      "F03_attdef_top_right.height",
+      "F03_attdef_top_right.layer"
+    ],
+    "F04_attdef_multiline": [
+      "F04_attdef_multiline.has_embedded_mtext",
+      "F04_attdef_multiline.layer"
+    ],
+    "F04_attrib_multiline": [
+      "F04_attrib_multiline.has_embedded_mtext",
+      "F04_attrib_multiline.layer"
+    ],
+    "F05_attrib_aligned": [
+      "F05_attrib_aligned.halign",
+      "F05_attrib_aligned.valign",
+      "F05_attrib_aligned.height",
+      "F05_attrib_aligned.layer",
+      "F05_attrib_aligned.alignment_rotation_error"
+    ],
+    "F05_attrib_bottom_center": [
+      "F05_attrib_bottom_center.halign",
+      "F05_attrib_bottom_center.valign",
+      "F05_attrib_bottom_center.height",
+      "F05_attrib_bottom_center.layer"
+    ],
+    "F05_attrib_bottom_left": [
+      "F05_attrib_bottom_left.halign",
+      "F05_attrib_bottom_left.valign",
+      "F05_attrib_bottom_left.height",
+      "F05_attrib_bottom_left.layer"
+    ],
+    "F05_attrib_bottom_right": [
+      "F05_attrib_bottom_right.halign",
+      "F05_attrib_bottom_right.valign",
+      "F05_attrib_bottom_right.height",
+      "F05_attrib_bottom_right.layer"
+    ],
+    "F05_attrib_center": [
+      "F05_attrib_center.halign",
+      "F05_attrib_center.valign",
+      "F05_attrib_center.height",
+      "F05_attrib_center.layer"
+    ],
+    "F05_attrib_fit": [
+      "F05_attrib_fit.halign",
+      "F05_attrib_fit.valign",
+      "F05_attrib_fit.height",
+      "F05_attrib_fit.layer",
+      "F05_attrib_fit.alignment_rotation_error",
+      "F05_attrib_fit.width"
+    ],
+    "F05_attrib_left": [
+      "F05_attrib_left.halign",
+      "F05_attrib_left.valign",
+      "F05_attrib_left.height",
+      "F05_attrib_left.layer"
+    ],
+    "F05_attrib_middle": [
+      "F05_attrib_middle.halign",
+      "F05_attrib_middle.valign",
+      "F05_attrib_middle.height",
+      "F05_attrib_middle.layer"
+    ],
+    "F05_attrib_middle_center": [
+      "F05_attrib_middle_center.halign",
+      "F05_attrib_middle_center.valign",
+      "F05_attrib_middle_center.height",
+      "F05_attrib_middle_center.layer"
+    ],
+    "F05_attrib_middle_left": [
+      "F05_attrib_middle_left.halign",
+      "F05_attrib_middle_left.valign",
+      "F05_attrib_middle_left.height",
+      "F05_attrib_middle_left.layer"
+    ],
+    "F05_attrib_middle_right": [
+      "F05_attrib_middle_right.halign",
+      "F05_attrib_middle_right.valign",
+      "F05_attrib_middle_right.height",
+      "F05_attrib_middle_right.layer"
+    ],
+    "F05_attrib_right": [
+      "F05_attrib_right.halign",
+      "F05_attrib_right.valign",
+      "F05_attrib_right.height",
+      "F05_attrib_right.layer"
+    ],
+    "F05_attrib_top_center": [
+      "F05_attrib_top_center.halign",
+      "F05_attrib_top_center.valign",
+      "F05_attrib_top_center.height",
+      "F05_attrib_top_center.layer"
+    ],
+    "F05_attrib_top_left": [
+      "F05_attrib_top_left.halign",
+      "F05_attrib_top_left.valign",
+      "F05_attrib_top_left.height",
+      "F05_attrib_top_left.layer"
+    ],
+    "F05_attrib_top_right": [
+      "F05_attrib_top_right.halign",
+      "F05_attrib_top_right.valign",
+      "F05_attrib_top_right.height",
+      "F05_attrib_top_right.layer"
+    ],
+    "F07_style_widthobl": [
+      "F07_style_widthobl.text",
+      "F07_style_widthobl.layer"
+    ],
+    "F10_mtext_tl_width": [
+      "F10_mtext_tl_width.attachment_point",
+      "F10_mtext_tl_width.width",
+      "F10_mtext_tl_width.char_height",
+      "F10_mtext_tl_width.layer"
+    ],
+    "F11_mtext_mc_nowidth": [
+      "F11_mtext_mc_nowidth.attachment_point",
+      "F11_mtext_mc_nowidth.width",
+      "F11_mtext_mc_nowidth.char_height",
+      "F11_mtext_mc_nowidth.layer"
+    ],
+    "F12_mtext_tl_nowidth": [
+      "F12_mtext_tl_nowidth.attachment_point",
+      "F12_mtext_tl_nowidth.width",
+      "F12_mtext_tl_nowidth.char_height",
+      "F12_mtext_tl_nowidth.layer"
+    ],
+    "F13_mtext_mc_width": [
+      "F13_mtext_mc_width.attachment_point",
+      "F13_mtext_mc_width.width",
+      "F13_mtext_mc_width.char_height",
+      "F13_mtext_mc_width.layer"
+    ],
+    "F14_text_rotated": [
+      "F14_text_rotated.rotation",
+      "F14_text_rotated.layer"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_l_proxy",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DXF",
+  "version": "2004",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "74607d60d988f2683c0b02fcd43ed0207a8bbc47a0c3646befa76046622cab22"
+  },
+  "content_digest": "cc99f568877c25b05eb54853dbdf2ee050d6bc8a036251078194be2cbd44a675",
+  "ezdxf_based": true
+}

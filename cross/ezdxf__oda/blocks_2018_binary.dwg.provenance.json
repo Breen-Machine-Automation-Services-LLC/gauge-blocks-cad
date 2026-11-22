@@ -1,0 +1,16 @@
+{
+  "intent_id": "background_blocks",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DWG",
+  "version": "2018",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "5fd15edca1a9bd5ae37a38fb7140b34aede5574ac2e813123e7991252641afd3"
+  },
+  "content_digest": "25812e7dde40ef0020adc547fa5a5a630239c88feb175d7e15112a4e5e743adf",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

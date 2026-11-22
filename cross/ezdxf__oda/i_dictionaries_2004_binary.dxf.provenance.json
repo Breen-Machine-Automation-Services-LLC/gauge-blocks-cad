@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_i_dictionaries",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DXF",
+  "version": "2004",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "b8652858f1433ab308b0a17af32be9c5bcabe67cfa0842f7c091e249b1ac8192"
+  },
+  "content_digest": "3fb1310d149080bfabda7daf5720b26715593ac5e0e6ec6113a464887d367993",
+  "ezdxf_based": true
+}

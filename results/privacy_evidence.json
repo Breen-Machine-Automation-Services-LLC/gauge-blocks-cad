@@ -1,0 +1,1096 @@
+{
+ "input": "native/ezdxf/metadata_2018_ASCII.dxf",
+ "tokens_checked": "login name, full name, legacy account, host name (values withheld)",
+ "bricscad_unneutralized": [
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 6388
+  },
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 3736
+  },
+  {
+   "format": "DWG",
+   "version": "R12",
+   "encoding": "binary",
+   "written": false,
+   "error": "BricsCAD cannot write DWG R12",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 1369806
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 107161
+  },
+  {
+   "format": "DWG",
+   "version": "2000",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 687391
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 1379509
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 113165
+  },
+  {
+   "format": "DWG",
+   "version": "2004",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 602899
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 1381570
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 113471
+  },
+  {
+   "format": "DWG",
+   "version": "2007",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/utf-16-le"
+   ],
+   "bytes": 625024
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 1338095
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 82641
+  },
+  {
+   "format": "DWG",
+   "version": "2010",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/utf-16-le"
+   ],
+   "bytes": 603259
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 1289673
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 42457
+  },
+  {
+   "format": "DWG",
+   "version": "2013",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/utf-16-le"
+   ],
+   "bytes": 13637
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 1289676
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 42459
+  },
+  {
+   "format": "DWG",
+   "version": "2018",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/utf-16-le"
+   ],
+   "bytes": 13637
+  }
+ ],
+ "bricscad_neutralized": [
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 6388
+  },
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 3736
+  },
+  {
+   "format": "DWG",
+   "version": "R12",
+   "encoding": "binary",
+   "written": false,
+   "error": "BricsCAD cannot write DWG R12",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 1369810
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 107165
+  },
+  {
+   "format": "DWG",
+   "version": "2000",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 687395
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 1379507
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 113169
+  },
+  {
+   "format": "DWG",
+   "version": "2004",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 602899
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 1381574
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 113475
+  },
+  {
+   "format": "DWG",
+   "version": "2007",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 625056
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 1338099
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 82645
+  },
+  {
+   "format": "DWG",
+   "version": "2010",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 603259
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 1289677
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 42461
+  },
+  {
+   "format": "DWG",
+   "version": "2013",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 13637
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 1289680
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 42463
+  },
+  {
+   "format": "DWG",
+   "version": "2018",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 13637
+  }
+ ],
+ "oda_unneutralized": [
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 6517
+  },
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 3736
+  },
+  {
+   "format": "DWG",
+   "version": "R12",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 3607
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 161123
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 104287
+  },
+  {
+   "format": "DWG",
+   "version": "2000",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 95975
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 166694
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 107334
+  },
+  {
+   "format": "DWG",
+   "version": "2004",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 16465
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 164517
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 105882
+  },
+  {
+   "format": "DWG",
+   "version": "2007",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/utf-16-le"
+   ],
+   "bytes": 28736
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 122773
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 76281
+  },
+  {
+   "format": "DWG",
+   "version": "2010",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/utf-16-le"
+   ],
+   "bytes": 15604
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 76435
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 37850
+  },
+  {
+   "format": "DWG",
+   "version": "2013",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/utf-16-le"
+   ],
+   "bytes": 12643
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 75860
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/ascii"
+   ],
+   "bytes": 37472
+  },
+  {
+   "format": "DWG",
+   "version": "2018",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [
+    "private identity token/utf-16-le"
+   ],
+   "bytes": 12256
+  }
+ ],
+ "oda_neutralized": [
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 6517
+  },
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 3736
+  },
+  {
+   "format": "DWG",
+   "version": "R12",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 3607
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 161127
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 104291
+  },
+  {
+   "format": "DWG",
+   "version": "2000",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 95979
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 166700
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 107338
+  },
+  {
+   "format": "DWG",
+   "version": "2004",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 16465
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 164521
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 105886
+  },
+  {
+   "format": "DWG",
+   "version": "2007",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 28768
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 122777
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 76285
+  },
+  {
+   "format": "DWG",
+   "version": "2010",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 15604
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 76439
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 37854
+  },
+  {
+   "format": "DWG",
+   "version": "2013",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 12643
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 75864
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 37476
+  },
+  {
+   "format": "DWG",
+   "version": "2018",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 12256
+  }
+ ],
+ "cadcraft": [
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "ASCII",
+   "written": false,
+   "error": "CADCraft cannot write R12 (saveas versions 2000 to 2018)",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DXF",
+   "version": "R12",
+   "encoding": "binary",
+   "written": false,
+   "error": "CADCraft cannot write R12 (saveas versions 2000 to 2018)",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DWG",
+   "version": "R12",
+   "encoding": "binary",
+   "written": false,
+   "error": "CADCraft cannot write R12 (saveas versions 2000 to 2018)",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 17589
+  },
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "binary",
+   "written": false,
+   "error": "CADCraft cannot write binary DXF",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DWG",
+   "version": "2000",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 7839
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 17627
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "binary",
+   "written": false,
+   "error": "CADCraft cannot write binary DXF",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DWG",
+   "version": "2004",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 9199
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 17627
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "binary",
+   "written": false,
+   "error": "CADCraft cannot write binary DXF",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DWG",
+   "version": "2007",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 21504
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 17627
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "binary",
+   "written": false,
+   "error": "CADCraft cannot write binary DXF",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DWG",
+   "version": "2010",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 10734
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 17627
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "binary",
+   "written": false,
+   "error": "CADCraft cannot write binary DXF",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DWG",
+   "version": "2013",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 23062
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "ASCII",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 17627
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "binary",
+   "written": false,
+   "error": "CADCraft cannot write binary DXF",
+   "hits": null,
+   "bytes": null
+  },
+  {
+   "format": "DWG",
+   "version": "2018",
+   "encoding": "binary",
+   "written": true,
+   "error": null,
+   "hits": [],
+   "bytes": 22774
+  }
+ ],
+ "summary": {
+  "bricscad_unneutralized": {
+   "written": 20,
+   "with_hits": 18,
+   "exposed_formats": [
+    "DWG 2000 binary",
+    "DWG 2004 binary",
+    "DWG 2007 binary",
+    "DWG 2010 binary",
+    "DWG 2013 binary",
+    "DWG 2018 binary",
+    "DXF 2000 ASCII",
+    "DXF 2000 binary",
+    "DXF 2004 ASCII",
+    "DXF 2004 binary",
+    "DXF 2007 ASCII",
+    "DXF 2007 binary",
+    "DXF 2010 ASCII",
+    "DXF 2010 binary",
+    "DXF 2013 ASCII",
+    "DXF 2013 binary",
+    "DXF 2018 ASCII",
+    "DXF 2018 binary"
+   ]
+  },
+  "bricscad_neutralized": {
+   "written": 20,
+   "with_hits": 0,
+   "exposed_formats": []
+  },
+  "oda_unneutralized": {
+   "written": 21,
+   "with_hits": 18,
+   "exposed_formats": [
+    "DWG 2000 binary",
+    "DWG 2004 binary",
+    "DWG 2007 binary",
+    "DWG 2010 binary",
+    "DWG 2013 binary",
+    "DWG 2018 binary",
+    "DXF 2000 ASCII",
+    "DXF 2000 binary",
+    "DXF 2004 ASCII",
+    "DXF 2004 binary",
+    "DXF 2007 ASCII",
+    "DXF 2007 binary",
+    "DXF 2010 ASCII",
+    "DXF 2010 binary",
+    "DXF 2013 ASCII",
+    "DXF 2013 binary",
+    "DXF 2018 ASCII",
+    "DXF 2018 binary"
+   ]
+  },
+  "oda_neutralized": {
+   "written": 21,
+   "with_hits": 0,
+   "exposed_formats": []
+  },
+  "cadcraft": {
+   "written": 12,
+   "with_hits": 0,
+   "exposed_formats": []
+  }
+ }
+}

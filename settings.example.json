@@ -1,0 +1,10 @@
+{
+  "python": "python3",
+  "oda_app": "/opt/oda/AppRun",
+  "oda_build": "27.1.0.143450",
+  "bricscad_wrapper": "/opt/cad-tools/bcad_run.sh",
+  "xvfb_reaper": "/opt/cad-tools/reap_xvfb.sh",
+  "crash_dir": "results/bricscad-crash",
+  "cadcraft_binary": "/opt/cadcraft/cadcraft-cli",
+  "privacy_tokens": []
+}

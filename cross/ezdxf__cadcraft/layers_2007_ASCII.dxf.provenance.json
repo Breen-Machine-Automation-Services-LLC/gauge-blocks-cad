@@ -1,0 +1,15 @@
+{
+  "intent_id": "background_layers",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DXF",
+  "version": "2007",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "d9818ab9adfe686b7b5115f5873f57dfc8d343a3cc027d62a05df0a986b20bc4"
+  },
+  "content_digest": "8e3c517c94d89bdcae48fd21d728021b90af50bb2d2a2b9b40515480f3779cda",
+  "ezdxf_based": true
+}

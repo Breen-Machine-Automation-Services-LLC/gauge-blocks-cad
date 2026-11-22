@@ -1,0 +1,273 @@
+{
+ "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+ "input": "native/ezdxf/metadata_2018_ASCII.dxf",
+ "saves_apart_seconds": ">2.5",
+ "cases": [
+  {
+   "format": "DXF",
+   "version": "2000",
+   "encoding": "ASCII",
+   "header_changes": {
+    "$FINGERPRINTGUID": [
+     "{9C9495DD-C6CA-47E1-BC0C-23471A109387}",
+     "{42CB23C3-F3D0-496A-866A-C7242BDD6C76}"
+    ],
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$VERSIONGUID": [
+     "{8BC50B90-BE97-4E3D-9C59-2588DE8E0C57}",
+     "{D524354E-BC19-4D8F-9BD6-8E48B4D71019}"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DXF",
+   "version": "2004",
+   "encoding": "ASCII",
+   "header_changes": {
+    "$FINGERPRINTGUID": [
+     "{68656059-7678-4BDB-9078-A059FE592E41}",
+     "{5551542F-187A-4950-BD92-0E786A47B5E5}"
+    ],
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$VERSIONGUID": [
+     "{2D6640D9-CB7F-47C5-A008-7A1928D6CD7F}",
+     "{E58D99E5-9749-4D92-8F22-D4E9AED918AA}"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DXF",
+   "version": "2007",
+   "encoding": "ASCII",
+   "header_changes": {
+    "$FINGERPRINTGUID": [
+     "{9ACFB24D-4AC0-4658-9E25-D6089D8C74E5}",
+     "{52F741EC-16D6-4D43-A244-4D4FE2483F08}"
+    ],
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$VERSIONGUID": [
+     "{DADFB59B-822E-4B99-A74F-9B6C41921A1C}",
+     "{8DC6C57F-F1D7-4EA8-B35F-FB75FBFDF78B}"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DXF",
+   "version": "2010",
+   "encoding": "ASCII",
+   "header_changes": {
+    "$FINGERPRINTGUID": [
+     "{1C1B82E4-0A23-4C53-AC5C-065DFAB1CA3D}",
+     "{E100B7FE-EBE4-46E6-8F04-7410611C563A}"
+    ],
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$VERSIONGUID": [
+     "{A1E1DA2F-D495-49FF-A8CA-C1CB71F22A11}",
+     "{56A93CA2-643C-4137-8B2D-B4089961EAA2}"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DXF",
+   "version": "2013",
+   "encoding": "ASCII",
+   "header_changes": {
+    "$FINGERPRINTGUID": [
+     "{B237FD0D-D42F-48C8-A914-400AB244F9FA}",
+     "{59E78FBA-77D7-4A20-BE65-905394498CFE}"
+    ],
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$VERSIONGUID": [
+     "{ADB78830-C078-46AF-A145-E4F2B2DD258F}",
+     "{58C9E72D-0AC6-4788-81E9-D65C6F6965E2}"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DXF",
+   "version": "2018",
+   "encoding": "ASCII",
+   "header_changes": {
+    "$FINGERPRINTGUID": [
+     "{E1C5DE9F-C8B1-4C3C-B8D5-B37E4D847AF4}",
+     "{3FBACB2C-9EC3-4BB5-B51A-7A4B6F60B351}"
+    ],
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$VERSIONGUID": [
+     "{BC191344-6540-4E00-934E-64950D9FC590}",
+     "{FB18BD6C-72C7-4672-BFF8-3BC7DEA1FC33}"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DWG",
+   "version": "2000",
+   "encoding": "binary",
+   "header_changes": {
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$TDUPDATE": [
+     "2461367.574163554",
+     "2461367.574233554"
+    ],
+    "$TDUUPDATE": [
+     "2461367.824163554",
+     "2461367.824233554"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DWG",
+   "version": "2004",
+   "encoding": "binary",
+   "header_changes": {
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$TDUPDATE": [
+     "2461367.574163635",
+     "2461367.574233623"
+    ],
+    "$TDUUPDATE": [
+     "2461367.824163635",
+     "2461367.824233623"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DWG",
+   "version": "2007",
+   "encoding": "binary",
+   "header_changes": {
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$TDUPDATE": [
+     "2461367.574163681",
+     "2461367.574233681"
+    ],
+    "$TDUUPDATE": [
+     "2461367.824163681",
+     "2461367.824233681"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DWG",
+   "version": "2010",
+   "encoding": "binary",
+   "header_changes": {
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$TDUPDATE": [
+     "2461367.574163727",
+     "2461367.574233762"
+    ],
+    "$TDUUPDATE": [
+     "2461367.824163727",
+     "2461367.824233762"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DWG",
+   "version": "2013",
+   "encoding": "binary",
+   "header_changes": {
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$TDUPDATE": [
+     "2461367.574163773",
+     "2461367.57423382"
+    ],
+    "$TDUUPDATE": [
+     "2461367.824163773",
+     "2461367.82423382"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  },
+  {
+   "format": "DWG",
+   "version": "2018",
+   "encoding": "binary",
+   "header_changes": {
+    "$TDCREATE": [
+     "2461367.5741550927",
+     "2461367.5742245372"
+    ],
+    "$TDUPDATE": [
+     "2461367.57416382",
+     "2461367.574233878"
+    ],
+    "$TDUUPDATE": [
+     "2461367.82416382",
+     "2461367.824233878"
+    ]
+   },
+   "entity_changes": {},
+   "entity_change_count": 0,
+   "digests_equal": true
+  }
+ ],
+ "all_digests_equal": true,
+ "one_field_changes_digest": true
+}

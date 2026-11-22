@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_f_extents",
+  "representation_id": "reference_1",
+  "program": "bricscad",
+  "build": "26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+  "format": "DWG",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "84068580abdf4410a667da453bdef482458e6b7ff6d65427e1e7a598efa2b317"
+  },
+  "content_digest": "d46da35d713bd934f48cae02c1145d3d1d08c5b10ab1d6f53d0a375104d510f7",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

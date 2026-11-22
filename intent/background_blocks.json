@@ -1,0 +1,237 @@
+{
+  "intent_id": "background_blocks",
+  "representation_id": "reference_1",
+  "features": [
+    "unused block with attribute definition",
+    "used block with attribute"
+  ],
+  "expected": [
+    {
+      "id": "identity",
+      "value": [
+        "background_blocks",
+        "reference_1"
+      ],
+      "selector": {
+        "kind": "identity"
+      },
+      "reference": {
+        "section": "BLOCK extended data; APPID; codes 1001,1000",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_UNUSED.tag",
+      "value": [
+        "ZEV_TAG"
+      ],
+      "selector": {
+        "kind": "block",
+        "name": "ZEV_UNUSED",
+        "attr": "tag"
+      },
+      "reference": {
+        "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_UNUSED.text",
+      "value": [
+        "ZEV_VALUE"
+      ],
+      "selector": {
+        "kind": "block",
+        "name": "ZEV_UNUSED",
+        "attr": "text"
+      },
+      "reference": {
+        "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_UNUSED.inserts",
+      "value": 0,
+      "selector": {
+        "kind": "block",
+        "name": "ZEV_UNUSED",
+        "attr": "inserts"
+      },
+      "reference": {
+        "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_USED.tag",
+      "value": [
+        "ZEV_TAG"
+      ],
+      "selector": {
+        "kind": "block",
+        "name": "ZEV_USED",
+        "attr": "tag"
+      },
+      "reference": {
+        "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_USED.text",
+      "value": [
+        "ZEV_VALUE"
+      ],
+      "selector": {
+        "kind": "block",
+        "name": "ZEV_USED",
+        "attr": "text"
+      },
+      "reference": {
+        "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_USED.inserts",
+      "value": 1,
+      "selector": {
+        "kind": "block",
+        "name": "ZEV_USED",
+        "attr": "inserts"
+      },
+      "reference": {
+        "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "used_attributes",
+      "value": [
+        [
+          "ZEV_TAG",
+          "ZEV_VALUE"
+        ]
+      ],
+      "selector": {
+        "kind": "insert_attributes"
+      },
+      "reference": {
+        "section": "ATTRIB codes 2,1",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "title": "Background Blocks",
+  "description": "Synthetic background content defined by the referenced DXF fields.",
+  "feature_fields": {
+    "unused block with attribute definition": [
+      "ZEV_UNUSED.tag",
+      "ZEV_UNUSED.text",
+      "ZEV_UNUSED.inserts"
+    ],
+    "used block with attribute": [
+      "ZEV_USED.tag",
+      "ZEV_USED.text",
+      "ZEV_USED.inserts",
+      "used_attributes"
+    ]
+  }
+}

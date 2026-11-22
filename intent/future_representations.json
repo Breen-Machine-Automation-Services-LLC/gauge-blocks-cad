@@ -1,0 +1,6 @@
+{
+  "intent_id": "future_representations",
+  "title": "Multiple representations per intent",
+  "status": "planned",
+  "description": "Author alternative valid encodings with shared semantic expectations."
+}

@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_j_raster",
+  "representation_id": "reference_1",
+  "program": "bricscad",
+  "build": "26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+  "format": "DWG",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "94a0d7feb733f634c359a1fbe722e27fc7337baab7cb91651aeee102e740b249"
+  },
+  "content_digest": "5fdbef8829489b941bfa672b538bc10dc3e5ffc177e4aeaef6659c5b3fea3ae8",
+  "ezdxf_based": true,
+  "digest_reader": "oda Build 27.1.0.143450"
+}

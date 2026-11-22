@@ -1,0 +1,20 @@
+{
+  "before": {
+    "planned": 1422,
+    "partial": 2289,
+    "not applicable": 90,
+    "blocked": 105,
+    "wanted": 21,
+    "covered": 0
+  },
+  "after": {
+    "covered": 540,
+    "planned": 900,
+    "not applicable": 90,
+    "partial": 2271,
+    "blocked": 105,
+    "wanted": 21
+  },
+  "all_partial_cells_name_missing_pairs": true,
+  "partial_cells_with_missing_declared_pairs": 2271
+}

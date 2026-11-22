@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_g_blocks",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DXF",
+  "version": "2010",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "2e76e657471f83717c43c94ab1314268456a6de285c5e3c45b6ac4347e6d74d2"
+  },
+  "content_digest": "2543d29356e4808dcc40bd90c7b52c2d925cd55b2f092a5e4d889138fd2b29e6",
+  "ezdxf_based": true
+}

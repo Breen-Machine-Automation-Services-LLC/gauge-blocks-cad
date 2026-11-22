@@ -1,0 +1,348 @@
+{
+  "intent_id": "feature_d_dimensions",
+  "title": "Dimensions",
+  "description": "Ported synthetic master D. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F50_dim_linear",
+    "F51_dim_aligned",
+    "F52_dim_angular",
+    "F53_dim_radial",
+    "F54_dim_override_text",
+    "F55_dim_dimstyle_xdata"
+  ],
+  "expected": [
+    {
+      "id": "F54_dim_override_text.text",
+      "value": "OVR <> mm",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F54_dim_override_text",
+        "table": "DIMENSION",
+        "attr": "text"
+      },
+      "reference": {
+        "section": "DIMENSION group codes for text",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F50_dim_linear.layer",
+      "value": "F50_dim_linear",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F50_dim_linear",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F51_dim_aligned.layer",
+      "value": "F51_dim_aligned",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F51_dim_aligned",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F52_dim_angular.layer",
+      "value": "F52_dim_angular",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F52_dim_angular",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F53_dim_radial.layer",
+      "value": "F53_dim_radial",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F53_dim_radial",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F54_dim_override_text.layer",
+      "value": "F54_dim_override_text",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F54_dim_override_text",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F55_dim_dimstyle_xdata.layer",
+      "value": "F55_dim_dimstyle_xdata",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F55_dim_dimstyle_xdata",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F50_dim_linear.dimtype",
+      "value": 32,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F50_dim_linear",
+        "table": "DIMENSION",
+        "attr": "dimtype"
+      },
+      "reference": {
+        "section": "DIMENSION; dimtype",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F51_dim_aligned.dimtype",
+      "value": 32,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F51_dim_aligned",
+        "table": "DIMENSION",
+        "attr": "dimtype"
+      },
+      "reference": {
+        "section": "DIMENSION; dimtype",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F52_dim_angular.dimtype",
+      "value": 34,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F52_dim_angular",
+        "table": "DIMENSION",
+        "attr": "dimtype"
+      },
+      "reference": {
+        "section": "DIMENSION; dimtype",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F53_dim_radial.dimtype",
+      "value": 36,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F53_dim_radial",
+        "table": "DIMENSION",
+        "attr": "dimtype"
+      },
+      "reference": {
+        "section": "DIMENSION; dimtype",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F55_dim_dimstyle_xdata.dimtype",
+      "value": 32,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F55_dim_dimstyle_xdata",
+        "table": "DIMENSION",
+        "attr": "dimtype"
+      },
+      "reference": {
+        "section": "DIMENSION; dimtype",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F50_dim_linear": [
+      "F50_dim_linear.layer",
+      "F50_dim_linear.dimtype"
+    ],
+    "F51_dim_aligned": [
+      "F51_dim_aligned.layer",
+      "F51_dim_aligned.dimtype"
+    ],
+    "F52_dim_angular": [
+      "F52_dim_angular.layer",
+      "F52_dim_angular.dimtype"
+    ],
+    "F53_dim_radial": [
+      "F53_dim_radial.layer",
+      "F53_dim_radial.dimtype"
+    ],
+    "F54_dim_override_text": [
+      "F54_dim_override_text.text",
+      "F54_dim_override_text.layer"
+    ],
+    "F55_dim_dimstyle_xdata": [
+      "F55_dim_dimstyle_xdata.layer",
+      "F55_dim_dimstyle_xdata.dimtype"
+    ]
+  }
+}

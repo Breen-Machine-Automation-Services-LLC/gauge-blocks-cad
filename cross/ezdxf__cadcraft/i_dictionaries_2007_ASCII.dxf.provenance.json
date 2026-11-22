@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_i_dictionaries",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DXF",
+  "version": "2007",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "5afa2a1e66fc63caf95423267e8360ebd99e65ed2eb003403e1a5fa10a7544fd"
+  },
+  "content_digest": "b2b7bf6d131da4078d961887dc00d81079d2cadd97ca1f6de9484a330a951c7e",
+  "ezdxf_based": true
+}

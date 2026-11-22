@@ -1,0 +1,8 @@
+[
+  {
+    "program": "oda",
+    "status": "resolved",
+    "cause": "Original launcher referenced a missing executable; direct AppRun under xvfb works.",
+    "blocked": "cross generation, DWG reading, exact executable build and save-digest evidence"
+  }
+]

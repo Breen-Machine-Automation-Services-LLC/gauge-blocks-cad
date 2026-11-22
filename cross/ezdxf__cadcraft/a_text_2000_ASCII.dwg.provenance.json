@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_a_text",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DWG",
+  "version": "2000",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "0ae94b7f5f33bc4f9c554f4c73dba2b96e8faa92fbd1725892dcd37a0a3e96b5"
+  },
+  "content_digest": "48b627c2b91bd9bfaf03d20d1088dfcbed09f2fb1b426c11d03360ccceb0154e",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

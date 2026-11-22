@@ -1,0 +1,45 @@
+;; BricsCAD batch open + save. Task line: infile|out1|spec1|out2|spec2...
+;; spec is a numeric vla-SaveAs constant, or "B:<version>" for a binary DXF written with the DXFOUT command
+;; (DXFOUT, Version option, then Binary option). Each event is appended to the log and the log file is closed
+;; immediately, so a killed session loses nothing.
+(vl-load-com)
+(defun bcb-split (s sep / out i start)
+  (setq out nil start 0 i 0)
+  (while (< i (strlen s))
+    (if (= (substr s (1+ i) 1) sep)
+      (setq out (cons (substr s (1+ start) (- i start)) out) start (1+ i)))
+    (setq i (1+ i)))
+  (reverse (cons (substr s (1+ start)) out)))
+(defun bcb-clean (s) (vl-string-translate "\t\n\r" "   " (vl-princ-to-string s)))
+(defun bcb-log (logfile lst / f s)
+  (setq f (open logfile "a") s (bcb-clean (car lst)))
+  (foreach x (cdr lst) (setq s (strcat s "\t" (bcb-clean x))))
+  (write-line s f) (close f))
+(defun bcb-save (doc out spec)
+  (if (= (substr spec 1 2) "B:")
+    (progn
+      (vla-Activate doc)
+      (command "_.DXFOUT" out "_V" (substr spec 3) "_B"))
+    (vla-SaveAs doc out (atoi spec))))
+(defun bcb-run (listfile logfile / docs in line parts n doc rest out spec r)
+  (setq docs (vla-get-Documents (vlax-get-acad-object)))
+  (setq in (open listfile "r") n 0)
+  (while (setq line (read-line in))
+    (setq n (1+ n) parts (bcb-split line "|"))
+    (bcb-log logfile (list "START" n (car parts)))
+    (setq doc (vl-catch-all-apply 'vla-Open (list docs (car parts) :vlax-true)))
+    (if (vl-catch-all-error-p doc)
+      (bcb-log logfile (list "OPEN-ERR" n (car parts) (vl-catch-all-error-message doc)))
+      (progn
+        (bcb-log logfile (list "OPEN-OK" n (car parts)))
+        (setq rest (cdr parts))
+        (while rest
+          (setq out (car rest) spec (cadr rest) rest (cddr rest))
+          (if (findfile out) (vl-file-delete out))
+          (setq r (vl-catch-all-apply 'bcb-save (list doc out spec)))
+          (bcb-log logfile (list (if (vl-catch-all-error-p r) "SAVE-ERR" (if (findfile out) "SAVE-OK" "SAVE-MISSING")) n out
+                                 (if (vl-catch-all-error-p r) (vl-catch-all-error-message r) ""))))
+        (vl-catch-all-apply 'vla-Close (list doc :vlax-false)))))
+  (close in)
+  (bcb-log logfile (list "DONE" n))
+  (princ))

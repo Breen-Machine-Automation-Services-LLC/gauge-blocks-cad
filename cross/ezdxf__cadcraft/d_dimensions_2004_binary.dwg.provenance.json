@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_d_dimensions",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DWG",
+  "version": "2004",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "51a4d8f088428f2423c781eb8d9c5e236071c51a67e35812809fe6aaad925a3d"
+  },
+  "content_digest": "30f04427b47d638977f2cb0b513e2b87090af7d0eae1c2fea8613a079599a703",
+  "ezdxf_based": true,
+  "digest_reader": "oda Build 27.1.0.143450"
+}

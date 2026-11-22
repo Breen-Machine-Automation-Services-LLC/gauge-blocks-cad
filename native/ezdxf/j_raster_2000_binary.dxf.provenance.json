@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_j_raster",
+  "representation_id": "reference_1",
+  "program": "ezdxf",
+  "build": "1.4.4",
+  "format": "DXF",
+  "version": "2000",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_features.py",
+    "input_digest": "0b2025c348cd822688f47b0405b0b63af5cfbd17a54bd2e08baa268171b036df"
+  },
+  "content_digest": "a7da017339191ae844e7febf89eea2fb6e808028e458c14273e4ab8d3b0d612b",
+  "ezdxf_based": true
+}

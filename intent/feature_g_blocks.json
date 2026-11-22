@@ -1,0 +1,743 @@
+{
+  "intent_id": "feature_g_blocks",
+  "title": "Blocks",
+  "description": "Ported synthetic master G. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F100_block_basepoint",
+    "F101_nested_inner",
+    "F101_nested_outer",
+    "F102_insert_rotated",
+    "F103_insert_mirrored",
+    "F104_insert_nonuniform",
+    "F105_insert_minsert",
+    "F106_unused_block",
+    "F107_wipeout_in_block",
+    "F108_wipeout_block_text",
+    "F109_wipeout_model",
+    "F110_none_arrowhead",
+    "F111_anonymous_block",
+    "F112_blockdefs_marker"
+  ],
+  "expected": [
+    {
+      "id": "F102_insert_rotated.rotation",
+      "value": 30,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F102_insert_rotated",
+        "table": "INSERT",
+        "attr": "rotation"
+      },
+      "reference": {
+        "section": "INSERT group codes for rotation",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F103_insert_mirrored.xscale",
+      "value": -1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F103_insert_mirrored",
+        "table": "INSERT",
+        "attr": "xscale"
+      },
+      "reference": {
+        "section": "INSERT group codes for xscale",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F104_insert_nonuniform.yscale",
+      "value": 0.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F104_insert_nonuniform",
+        "table": "INSERT",
+        "attr": "yscale"
+      },
+      "reference": {
+        "section": "INSERT group codes for yscale",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F105_insert_minsert.row_count",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F105_insert_minsert",
+        "table": "INSERT",
+        "attr": "row_count"
+      },
+      "reference": {
+        "section": "INSERT group codes for row_count",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F100_block_basepoint.name",
+      "value": "G_BASEOFF",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F100_block_basepoint",
+        "table": "INSERT",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "INSERT; name",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F101_nested_outer.name",
+      "value": "G_OUTER",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F101_nested_outer",
+        "table": "INSERT",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "INSERT; name",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F105_insert_minsert.column_count",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F105_insert_minsert",
+        "table": "INSERT",
+        "attr": "column_count"
+      },
+      "reference": {
+        "section": "INSERT; column_count",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F106_unused_block.radius",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F106_unused_block",
+        "table": "CIRCLE",
+        "attr": "radius"
+      },
+      "reference": {
+        "section": "CIRCLE; radius",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F107_wipeout_in_block.boundary_path",
+      "value": [
+        [
+          -0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          -0.5
+        ],
+        [
+          -0.5,
+          -0.5
+        ],
+        [
+          -0.5,
+          0.5
+        ]
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F107_wipeout_in_block",
+        "table": "WIPEOUT",
+        "attr": "boundary_path"
+      },
+      "reference": {
+        "section": "WIPEOUT; boundary_path",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F108_wipeout_block_text.text",
+      "value": "OVER WIPE",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F108_wipeout_block_text",
+        "table": "TEXT",
+        "attr": "text"
+      },
+      "reference": {
+        "section": "TEXT; text",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F111_anonymous_block.name",
+      "value": "*U77",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F111_anonymous_block",
+        "table": "INSERT",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "INSERT; name",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F100_block_basepoint.layer",
+      "value": "F100_block_basepoint",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F100_block_basepoint",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F101_nested_inner.layer",
+      "value": "F101_nested_inner",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F101_nested_inner",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F101_nested_outer.layer",
+      "value": "F101_nested_outer",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F101_nested_outer",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F102_insert_rotated.layer",
+      "value": "F102_insert_rotated",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F102_insert_rotated",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F103_insert_mirrored.layer",
+      "value": "F103_insert_mirrored",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F103_insert_mirrored",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F104_insert_nonuniform.layer",
+      "value": "F104_insert_nonuniform",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F104_insert_nonuniform",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F105_insert_minsert.layer",
+      "value": "F105_insert_minsert",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F105_insert_minsert",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F106_unused_block.layer",
+      "value": "F106_unused_block",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F106_unused_block",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F107_wipeout_in_block.layer",
+      "value": "F107_wipeout_in_block",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F107_wipeout_in_block",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F108_wipeout_block_text.layer",
+      "value": "F108_wipeout_block_text",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F108_wipeout_block_text",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F109_wipeout_model.layer",
+      "value": "F109_wipeout_model",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F109_wipeout_model",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F110_none_arrowhead.layer",
+      "value": "F110_none_arrowhead",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F110_none_arrowhead",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F111_anonymous_block.layer",
+      "value": "F111_anonymous_block",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F111_anonymous_block",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F112_blockdefs_marker.layer",
+      "value": "F112_blockdefs_marker",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F112_blockdefs_marker",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F100_block_basepoint": [
+      "F100_block_basepoint.name",
+      "F100_block_basepoint.layer"
+    ],
+    "F101_nested_inner": [
+      "F101_nested_inner.layer"
+    ],
+    "F101_nested_outer": [
+      "F101_nested_outer.name",
+      "F101_nested_outer.layer"
+    ],
+    "F102_insert_rotated": [
+      "F102_insert_rotated.rotation",
+      "F102_insert_rotated.layer"
+    ],
+    "F103_insert_mirrored": [
+      "F103_insert_mirrored.xscale",
+      "F103_insert_mirrored.layer"
+    ],
+    "F104_insert_nonuniform": [
+      "F104_insert_nonuniform.yscale",
+      "F104_insert_nonuniform.layer"
+    ],
+    "F105_insert_minsert": [
+      "F105_insert_minsert.row_count",
+      "F105_insert_minsert.column_count",
+      "F105_insert_minsert.layer"
+    ],
+    "F106_unused_block": [
+      "F106_unused_block.radius",
+      "F106_unused_block.layer"
+    ],
+    "F107_wipeout_in_block": [
+      "F107_wipeout_in_block.boundary_path",
+      "F107_wipeout_in_block.layer"
+    ],
+    "F108_wipeout_block_text": [
+      "F108_wipeout_block_text.text",
+      "F108_wipeout_block_text.layer"
+    ],
+    "F109_wipeout_model": [
+      "F109_wipeout_model.layer"
+    ],
+    "F110_none_arrowhead": [
+      "F110_none_arrowhead.layer"
+    ],
+    "F111_anonymous_block": [
+      "F111_anonymous_block.name",
+      "F111_anonymous_block.layer"
+    ],
+    "F112_blockdefs_marker": [
+      "F112_blockdefs_marker.layer"
+    ]
+  }
+}

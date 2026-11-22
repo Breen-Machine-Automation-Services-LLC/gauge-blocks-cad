@@ -1,0 +1,15 @@
+{
+  "intent_id": "background_blocks",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DXF",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "52456867323d81791cb7a114c35a47e781ff19426dff8f6ec7ee01e3c5e9cfe0"
+  },
+  "content_digest": "0ca7584b8330201b3c812fab0be41bafbbe7c06c6fadf32c54deff04696286a0",
+  "ezdxf_based": true
+}

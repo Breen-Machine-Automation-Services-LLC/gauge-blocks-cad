@@ -1,0 +1,5 @@
+{
+  "refusal_without_output_sidecar": "pass",
+  "coverage_does_not_claim_unavailable_output": "pass",
+  "input_provenance": "pass"
+}

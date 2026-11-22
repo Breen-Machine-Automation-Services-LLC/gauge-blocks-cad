@@ -1,0 +1,10 @@
+{
+  "build": "Build 27.1.0.143450",
+  "format": "DXF",
+  "version": "R12",
+  "encoding": "binary",
+  "signature": "AutoCAD Binary DXF",
+  "fields_read": 8,
+  "digest": "1f9a67ae8b4aebee32ce0d117508be33e1ca73060f1599f3d5b1ed35c766b11e",
+  "audit_errors": 0
+}

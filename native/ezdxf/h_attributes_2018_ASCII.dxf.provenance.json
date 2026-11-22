@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_h_attributes",
+  "representation_id": "reference_1",
+  "program": "ezdxf",
+  "build": "1.4.4",
+  "format": "DXF",
+  "version": "2018",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_features.py",
+    "input_digest": "d59980809f55c7b4842126df673c17d1bf71157ce203c70d19b3e0e99368b251"
+  },
+  "content_digest": "8c948a22eea2326cf82be85899f7f6821f42f85b347ab426dac93db669d73b6a",
+  "ezdxf_based": true
+}

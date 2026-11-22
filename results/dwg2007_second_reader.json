@@ -1,0 +1,21 @@
+{
+ "input": "native/ezdxf/e_objects_2007_ASCII.dxf",
+ "writer": "cadcraft a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+ "readers": {
+  "e_objects_2004.dwg": {
+   "bricscad": "read",
+   "oda": "read",
+   "header": "AC1018"
+  },
+  "e_objects_2007.dwg": {
+   "bricscad": "BricsCAD refused to open: err:Automation Error E_FAIL; [IAcadDocuments] function [OPEN] unspecified error ",
+   "oda": "ODA produced no output",
+   "header": "AC1021"
+  },
+  "e_objects_2010.dwg": {
+   "bricscad": "read",
+   "oda": "read",
+   "header": "AC1024"
+  }
+ }
+}

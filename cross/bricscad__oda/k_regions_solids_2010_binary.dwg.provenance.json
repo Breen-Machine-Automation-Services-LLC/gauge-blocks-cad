@@ -1,0 +1,16 @@
+{
+  "intent_id": "future_k_regions_solids",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "Build 27.1.0.143450",
+  "format": "DWG",
+  "version": "2010",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "d089b7bcd4f2360bfe4f1934f0564f8ef314137fe4a955d4c78b786b627d0569"
+  },
+  "content_digest": "6a48878fbb8eab4540abc718f5dd25d33011e5e043968b9d5847c4227c4e9006",
+  "ezdxf_based": false,
+  "digest_reader": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)"
+}

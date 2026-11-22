@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_j_raster",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DXF",
+  "version": "2018",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "252acc8884f5c8d4c0e365b19b782de70d67ecd403ece5a6eddab4f81927939d"
+  },
+  "content_digest": "e54be9969388640c5bc4ff9cdc0934f275d2b22d885fc17d8338d7ddc64a325f",
+  "ezdxf_based": true
+}

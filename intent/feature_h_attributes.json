@@ -1,0 +1,1436 @@
+{
+  "intent_id": "feature_h_attributes",
+  "title": "Attributes",
+  "description": "Ported synthetic master H. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F113_attdef_constant",
+    "F114_attdef_invisible",
+    "F114_attrib_invisible",
+    "F115_attdef_verify",
+    "F115_attrib_verify",
+    "F116_attdef_preset",
+    "F116_attrib_preset",
+    "F117_attdef_lockpos",
+    "F117_attrib_lockpos",
+    "F118_attdef_rotinsert",
+    "F118_attrib_rotinsert",
+    "F118_insert_rotinsert",
+    "F119_attdef_mirinsert",
+    "F119_attrib_mirinsert",
+    "F119_insert_mirinsert",
+    "F120_attdef_textmirror",
+    "F120_attrib_textmirror",
+    "F121_attdef_valuediff",
+    "F121_attrib_valuediff",
+    "F122_attdef_nodef",
+    "F123_attdef_style_a",
+    "F123_attrib_style_a",
+    "F123_insert_styles",
+    "F124_attdef_style_b",
+    "F124_attrib_style_b"
+  ],
+  "expected": [
+    {
+      "id": "F118_insert_rotinsert.rotation",
+      "value": 40,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F118_insert_rotinsert",
+        "table": "INSERT",
+        "attr": "rotation"
+      },
+      "reference": {
+        "section": "INSERT group codes for rotation",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F119_insert_mirinsert.xscale",
+      "value": -1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F119_insert_mirinsert",
+        "table": "INSERT",
+        "attr": "xscale"
+      },
+      "reference": {
+        "section": "INSERT group codes for xscale",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F113_attdef_constant.flags",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F113_attdef_constant",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F114_attdef_invisible.flags",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F114_attdef_invisible",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F114_attrib_invisible.flags",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F114_attrib_invisible",
+        "table": "ATTRIB",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTRIB; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F115_attdef_verify.flags",
+      "value": 4,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F115_attdef_verify",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F115_attrib_verify.flags",
+      "value": 4,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F115_attrib_verify",
+        "table": "ATTRIB",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTRIB; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F116_attdef_preset.flags",
+      "value": 8,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F116_attdef_preset",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F116_attrib_preset.flags",
+      "value": 8,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F116_attrib_preset",
+        "table": "ATTRIB",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTRIB; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F117_attdef_lockpos.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F117_attdef_lockpos",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F117_attrib_lockpos.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F117_attrib_lockpos",
+        "table": "ATTRIB",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTRIB; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F118_attdef_rotinsert.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F118_attdef_rotinsert",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F118_attrib_rotinsert.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F118_attrib_rotinsert",
+        "table": "ATTRIB",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTRIB; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F119_attdef_mirinsert.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F119_attdef_mirinsert",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F119_attrib_mirinsert.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F119_attrib_mirinsert",
+        "table": "ATTRIB",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTRIB; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F120_attdef_textmirror.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F120_attdef_textmirror",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F120_attrib_textmirror.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F120_attrib_textmirror",
+        "table": "ATTRIB",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTRIB; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F121_attdef_valuediff.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F121_attdef_valuediff",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F121_attrib_valuediff.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F121_attrib_valuediff",
+        "table": "ATTRIB",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTRIB; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F122_attdef_nodef.flags",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F122_attdef_nodef",
+        "table": "ATTDEF",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "ATTDEF; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F117_attdef_lockpos.lock_position",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F117_attdef_lockpos",
+        "table": "ATTDEF",
+        "attr": "lock_position"
+      },
+      "reference": {
+        "section": "ATTDEF; lock_position",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F117_attrib_lockpos.lock_position",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F117_attrib_lockpos",
+        "table": "ATTRIB",
+        "attr": "lock_position"
+      },
+      "reference": {
+        "section": "ATTRIB; lock_position",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F120_attrib_textmirror.text_generation_flag",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F120_attrib_textmirror",
+        "table": "ATTRIB",
+        "attr": "text_generation_flag"
+      },
+      "reference": {
+        "section": "ATTRIB; text_generation_flag",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F121_attrib_valuediff.text",
+      "value": "CHANGED VALUE 9",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F121_attrib_valuediff",
+        "table": "ATTRIB",
+        "attr": "text"
+      },
+      "reference": {
+        "section": "ATTRIB; text",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F123_attrib_style_a.style",
+      "value": "H_STYLE_A",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F123_attrib_style_a",
+        "table": "ATTRIB",
+        "attr": "style"
+      },
+      "reference": {
+        "section": "ATTRIB; style",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F124_attrib_style_b.style",
+      "value": "H_STYLE_B",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F124_attrib_style_b",
+        "table": "ATTRIB",
+        "attr": "style"
+      },
+      "reference": {
+        "section": "ATTRIB; style",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F113_attdef_constant.layer",
+      "value": "F113_attdef_constant",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F113_attdef_constant",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F114_attdef_invisible.layer",
+      "value": "F114_attdef_invisible",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F114_attdef_invisible",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F114_attrib_invisible.layer",
+      "value": "F114_attrib_invisible",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F114_attrib_invisible",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F115_attdef_verify.layer",
+      "value": "F115_attdef_verify",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F115_attdef_verify",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F115_attrib_verify.layer",
+      "value": "F115_attrib_verify",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F115_attrib_verify",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F116_attdef_preset.layer",
+      "value": "F116_attdef_preset",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F116_attdef_preset",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F116_attrib_preset.layer",
+      "value": "F116_attrib_preset",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F116_attrib_preset",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F117_attdef_lockpos.layer",
+      "value": "F117_attdef_lockpos",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F117_attdef_lockpos",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F117_attrib_lockpos.layer",
+      "value": "F117_attrib_lockpos",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F117_attrib_lockpos",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F118_attdef_rotinsert.layer",
+      "value": "F118_attdef_rotinsert",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F118_attdef_rotinsert",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F118_attrib_rotinsert.layer",
+      "value": "F118_attrib_rotinsert",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F118_attrib_rotinsert",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F118_insert_rotinsert.layer",
+      "value": "F118_insert_rotinsert",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F118_insert_rotinsert",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F119_attdef_mirinsert.layer",
+      "value": "F119_attdef_mirinsert",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F119_attdef_mirinsert",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F119_attrib_mirinsert.layer",
+      "value": "F119_attrib_mirinsert",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F119_attrib_mirinsert",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F119_insert_mirinsert.layer",
+      "value": "F119_insert_mirinsert",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F119_insert_mirinsert",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F120_attdef_textmirror.layer",
+      "value": "F120_attdef_textmirror",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F120_attdef_textmirror",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F120_attrib_textmirror.layer",
+      "value": "F120_attrib_textmirror",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F120_attrib_textmirror",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F121_attdef_valuediff.layer",
+      "value": "F121_attdef_valuediff",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F121_attdef_valuediff",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F121_attrib_valuediff.layer",
+      "value": "F121_attrib_valuediff",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F121_attrib_valuediff",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F122_attdef_nodef.layer",
+      "value": "F122_attdef_nodef",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F122_attdef_nodef",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F123_attdef_style_a.layer",
+      "value": "F123_attdef_style_a",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F123_attdef_style_a",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F123_attrib_style_a.layer",
+      "value": "F123_attrib_style_a",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F123_attrib_style_a",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F123_insert_styles.layer",
+      "value": "F123_insert_styles",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F123_insert_styles",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F124_attdef_style_b.layer",
+      "value": "F124_attdef_style_b",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F124_attdef_style_b",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F124_attrib_style_b.layer",
+      "value": "F124_attrib_style_b",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F124_attrib_style_b",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F113_attdef_constant": [
+      "F113_attdef_constant.flags",
+      "F113_attdef_constant.layer"
+    ],
+    "F114_attdef_invisible": [
+      "F114_attdef_invisible.flags",
+      "F114_attdef_invisible.layer"
+    ],
+    "F114_attrib_invisible": [
+      "F114_attrib_invisible.flags",
+      "F114_attrib_invisible.layer"
+    ],
+    "F115_attdef_verify": [
+      "F115_attdef_verify.flags",
+      "F115_attdef_verify.layer"
+    ],
+    "F115_attrib_verify": [
+      "F115_attrib_verify.flags",
+      "F115_attrib_verify.layer"
+    ],
+    "F116_attdef_preset": [
+      "F116_attdef_preset.flags",
+      "F116_attdef_preset.layer"
+    ],
+    "F116_attrib_preset": [
+      "F116_attrib_preset.flags",
+      "F116_attrib_preset.layer"
+    ],
+    "F117_attdef_lockpos": [
+      "F117_attdef_lockpos.flags",
+      "F117_attdef_lockpos.lock_position",
+      "F117_attdef_lockpos.layer"
+    ],
+    "F117_attrib_lockpos": [
+      "F117_attrib_lockpos.flags",
+      "F117_attrib_lockpos.lock_position",
+      "F117_attrib_lockpos.layer"
+    ],
+    "F118_attdef_rotinsert": [
+      "F118_attdef_rotinsert.flags",
+      "F118_attdef_rotinsert.layer"
+    ],
+    "F118_attrib_rotinsert": [
+      "F118_attrib_rotinsert.flags",
+      "F118_attrib_rotinsert.layer"
+    ],
+    "F118_insert_rotinsert": [
+      "F118_insert_rotinsert.rotation",
+      "F118_insert_rotinsert.layer"
+    ],
+    "F119_attdef_mirinsert": [
+      "F119_attdef_mirinsert.flags",
+      "F119_attdef_mirinsert.layer"
+    ],
+    "F119_attrib_mirinsert": [
+      "F119_attrib_mirinsert.flags",
+      "F119_attrib_mirinsert.layer"
+    ],
+    "F119_insert_mirinsert": [
+      "F119_insert_mirinsert.xscale",
+      "F119_insert_mirinsert.layer"
+    ],
+    "F120_attdef_textmirror": [
+      "F120_attdef_textmirror.flags",
+      "F120_attdef_textmirror.layer"
+    ],
+    "F120_attrib_textmirror": [
+      "F120_attrib_textmirror.flags",
+      "F120_attrib_textmirror.text_generation_flag",
+      "F120_attrib_textmirror.layer"
+    ],
+    "F121_attdef_valuediff": [
+      "F121_attdef_valuediff.flags",
+      "F121_attdef_valuediff.layer"
+    ],
+    "F121_attrib_valuediff": [
+      "F121_attrib_valuediff.flags",
+      "F121_attrib_valuediff.text",
+      "F121_attrib_valuediff.layer"
+    ],
+    "F122_attdef_nodef": [
+      "F122_attdef_nodef.flags",
+      "F122_attdef_nodef.layer"
+    ],
+    "F123_attdef_style_a": [
+      "F123_attdef_style_a.layer"
+    ],
+    "F123_attrib_style_a": [
+      "F123_attrib_style_a.style",
+      "F123_attrib_style_a.layer"
+    ],
+    "F123_insert_styles": [
+      "F123_insert_styles.layer"
+    ],
+    "F124_attdef_style_b": [
+      "F124_attdef_style_b.layer"
+    ],
+    "F124_attrib_style_b": [
+      "F124_attrib_style_b.style",
+      "F124_attrib_style_b.layer"
+    ]
+  }
+}

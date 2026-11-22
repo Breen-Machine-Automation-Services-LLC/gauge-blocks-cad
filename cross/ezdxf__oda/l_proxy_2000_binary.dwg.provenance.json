@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_l_proxy",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DWG",
+  "version": "2000",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "d3e578fb27340cb996d323f1ffad3029bf175dd8799577e64e306dc93d7d0aec"
+  },
+  "content_digest": "7399f5d51e5c17bb4633a29da91724aa094f54dcf77d44b600d19be7d68b0be5",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

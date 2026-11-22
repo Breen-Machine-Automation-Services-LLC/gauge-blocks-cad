@@ -1,0 +1,15 @@
+{
+  "intent_id": "background_plots",
+  "representation_id": "reference_1",
+  "program": "ezdxf",
+  "build": "1.4.4",
+  "format": "DXF",
+  "version": "2013",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "regenerate.py",
+    "input_digest": "9156baa99aee012237179863a507a4967c4c1639b7ff6a6960deb6067a8ff411"
+  },
+  "content_digest": "6bea61826cd41a888414b954a2e1c701775b6fa01ee7818318baa65eb240d77e",
+  "ezdxf_based": true
+}

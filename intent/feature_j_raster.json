@@ -1,0 +1,471 @@
+{
+  "intent_id": "feature_j_raster",
+  "title": "Raster",
+  "description": "Ported synthetic master J. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F140_image_plain",
+    "F141_image_rotated",
+    "F142_image_clip_rect",
+    "F143_image_clip_poly",
+    "F144_image_adjust"
+  ],
+  "expected": [
+    {
+      "id": "F144_image_adjust.brightness",
+      "value": 70,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F144_image_adjust",
+        "table": "IMAGE",
+        "attr": "brightness"
+      },
+      "reference": {
+        "section": "IMAGE group codes for brightness",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F144_image_adjust.contrast",
+      "value": 30,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F144_image_adjust",
+        "table": "IMAGE",
+        "attr": "contrast"
+      },
+      "reference": {
+        "section": "IMAGE group codes for contrast",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F144_image_adjust.fade",
+      "value": 20,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F144_image_adjust",
+        "table": "IMAGE",
+        "attr": "fade"
+      },
+      "reference": {
+        "section": "IMAGE group codes for fade",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F140_image_plain.layer",
+      "value": "F140_image_plain",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F140_image_plain",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F141_image_rotated.layer",
+      "value": "F141_image_rotated",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F141_image_rotated",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F142_image_clip_rect.layer",
+      "value": "F142_image_clip_rect",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F142_image_clip_rect",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F143_image_clip_poly.layer",
+      "value": "F143_image_clip_poly",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F143_image_clip_poly",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F144_image_adjust.layer",
+      "value": "F144_image_adjust",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F144_image_adjust",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F140_image_plain.image_size",
+      "value": [
+        64,
+        48
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F140_image_plain",
+        "table": "IMAGE",
+        "attr": "image_size"
+      },
+      "reference": {
+        "section": "IMAGE; image_size",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F141_image_rotated.image_size",
+      "value": [
+        64,
+        48
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F141_image_rotated",
+        "table": "IMAGE",
+        "attr": "image_size"
+      },
+      "reference": {
+        "section": "IMAGE; image_size",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F142_image_clip_rect.image_size",
+      "value": [
+        64,
+        48
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F142_image_clip_rect",
+        "table": "IMAGE",
+        "attr": "image_size"
+      },
+      "reference": {
+        "section": "IMAGE; image_size",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F143_image_clip_poly.image_size",
+      "value": [
+        64,
+        48
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F143_image_clip_poly",
+        "table": "IMAGE",
+        "attr": "image_size"
+      },
+      "reference": {
+        "section": "IMAGE; image_size",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F144_image_adjust.image_size",
+      "value": [
+        64,
+        48
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F144_image_adjust",
+        "table": "IMAGE",
+        "attr": "image_size"
+      },
+      "reference": {
+        "section": "IMAGE; image_size",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F142_image_clip_rect.boundary_path",
+      "value": [
+        [
+          10,
+          10
+        ],
+        [
+          50,
+          40
+        ]
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F142_image_clip_rect",
+        "table": "IMAGE",
+        "attr": "boundary_path"
+      },
+      "reference": {
+        "section": "IMAGE; boundary_path",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F143_image_clip_poly.boundary_path",
+      "value": [
+        [
+          10,
+          5
+        ],
+        [
+          54,
+          12
+        ],
+        [
+          60,
+          40
+        ],
+        [
+          30,
+          46
+        ],
+        [
+          4,
+          30
+        ],
+        [
+          10,
+          5
+        ]
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F143_image_clip_poly",
+        "table": "IMAGE",
+        "attr": "boundary_path"
+      },
+      "reference": {
+        "section": "IMAGE; boundary_path",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F140_image_plain": [
+      "F140_image_plain.layer",
+      "F140_image_plain.image_size"
+    ],
+    "F141_image_rotated": [
+      "F141_image_rotated.layer",
+      "F141_image_rotated.image_size"
+    ],
+    "F142_image_clip_rect": [
+      "F142_image_clip_rect.layer",
+      "F142_image_clip_rect.image_size",
+      "F142_image_clip_rect.boundary_path"
+    ],
+    "F143_image_clip_poly": [
+      "F143_image_clip_poly.layer",
+      "F143_image_clip_poly.image_size",
+      "F143_image_clip_poly.boundary_path"
+    ],
+    "F144_image_adjust": [
+      "F144_image_adjust.brightness",
+      "F144_image_adjust.contrast",
+      "F144_image_adjust.fade",
+      "F144_image_adjust.layer",
+      "F144_image_adjust.image_size"
+    ]
+  }
+}

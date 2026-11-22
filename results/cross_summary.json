@@ -1,0 +1,60 @@
+{
+ "outputs_by_pair_and_format": {
+  "bricscad__cadcraft DWG": {
+   "lost": 4,
+   "kept": 7
+  },
+  "bricscad__cadcraft DXF": {
+   "kept": 11
+  },
+  "bricscad__oda DWG": {
+   "kept": 11
+  },
+  "bricscad__oda DXF": {
+   "kept": 15,
+   "lost": 4,
+   "changed": 3
+  },
+  "ezdxf__bricscad DWG": {
+   "changed": 24,
+   "kept": 160,
+   "lost": 32
+  },
+  "ezdxf__bricscad DXF": {
+   "changed": 30,
+   "lost": 31,
+   "kept": 172
+  },
+  "ezdxf__cadcraft DWG": {
+   "kept": 118,
+   "changed": 60,
+   "refused": 2,
+   "lost": 36
+  },
+  "ezdxf__cadcraft DXF": {
+   "kept": 77,
+   "changed": 19,
+   "lost": 12
+  },
+  "ezdxf__oda DWG": {
+   "kept": 60,
+   "lost": 17
+  },
+  "oda__bricscad DWG": {
+   "kept": 60,
+   "lost": 12
+  },
+  "oda__bricscad DXF": {
+   "kept": 64,
+   "lost": 12,
+   "changed": 1
+  }
+ },
+ "not_run_capability_gap": {
+  "bricscad__cadcraft DXF": 16,
+  "ezdxf__bricscad DWG": 17,
+  "ezdxf__cadcraft DWG": 17,
+  "ezdxf__cadcraft DXF": 125,
+  "oda__bricscad DWG": 5
+ }
+}

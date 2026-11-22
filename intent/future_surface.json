@@ -1,0 +1,6 @@
+{
+  "intent_id": "future_surface",
+  "title": "SURFACE",
+  "status": "planned",
+  "description": "An extruded surface from an open curve, written by an authoring program that creates surface entities."
+}

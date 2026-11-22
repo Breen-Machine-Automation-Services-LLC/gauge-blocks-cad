@@ -1,0 +1,15 @@
+{
+  "intent_id": "background_plots",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DXF",
+  "version": "2004",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "8e1777e481c49683fae3f5138b6bb6745bc3d21cf7e748c55037b54ceaca1cb2"
+  },
+  "content_digest": "376880e523fbbc7fabbee0b96d300ce9f6346887f70a9a664fb94615b952408f",
+  "ezdxf_based": true
+}

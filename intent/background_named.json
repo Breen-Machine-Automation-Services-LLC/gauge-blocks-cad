@@ -1,0 +1,329 @@
+{
+  "intent_id": "background_named",
+  "representation_id": "reference_1",
+  "features": [
+    "scale list",
+    "named view",
+    "named UCS",
+    "group"
+  ],
+  "expected": [
+    {
+      "id": "identity",
+      "value": [
+        "background_named",
+        "reference_1"
+      ],
+      "selector": {
+        "kind": "identity"
+      },
+      "reference": {
+        "section": "BLOCK extended data; APPID; codes 1001,1000",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_VIEW.height",
+      "value": 20.0,
+      "selector": {
+        "kind": "table",
+        "table": "views",
+        "name": "ZEV_VIEW",
+        "attr": "height"
+      },
+      "reference": {
+        "section": "VIEW codes 40,41,10",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_VIEW.width",
+      "value": 30.0,
+      "selector": {
+        "kind": "table",
+        "table": "views",
+        "name": "ZEV_VIEW",
+        "attr": "width"
+      },
+      "reference": {
+        "section": "VIEW codes 40,41,10",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_VIEW.center",
+      "value": [
+        1.0,
+        2.0
+      ],
+      "selector": {
+        "kind": "table",
+        "table": "views",
+        "name": "ZEV_VIEW",
+        "attr": "center"
+      },
+      "reference": {
+        "section": "VIEW codes 40,41,10",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_UCS.origin",
+      "value": [
+        3.0,
+        4.0,
+        0.0
+      ],
+      "selector": {
+        "kind": "table",
+        "table": "ucs",
+        "name": "ZEV_UCS",
+        "attr": "origin"
+      },
+      "reference": {
+        "section": "UCS codes 10,11,12",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_UCS.xaxis",
+      "value": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "selector": {
+        "kind": "table",
+        "table": "ucs",
+        "name": "ZEV_UCS",
+        "attr": "xaxis"
+      },
+      "reference": {
+        "section": "UCS codes 10,11,12",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "ZEV_UCS.yaxis",
+      "value": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "selector": {
+        "kind": "table",
+        "table": "ucs",
+        "name": "ZEV_UCS",
+        "attr": "yaxis"
+      },
+      "reference": {
+        "section": "UCS codes 10,11,12",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "group",
+      "value": 1,
+      "selector": {
+        "kind": "group",
+        "name": "ZEV_GROUP"
+      },
+      "reference": {
+        "section": "GROUP code 340",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "scale.name",
+      "value": "ZEV_SCALE",
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_SCALELIST",
+        "name": "ZEV_SCALE",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "SCALE codes 300,140,141",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "scale.paper_units",
+      "value": 1.0,
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_SCALELIST",
+        "name": "ZEV_SCALE",
+        "attr": "paper_units"
+      },
+      "reference": {
+        "section": "SCALE codes 300,140,141",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "scale.drawing_units",
+      "value": 5.0,
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_SCALELIST",
+        "name": "ZEV_SCALE",
+        "attr": "drawing_units"
+      },
+      "reference": {
+        "section": "SCALE codes 300,140,141",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "title": "Background Named",
+  "description": "Synthetic background content defined by the referenced DXF fields.",
+  "feature_fields": {
+    "scale list": [
+      "scale.name",
+      "scale.paper_units",
+      "scale.drawing_units"
+    ],
+    "named view": [
+      "ZEV_VIEW.height",
+      "ZEV_VIEW.width",
+      "ZEV_VIEW.center"
+    ],
+    "named UCS": [
+      "ZEV_UCS.origin",
+      "ZEV_UCS.xaxis",
+      "ZEV_UCS.yaxis"
+    ],
+    "group": [
+      "group"
+    ]
+  }
+}

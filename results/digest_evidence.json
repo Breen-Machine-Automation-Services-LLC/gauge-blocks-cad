@@ -1,0 +1,1075 @@
+[
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:07.395857+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:08.466051+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2000",
+    "encoding": "asc",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.719525463",
+        "2461367.719537037"
+      ],
+      "$VERSIONGUID": [
+        "{BA179B98-3D1E-4A68-BAD8-BE31C6932F14}",
+        "{473A7A17-E724-418D-96E0-BC1FB77FACD3}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:08.583393+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:09.652476+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2000",
+    "encoding": "bin",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.719537037",
+        "2461367.719548611"
+      ],
+      "$VERSIONGUID": [
+        "{EE809ADD-D547-42CB-BA1C-544D4D5C441C}",
+        "{61C6BA75-5EDD-4E48-B5DF-4CCB7427EAEB}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:09.761545+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:10.821317+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2004",
+    "encoding": "asc",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.719548611",
+        "2461367.719560185"
+      ],
+      "$VERSIONGUID": [
+        "{084CF634-7A74-4D57-BE44-60E30B43C820}",
+        "{BE77C06F-0878-4340-B723-EEAA9F4F1B44}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:10.917684+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:11.978842+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2004",
+    "encoding": "bin",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.719560185",
+        "2461367.7195717595"
+      ],
+      "$VERSIONGUID": [
+        "{A61C4B66-99B3-434D-923F-5DD465E206C9}",
+        "{C557513D-99BF-4E7C-AE59-937027F870F1}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:12.056095+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:13.113660+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2007",
+    "encoding": "asc",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.7195833335",
+        "2461367.7195949075"
+      ],
+      "$VERSIONGUID": [
+        "{55C9AEF8-FFD3-4E2F-AA7B-9047EBA5C107}",
+        "{8BB01D14-12CF-4D77-804E-6337D90249D6}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:13.173659+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:14.232253+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2007",
+    "encoding": "bin",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.7195949075",
+        "2461367.7196064815"
+      ],
+      "$VERSIONGUID": [
+        "{384D760E-7282-4A83-A43D-1DB41E887FC6}",
+        "{FDD0013F-D71D-436E-82A0-580F23FC97AC}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:14.290363+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:15.347479+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2010",
+    "encoding": "asc",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.7196064815",
+        "2461367.7196180555"
+      ],
+      "$VERSIONGUID": [
+        "{A0F9795E-2699-4A31-9ED4-A5B7025B78FC}",
+        "{4BE2F8DE-B64F-4C37-AE54-403929F97F15}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:15.415072+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:16.474665+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2010",
+    "encoding": "bin",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.7196180555",
+        "2461367.7196296295"
+      ],
+      "$VERSIONGUID": [
+        "{43D24336-9EBE-4DFA-90B3-318597EE4D55}",
+        "{98AE7C9F-0B17-4FDE-A2C8-9643D2B0FEB6}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:16.547524+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:17.605532+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2013",
+    "encoding": "asc",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.7196296295",
+        "2461367.7196412035"
+      ],
+      "$VERSIONGUID": [
+        "{FEAB89E8-A76C-4802-8309-7DC8BAE4947B}",
+        "{B46E4CD2-A0C8-4D8E-83CC-11CDC5E8971A}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:17.681266+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:18.741844+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2013",
+    "encoding": "bin",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.7196412035",
+        "2461367.719652778"
+      ],
+      "$VERSIONGUID": [
+        "{60C34A37-E1EB-45A3-88E4-A7BECDF6EF61}",
+        "{A1AC630A-45BB-47B5-89D9-E1BA2F434BBD}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:18.842594+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:19.905128+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2018",
+    "encoding": "asc",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.719652778",
+        "2461367.719664352"
+      ],
+      "$VERSIONGUID": [
+        "{FFA090D9-6EC3-44D1-90D4-D2A0C15D23E0}",
+        "{508F0437-08F2-44FF-A6BC-62CBB009063B}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "38",
+        "before": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:20.023430+00:00"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "DICTIONARYVAR"
+          ],
+          [
+            5,
+            "38"
+          ],
+          [
+            330,
+            "2D"
+          ],
+          [
+            100,
+            "DictionaryVariables"
+          ],
+          [
+            280,
+            0
+          ],
+          [
+            1,
+            "1.4.4 @ 2026-11-22T23:16:21.084547+00:00"
+          ]
+        ]
+      }
+    ],
+    "version": "2018",
+    "encoding": "bin",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.719675926",
+        "2461367.7196875"
+      ],
+      "$VERSIONGUID": [
+        "{0A6AC12B-21AC-4BEF-A491-A10F14B859DB}",
+        "{75688B6A-DB9C-4BA3-9D2D-866B4AB08310}"
+      ]
+    }
+  },
+  {
+    "entity_changes": [
+      {
+        "handle": "18",
+        "before": [
+          [
+            0,
+            "BLOCK"
+          ],
+          [
+            5,
+            "18"
+          ],
+          [
+            330,
+            "33"
+          ],
+          [
+            100,
+            "AcDbEntity"
+          ],
+          [
+            8,
+            "0"
+          ],
+          [
+            100,
+            "AcDbBlockBegin"
+          ],
+          [
+            2,
+            "*Model_Space"
+          ],
+          [
+            70,
+            0
+          ],
+          [
+            10,
+            0.0
+          ],
+          [
+            20,
+            0.0
+          ],
+          [
+            30,
+            0.0
+          ],
+          [
+            3,
+            "*Model_Space"
+          ],
+          [
+            1,
+            ""
+          ],
+          [
+            1001,
+            "EZDXF"
+          ],
+          [
+            1000,
+            "CREATED_BY_EZDXF"
+          ],
+          [
+            1000,
+            "1.4.4 @ 2026-11-22T23:16:21.167098+00:00"
+          ],
+          [
+            1000,
+            "WRITTEN_BY_EZDXF"
+          ],
+          [
+            1000,
+            "1.4.4 @ 2026-11-22T23:16:21.168045+00:00"
+          ],
+          [
+            1001,
+            "ZEV_IDENTITY"
+          ],
+          [
+            1000,
+            "background_metadata"
+          ],
+          [
+            1000,
+            "reference_1"
+          ]
+        ],
+        "after": [
+          [
+            0,
+            "BLOCK"
+          ],
+          [
+            5,
+            "18"
+          ],
+          [
+            330,
+            "33"
+          ],
+          [
+            100,
+            "AcDbEntity"
+          ],
+          [
+            8,
+            "0"
+          ],
+          [
+            100,
+            "AcDbBlockBegin"
+          ],
+          [
+            2,
+            "*Model_Space"
+          ],
+          [
+            70,
+            0
+          ],
+          [
+            10,
+            0.0
+          ],
+          [
+            20,
+            0.0
+          ],
+          [
+            30,
+            0.0
+          ],
+          [
+            3,
+            "*Model_Space"
+          ],
+          [
+            1,
+            ""
+          ],
+          [
+            1001,
+            "EZDXF"
+          ],
+          [
+            1000,
+            "CREATED_BY_EZDXF"
+          ],
+          [
+            1000,
+            "1.4.4 @ 2026-11-22T23:16:21.167098+00:00"
+          ],
+          [
+            1000,
+            "WRITTEN_BY_EZDXF"
+          ],
+          [
+            1000,
+            "1.4.4 @ 2026-11-22T23:16:22.221976+00:00"
+          ],
+          [
+            1001,
+            "ZEV_IDENTITY"
+          ],
+          [
+            1000,
+            "background_metadata"
+          ],
+          [
+            1000,
+            "reference_1"
+          ]
+        ]
+      }
+    ],
+    "version": "R12",
+    "encoding": "asc",
+    "equal": true,
+    "one_field_changes_digest": true,
+    "header_changes": {
+      "$TDUPDATE": [
+        "2461367.7196875",
+        "2461367.719699074"
+      ],
+      "$FINGERPRINTGUID": [
+        "{A9A2B32F-E7E2-4918-8278-6EDD5B16DE2D}",
+        "{13D11F2E-989A-4108-8AC4-7B25A030ABD9}"
+      ],
+      "$VERSIONGUID": [
+        "{16D4BB6D-542A-4B54-BD5F-E33BD94CF02B}",
+        "{620702A8-48FC-4217-98F0-136027577C0F}"
+      ]
+    }
+  }
+]

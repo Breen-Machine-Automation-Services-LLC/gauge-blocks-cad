@@ -1,0 +1,148 @@
+{
+  "intent_id": "future_k_regions_solids",
+  "title": "Regions and solids",
+  "representation_id": "reference_1",
+  "description": "Circular region radius 10 and box 12 by 8 by 6; generator: generators/bricscad/make_bricscad_masters.lsp. Expected REGION from circle radius 10 and 3DSOLID box dimensions 12 by 8 by 6. Authored by BricsCAD only. The region expectation is the entity count and one ACIS body; its radius cannot be read from ACIS data with the pinned ezdxf.",
+  "features": [
+    "F152_region",
+    "F154_solid3d"
+  ],
+  "expected": [
+    {
+      "id": "F152_region.count",
+      "value": 1,
+      "selector": {
+        "kind": "query_count",
+        "name": "REGION[layer==\"F152_region\"]"
+      },
+      "reference": {
+        "section": "REGION entity (ACIS)",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; one entity per layer in the generator in the intent description"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F152_region.acis_body_count",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F152_region",
+        "table": "REGION",
+        "attr": "acis_body_count"
+      },
+      "reference": {
+        "section": "REGION ACIS data (SAT text or SAB binary): one body",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; one ACIS body per entity"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F154_solid3d.count",
+      "value": 1,
+      "selector": {
+        "kind": "query_count",
+        "name": "3DSOLID[layer==\"F154_solid3d\"]"
+      },
+      "reference": {
+        "section": "3DSOLID entity (ACIS)",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; one entity per layer in the generator in the intent description"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F154_solid3d.acis_body_count",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F154_solid3d",
+        "table": "3DSOLID",
+        "attr": "acis_body_count"
+      },
+      "reference": {
+        "section": "3DSOLID ACIS data (SAT text or SAB binary): one body",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; one ACIS body per entity"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F154_solid3d.acis_bbox_size",
+      "value": [
+        12,
+        8,
+        6
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F154_solid3d",
+        "table": "3DSOLID",
+        "attr": "acis_bbox_size"
+      },
+      "reference": {
+        "section": "3DSOLID ACIS data: box 12 by 8 by 6",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; box dimensions from the generator in the intent description, read as a tessellation bounding box"
+      },
+      "tolerance": 1e-06,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F152_region": [
+      "F152_region.count",
+      "F152_region.acis_body_count"
+    ],
+    "F154_solid3d": [
+      "F154_solid3d.count",
+      "F154_solid3d.acis_body_count",
+      "F154_solid3d.acis_bbox_size"
+    ]
+  }
+}

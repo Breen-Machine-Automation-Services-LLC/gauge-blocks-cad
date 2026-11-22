@@ -1,0 +1,201 @@
+{
+  "intent_id": "feature_e_objects",
+  "title": "Objects",
+  "description": "Ported synthetic master E. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F70_plain",
+    "F71_marker",
+    "F72_xrecord",
+    "F73_dictionaryvar"
+  ],
+  "expected": [
+    {
+      "id": "F70_plain.end",
+      "value": [
+        10,
+        5,
+        0
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F70_plain",
+        "table": "LINE",
+        "attr": "end"
+      },
+      "reference": {
+        "section": "LINE group codes for end",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F70_plain.description",
+      "value": "F70_plain",
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_VISUALSTYLE",
+        "name": "F70_plain",
+        "attr": "description"
+      },
+      "reference": {
+        "section": "VISUALSTYLE code 2",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented object values"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F71_marker.description",
+      "value": "F71_marker",
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_VISUALSTYLE",
+        "name": "F71_marker",
+        "attr": "description"
+      },
+      "reference": {
+        "section": "VISUALSTYLE code 2",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented object values"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F71_marker.acad_marker",
+      "value": [
+        [
+          1000,
+          "AcRTDxfName"
+        ],
+        [
+          1000,
+          "VISUALSTYLE"
+        ]
+      ],
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_VISUALSTYLE",
+        "name": "F71_marker",
+        "attr": "acad_marker"
+      },
+      "reference": {
+        "section": "VISUALSTYLE; Extended Data codes 1001,1000",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented object values"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F72_xrecord.tags",
+      "value": [
+        [
+          1,
+          "ZEV_RECORD"
+        ],
+        [
+          40,
+          12.5
+        ],
+        [
+          70,
+          42
+        ]
+      ],
+      "selector": {
+        "kind": "object",
+        "dictionary": "ROOT",
+        "name": "F72_xrecord",
+        "attr": "tags"
+      },
+      "reference": {
+        "section": "XRECORD; DICTIONARYVAR; CLASSES",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented payload"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F73_dictionaryvar.value",
+      "value": "ZEV_VAR",
+      "selector": {
+        "kind": "object",
+        "dictionary": "ROOT",
+        "name": "F73_dictionaryvar",
+        "attr": "value"
+      },
+      "reference": {
+        "section": "XRECORD; DICTIONARYVAR; CLASSES",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented payload"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F70_plain": [
+      "F70_plain.end",
+      "F70_plain.description"
+    ],
+    "F71_marker": [
+      "F71_marker.description",
+      "F71_marker.acad_marker"
+    ],
+    "F72_xrecord": [
+      "F72_xrecord.tags"
+    ],
+    "F73_dictionaryvar": [
+      "F73_dictionaryvar.value"
+    ]
+  }
+}

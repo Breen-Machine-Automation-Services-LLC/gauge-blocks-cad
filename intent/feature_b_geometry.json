@@ -1,0 +1,936 @@
+{
+  "intent_id": "feature_b_geometry",
+  "title": "Geometry",
+  "description": "Ported synthetic master B. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F20_hatch_solid_style0",
+    "F20_hatch_solid_style1",
+    "F20_hatch_solid_style2",
+    "F23_hatch_flags7_22",
+    "F24_hatch_pattern",
+    "F25_hatch_gradient",
+    "F30_lwpoly_bulge_width",
+    "F31_arc",
+    "F32_circle",
+    "F33_ellipse",
+    "F34_spline",
+    "F35_linetype_custom",
+    "F36_linetype_dashed_ltscale"
+  ],
+  "expected": [
+    {
+      "id": "F31_arc.radius",
+      "value": 8,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F31_arc",
+        "table": "ARC",
+        "attr": "radius"
+      },
+      "reference": {
+        "section": "ARC group codes for radius",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F32_circle.radius",
+      "value": 7,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F32_circle",
+        "table": "CIRCLE",
+        "attr": "radius"
+      },
+      "reference": {
+        "section": "CIRCLE group codes for radius",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F33_ellipse.ratio",
+      "value": 0.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F33_ellipse",
+        "table": "ELLIPSE",
+        "attr": "ratio"
+      },
+      "reference": {
+        "section": "ELLIPSE group codes for ratio",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F36_linetype_dashed_ltscale.ltscale",
+      "value": 2.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F36_linetype_dashed_ltscale",
+        "table": "LINE",
+        "attr": "ltscale"
+      },
+      "reference": {
+        "section": "LINE group codes for ltscale",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F20_hatch_solid_style0.hatch_style",
+      "value": 0,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F20_hatch_solid_style0",
+        "table": "HATCH",
+        "attr": "hatch_style"
+      },
+      "reference": {
+        "section": "HATCH; hatch_style",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F20_hatch_solid_style1.hatch_style",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F20_hatch_solid_style1",
+        "table": "HATCH",
+        "attr": "hatch_style"
+      },
+      "reference": {
+        "section": "HATCH; hatch_style",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F20_hatch_solid_style2.hatch_style",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F20_hatch_solid_style2",
+        "table": "HATCH",
+        "attr": "hatch_style"
+      },
+      "reference": {
+        "section": "HATCH; hatch_style",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F30_lwpoly_bulge_width.points",
+      "value": [
+        [
+          0,
+          40,
+          0.5,
+          1,
+          0.8
+        ],
+        [
+          20,
+          40,
+          1.5,
+          0.2,
+          -0.6
+        ],
+        [
+          40,
+          55,
+          0,
+          0,
+          0
+        ],
+        [
+          60,
+          40,
+          0.3,
+          0.3,
+          0
+        ]
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F30_lwpoly_bulge_width",
+        "table": "LWPOLYLINE",
+        "attr": "points"
+      },
+      "reference": {
+        "section": "LWPOLYLINE; points",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F20_hatch_solid_style0.layer",
+      "value": "F20_hatch_solid_style0",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F20_hatch_solid_style0",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F20_hatch_solid_style1.layer",
+      "value": "F20_hatch_solid_style1",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F20_hatch_solid_style1",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F20_hatch_solid_style2.layer",
+      "value": "F20_hatch_solid_style2",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F20_hatch_solid_style2",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F23_hatch_flags7_22.layer",
+      "value": "F23_hatch_flags7_22",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F23_hatch_flags7_22",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F24_hatch_pattern.layer",
+      "value": "F24_hatch_pattern",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F24_hatch_pattern",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F25_hatch_gradient.layer",
+      "value": "F25_hatch_gradient",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F25_hatch_gradient",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F30_lwpoly_bulge_width.layer",
+      "value": "F30_lwpoly_bulge_width",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F30_lwpoly_bulge_width",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F31_arc.layer",
+      "value": "F31_arc",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F31_arc",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F32_circle.layer",
+      "value": "F32_circle",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F32_circle",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F33_ellipse.layer",
+      "value": "F33_ellipse",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F33_ellipse",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F34_spline.layer",
+      "value": "F34_spline",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F34_spline",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F35_linetype_custom.layer",
+      "value": "F35_linetype_custom",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F35_linetype_custom",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F36_linetype_dashed_ltscale.layer",
+      "value": "F36_linetype_dashed_ltscale",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F36_linetype_dashed_ltscale",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F20_hatch_solid_style0.loop_flags",
+      "value": [
+        3,
+        2,
+        2
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F20_hatch_solid_style0",
+        "table": "HATCH",
+        "attr": "loop_flags"
+      },
+      "reference": {
+        "section": "HATCH; loop_flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F20_hatch_solid_style1.loop_flags",
+      "value": [
+        3,
+        2,
+        2
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F20_hatch_solid_style1",
+        "table": "HATCH",
+        "attr": "loop_flags"
+      },
+      "reference": {
+        "section": "HATCH; loop_flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F20_hatch_solid_style2.loop_flags",
+      "value": [
+        3,
+        2,
+        2
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F20_hatch_solid_style2",
+        "table": "HATCH",
+        "attr": "loop_flags"
+      },
+      "reference": {
+        "section": "HATCH; loop_flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F23_hatch_flags7_22.loop_flags",
+      "value": [
+        7,
+        22
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F23_hatch_flags7_22",
+        "table": "HATCH",
+        "attr": "loop_flags"
+      },
+      "reference": {
+        "section": "HATCH; loop_flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F24_hatch_pattern.pattern_name",
+      "value": "ANSI31",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F24_hatch_pattern",
+        "table": "HATCH",
+        "attr": "pattern_name"
+      },
+      "reference": {
+        "section": "HATCH; pattern_name",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F24_hatch_pattern.pattern_scale",
+      "value": 0.5,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F24_hatch_pattern",
+        "table": "HATCH",
+        "attr": "pattern_scale"
+      },
+      "reference": {
+        "section": "HATCH; pattern_scale",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F24_hatch_pattern.pattern_angle",
+      "value": 15,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F24_hatch_pattern",
+        "table": "HATCH",
+        "attr": "pattern_angle"
+      },
+      "reference": {
+        "section": "HATCH; pattern_angle",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F25_hatch_gradient.gradient_rotation",
+      "value": 30,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F25_hatch_gradient",
+        "table": "HATCH",
+        "attr": "gradient_rotation"
+      },
+      "reference": {
+        "section": "HATCH; gradient_rotation",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F34_spline.fit_points",
+      "value": [
+        [
+          160,
+          40,
+          0
+        ],
+        [
+          170,
+          55,
+          0
+        ],
+        [
+          180,
+          38,
+          0
+        ],
+        [
+          190,
+          52,
+          0
+        ]
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F34_spline",
+        "table": "SPLINE",
+        "attr": "fit_points"
+      },
+      "reference": {
+        "section": "SPLINE; fit_points",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F35_linetype_custom.linetype",
+      "value": "F35CUSTOM",
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F35_linetype_custom",
+        "table": "LINE",
+        "attr": "linetype"
+      },
+      "reference": {
+        "section": "LINE; linetype",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F20_hatch_solid_style0": [
+      "F20_hatch_solid_style0.hatch_style",
+      "F20_hatch_solid_style0.layer",
+      "F20_hatch_solid_style0.loop_flags"
+    ],
+    "F20_hatch_solid_style1": [
+      "F20_hatch_solid_style1.hatch_style",
+      "F20_hatch_solid_style1.layer",
+      "F20_hatch_solid_style1.loop_flags"
+    ],
+    "F20_hatch_solid_style2": [
+      "F20_hatch_solid_style2.hatch_style",
+      "F20_hatch_solid_style2.layer",
+      "F20_hatch_solid_style2.loop_flags"
+    ],
+    "F23_hatch_flags7_22": [
+      "F23_hatch_flags7_22.layer",
+      "F23_hatch_flags7_22.loop_flags"
+    ],
+    "F24_hatch_pattern": [
+      "F24_hatch_pattern.layer",
+      "F24_hatch_pattern.pattern_name",
+      "F24_hatch_pattern.pattern_scale",
+      "F24_hatch_pattern.pattern_angle"
+    ],
+    "F25_hatch_gradient": [
+      "F25_hatch_gradient.layer",
+      "F25_hatch_gradient.gradient_rotation"
+    ],
+    "F30_lwpoly_bulge_width": [
+      "F30_lwpoly_bulge_width.points",
+      "F30_lwpoly_bulge_width.layer"
+    ],
+    "F31_arc": [
+      "F31_arc.radius",
+      "F31_arc.layer"
+    ],
+    "F32_circle": [
+      "F32_circle.radius",
+      "F32_circle.layer"
+    ],
+    "F33_ellipse": [
+      "F33_ellipse.ratio",
+      "F33_ellipse.layer"
+    ],
+    "F34_spline": [
+      "F34_spline.layer",
+      "F34_spline.fit_points"
+    ],
+    "F35_linetype_custom": [
+      "F35_linetype_custom.layer",
+      "F35_linetype_custom.linetype"
+    ],
+    "F36_linetype_dashed_ltscale": [
+      "F36_linetype_dashed_ltscale.ltscale",
+      "F36_linetype_dashed_ltscale.layer"
+    ]
+  }
+}

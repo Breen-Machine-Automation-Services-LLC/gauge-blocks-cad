@@ -1,0 +1,6 @@
+{
+  "intent_id": "future_own_drawings",
+  "title": "Generator for user drawings",
+  "status": "wanted",
+  "description": "Accept a user drawing as input to produce native and cross sets."
+}

@@ -1,0 +1,15 @@
+{
+  "intent_id": "future_k_regions_solids",
+  "representation_id": "reference_1",
+  "program": "bricscad",
+  "build": "26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+  "format": "DXF",
+  "version": "2010",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_bricscad.py",
+    "input_digest": "36d610ccb87fb7463b6c4df421e397d92d4b4c819e1c0531772791962e4f6586"
+  },
+  "content_digest": "01978af069707043971711056c9eb0cb7b69313cbb31e4bd384105821cff9833",
+  "ezdxf_based": false
+}

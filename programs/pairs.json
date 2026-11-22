@@ -1,0 +1,32 @@
+[
+  {
+    "writer": "ezdxf",
+    "resaver": "bricscad",
+    "sources": "native/ezdxf"
+  },
+  {
+    "writer": "ezdxf",
+    "resaver": "cadcraft",
+    "sources": "native/ezdxf"
+  },
+  {
+    "writer": "ezdxf",
+    "resaver": "oda",
+    "sources": "native/ezdxf"
+  },
+  {
+    "writer": "oda",
+    "resaver": "bricscad",
+    "sources": "cross/ezdxf__oda"
+  },
+  {
+    "writer": "bricscad",
+    "resaver": "oda",
+    "sources": "native/bricscad"
+  },
+  {
+    "writer": "bricscad",
+    "resaver": "cadcraft",
+    "sources": "native/bricscad"
+  }
+]

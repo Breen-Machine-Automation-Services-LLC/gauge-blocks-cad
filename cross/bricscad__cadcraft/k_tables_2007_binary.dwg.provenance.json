@@ -1,0 +1,16 @@
+{
+  "intent_id": "future_k_tables",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DWG",
+  "version": "2007",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "5a4edb5e77bb5a67f2aa8e14549913217a7c17ee172c54fa3d491e6f12fe9330"
+  },
+  "content_digest": "ac52bc99a164f218ffa25c6c328bf7d474bfbcbfcc1d1ca8262c2dd588bd6871",
+  "ezdxf_based": false,
+  "digest_reader": "oda Build 27.1.0.143450"
+}

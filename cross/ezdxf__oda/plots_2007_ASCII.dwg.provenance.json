@@ -1,0 +1,16 @@
+{
+  "intent_id": "background_plots",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DWG",
+  "version": "2007",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "f115b973b11c972fa82271700ea7a9404f05d91d1bd589b3f0c480a1fcc5920a"
+  },
+  "content_digest": "d9561c98baf6811007dbdbfa8cc4b69e066a327f84eb53384586d2eb3a93b872",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

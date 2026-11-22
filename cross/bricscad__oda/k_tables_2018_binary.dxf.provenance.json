@@ -1,0 +1,15 @@
+{
+  "intent_id": "future_k_tables",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "Build 27.1.0.143450",
+  "format": "DXF",
+  "version": "2018",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "9c0c732ef210d1285b5d2622d4e460287784cf2919ba968cd751e09ab5a3ead6"
+  },
+  "content_digest": "cd7809d4ad37b69d78506808f7ecd00d4dd5be9ecde3f34c22b4f77d1ce17c29",
+  "ezdxf_based": false
+}

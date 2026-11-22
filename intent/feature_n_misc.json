@@ -1,0 +1,685 @@
+{
+  "intent_id": "feature_n_misc",
+  "title": "Misc",
+  "description": "Ported synthetic master N. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F160_polyline2d_width_bulge",
+    "F161_polyline2d_closed",
+    "F162_polyline3d",
+    "F163_point",
+    "F164_solid",
+    "F165_scale_marker",
+    "F166_viewport_scaled",
+    "F167_viewport_twisted",
+    "F168_viewport_frozen",
+    "F169_scale_list_marker"
+  ],
+  "expected": [
+    {
+      "id": "F164_solid.thickness",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F164_solid",
+        "table": "SOLID",
+        "attr": "thickness"
+      },
+      "reference": {
+        "section": "SOLID group codes for thickness",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F167_viewport_twisted.view_twist_angle",
+      "value": 30,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F167_viewport_twisted",
+        "table": "VIEWPORT",
+        "attr": "view_twist_angle"
+      },
+      "reference": {
+        "section": "VIEWPORT group codes for view_twist_angle",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F160_polyline2d_width_bulge.vertices",
+      "value": [
+        [
+          0,
+          0,
+          0.5,
+          1.5,
+          0
+        ],
+        [
+          10,
+          0,
+          1,
+          0.2,
+          0.5
+        ],
+        [
+          20,
+          5,
+          0,
+          0,
+          -0.4
+        ],
+        [
+          30,
+          0,
+          0.8,
+          0.8,
+          0
+        ]
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F160_polyline2d_width_bulge",
+        "table": "POLYLINE",
+        "attr": "vertices"
+      },
+      "reference": {
+        "section": "POLYLINE; vertices",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F161_polyline2d_closed.flags",
+      "value": 1,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F161_polyline2d_closed",
+        "table": "POLYLINE",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "POLYLINE; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F162_polyline3d.flags",
+      "value": 8,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F162_polyline3d",
+        "table": "POLYLINE",
+        "attr": "flags"
+      },
+      "reference": {
+        "section": "POLYLINE; flags",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F166_viewport_scaled.view_height",
+      "value": 40,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F166_viewport_scaled",
+        "table": "VIEWPORT",
+        "attr": "view_height"
+      },
+      "reference": {
+        "section": "VIEWPORT; view_height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F168_viewport_frozen.frozen_layers",
+      "value": [
+        "F163_point"
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F168_viewport_frozen",
+        "table": "VIEWPORT",
+        "attr": "frozen_layers"
+      },
+      "reference": {
+        "section": "VIEWPORT; frozen_layers",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F160_polyline2d_width_bulge.layer",
+      "value": "F160_polyline2d_width_bulge",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F160_polyline2d_width_bulge",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F161_polyline2d_closed.layer",
+      "value": "F161_polyline2d_closed",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F161_polyline2d_closed",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F162_polyline3d.layer",
+      "value": "F162_polyline3d",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F162_polyline3d",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F163_point.layer",
+      "value": "F163_point",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F163_point",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F164_solid.layer",
+      "value": "F164_solid",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F164_solid",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F165_scale_marker.layer",
+      "value": "F165_scale_marker",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F165_scale_marker",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F166_viewport_scaled.layer",
+      "value": "F166_viewport_scaled",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F166_viewport_scaled",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F167_viewport_twisted.layer",
+      "value": "F167_viewport_twisted",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F167_viewport_twisted",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F168_viewport_frozen.layer",
+      "value": "F168_viewport_frozen",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F168_viewport_frozen",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F169_scale_list_marker.layer",
+      "value": "F169_scale_list_marker",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F169_scale_list_marker",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "N_1_TO_37.name",
+      "value": "N_1_TO_37",
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_SCALELIST",
+        "name": "N_1_TO_37",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "SCALE codes 300,140,141",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented object values"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "N_1_TO_37.paper_units",
+      "value": 1.0,
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_SCALELIST",
+        "name": "N_1_TO_37",
+        "attr": "paper_units"
+      },
+      "reference": {
+        "section": "SCALE codes 300,140,141",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented object values"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "N_1_TO_37.drawing_units",
+      "value": 37.0,
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_SCALELIST",
+        "name": "N_1_TO_37",
+        "attr": "drawing_units"
+      },
+      "reference": {
+        "section": "SCALE codes 300,140,141",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented object values"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "N_5_TO_2.name",
+      "value": "N_5_TO_2",
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_SCALELIST",
+        "name": "N_5_TO_2",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "SCALE codes 300,140,141",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented object values"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "N_5_TO_2.paper_units",
+      "value": 5.0,
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_SCALELIST",
+        "name": "N_5_TO_2",
+        "attr": "paper_units"
+      },
+      "reference": {
+        "section": "SCALE codes 300,140,141",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented object values"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "N_5_TO_2.drawing_units",
+      "value": 2.0,
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_SCALELIST",
+        "name": "N_5_TO_2",
+        "attr": "drawing_units"
+      },
+      "reference": {
+        "section": "SCALE codes 300,140,141",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented object values"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F160_polyline2d_width_bulge": [
+      "F160_polyline2d_width_bulge.vertices",
+      "F160_polyline2d_width_bulge.layer"
+    ],
+    "F161_polyline2d_closed": [
+      "F161_polyline2d_closed.flags",
+      "F161_polyline2d_closed.layer"
+    ],
+    "F162_polyline3d": [
+      "F162_polyline3d.flags",
+      "F162_polyline3d.layer"
+    ],
+    "F163_point": [
+      "F163_point.layer"
+    ],
+    "F164_solid": [
+      "F164_solid.thickness",
+      "F164_solid.layer"
+    ],
+    "F165_scale_marker": [
+      "F165_scale_marker.layer"
+    ],
+    "F166_viewport_scaled": [
+      "F166_viewport_scaled.view_height",
+      "F166_viewport_scaled.layer"
+    ],
+    "F167_viewport_twisted": [
+      "F167_viewport_twisted.view_twist_angle",
+      "F167_viewport_twisted.layer"
+    ],
+    "F168_viewport_frozen": [
+      "F168_viewport_frozen.frozen_layers",
+      "F168_viewport_frozen.layer"
+    ],
+    "F169_scale_list_marker": [
+      "F169_scale_list_marker.layer",
+      "N_1_TO_37.name",
+      "N_1_TO_37.paper_units",
+      "N_1_TO_37.drawing_units",
+      "N_5_TO_2.name",
+      "N_5_TO_2.paper_units",
+      "N_5_TO_2.drawing_units"
+    ]
+  }
+}

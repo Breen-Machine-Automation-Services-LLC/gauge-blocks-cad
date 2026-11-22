@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_i_dictionaries",
+  "representation_id": "reference_1",
+  "program": "ezdxf",
+  "build": "1.4.4",
+  "format": "DXF",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_features.py",
+    "input_digest": "3ff7a03c99feb38867b03c1023cf3078eedfaa85df9c8bf2e7431848a6494dea"
+  },
+  "content_digest": "e15cac8783a46b88bc7a09b40a436687c74bcc950b82462bd5fdf595435cebcd",
+  "ezdxf_based": true
+}

@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_i_dictionaries",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DWG",
+  "version": "R12",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "07c5422faf9e7de128a6bbd12e818773bff78c70da67b861e32f1c5745a2fc1e"
+  },
+  "content_digest": "ff5875009076f8fc886cacfb58c061ab9592d0b64f5b31d165238c507e35352b",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

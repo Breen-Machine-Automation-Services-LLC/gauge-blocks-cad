@@ -1,0 +1,6 @@
+Independent read-only review completed.
+Findings corrected: status filters hid matching descendants beneath worse topic summaries; tooltip/panel status icons were missing; refused conversions without output sidecars appeared not run.
+Follow-up review: no substantive remaining issue in these fixes.
+The local review-before-presenting skill references a BizArchitect bundle tool unavailable in this session; review used direct code/data inspection.
+Six final Firefox screenshots were visually inspected after fixes. No label collision or page-level horizontal overflow remains; expanded grids scroll vertically with the document.
+Palette remains an explicit unresolved requirement conflict; see palette-check.txt.

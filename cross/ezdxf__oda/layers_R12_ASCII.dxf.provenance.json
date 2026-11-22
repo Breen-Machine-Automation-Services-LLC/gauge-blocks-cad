@@ -1,0 +1,15 @@
+{
+  "intent_id": "background_layers",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DXF",
+  "version": "R12",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "49448707e76215affc7435567f4092cf8eb90bad2af8ab905271a09cb54a143c"
+  },
+  "content_digest": "e225f1ad3e909ed7d27abf9fbdf87a16ed3ba19ab2a569796875a56149986b7b",
+  "ezdxf_based": true
+}

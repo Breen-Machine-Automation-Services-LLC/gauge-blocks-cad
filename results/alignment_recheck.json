@@ -1,0 +1,218 @@
+[
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2000_ASCII.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2000_ASCII.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2000_ASCII.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2000_binary.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2000_binary.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2000_binary.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2004_ASCII.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2004_ASCII.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2004_ASCII.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2004_binary.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2004_binary.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2004_binary.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2007_ASCII.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2007_ASCII.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2007_ASCII.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2007_binary.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2007_binary.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2007_binary.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2010_ASCII.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2010_ASCII.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2010_ASCII.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2010_binary.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2010_binary.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2010_binary.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2013_ASCII.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2013_ASCII.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2013_ASCII.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2013_binary.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2013_binary.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2013_binary.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2018_ASCII.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2018_ASCII.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2018_ASCII.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2018_binary.dxf",
+    "field": "F01_text_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2018_binary.dxf",
+    "field": "F03_attdef_fit.width",
+    "before": "differs",
+    "after": "same"
+  },
+  {
+    "file": "cross/ezdxf__bricscad/a_text_2018_binary.dxf",
+    "field": "F05_attrib_fit.width",
+    "before": "differs",
+    "after": "same"
+  }
+]

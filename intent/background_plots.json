@@ -1,0 +1,175 @@
+{
+  "intent_id": "background_plots",
+  "representation_id": "reference_1",
+  "features": [
+    "named page setup",
+    "plot-style table reference",
+    "empty layout"
+  ],
+  "expected": [
+    {
+      "id": "identity",
+      "value": [
+        "background_plots",
+        "reference_1"
+      ],
+      "selector": {
+        "kind": "identity"
+      },
+      "reference": {
+        "section": "BLOCK extended data; APPID; codes 1001,1000",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "empty",
+      "value": 0,
+      "selector": {
+        "kind": "layout_count",
+        "name": "ZEV_EMPTY"
+      },
+      "reference": {
+        "section": "LAYOUT; BLOCK_RECORD",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "page_setup_name",
+      "value": "ZEV_SETUP",
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_PLOTSETTINGS",
+        "name": "ZEV_SETUP",
+        "attr": "page_setup_name"
+      },
+      "reference": {
+        "section": "PLOTSETTINGS codes 1,7,44,45",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "current_style_sheet",
+      "value": "ZEV_STYLE.ctb",
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_PLOTSETTINGS",
+        "name": "ZEV_SETUP",
+        "attr": "current_style_sheet"
+      },
+      "reference": {
+        "section": "PLOTSETTINGS codes 1,7,44,45",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "paper_width",
+      "value": 210.0,
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_PLOTSETTINGS",
+        "name": "ZEV_SETUP",
+        "attr": "paper_width"
+      },
+      "reference": {
+        "section": "PLOTSETTINGS codes 1,7,44,45",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "paper_height",
+      "value": 297.0,
+      "selector": {
+        "kind": "object",
+        "dictionary": "ACAD_PLOTSETTINGS",
+        "name": "ZEV_SETUP",
+        "attr": "paper_height"
+      },
+      "reference": {
+        "section": "PLOTSETTINGS codes 1,7,44,45",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
+        "basis": "DXF Reference"
+      },
+      "tolerance": 1e-09,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "title": "Background Plots",
+  "description": "Synthetic background content defined by the referenced DXF fields.",
+  "feature_fields": {
+    "named page setup": [
+      "page_setup_name",
+      "paper_width",
+      "paper_height"
+    ],
+    "plot-style table reference": [
+      "current_style_sheet"
+    ],
+    "empty layout": [
+      "empty"
+    ]
+  }
+}

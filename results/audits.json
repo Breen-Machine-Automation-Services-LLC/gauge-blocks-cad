@@ -1,0 +1,541 @@
+[
+  {
+    "intent_id": "background_blocks",
+    "version": "2000",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2000",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2004",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2004",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2007",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2007",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2010",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2010",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2013",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2013",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2018",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "2018",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_blocks",
+    "version": "R12",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2000",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2000",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2004",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2004",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2007",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2007",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2010",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2010",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2013",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2013",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2018",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "2018",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_layers",
+    "version": "R12",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2000",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2000",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2004",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2004",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2007",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2007",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2010",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2010",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2013",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2013",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2018",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "2018",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_metadata",
+    "version": "R12",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2000",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2000",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2004",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2004",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2007",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2007",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2010",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2010",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2013",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2013",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2018",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "2018",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_named",
+    "version": "R12",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2000",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2000",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2004",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2004",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2007",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2007",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2010",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2010",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2013",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2013",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2018",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_plots",
+    "version": "2018",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2000",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2000",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2004",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2004",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2007",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2007",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2010",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2010",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2013",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2013",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2018",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "2018",
+    "encoding": "binary",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "intent_id": "background_styles",
+    "version": "R12",
+    "encoding": "ASCII",
+    "errors": 0,
+    "fixes": 0
+  }
+]

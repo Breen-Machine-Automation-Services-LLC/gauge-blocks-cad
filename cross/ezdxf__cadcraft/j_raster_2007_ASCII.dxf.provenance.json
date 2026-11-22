@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_j_raster",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DXF",
+  "version": "2007",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "ae0ae39c44c8b64c138ccc9ec5a1911f65c2076673b518f6040fea030ee72edb"
+  },
+  "content_digest": "7ea33af2d53eb902b44ac862a257d60c3fcc39d835b2908fb728869e98ff9de1",
+  "ezdxf_based": true
+}

@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "properties": {
+    "intent_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "representation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "program": {
+      "enum": [
+        "ezdxf",
+        "oda",
+        "bricscad",
+        "cadcraft"
+      ]
+    },
+    "build": {
+      "type": "string",
+      "minLength": 1
+    },
+    "format": {
+      "enum": [
+        "DXF",
+        "DWG"
+      ]
+    },
+    "version": {
+      "enum": [
+        "R12",
+        "2000",
+        "2004",
+        "2007",
+        "2010",
+        "2013",
+        "2018"
+      ]
+    },
+    "encoding": {
+      "enum": [
+        "ASCII",
+        "binary"
+      ]
+    },
+    "made_by": {
+      "type": "object",
+      "properties": {
+        "script": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "script",
+        "input_digest"
+      ],
+      "additionalProperties": false
+    },
+    "content_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "ezdxf_based": {
+      "type": "boolean"
+    },
+    "digest_reader": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "intent_id",
+    "representation_id",
+    "program",
+    "build",
+    "format",
+    "version",
+    "encoding",
+    "made_by",
+    "content_digest",
+    "ezdxf_based"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,15 @@
+{
+  "intent_id": "background_layers",
+  "representation_id": "reference_1",
+  "program": "ezdxf",
+  "build": "1.4.4",
+  "format": "DXF",
+  "version": "R12",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "regenerate.py",
+    "input_digest": "52a59cec22ce9ef7b0c190498c3cfa21129fdfa217676dff1871592b64664dd2"
+  },
+  "content_digest": "49448707e76215affc7435567f4092cf8eb90bad2af8ab905271a09cb54a143c",
+  "ezdxf_based": true
+}

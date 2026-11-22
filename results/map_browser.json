@@ -1,0 +1,16 @@
+{
+  "browser": "Firefox",
+  "headless": true,
+  "exit_code": 0,
+  "viewport": [
+    390,
+    844
+  ],
+  "screenshot": "results/map-mobile.png",
+  "links": {
+    "links": 2852,
+    "broken": 0,
+    "method": "All embedded intent, input/output drawing and provenance record targets resolve inside repository"
+  },
+  "cache_warnings": false
+}

@@ -1,0 +1,80 @@
+{
+  "intent_id": "feature_f_extents",
+  "title": "Extents",
+  "description": "Ported synthetic master F. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F80_extents_line",
+    "F81_extents_mtext_block"
+  ],
+  "expected": [
+    {
+      "id": "F80_extents_line.end",
+      "value": [
+        17,
+        11,
+        0
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F80_extents_line",
+        "table": "LINE",
+        "attr": "end"
+      },
+      "reference": {
+        "section": "LINE group codes for end",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F81_extents_mtext_block.insert",
+      "value": [
+        10,
+        2,
+        0
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F81_extents_mtext_block",
+        "table": "INSERT",
+        "attr": "insert"
+      },
+      "reference": {
+        "section": "INSERT group codes for insert",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F80_extents_line": [
+      "F80_extents_line.end"
+    ],
+    "F81_extents_mtext_block": [
+      "F81_extents_mtext_block.insert"
+    ]
+  }
+}

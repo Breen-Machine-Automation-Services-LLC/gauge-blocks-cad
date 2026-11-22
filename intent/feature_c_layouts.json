@@ -1,0 +1,127 @@
+{
+  "intent_id": "feature_c_layouts",
+  "title": "Layouts",
+  "description": "Ported synthetic master C. Feature layers retain the source generator identifiers.",
+  "representation_id": "reference_1",
+  "features": [
+    "F40_model_marker",
+    "F41_LayoutA",
+    "F42_LayoutB"
+  ],
+  "expected": [
+    {
+      "id": "F40_model_marker.radius",
+      "value": 20,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F40_model_marker",
+        "table": "CIRCLE",
+        "attr": "radius"
+      },
+      "reference": {
+        "section": "CIRCLE group codes for radius",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented constants from the source generator"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F40_model_marker.layer",
+      "value": "F40_model_marker",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F40_model_marker",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; common entity code 8",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; feature layer declared in source generator"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F41_LayoutA.view_height",
+      "value": 60,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F41_LayoutA",
+        "table": "VIEWPORT",
+        "attr": "view_height"
+      },
+      "reference": {
+        "section": "VIEWPORT; view_height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F42_LayoutB.view_height",
+      "value": 60,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F42_LayoutB",
+        "table": "VIEWPORT",
+        "attr": "view_height"
+      },
+      "reference": {
+        "section": "VIEWPORT; view_height",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F40_model_marker": [
+      "F40_model_marker.radius",
+      "F40_model_marker.layer"
+    ],
+    "F41_LayoutA": [
+      "F41_LayoutA.view_height"
+    ],
+    "F42_LayoutB": [
+      "F42_LayoutB.view_height"
+    ]
+  }
+}

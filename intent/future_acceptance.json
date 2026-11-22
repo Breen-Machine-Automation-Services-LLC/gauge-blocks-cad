@@ -1,0 +1,6 @@
+{
+  "intent_id": "future_acceptance",
+  "title": "AutoCAD opens but loads no drawing",
+  "status": "blocked",
+  "description": "Blocked on AutoCAD; verify open succeeds and drawing content actually loads."
+}

@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_j_raster",
+  "representation_id": "reference_1",
+  "program": "bricscad",
+  "build": "26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+  "format": "DXF",
+  "version": "2010",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "359ee715f44056c1cb5e3a7705f135c06106984386dc59cda9c71e0afd5f51e1"
+  },
+  "content_digest": "fbc5310fe185f479c812737a512db8abacdb146abd88bf1085db319f375f293e",
+  "ezdxf_based": true
+}

@@ -1,0 +1,15 @@
+{
+  "intent_id": "future_k_tables",
+  "representation_id": "reference_1",
+  "program": "bricscad",
+  "build": "26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+  "format": "DXF",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_bricscad.py",
+    "input_digest": "2ce44467e282dc76486a9d0e2c8028d98ad32d167b3526d82d7717602854c680"
+  },
+  "content_digest": "c240933d6a0b29621bcb4567c59b691ed6c55a532e1704305c76c4e01cc2d1f3",
+  "ezdxf_based": false
+}

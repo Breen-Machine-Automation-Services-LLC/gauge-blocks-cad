@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_b_geometry",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DWG",
+  "version": "2004",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "0102579862e90b05d1644caae92cc9c8392c23c2a368dea3f19bb8732dcbc040"
+  },
+  "content_digest": "f4da4a21d62332e13b07b1493739eae5824a2e7e2a8aee72589737490d561ee0",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

@@ -1,0 +1,16 @@
+{
+  "intent_id": "background_styles",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DWG",
+  "version": "2007",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "26c82d7c08cbc353d6c9e453fb142897e2f71f495e6c16a673ff48e773bdb5ba"
+  },
+  "content_digest": "0c89ae40656dc393ec75fc0fbda1b31279e80403fff6cb2b2dfd5594e8f38abf",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

@@ -1,0 +1,227 @@
+{
+  "generator_steps": {
+    "k_tables": [
+      "AddTable merged: ok",
+      "SetText title: ok",
+      "SetText cells: ok",
+      "AddTable plain: ok",
+      "plain: no title row: ok",
+      "plain: no header row: ok",
+      "SetText plain: ok",
+      "RegApp: ok",
+      "block entity: ((-1 . <Entity name: 56413c15d650>) (0 . BLOCK) (5 . 20) (330 . <Entity name: 56413c15d5e0>) (100 . AcDbEntity) (67 . 0) (410 . Model) (8 . 0) (100 . AcDbBlockBegin) (2 . *Model_Space) (70 . 0) (71 . 0) (10 0.0 0.0 0.0) (3 . *Model_Space) (1 . ) (-2 . <Entity name: 5641406e7fc0>))",
+      "entmod identity: ok",
+      "readback identity: ok",
+      "save <out>/k_tables_2018_ASCII.dxf: ok",
+      "save <out>/k_tables_2018_binary.dxf: ok",
+      "save <out>/k_tables_2018_binary.dwg: ok",
+      "save <out>/k_tables_2013_ASCII.dxf: ok",
+      "save <out>/k_tables_2013_binary.dxf: ok",
+      "save <out>/k_tables_2013_binary.dwg: ok",
+      "save <out>/k_tables_2010_ASCII.dxf: ok",
+      "save <out>/k_tables_2010_binary.dxf: ok",
+      "save <out>/k_tables_2010_binary.dwg: ok",
+      "save <out>/k_tables_2007_ASCII.dxf: ok",
+      "save <out>/k_tables_2007_binary.dxf: ok",
+      "save <out>/k_tables_2007_binary.dwg: ok",
+      "save <out>/k_tables_2004_ASCII.dxf: ok",
+      "save <out>/k_tables_2004_binary.dxf: ok",
+      "save <out>/k_tables_2004_binary.dwg: ok",
+      "save <out>/k_tables_2000_ASCII.dxf: ok",
+      "save <out>/k_tables_2000_binary.dxf: ok",
+      "save <out>/k_tables_2000_binary.dwg: ok",
+      "save <out>/k_tables_R12_ASCII.dxf: ok",
+      "save <out>/k_tables_R12_binary.dxf: ok"
+    ],
+    "k_regions_solids": [
+      "AddRegion: ok",
+      "AddBox: ok",
+      "RegApp: ok",
+      "block entity: ((-1 . <Entity name: 55e340afca70>) (0 . BLOCK) (5 . 20) (330 . <Entity name: 55e340afca00>) (100 . AcDbEntity) (67 . 0) (410 . Model) (8 . 0) (100 . AcDbBlockBegin) (2 . *Model_Space) (70 . 0) (71 . 0) (10 0.0 0.0 0.0) (3 . *Model_Space) (1 . ) (-2 . <Entity name: 55e3432ed470>))",
+      "entmod identity: ok",
+      "readback identity: ok",
+      "save <out>/k_regions_solids_2018_ASCII.dxf: ok",
+      "save <out>/k_regions_solids_2018_binary.dxf: ok",
+      "save <out>/k_regions_solids_2018_binary.dwg: ok",
+      "save <out>/k_regions_solids_2013_ASCII.dxf: ok",
+      "save <out>/k_regions_solids_2013_binary.dxf: ok",
+      "save <out>/k_regions_solids_2013_binary.dwg: ok",
+      "save <out>/k_regions_solids_2010_ASCII.dxf: ok",
+      "save <out>/k_regions_solids_2010_binary.dxf: ok",
+      "save <out>/k_regions_solids_2010_binary.dwg: ok",
+      "save <out>/k_regions_solids_2007_ASCII.dxf: ok",
+      "save <out>/k_regions_solids_2007_binary.dxf: ok",
+      "save <out>/k_regions_solids_2007_binary.dwg: ok",
+      "save <out>/k_regions_solids_2004_ASCII.dxf: ok",
+      "save <out>/k_regions_solids_2004_binary.dxf: ok",
+      "save <out>/k_regions_solids_2004_binary.dwg: ok",
+      "save <out>/k_regions_solids_2000_ASCII.dxf: ok",
+      "save <out>/k_regions_solids_2000_binary.dxf: ok",
+      "save <out>/k_regions_solids_2000_binary.dwg: ok",
+      "save <out>/k_regions_solids_R12_ASCII.dxf: ok",
+      "save <out>/k_regions_solids_R12_binary.dxf: ok"
+    ]
+  },
+  "modelspace_entities_by_file": {
+    "k_tables_2000_ASCII.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2000_binary.dwg": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2000_binary.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2004_ASCII.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2004_binary.dwg": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2004_binary.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2007_ASCII.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2007_binary.dwg": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2007_binary.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2010_ASCII.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2010_binary.dwg": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2010_binary.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2013_ASCII.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2013_binary.dwg": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2013_binary.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2018_ASCII.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2018_binary.dwg": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_2018_binary.dxf": {
+      "ACAD_TABLE on F150_table_merged_title": 1,
+      "ACAD_TABLE on F151_table_plain": 1
+    },
+    "k_tables_R12_ASCII.dxf": {
+      "INSERT on F150_TABLE_MERGED_TITLE": 1,
+      "INSERT on F151_TABLE_PLAIN": 1
+    },
+    "k_tables_R12_binary.dxf": {
+      "INSERT on F150_TABLE_MERGED_TITLE": 1,
+      "INSERT on F151_TABLE_PLAIN": 1
+    },
+    "k_regions_solids_2000_ASCII.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2000_binary.dwg": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2000_binary.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2004_ASCII.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2004_binary.dwg": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2004_binary.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2007_ASCII.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2007_binary.dwg": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2007_binary.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2010_ASCII.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2010_binary.dwg": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2010_binary.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2013_ASCII.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2013_binary.dwg": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2013_binary.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2018_ASCII.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2018_binary.dwg": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_2018_binary.dxf": {
+      "REGION on F152_region": 1,
+      "3DSOLID on F154_solid3d": 1
+    },
+    "k_regions_solids_R12_ASCII.dxf": {
+      "POLYLINE on F152_REGION": 1,
+      "INSERT on F154_SOLID3D": 1
+    },
+    "k_regions_solids_R12_binary.dxf": {
+      "POLYLINE on F152_REGION": 1,
+      "INSERT on F154_SOLID3D": 1
+    }
+  }
+}

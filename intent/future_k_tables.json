@@ -1,0 +1,186 @@
+{
+  "intent_id": "future_k_tables",
+  "title": "Tables",
+  "representation_id": "reference_1",
+  "description": "Merged title and plain table cells; generator: generators/bricscad/make_bricscad_masters.lsp. Tables: 4 rows by 3 columns, merged title \"Merged Title Row\", header Item/Qty/Note, Widget/12/red, Gadget/7/blue; plain 3 by 2 cells A1/B1, A2/B2, A3/B3. Authored by BricsCAD only; ezdxf has no table writer, so other programs appear as cross-set resavers. The expectation reads the table cell data. The plain table drawn block omits B1 although its cell data holds it.",
+  "features": [
+    "F150_table_merged_title",
+    "F151_table_plain"
+  ],
+  "expected": [
+    {
+      "id": "F150_table_merged_title.table_rows",
+      "value": 4,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F150_table_merged_title",
+        "table": "ACAD_TABLE",
+        "attr": "table_rows"
+      },
+      "reference": {
+        "section": "ACAD_TABLE group code 91: number of rows",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented values from the generator in the intent description"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F150_table_merged_title.table_columns",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F150_table_merged_title",
+        "table": "ACAD_TABLE",
+        "attr": "table_columns"
+      },
+      "reference": {
+        "section": "ACAD_TABLE group code 92: number of columns",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented values from the generator in the intent description"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F150_table_merged_title.table_cell_text",
+      "value": [
+        "Merged Title Row",
+        "Item",
+        "Qty",
+        "Note",
+        "Widget",
+        "12",
+        "red",
+        "Gadget",
+        "7",
+        "blue"
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F150_table_merged_title",
+        "table": "ACAD_TABLE",
+        "attr": "table_cell_text"
+      },
+      "reference": {
+        "section": "ACAD_TABLE group code 1: cell text values in row order, merged and empty cells omitted",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented values from the generator in the intent description"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F151_table_plain.table_rows",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F151_table_plain",
+        "table": "ACAD_TABLE",
+        "attr": "table_rows"
+      },
+      "reference": {
+        "section": "ACAD_TABLE group code 91: number of rows",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented values from the generator in the intent description"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F151_table_plain.table_columns",
+      "value": 2,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F151_table_plain",
+        "table": "ACAD_TABLE",
+        "attr": "table_columns"
+      },
+      "reference": {
+        "section": "ACAD_TABLE group code 92: number of columns",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented values from the generator in the intent description"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F151_table_plain.table_cell_text",
+      "value": [
+        "A1",
+        "B1",
+        "A2",
+        "B2",
+        "A3",
+        "B3"
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F151_table_plain",
+        "table": "ACAD_TABLE",
+        "attr": "table_cell_text"
+      },
+      "reference": {
+        "section": "ACAD_TABLE group code 1: cell text values in row order, merged and empty cells omitted",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented values from the generator in the intent description"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F150_table_merged_title": [
+      "F150_table_merged_title.table_rows",
+      "F150_table_merged_title.table_columns",
+      "F150_table_merged_title.table_cell_text"
+    ],
+    "F151_table_plain": [
+      "F151_table_plain.table_rows",
+      "F151_table_plain.table_columns",
+      "F151_table_plain.table_cell_text"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "intent_id": "background_metadata",
+  "representation_id": "reference_1",
+  "program": "bricscad",
+  "build": "26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+  "format": "DXF",
+  "version": "2004",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "fc2c9241755c2294e7353c1497f07775ec9bd78c795d3d7bdb62280ee056e92f"
+  },
+  "content_digest": "0ffa19a4dfc978f4a472e6e3103262071d26c1ecce11737eff14900603dd7d80",
+  "ezdxf_based": true
+}

@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_d_dimensions",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DXF",
+  "version": "2010",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "76077018f3f12950518d17511d01227d1ae8827c804e143d5c8a04842151ae0d"
+  },
+  "content_digest": "bd27898af5ada1bb4b06cb60c89ef7632ee1830e6e1b9f2f4b2eb16c1a692dce",
+  "ezdxf_based": true
+}

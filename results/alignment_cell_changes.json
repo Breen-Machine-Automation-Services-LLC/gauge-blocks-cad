@@ -1,0 +1,794 @@
+[
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DWG",
+      "2000",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DWG",
+      "2004",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DWG",
+      "2007",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DWG",
+      "2010",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DWG",
+      "2013",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DWG",
+      "2018",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2000",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2000",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2004",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2004",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2007",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2007",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2010",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2010",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2013",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2013",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2018",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2018",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2000",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2004",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2007",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2010",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2013",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F01_text_aligned",
+    "column": [
+      "DXF",
+      "2018",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DWG",
+      "2000",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DWG",
+      "2004",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DWG",
+      "2007",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DWG",
+      "2010",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DWG",
+      "2013",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DWG",
+      "2018",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2000",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2000",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2004",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2004",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2007",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2007",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2010",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2010",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2013",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2013",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2018",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2018",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2000",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2004",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2007",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2010",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2013",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F03_attdef_aligned",
+    "column": [
+      "DXF",
+      "2018",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DWG",
+      "2000",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DWG",
+      "2004",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DWG",
+      "2007",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DWG",
+      "2010",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DWG",
+      "2013",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DWG",
+      "2018",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2000",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2000",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2004",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2004",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2007",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2007",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2010",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2010",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2013",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2013",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2018",
+      "ASCII"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2018",
+      "ASCII"
+    ],
+    "pair": "ezdxf__cadcraft",
+    "before": "kept",
+    "after": "changed"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2000",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2004",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2007",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2010",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2013",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  },
+  {
+    "feature": "F05_attrib_aligned",
+    "column": [
+      "DXF",
+      "2018",
+      "binary"
+    ],
+    "pair": "ezdxf__bricscad",
+    "before": "changed",
+    "after": "kept"
+  }
+]

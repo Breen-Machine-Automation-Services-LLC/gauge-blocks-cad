@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_b_geometry",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DWG",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "51126e8d0bf8b3f745465a44d38de09fd9d368857f9c9b83c752f224a12e5cc1"
+  },
+  "content_digest": "ffc0faccb1042ac4def700a0c5a574abadc6cb7f6a3ccd8938369a50c0bb8ed7",
+  "ezdxf_based": true,
+  "digest_reader": "oda Build 27.1.0.143450"
+}

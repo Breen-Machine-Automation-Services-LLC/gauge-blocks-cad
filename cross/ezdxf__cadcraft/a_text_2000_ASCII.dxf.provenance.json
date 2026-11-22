@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_a_text",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DXF",
+  "version": "2000",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "0ae94b7f5f33bc4f9c554f4c73dba2b96e8faa92fbd1725892dcd37a0a3e96b5"
+  },
+  "content_digest": "921a04f78c8966b3b15add96cf17def122ae45665c91649ab0fb1966de4712b6",
+  "ezdxf_based": true
+}

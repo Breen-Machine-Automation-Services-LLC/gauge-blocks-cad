@@ -1,0 +1,14 @@
+{
+  "status_counts": {
+    "derived": 20,
+    "blocked": 5,
+    "planned": 4,
+    "wanted": 1
+  },
+  "native_feature_files": 156,
+  "fields_same": 5069,
+  "documented_rotation_changes": 0,
+  "audit_errors": 0,
+  "audit_fixes": 0,
+  "all_intents_in_map": true
+}

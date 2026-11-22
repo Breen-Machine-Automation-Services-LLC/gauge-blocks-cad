@@ -1,0 +1,6 @@
+{
+  "intent_id": "future_aec_proxy",
+  "title": "AEC proxy objects",
+  "status": "blocked",
+  "description": "Blocked on AutoCAD with an AEC vertical product; preserve classes and opaque payload."
+}

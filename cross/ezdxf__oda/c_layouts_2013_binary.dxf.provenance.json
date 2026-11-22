@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_c_layouts",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DXF",
+  "version": "2013",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "dc941dd5d1ebc2163c21ea76f7cd37393638fae6e14710e35b79db15f241c2a3"
+  },
+  "content_digest": "729a0f74170713ee078efe0c3686bbf8962ac191bc80ac3757216df4e9e91077",
+  "ezdxf_based": true
+}

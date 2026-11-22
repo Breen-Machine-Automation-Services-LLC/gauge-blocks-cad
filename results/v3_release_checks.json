@@ -1,0 +1,41 @@
+{
+  "shipped_files": 2984,
+  "home_path_hits": [],
+  "old_record_names": [],
+  "local_name_hits": [],
+  "em_dash_hits": [],
+  "remaining_note_search_hits": [
+    {
+      "file": "map/TESTING.md",
+      "line": 23,
+      "allowed_reason": "Firefox browser test instructions or execution metadata"
+    },
+    {
+      "file": "map/TESTING.md",
+      "line": 24,
+      "allowed_reason": "Firefox browser test instructions or execution metadata"
+    },
+    {
+      "file": "results/map_browser.json",
+      "line": 3,
+      "allowed_reason": "Firefox browser test instructions or execution metadata"
+    }
+  ],
+  "coverage_before": {
+    "covered": 538,
+    "partial": 2917,
+    "planned": 382,
+    "wanted": 21,
+    "blocked": 105,
+    "not applicable": 90
+  },
+  "coverage_after": {
+    "planned": 1422,
+    "partial": 2289,
+    "not applicable": 90,
+    "blocked": 105,
+    "wanted": 21,
+    "covered": 0
+  },
+  "features": 187
+}

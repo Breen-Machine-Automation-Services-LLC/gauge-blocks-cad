@@ -1,0 +1,139 @@
+{
+  "browser": "159.0.1",
+  "checks": [
+    {
+      "behavior": "Coverage collapsed: all 30 topics fit 1400 \u00d7 900",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "16 px squares, 2 px gap, DWG and DXF groups",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Both views and status labels/icons",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "No-source tooltip explains source capability",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "No-source cell opens evidence panel",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Compatibility collapsed: all topics fit",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Declared pair selector changes cells and retains not run gaps",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Topic expands to feature rows",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Hover tooltip includes feature, format/version, pair, status and fields",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Click opens panel with all differing fields, both values, reader and links",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Panel input/output and sidecar links resolve",
+      "passed": true,
+      "evidence": [
+        "../intent/background_layers.json",
+        "../native/ezdxf/layers_2000_ASCII.dxf",
+        "../native/ezdxf/layers_2000_ASCII.dxf.provenance.json",
+        "../native/ezdxf/layers_2000_binary.dxf",
+        "../native/ezdxf/layers_2000_binary.dxf.provenance.json",
+        "../cross/ezdxf__oda/layers_2000_ASCII.dwg",
+        "../cross/ezdxf__oda/layers_2000_ASCII.dwg.provenance.json",
+        "../native/ezdxf/layers_2000_ASCII.dxf",
+        "../native/ezdxf/layers_2000_ASCII.dxf.provenance.json",
+        "../native/ezdxf/layers_2000_binary.dxf",
+        "../native/ezdxf/layers_2000_binary.dxf.provenance.json",
+        "../cross/ezdxf__oda/layers_2000_binary.dwg",
+        "../cross/ezdxf__oda/layers_2000_binary.dwg.provenance.json"
+      ]
+    },
+    {
+      "behavior": "Self-read corner marks match measurements",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Format filter limits columns",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Status filter limits squares",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Status filter exposes matching features within worse topics",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Changed tooltip names differing fields",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Changed panel lists every one of the 50 differing linetypes and both values",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Summary counts match underlying feature cells",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Accessible table view uses same labels",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Generated timestamp and exact builds",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Phone has internal grid scroll, no page horizontal overflow",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Blocked tooltip names the program it waits on",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Standalone page has no remote resources",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "Dark scheme media query and surface apply",
+      "passed": true,
+      "evidence": true
+    }
+  ]
+}

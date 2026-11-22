@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BMAS Gauge Blocks: CAD</title>
+<style>
+:root{color-scheme:light;--surface:#fcfcfb;--ink:#252524;--muted:#626260;--line:#d2d2ce;--neutral:#deded9;--empty:#efefec;--good:#0ca30c;--warning:#fab219;--serious:#ec835a;--critical:#d03b3b;font:13px system-ui,sans-serif;background:var(--surface);color:var(--ink)}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--surface:#1a1a19;--ink:#f2f2ed;--muted:#b9b9b2;--line:#55554f;--neutral:#60605a;--empty:#30302d}}
+*{box-sizing:border-box}body{margin:0;padding:22px 28px;max-width:1400px}h1{font-size:25px;letter-spacing:-.6px;margin:0 0 6px}p{margin:5px 0;color:var(--muted)}button,select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:5px 8px}button{cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}a{color:inherit}#filters{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:16px 0 10px}label{display:flex;gap:6px;align-items:center}#summary,#legend{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0}#legend{color:var(--muted);font-size:12px}#summary span,#legend span{display:flex;align-items:center;gap:5px}.swatch,.cell{width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #555;border-radius:2px;font:11px/1 system-ui;color:#171717;padding:0;position:relative;flex-shrink:0}.kept,.covered{background:var(--good)}.changed,.partial{background:var(--warning)}.lost{background:var(--serious)}.refused{background:var(--critical)}.not-run,.blocked{background:var(--neutral);color:var(--ink)}.no-source{background:var(--empty);color:var(--ink);border-style:dotted}.not-applicable{background:var(--empty);color:var(--muted);border-color:var(--line)}.planned{background:var(--surface);color:var(--ink);border-style:dashed}.wanted{background:repeating-linear-gradient(135deg,var(--empty) 0 2px,var(--surface) 2px 4px);color:var(--ink)}.self:after{content:"";position:absolute;right:-1px;top:-1px;border-top:5px solid var(--ink);border-left:5px solid transparent}.cell:hover{outline:2px solid var(--ink);z-index:1}#gridbox{overflow:auto;max-width:100%;border:1px solid var(--line);border-radius:5px;padding:8px;width:fit-content}table{border-collapse:separate;border-spacing:2px 2px}th{font-weight:500;text-align:left}thead th{font-size:10px;color:var(--muted);text-align:center}th.rowlabel{min-width:300px;max-width:300px;position:sticky;left:0;background:var(--surface);z-index:2;text-align:left}tbody th{font-size:12px;padding:0;height:16px;line-height:16px}tbody td{padding:0;height:16px;line-height:0}thead .group{border-bottom:1px solid var(--line);font-size:12px;padding-bottom:4px}.topic{border:0;padding:0;background:none;font-weight:600;font-size:12px;line-height:16px;height:16px;text-align:left;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}.feature{display:block;padding-left:16px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.boundary{border-left:8px solid var(--surface)}#tooltip{position:fixed;max-width:min(360px,calc(100vw - 16px));z-index:10;background:var(--ink);color:var(--surface);padding:10px;border-radius:5px;white-space:pre-line;pointer-events:none;font-size:12px}#panel{position:fixed;right:0;top:0;height:100dvh;width:min(480px,100%);background:var(--surface);border-left:1px solid var(--line);box-shadow:-10px 0 40px #0003;padding:20px;overflow:auto;z-index:20}#panel h2{font-size:19px;padding-right:65px}#panel h3{font-size:14px}#panel pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--empty);padding:8px;font:12px monospace}#panel a{overflow-wrap:anywhere}#panel li{margin:6px 0}#close{float:right}#texttable td{line-height:1.4;padding:5px;border-bottom:1px solid var(--line);min-width:95px}#texttable th{max-width:280px}small{color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){body{padding:16px 12px}h1{font-size:22px}#filters{gap:8px}th.rowlabel{min-width:210px;max-width:210px}.feature{max-width:210px}#summary{gap:9px;font-size:12px}}
+</style>
+<h1>BMAS Gauge Blocks: CAD</h1><p>Open DWG and DXF interchange test files</p>
+<div id="filters"><label>View <select id="view"><option value="coverage">Coverage</option><option value="compatibility">Compatibility</option></select></label><label>Program pair <select id="pair"><option value="all">All pairs</option></select></label><label>Format <select id="format"><option value="all">All formats</option><option>DWG</option><option>DXF</option></select></label><label>Status <select id="status"></select></label><button id="tabletoggle" aria-pressed="false">Table view</button></div>
+<div id="summary" aria-live="polite"></div><div id="legend"></div>
+<p style="font-size:12px;margin-bottom:10px">Select a topic to expand. Hover or focus a square for its label; select it for evidence. ◥ Self-read: DWG read through its own converter.</p>
+<div id="gridbox" tabindex="0" aria-label="Scrollable feature map"><table id="grid"></table><table id="texttable" hidden></table></div>
+<p id="method" style="font-size:12px"></p><p id="builds" style="font-size:11px"></p>
+<div id="tooltip" role="tooltip" hidden></div><aside id="panel" aria-label="Cell evidence" hidden><button id="close">Close ×</button><div id="details"></div></aside>
+<script>
+const DATA=/*DATA*/;
+const icons={'kept':'✓','covered':'✓','changed':'≠','partial':'◐','lost':'−','refused':'×','not run':'·','no source':'−','not applicable':'/','planned':'□','wanted':'◇','blocked':'⚿'};
+const sets={coverage:['covered','partial','planned','wanted','blocked','no source','not applicable'],compatibility:['kept','changed','lost','refused','not run','not applicable']};
+const rank={'not applicable':-1,'no source':-0.5,kept:0,covered:0,planned:2,wanted:3,'not run':1,partial:1,changed:2,lost:3,blocked:4,refused:4};
+const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let expanded=new Set(),tableMode=false,lastCell;
+function worst(states){return states.reduce((a,b)=>rank[b]>rank[a]?b:a,'not applicable')}
+function runs(c){return c.runs.filter(r=>$('pair').value==='all'||r.pair===$('pair').value)}
+function state(c){return $('view').value==='coverage'?c.coverage:!c.applicable?'not applicable':worst(runs(c).map(r=>r.status).concat(runs(c).length?[]:['not run']))}
+function aggregate(fs,k){
+ const cs=fs.map(f=>f.cells[k]), grouped=new Map();
+ for(const r of cs.flatMap(c=>c.runs)){
+  const key=r.pair+'|'+r.output;
+  if(!grouped.has(key))grouped.set(key,{...r,diffs:[],readers:[]});
+  const g=grouped.get(key);g.status=worst([g.status,r.status]);
+  g.self ||= r.self;g.readers=[...new Set([...g.readers,...r.readers])];
+  for(const d of r.diffs)if(!g.diffs.some(x=>JSON.stringify(x)===JSON.stringify(d)))g.diffs.push(d);
+ }
+ return {coverage:worst(cs.map(c=>c.coverage)),applicable:cs.some(c=>c.applicable),runs:[...grouped.values()],missing:[...new Set(cs.flatMap(c=>c.missing||[]))],impossible:[...new Set(cs.flatMap(c=>c.impossible||[]))],files:[...new Set(cs.flatMap(c=>c.files))]};
+}
+function swatch(s,cls='swatch'){return `<span class="${cls} ${s.replaceAll(' ','-')}" aria-hidden="true">${icons[s]}</span>`}
+function render(){
+ const view=$('view').value,states=sets[view],counts=Object.fromEntries(states.map(s=>[s,0]));
+ const cols=DATA.columns.map((c,k)=>({c,k})).filter(({c})=>$('format').value==='all'||c[0]===$('format').value);
+ $('pair').disabled=view==='coverage';
+ let head='<thead><tr><th class="rowlabel" rowspan="3">Topic / feature</th>';
+ for(const fmt of ['DWG','DXF']){let n=cols.filter(x=>x.c[0]===fmt).length;if(n)head+=`<th class="group" colspan="${n}">${fmt}</th>`}head+='</tr><tr>';
+ for(const enc of ['DWG binary','DXF ASCII','DXF binary']){let n=cols.filter(x=>x.c[0]+' '+x.c[2]===enc).length;if(n)head+=`<th colspan="${n}">${enc.split(' ')[1]}</th>`}head+='</tr><tr>'+cols.map(({c})=>`<th style="writing-mode:vertical-rl;height:34px;padding:0">${c[1]}</th>`).join('')+'</tr></thead>';
+ let body='',text='';
+ DATA.topics.forEach((t,ti)=>{
+  t.features.forEach(f=>cols.forEach(({k})=>counts[state(f.cells[k])]++));
+  const entries=[{name:t.title,cells:DATA.columns.map((_,k)=>aggregate(t.features,k)),topic:true},...((tableMode||expanded.has(ti))?t.features:[])];
+  entries.forEach((f,fi)=>{
+   const visible=cols.filter(({k})=>$('status').value==='all'||state(f.cells[k])===$('status').value);
+   if(!visible.length && !(f.topic && t.features.some(ff=>cols.some(({k})=>state(ff.cells[k])===$('status').value))))return;
+   let label=f.topic?`<button class="topic" title="${esc(f.name)}" data-topic="${ti}" aria-expanded="${expanded.has(ti)}">${expanded.has(ti)?'▾':'▸'} ${esc(f.name)} <small>(${t.features.length})</small></button>`:`<span class="feature" title="${esc(f.name)}">${esc(f.name)}</span>`;
+   body+=`<tr><th class="rowlabel" scope="row">${label}</th>`;text+=`<tr><th scope="row">${esc(t.title===f.name?t.title:t.title+' / '+f.name)}</th>`;
+   cols.forEach(({c,k},ci)=>{let cell=f.cells[k],s=state(cell),matches=$('status').value==='all'||s===$('status').value, self=view==='compatibility'&&runs(cell).some(r=>r.self), key=`${ti},${fi},${k}`;
+    const title=`${f.name} • ${c.join(' ')} • ${view==='coverage'?'dataset':$('pair').selectedOptions[0].text} • ${s}${self?' • self-read':''}`;
+    body+=`<td class="${ci&&c[0]!==cols[ci-1].c[0]?'boundary':''}">${matches?`<button class="cell ${s.replaceAll(' ','-')}${self?' self':''}" data-cell="${key}" aria-label="${esc(title)}">${icons[s]}</button>`:''}</td>`;
+    text+=`<td>${matches?`<button data-cell="${key}">${icons[s]} ${s}${self?' ◥ self-read':''}</button>`:' - '}</td>`;
+   });body+='</tr>';text+='</tr>';
+  });
+ });
+ $('grid').innerHTML=head+'<tbody>'+body+'</tbody>';$('texttable').innerHTML=head+'<tbody>'+text+'</tbody>';
+ $('summary').innerHTML=states.map(s=>`<span>${swatch(s)} <b>${counts[s]}</b> ${s}</span>`).join('');
+ $('legend').innerHTML=states.map(s=>`<span>${swatch(s)} ${s}</span>`).join('');
+ $('method').textContent=view==='coverage'?'Counts are feature × format/version/encoding cells, before status filtering. Covered requires a file in a declared source folder and measured results for every declared writable pair with a source in that cell. Partial lists missing measurements. Missing files are planned when a source program can write them; no source means no eligible source program can write the cell. Topic squares show the worst feature status.':'Counts are feature × format/version/encoding cells, before status filtering. All pairs shows the worst measured outcome. Fields are compared with intent values; absent = lost. No measurement = not run. Topic squares show the worst feature status.';
+ $('grid').hidden=tableMode;$('texttable').hidden=!tableMode;
+}
+function selection(el){let [ti,fi,k]=el.dataset.cell.split(',').map(Number),t=DATA.topics[ti],f=fi===0?{name:t.title,cells:DATA.columns.map((_,n)=>aggregate(t.features,n))}:t.features[fi-1];return {t,f,k,c:f.cells[k]}}
+function tooltip(el){let {t,f,k,c}=selection(el),rs=runs(c);$('tooltip').textContent=[t.title+' / '+f.name,DATA.columns[k].join(' '),$('view').value==='coverage'?'Dataset coverage':$('pair').selectedOptions[0].text,icons[state(c)]+' '+state(c),...(state(c)==='no source'?['no program in this dataset writes '+DATA.columns[k].join(' ')+' as a source']:[]),...(c.missing||[]),...(c.impossible||[]),...(state(c)==='blocked'?[t.description]:[]),...(rs.some(r=>r.diffs.length)?['Fields: '+[...new Set(rs.flatMap(r=>r.diffs.map(d=>d.field)))].join(', ')]:[])].join('\n');$('tooltip').hidden=false;let b=el.getBoundingClientRect();$('tooltip').style.left=Math.min(b.left,innerWidth-370)+'px';$('tooltip').style.left=Math.max(8,parseFloat($('tooltip').style.left))+'px';$('tooltip').style.top=Math.max(8,Math.min(b.bottom+8,innerHeight-$('tooltip').offsetHeight-8))+'px'}
+function fileLinks(path,label,unavailable=false){if(unavailable)return `<li>${esc(label)}: ${esc(path)} (unavailable; no drawing or provenance record was produced)</li>`;return `<li>${esc(label)}: <a href="../${esc(path)}">${esc(path)}</a> · <a href="../${esc(path)}.provenance.json">provenance record (how this file was made)</a></li>`}
+function panel(el){lastCell=el;let {t,f,k,c}=selection(el),rs=runs(c);$('tooltip').hidden=true;$('details').innerHTML=`<h2>${esc(t.title===f.name?t.title:t.title+' / '+f.name)}</h2><p>${esc(DATA.columns[k].join(' '))} · ${icons[state(c)]} ${esc(state(c))}</p><p>${esc(t.description)}</p><p><a href="../intent/${esc(t.id)}.json">Intent and expected fields</a></p>`+($('view').value==='coverage'?'<p>'+[...(c.missing||[]),...(c.impossible||[])].map(esc).join('<br>')+'</p><ul>'+c.files.map(p=>fileLinks(p,'Drawing')).join('')+'</ul>':rs.map(r=>`<h3>${esc(r.pair.replace('__',' → '))} · ${icons[r.status]} ${esc(r.status)}${r.self?' ◥ self-read':''}</h3><p>Reader: ${esc(r.readers.join(', ')||'No reader recorded')}</p>${r.stale?'<p>Stale output: its recorded source digest predates the current input linked below.</p>':''}<ul>${r.inputs.map(p=>fileLinks(p,'Input')).join('')}${fileLinks(r.output,'Output',r.unavailable)}</ul>${r.diffs.length?r.diffs.map(d=>`<h3>${esc(d.field||'File open')} · ${esc(d.status)}</h3><small>Expected (intent)</small><pre>${esc(JSON.stringify(d.expected,null,2))}</pre><small>Actual (output)</small><pre>${esc(JSON.stringify(d.actual,null,2))}</pre>`).join(''):'<p>No differing fields recorded.</p>'}`).join('')||'<p>No run or files recorded for this selection.</p>');$('panel').hidden=false;$('close').focus()}
+function resetStatus(){let old=$('status').value;$('status').innerHTML='<option value="all">All statuses</option>'+sets[$('view').value].map(s=>`<option>${s}</option>`).join('');if(sets[$('view').value].includes(old))$('status').value=old}
+for(const p of DATA.pairs)$('pair').add(new Option(p.replace('__',' → '),p));
+$('builds').textContent='Generated '+DATA.generated+' · '+DATA.builds.join(' · ');
+for(const id of ['view','pair','format','status'])$(id).onchange=()=>{if(id==='view')resetStatus();$('tooltip').hidden=true;$('panel').hidden=true;if($('status').value!=='all')DATA.topics.forEach((t,ti)=>{if(t.features.some(f=>f.cells.some(c=>state(c)===$('status').value)))expanded.add(ti)});render()};
+$('tabletoggle').onclick=()=>{tableMode=!tableMode;$('tabletoggle').setAttribute('aria-pressed',tableMode);$('tabletoggle').textContent=tableMode?'Heatmap view':'Table view';render()};
+document.addEventListener('click',e=>{const topic=e.target.closest('[data-topic]'),cell=e.target.closest('[data-cell]');if(topic){let n=+topic.dataset.topic;expanded.has(n)?expanded.delete(n):expanded.add(n);render()}if(cell)panel(cell)});
+document.addEventListener('mouseover',e=>{const cell=e.target.closest('[data-cell]');if(cell)tooltip(cell)});document.addEventListener('focusin',e=>{if(e.target.matches('[data-cell]'))tooltip(e.target)});document.addEventListener('mouseout',e=>{if(e.target.closest('[data-cell]'))$('tooltip').hidden=true});
+$('close').onclick=()=>{$('panel').hidden=true;lastCell?.focus()};document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('panel').hidden=true;$('tooltip').hidden=true;lastCell?.focus()}});
+resetStatus();render();
+</script></html>

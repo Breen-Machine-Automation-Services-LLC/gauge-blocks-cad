@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_g_blocks",
+  "representation_id": "reference_1",
+  "program": "cadcraft",
+  "build": "a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)",
+  "format": "DWG",
+  "version": "2007",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "3ac8a75bd80cb3b335f7fb85b811f1cedb0fe794454d6c009726d698ba124d3b"
+  },
+  "content_digest": "ae6b494213f0b4b7432cf9fbb119d8fb83e74fee87dad1e306dea4e394f82d43",
+  "ezdxf_based": true,
+  "digest_reader": "oda Build 27.1.0.143450"
+}

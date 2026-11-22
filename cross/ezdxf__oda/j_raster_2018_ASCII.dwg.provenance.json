@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_j_raster",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DWG",
+  "version": "2018",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "252acc8884f5c8d4c0e365b19b782de70d67ecd403ece5a6eddab4f81927939d"
+  },
+  "content_digest": "767a6e55848201a64f9459623c46fe1c9906b60497ead48bb33c5ed21b56bdf5",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

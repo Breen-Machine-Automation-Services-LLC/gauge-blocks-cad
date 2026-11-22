@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_g_blocks",
+  "representation_id": "reference_1",
+  "program": "oda",
+  "build": "27.1.0.143450",
+  "format": "DWG",
+  "version": "2000",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "6bf8b1046b4db951caf1c4d5414dd67a3af9530e6cd6bcdd4d0f8af897332a38"
+  },
+  "content_digest": "b56a26ad31edb183822576834c38aac32da4be220cbb0b85ba6486bf3fd9450f",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

@@ -1,0 +1,207 @@
+{
+  "intent_id": "feature_l_proxy",
+  "title": "Synthetic proxy classes",
+  "description": "Invented custom entity and object classes from master L, distinct from AutoCAD AEC proxy objects.",
+  "representation_id": "reference_1",
+  "features": [
+    "F180_proxy_entity",
+    "F181_proxy_entity_b",
+    "F182_proxy_object_marker"
+  ],
+  "expected": [
+    {
+      "id": "F180_proxy_entity.layer",
+      "value": "F180_proxy_entity",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F180_proxy_entity",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; CLASSES",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented custom classes"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F181_proxy_entity_b.layer",
+      "value": "F181_proxy_entity_b",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F181_proxy_entity_b",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; CLASSES",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented custom classes"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F182_proxy_object_marker.layer",
+      "value": "F182_proxy_object_marker",
+      "selector": {
+        "kind": "table",
+        "table": "layers",
+        "name": "F182_proxy_object_marker",
+        "attr": "name"
+      },
+      "reference": {
+        "section": "LAYER code 2; CLASSES",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented custom classes"
+      },
+      "tolerance": 0,
+      "versions": [
+        "AC1009",
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F180_proxy_entity.opaque_values",
+      "value": [
+        [
+          90,
+          7
+        ],
+        [
+          40,
+          2.5
+        ]
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F180_proxy_entity",
+        "table": "SYNTH_WIDGET",
+        "attr": "opaque_values"
+      },
+      "reference": {
+        "section": "SYNTH_WIDGET; opaque_values",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "F181_proxy_entity_b.opaque_values",
+      "value": [
+        [
+          90,
+          7
+        ],
+        [
+          40,
+          2.5
+        ]
+      ],
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F181_proxy_entity_b",
+        "table": "SYNTH_GADGET",
+        "attr": "opaque_values"
+      },
+      "reference": {
+        "section": "SYNTH_GADGET; opaque_values",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; independently authored generator constants"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    },
+    {
+      "id": "SYNTH_OBJ_REF.opaque_values",
+      "value": [
+        [
+          90,
+          3
+        ],
+        [
+          40,
+          1.25
+        ]
+      ],
+      "selector": {
+        "kind": "object",
+        "dictionary": "ROOT",
+        "name": "SYNTH_OBJ_REF",
+        "attr": "opaque_values"
+      },
+      "reference": {
+        "section": "XRECORD; DICTIONARYVAR; CLASSES",
+        "source": "Autodesk DXF Reference",
+        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
+        "basis": "DXF Reference; invented payload"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
+    }
+  ],
+  "feature_fields": {
+    "F180_proxy_entity": [
+      "F180_proxy_entity.layer",
+      "F180_proxy_entity.opaque_values"
+    ],
+    "F181_proxy_entity_b": [
+      "F181_proxy_entity_b.layer",
+      "F181_proxy_entity_b.opaque_values"
+    ],
+    "F182_proxy_object_marker": [
+      "F182_proxy_object_marker.layer",
+      "SYNTH_OBJ_REF.opaque_values"
+    ]
+  }
+}
