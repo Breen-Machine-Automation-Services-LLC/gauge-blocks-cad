@@ -12,6 +12,7 @@ import subprocess
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 from programs import adapters
+from programs.cadcraft_mcp import HarnessError, launch_options
 from generators import run_cross as cross
 
 # map/template.html compatibility rank, mapped to checker statuses.
@@ -36,6 +37,7 @@ def main():
     p.add_argument('--out', required=True, type=Path)
     p.add_argument('--pairs', nargs='+', help='Pair IDs, separated by spaces or commas')
     p.add_argument('--intent')
+    p.add_argument('--overwrite', action='store_true', help='Replace the existing run directory')
     a = p.parse_args()
     if Path(a.label).name != a.label or a.label in ('.', '..'): p.error('label must be a filename component')
     out = a.out.resolve()
@@ -50,7 +52,9 @@ def main():
     if a.intent and not (ROOT/'intent'/f'{a.intent}.json').is_file(): p.error('unknown intent')
     before = snapshot()
     run = out/a.label
-    if run.exists(): p.error(f'run destination already exists: {run}')
+    if run.exists():
+        if not a.overwrite: p.error(f'run destination already exists: {run}')
+        shutil.rmtree(run)
     run.mkdir(parents=True)
     (run/'results').mkdir()
     shutil.copytree(ROOT/'intent', run/'intent')
@@ -60,6 +64,12 @@ def main():
     provenance = {'binary': str(binary), 'binary_sha256': hashlib.sha256(binary.read_bytes()).hexdigest(),
                   'commit': commit, 'published_build': baseline,
                   'different_baseline_commit': bool(commit and not baseline.startswith(commit))}
+    try:
+        provenance['mcp_launch_options'] = launch_options(binary, '<workdir>')
+        probe_error = None
+    except HarnessError as ex:
+        provenance['mcp_launch_options'] = None
+        probe_error = str(ex)
     adapters.CadCraft.binary = str(binary)
     adapters.CadCraft.build = commit or baseline
     adapters.SCRATCH_ROOT = run/'results'
@@ -70,10 +80,20 @@ def main():
     cross.jobs_for = isolated_jobs
     cross.R = run
     cross.LOG = run/'progress.log'
-    for pair in pairs: cross.run_pair(pair, intent=a.intent, reader_name='oda', retain_unreadable=True)
+    failures = {}
+    for pair in pairs:
+        if probe_error:
+            failures[pair] = probe_error
+            continue
+        try:
+            cross.run_pair(pair, intent=a.intent, reader_name='oda', retain_unreadable=True)
+        except HarnessError as ex:
+            failures[pair] = str(ex)
+            print(f'{pair}: could not run this build: {ex}', flush=True)
     rows = []
     cells = collections.defaultdict(collections.Counter)
     for pair in pairs:
+        if pair in failures: continue
         published = read(ROOT/'results'/f'cross_{pair}_checks.json', [])
         built = read(run/'results'/f'cross_{pair}_checks.json', [])
         old = {(r['file'], r['field']): r for r in published}
@@ -99,7 +119,7 @@ def main():
     rows.sort(key=lambda r: (-RANK[r['published']['status']], -RANK[r['build']['status']], r['file'], r['field']))
     counts = {k: sum(r['change'] == k for r in rows) for k in ('improved', 'worsened', 'unchanged')}
     after = snapshot()
-    result = dict(label=a.label, provenance=provenance, counts=counts, rows=rows,
+    result = dict(label=a.label, provenance=provenance, failures=failures, counts=counts, rows=rows,
                   cells=[dict(cell=list(k), counts=dict(v)) for k, v in sorted(cells.items())],
                   repository_unchanged=before == after,
                   changed_repository_paths=sorted(k for k in before.keys() | after.keys() if before.get(k) != after.get(k)))
@@ -112,6 +132,7 @@ def main():
              f'Repository unchanged: {before == after}. Changed paths: {result["changed_repository_paths"]}', '',
              'Counts describe field status transitions; unchanged can include differing actual values with the same status.', '',
              '| Pair / feature / format / version / encoding | Improved | Worsened | Unchanged |', '| --- | ---: | ---: | ---: |']
+    lines[4:4] = [f'{pair}: could not run this build: {reason}' for pair, reason in failures.items()]
     lines += ['| '+' / '.join(k)+' | '+' | '.join(str(v[x]) for x in counts)+' |' for k, v in sorted(cells.items())]
     lines += ['', '| File | Field | Published status / value | Build status / value | Change |', '| --- | --- | --- | --- | --- |']
     def value(r): return (r['status']+' / '+json.dumps(r.get('actual'), ensure_ascii=False)).replace('|', '\\|').replace('\n', ' ')

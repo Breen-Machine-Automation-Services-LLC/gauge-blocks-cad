@@ -44,6 +44,9 @@ for topic,entries in [('n_misc',[('ACAD_SCALELIST','N_1_TO_37','name','N_1_TO_37
 i=load('i_dictionaries')
 add(i,'F130_sortents_a','SOLID','redraw_order',['F130_sortents_d','F130_sortents_c','F130_sortents_b','F130_sortents_a'])
 add(i,'F131_sortents_block_a','SOLID','redraw_order',['F131_sortents_block_c','F131_sortents_block_b','F131_sortents_block_a'])
+for f in i['expected']:
+ if f['selector'].get('attr')=='redraw_order':
+  f['reference'].update(section='OBJECTS / SORTENTSTABLE; codes 331 (entity handle) and 5 (sort handle)',url='https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-462F4378-F850-4E89-90F2-3C1880F55779.htm',basis='Compare relative effective order of these entities in their space: ascending numeric sort handle, or own entity handle when unlisted; literal table is informational.')
 save(i)
 i=load('e_objects')
 key='F71_marker.acad_marker'

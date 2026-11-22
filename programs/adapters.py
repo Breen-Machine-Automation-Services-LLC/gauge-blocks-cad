@@ -159,7 +159,7 @@ class CadCraft:
   r=self.save_many([(source,path,format,version,encoding)])[path]
   if r is not None:raise RuntimeError(r)
  def save_many(self,jobs):
-  from programs.cadcraft_mcp import MCP
+  from programs.cadcraft_mcp import MCP, HarnessError
   results={};by_source={}
   for source,dest,format,version,encoding in jobs:
    if version not in self.SAVEAS_VERSIONS:results[dest]=f'CADCraft cannot write {version} (saveas versions 2000 to 2018)';continue
@@ -174,11 +174,13 @@ class CadCraft:
      try:
       m.call('open',path=str(local))   # saveas renames the session drawing: reopen the original for every save
       m.ex('saveas',path=str(produced),version=self.SAVEAS_VERSIONS[version])
+     except HarnessError:raise
      except Exception as ex:results[dest]='CADCraft: '+str(ex)[:300];continue
      if not produced.exists():results[dest]='CADCraft wrote no file';continue
      try:privacy.assert_clean(produced)
      except privacy.PrivacyError as ex:results[dest]=str(ex);continue
      shutil.copyfile(produced,dest);results[dest]=None
+   except HarnessError:raise
    except Exception as ex:
     for dest,_,_ in items:results.setdefault(dest,'CADCraft: '+str(ex)[:300])
    finally:

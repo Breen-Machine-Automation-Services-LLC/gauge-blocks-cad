@@ -402,10 +402,10 @@
         "attr": "redraw_order"
       },
       "reference": {
-        "section": "SOLID; redraw_order",
+        "section": "OBJECTS / SORTENTSTABLE; codes 331 (entity handle) and 5 (sort handle)",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-462F4378-F850-4E89-90F2-3C1880F55779.htm",
+        "basis": "Compare relative effective order of these entities in their space: ascending numeric sort handle, or own entity handle when unlisted; literal table is informational."
       },
       "tolerance": 1e-08,
       "versions": [
@@ -431,10 +431,10 @@
         "attr": "redraw_order"
       },
       "reference": {
-        "section": "SOLID; redraw_order",
+        "section": "OBJECTS / SORTENTSTABLE; codes 331 (entity handle) and 5 (sort handle)",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-462F4378-F850-4E89-90F2-3C1880F55779.htm",
+        "basis": "Compare relative effective order of these entities in their space: ascending numeric sort handle, or own entity handle when unlisted; literal table is informational."
       },
       "tolerance": 1e-08,
       "versions": [

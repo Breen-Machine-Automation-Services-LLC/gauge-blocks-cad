@@ -113125,7 +113125,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2000_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -113145,7 +113149,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2000_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -113361,7 +113369,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2000_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -113381,7 +113420,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2000_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -113597,7 +113657,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2000_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -113617,7 +113681,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2000_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -113833,7 +113901,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2000_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -113853,7 +113952,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2000_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -114069,7 +114189,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2004_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -114089,7 +114213,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2004_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -114305,7 +114433,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2004_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -114325,7 +114484,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2004_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -114541,7 +114721,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2004_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -114561,7 +114745,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2004_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -114777,7 +114965,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2004_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -114797,7 +115016,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2004_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115013,7 +115253,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2007_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115033,7 +115277,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2007_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115249,7 +115497,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2007_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115269,7 +115548,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2007_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115485,7 +115785,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2007_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115505,7 +115809,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2007_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115721,7 +116029,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2007_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115741,7 +116080,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2007_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115957,7 +116317,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2010_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -115977,7 +116341,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2010_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -116193,7 +116561,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2010_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -116213,7 +116612,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2010_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -116429,7 +116849,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2010_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -116449,7 +116873,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2010_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -116665,7 +117093,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2010_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -116685,7 +117144,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2010_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -116901,7 +117381,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2013_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -116921,7 +117405,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2013_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -117137,7 +117625,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2013_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -117157,7 +117676,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2013_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -117373,7 +117913,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2013_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -117393,7 +117937,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2013_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -117609,7 +118157,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2013_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -117629,7 +118208,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2013_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -117845,7 +118445,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2018_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -117865,7 +118469,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2018_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -118081,7 +118689,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2018_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -118101,7 +118740,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2018_ASCII.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -118317,7 +118977,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2018_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -118337,7 +119001,11 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2018_binary.dwg",
     "converter": "oda 27.1.0.143450",
-    "self_read": true
+    "self_read": true,
+    "detail": {
+      "recheck": "unavailable: no saved DXF readback",
+      "comparison_basis": "legacy literal SORTENTS list; effective order has not been measured"
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -118553,7 +119221,38 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2018_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "8B",
+          "sort_handle": "400"
+        },
+        {
+          "entity_handle": "8D",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "8F",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "91",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_insert_sorted_block",
+        "F132_xdict_line",
+        "F132_xdict_circle",
+        "F133_dictionary_marker",
+        "F134_xdict_owners",
+        "F130_sortents_d",
+        "F130_sortents_c",
+        "F130_sortents_b",
+        "F130_sortents_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",
@@ -118573,7 +119272,28 @@
     "status": "same",
     "file": "cross/ezdxf__oda/i_dictionaries_2018_binary.dxf",
     "converter": null,
-    "self_read": false
+    "self_read": false,
+    "detail": {
+      "literal_table": [
+        {
+          "entity_handle": "9B",
+          "sort_handle": "300"
+        },
+        {
+          "entity_handle": "9C",
+          "sort_handle": "200"
+        },
+        {
+          "entity_handle": "9D",
+          "sort_handle": "100"
+        }
+      ],
+      "effective_space_order": [
+        "F131_sortents_block_c",
+        "F131_sortents_block_b",
+        "F131_sortents_block_a"
+      ]
+    }
   },
   {
     "intent_id": "feature_i_dictionaries",

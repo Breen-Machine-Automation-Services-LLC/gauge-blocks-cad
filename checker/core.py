@@ -42,6 +42,22 @@ def layer_of(e):
 def table_tags(e):
  tags=[(t.code,t.value) for t in TagCollector.dxftags(e)]
  return tags[next(i for i,t in enumerate(tags) if t==(100,'AcDbTable')):]
+def redraw_layout(d, name):
+ e=next(e for e in d.entitydb.values() if e.is_alive and layer_of(e)==name and hasattr(e,'get_layout'))
+ layout=e.get_layout()
+ if layout is None:raise ValueError('Draw-order entity has no space: '+name)
+ return layout
+
+def effective_redraw_order(layout):
+ # DXF Reference, OBJECTS / SORTENTSTABLE: 331 entity handles, 5 sort handles.
+ # https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-462F4378-F850-4E89-90F2-3C1880F55779.htm
+ # Unlisted entities retain their own handles as sort keys (see DRAW_ORDER.md).
+ table=dict(layout.get_redraw_order())
+ return [layer_of(e) for e in sorted(layout, key=lambda e:int(table.get(e.dxf.handle,e.dxf.handle),16))]
+
+def literal_redraw_order(layout):
+ return [dict(entity_handle=h,sort_handle=k) for h,k in layout.get_redraw_order()]
+
 def extract(d,s):
  kind=s['kind'];name=s.get('name');attr=s.get('attr')
  if kind=='feature_attr':
@@ -60,8 +76,7 @@ def extract(d,s):
    box=ezdxf.math.BoundingBox([v for m in acis.mesh_from_body(bodies[0]) for v in m.vertices])
    return list(box.size)
   if attr=='redraw_order':
-   layout=d.blocks.get('I_SORTBLK') if name.startswith('F131') else d.modelspace()
-   return [d.entitydb[h].dxf.layer for h,order in sorted(layout.get_redraw_order(),key=lambda pair:int(pair[1],16))]
+   return effective_redraw_order(redraw_layout(d,name))
   if attr=='image_size':return list(e.dxf.image_size)[:2]
   if attr=='loop_flags':return [p.path_type_flags for p in e.paths]
   if attr=='gradient_rotation':return e.gradient.rotation
@@ -128,7 +143,11 @@ def compare(d,intent,reader,source_version=None):
   if (source_version or d.dxfversion) not in f['versions']:continue
   row={'intent_id':intent['intent_id'],'field':f['id'],'reader':reader,'expected':f['value'],'tolerance':f['tolerance']}
   try:
-   actual=extract(d,f['selector']);actual=json.loads(json.dumps(actual,default=list));row['actual']=actual
+   actual=extract(d,f['selector'])
+   if f['selector'].get('attr')=='redraw_order':
+    row['detail']={'literal_table':literal_redraw_order(redraw_layout(d,f['selector']['name'])),'effective_space_order':actual}
+    actual=[name for name in actual if name in f['value']]
+   actual=json.loads(json.dumps(actual,default=list));row['actual']=actual
    same=equal(actual,f['value'],f['tolerance'])
    if not same and 'recomputed_width_relative_tolerance' in f:
     recomputed=recomputed_fit_width(d,f['selector'])
