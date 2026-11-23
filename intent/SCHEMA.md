@@ -85,3 +85,42 @@ locale-wide Unicode equivalence claim.
   repeated group-49 dash lengths retain order and numeric tolerance.
   [Object and Entity Codes](https://help.autodesk.com/cloudhelp/2020/ENU/AutoCAD-DXF/files/GUID-A35B8C2A-1885-4A8E-8533-E61D8A423D62.htm),
   [LTYPE](https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm).
+
+## Expectation basis and citations
+
+Every expected field's `reference` requires `basis_type`, an exact owning item
+`url`, and explanatory `basis` text. Generic help landing pages are rejected.
+The four basis types classify the whole expected value:
+
+- `synthetic`: an invented fixture value, for example a CIRCLE radius of 7.
+- `normative`: the standard fixes the whole value, for example LTYPE alignment
+  group 72 equal to 65 in a hypothetical standalone alignment expectation.
+- `application_semantics`: published application behavior settles the expectation,
+  with a named published source in the basis text. The current fields use no such classification.
+- `compatibility_policy`: a dataset choice where no standard settles it, for
+  example viewport color override 6 with its provisional dictionary mapping.
+
+A mixed linetype pattern is synthetic even though group 72 is fixed at 65;
+its basis names that fixed part. Name comparison behavior does not turn an
+invented symbol name into a normative value. Proxy class envelope IDs are
+normative when independently asserted; invented opaque payloads are synthetic.
+
+The authoring scripts apply `references.py`; `python intent/traceability.py`
+regenerates citations on existing intents without changing scoring inputs.
+Owning pages come from `reference_pages.py`, transcribed from the standard
+catalog. Custom classes without an item page explain the fallback in `basis`.
+Each row's intent stamp hashes only the expected fields, with each `reference`
+removed. Every other field key, including future comparison settings, is hashed;
+titles, descriptions, citations and explanations do not invalidate scores.
+
+Every expectation constructor call supplies its basis type explicitly. The
+reference helper rejects a missing or invalid type and never infers one.
+Validation requires the owning page selected by the field selector. The documented
+exceptions are: extension-record fields cite XRECORD; draw-order fields cite
+SORTENTSTABLE; nested block-circle fields cite CIRCLE; wildcard layer-usage counts
+cite LAYER; multi-type counts cite the first queried type; viewport color policy
+cites LAYER; extended data cites APPID; custom synthetic classes cite the proxy
+entity envelope; and scale-list entries cite OBJECTS because the cataloged
+Reference contents provide no SCALE item page. Each missing-page fallback explains
+the limitation in its basis. These exceptions identify the storage or property the
+selector reads, rather than an unrelated entity page.

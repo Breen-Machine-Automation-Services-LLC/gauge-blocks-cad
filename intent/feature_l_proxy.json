@@ -21,8 +21,9 @@
       "reference": {
         "section": "LAYER code 2; CLASSES",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented custom classes"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; invented custom classes",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -47,8 +48,9 @@
       "reference": {
         "section": "LAYER code 2; CLASSES",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented custom classes"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; invented custom classes",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -73,8 +75,9 @@
       "reference": {
         "section": "LAYER code 2; CLASSES",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented custom classes"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; invented custom classes",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -108,8 +111,9 @@
       "reference": {
         "section": "SYNTH_WIDGET; opaque_values",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-89A690F9-E859-4D57-89EA-750F3FB76C6B.htm",
+        "basis": "DXF Reference; independently authored generator constants; No item page exists for the invented custom class; the proxy entity page is the best available envelope reference.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -142,8 +146,9 @@
       "reference": {
         "section": "SYNTH_GADGET; opaque_values",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-89A690F9-E859-4D57-89EA-750F3FB76C6B.htm",
+        "basis": "DXF Reference; independently authored generator constants; No item page exists for the invented custom class; the proxy entity page is the best available envelope reference.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -174,10 +179,11 @@
         "attr": "opaque_values"
       },
       "reference": {
-        "section": "XRECORD; DICTIONARYVAR; CLASSES",
+        "section": "ACAD_PROXY_OBJECT; opaque_values",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented payload"
+        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-F59F0EC3-D34D-4C1A-91AC-7FDA569EF016.htm",
+        "basis": "DXF Reference; invented payload",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [

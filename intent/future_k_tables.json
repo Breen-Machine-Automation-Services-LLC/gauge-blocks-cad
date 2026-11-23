@@ -20,8 +20,9 @@
       "reference": {
         "section": "ACAD_TABLE group code 91: number of rows",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented values from the generator in the intent description"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-D8CCD2F0-18A3-42BB-A64D-539114A07DA0.htm",
+        "basis": "DXF Reference; invented values from the generator in the intent description",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -44,8 +45,9 @@
       "reference": {
         "section": "ACAD_TABLE group code 92: number of columns",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented values from the generator in the intent description"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-D8CCD2F0-18A3-42BB-A64D-539114A07DA0.htm",
+        "basis": "DXF Reference; invented values from the generator in the intent description",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -79,8 +81,9 @@
       "reference": {
         "section": "ACAD_TABLE group code 1: cell text values in row order, merged and empty cells omitted",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented values from the generator in the intent description"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-D8CCD2F0-18A3-42BB-A64D-539114A07DA0.htm",
+        "basis": "DXF Reference; invented values from the generator in the intent description",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -103,8 +106,9 @@
       "reference": {
         "section": "ACAD_TABLE group code 91: number of rows",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented values from the generator in the intent description"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-D8CCD2F0-18A3-42BB-A64D-539114A07DA0.htm",
+        "basis": "DXF Reference; invented values from the generator in the intent description",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -127,8 +131,9 @@
       "reference": {
         "section": "ACAD_TABLE group code 92: number of columns",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented values from the generator in the intent description"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-D8CCD2F0-18A3-42BB-A64D-539114A07DA0.htm",
+        "basis": "DXF Reference; invented values from the generator in the intent description",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -158,8 +163,9 @@
       "reference": {
         "section": "ACAD_TABLE group code 1: cell text values in row order, merged and empty cells omitted",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented values from the generator in the intent description"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-D8CCD2F0-18A3-42BB-A64D-539114A07DA0.htm",
+        "basis": "DXF Reference; invented values from the generator in the intent description",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [

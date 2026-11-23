@@ -24,8 +24,9 @@
       "reference": {
         "section": "LINE group codes for end",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented constants from the source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-FCEF5726-53AE-4C43-B4EA-C84EB8686A66.htm",
+        "basis": "DXF Reference; invented constants from the source generator",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -54,8 +55,9 @@
       "reference": {
         "section": "INSERT group codes for insert",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented constants from the source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "basis": "DXF Reference; invented constants from the source generator",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [

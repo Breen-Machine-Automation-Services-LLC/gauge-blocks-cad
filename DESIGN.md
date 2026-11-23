@@ -89,3 +89,8 @@ Code and data: MIT OR Apache-2.0, at the user's option.
 ## Derived coverage
 
 Intents state status only for wanted, planned, or blocked requests without drawings. Covered and partial are computed per feature, format, version, and encoding from declared source folders in `programs/pairs.json`, measured declared cross pairs, and `programs/capabilities.json`. Missing runnable pairs are named; impossible outputs do not make a cell partial. Cells for which no declared source folder can receive that format, version, and encoding are no source and do not count against the intent. An intent is covered when all remaining applicable cells are covered.
+
+The [DXF standard inventory](standard/README.md) lists owning Reference pages and
+computes dataset coverage from intent selectors and citations, provenance-linked
+native ASCII drawing presence, and item-naming future requests. Generator source
+witnesses supplement the evidence without deciding status.

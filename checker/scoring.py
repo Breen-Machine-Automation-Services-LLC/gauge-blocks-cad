@@ -8,9 +8,13 @@ ENGINES = {'ezdxf': 'ezdxf', 'oda': 'oda-teigha', 'bricscad': 'oda-teigha', 'cad
 
 def stamp(root, intent_id):
     from programs.adapters import VERSIONS
+    intent = json.loads((root / 'intent' / (intent_id + '.json')).read_text())
+    fields = [{key: value for key, value in field.items() if key != 'reference'}
+              for field in intent.get('expected', [])]
+    scoring_intent = json.dumps(fields, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')
     return {'checker': hashlib.sha256(Path(__file__).with_name('core.py').read_bytes()).hexdigest(),
             'ezdxf': ezdxf.__version__, 'versions': dict(VERSIONS),
-            'intent': hashlib.sha256((root / 'intent' / (intent_id + '.json')).read_bytes()).hexdigest()}
+            'intent': hashlib.sha256(scoring_intent).hexdigest()}
 
 def annotate(rows, root, intent_id, writer, reader):
     score = stamp(root, intent_id)

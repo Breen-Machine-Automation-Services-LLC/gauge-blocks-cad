@@ -21,8 +21,9 @@
       "reference": {
         "section": "CIRCLE group codes for radius",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented constants from the source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-8663262B-222C-414D-B133-4A8506A27C18.htm",
+        "basis": "DXF Reference; invented constants from the source generator",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -47,8 +48,9 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; feature layer declared in source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -73,8 +75,9 @@
       "reference": {
         "section": "VIEWPORT; view_height",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-2602B0FB-02E4-4B9A-B03C-B1D904753D34.htm",
+        "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -98,8 +101,9 @@
       "reference": {
         "section": "VIEWPORT; view_height",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-2602B0FB-02E4-4B9A-B03C-B1D904753D34.htm",
+        "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [

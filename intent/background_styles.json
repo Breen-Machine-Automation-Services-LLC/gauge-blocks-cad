@@ -20,8 +20,9 @@
       "reference": {
         "section": "BLOCK extended data; APPID; codes 1001,1000",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -46,8 +47,9 @@
       "reference": {
         "section": "LTYPE code 3; pattern codes 40,49",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -72,8 +74,9 @@
       "reference": {
         "section": "STYLE codes 3,40,41",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-EF68AF7C-13EF-45A1-8175-ED6CE66C8FC9.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -98,8 +101,9 @@
       "reference": {
         "section": "STYLE codes 3,40,41",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-EF68AF7C-13EF-45A1-8175-ED6CE66C8FC9.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-09,
       "versions": [
@@ -124,8 +128,9 @@
       "reference": {
         "section": "STYLE codes 3,40,41",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-EF68AF7C-13EF-45A1-8175-ED6CE66C8FC9.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-09,
       "versions": [
@@ -150,8 +155,9 @@
       "reference": {
         "section": "DIMSTYLE codes 40,41",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F2FAD36F-0CE3-4943-9DAD-A9BCD2AE81DA.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-09,
       "versions": [
@@ -176,8 +182,9 @@
       "reference": {
         "section": "DIMSTYLE codes 40,41",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F2FAD36F-0CE3-4943-9DAD-A9BCD2AE81DA.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-09,
       "versions": [
@@ -200,8 +207,9 @@
       "reference": {
         "section": "TEXT; MTEXT; DIMENSION table references",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -245,8 +253,9 @@
       "reference": {
         "section": "LTYPE codes 72,73,40,49,74",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm",
+        "basis": "DXF Reference; LTYPE group 72 is fixed at 65; dash lengths and pattern size are invented.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -270,8 +279,9 @@
       "reference": {
         "section": "LTYPE codes 9,340,46,50,44,45,74",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -294,8 +304,9 @@
       "reference": {
         "section": "LTYPE codes 9,340,46,50,44,45,74",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -318,8 +329,9 @@
       "reference": {
         "section": "LTYPE codes 9,340,46,50,44,45,74",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-09,
       "versions": [
@@ -342,8 +354,9 @@
       "reference": {
         "section": "LTYPE codes 9,340,46,50,44,45,74",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-09,
       "versions": [
@@ -366,8 +379,9 @@
       "reference": {
         "section": "LTYPE codes 9,340,46,50,44,45,74",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-09,
       "versions": [
@@ -390,8 +404,9 @@
       "reference": {
         "section": "LTYPE codes 9,340,46,50,44,45,74",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-09,
       "versions": [
@@ -414,8 +429,9 @@
       "reference": {
         "section": "LTYPE codes 9,340,46,50,44,45,74",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [

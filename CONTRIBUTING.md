@@ -73,7 +73,11 @@ adding that support. See the [intent schema](intent/SCHEMA.md).
 
 Add a generator under `generators/` and independently authored expected fields to
 the intent. Give each field a DXF Reference section, selector (how to find the
-value), tolerance, and applicable versions. Never derive expected values from a
+value), tolerance, and applicable versions. Set `reference.basis_type` to
+`synthetic`, `normative`, `application_semantics`, or `compatibility_policy`, and
+set `reference.url` to the exact owning item URL in the [standard inventory](standard/README.md).
+Explain any missing item page in `basis`; regenerate intent JSON through its
+authoring script or `python intent/traceability.py`. Never derive expected values from a
 program's saved output. Put each feature on a distinct named layer.
 
 Use stable lowercase intent and representation IDs. Drawing filenames use topic,

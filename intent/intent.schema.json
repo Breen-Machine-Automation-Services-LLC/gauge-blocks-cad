@@ -263,18 +263,28 @@
               },
               "url": {
                 "type": "string",
-                "format": "uri"
+                "format": "uri",
+                "pattern": "^https://help\\.autodesk\\.com/cloudhelp/\\d{4}/ENU/AutoCAD-DXF/files/GUID-[A-F0-9-]+\\.htm(?:#.*)?$"
               },
               "basis": {
                 "type": "string",
                 "minLength": 1
+              },
+              "basis_type": {
+                "enum": [
+                  "normative",
+                  "application_semantics",
+                  "compatibility_policy",
+                  "synthetic"
+                ]
               }
             },
             "required": [
               "section",
               "source",
               "url",
-              "basis"
+              "basis",
+              "basis_type"
             ],
             "additionalProperties": false
           },

@@ -24,8 +24,9 @@
       "reference": {
         "section": "DIMENSION group codes for text",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; invented constants from the source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-239A1BDD-7459-4BB9-8DD7-08EC79BF1EB0.htm",
+        "basis": "DXF Reference; invented constants from the source generator",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -49,8 +50,9 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; feature layer declared in source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -75,8 +77,9 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; feature layer declared in source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -101,8 +104,9 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; feature layer declared in source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -127,8 +131,9 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; feature layer declared in source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -153,8 +158,9 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; feature layer declared in source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -179,8 +185,9 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; feature layer declared in source generator"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -205,8 +212,9 @@
       "reference": {
         "section": "DIMENSION; dimtype",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-239A1BDD-7459-4BB9-8DD7-08EC79BF1EB0.htm",
+        "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -230,8 +238,9 @@
       "reference": {
         "section": "DIMENSION; dimtype",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-239A1BDD-7459-4BB9-8DD7-08EC79BF1EB0.htm",
+        "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -255,8 +264,9 @@
       "reference": {
         "section": "DIMENSION; dimtype",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-239A1BDD-7459-4BB9-8DD7-08EC79BF1EB0.htm",
+        "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -280,8 +290,9 @@
       "reference": {
         "section": "DIMENSION; dimtype",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-239A1BDD-7459-4BB9-8DD7-08EC79BF1EB0.htm",
+        "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [
@@ -305,8 +316,9 @@
       "reference": {
         "section": "DIMENSION; dimtype",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/",
-        "basis": "DXF Reference; independently authored generator constants"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-239A1BDD-7459-4BB9-8DD7-08EC79BF1EB0.htm",
+        "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 1e-08,
       "versions": [

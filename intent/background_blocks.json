@@ -18,8 +18,9 @@
       "reference": {
         "section": "BLOCK extended data; APPID; codes 1001,1000",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -45,8 +46,9 @@
       "reference": {
         "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-F0EA099B-6F88-4BCC-BEC7-247BA64838A4.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -72,8 +74,9 @@
       "reference": {
         "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-F0EA099B-6F88-4BCC-BEC7-247BA64838A4.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -97,8 +100,9 @@
       "reference": {
         "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -124,8 +128,9 @@
       "reference": {
         "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-F0EA099B-6F88-4BCC-BEC7-247BA64838A4.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -151,8 +156,9 @@
       "reference": {
         "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-F0EA099B-6F88-4BCC-BEC7-247BA64838A4.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -176,8 +182,9 @@
       "reference": {
         "section": "BLOCK; ATTDEF codes 2,1; INSERT code 2",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
@@ -204,8 +211,9 @@
       "reference": {
         "section": "ATTRIB codes 2,1",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "DXF Reference"
+        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-7DD8B495-C3F8-48CD-A766-14F9D7D0DD9B.htm",
+        "basis": "DXF Reference; The expected value is an invented fixture choice.",
+        "basis_type": "synthetic"
       },
       "tolerance": 0,
       "versions": [
