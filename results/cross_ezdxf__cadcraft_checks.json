@@ -63202,7 +63202,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2000_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -63370,6 +63370,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2000_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2000_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -63719,6 +63733,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2000_ASCII.dxf",
+    "converter": null,
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -63890,7 +63918,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2000_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -64065,6 +64093,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2000_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -64236,7 +64278,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2004_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -64404,6 +64446,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2004_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2004_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -64753,6 +64809,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2004_ASCII.dxf",
+    "converter": null,
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -64924,7 +64994,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2004_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -65099,6 +65169,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2004_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -65270,7 +65354,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2007_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -65438,6 +65522,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2007_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2007_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -65787,6 +65885,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2007_ASCII.dxf",
+    "converter": null,
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -65958,7 +66070,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2007_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -66133,6 +66245,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2007_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -66304,7 +66430,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2010_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -66472,6 +66598,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2010_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2010_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -66821,6 +66961,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2010_ASCII.dxf",
+    "converter": null,
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -66992,7 +67146,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2010_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -67167,6 +67321,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2010_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -67338,7 +67506,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2013_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -67506,6 +67674,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2013_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2013_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -67855,6 +68037,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2013_ASCII.dxf",
+    "converter": null,
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -68026,7 +68222,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2013_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -68201,6 +68397,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2013_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -68372,7 +68582,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2018_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -68540,6 +68750,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2018_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2018_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -68889,6 +69113,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2018_ASCII.dxf",
+    "converter": null,
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -69060,7 +69298,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U0",
-    "status": "differs",
+    "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2018_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -69228,6 +69466,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/ezdxf__cadcraft/g_blocks_2018_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/ezdxf__cadcraft/g_blocks_2018_binary.dwg",
     "converter": "oda 27.1.0.143450",

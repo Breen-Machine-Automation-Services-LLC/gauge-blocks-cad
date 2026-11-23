@@ -1,7 +1,9 @@
 """Independent feature expectations transcribed from the synthetic generators."""
 from pathlib import Path
-import json,math
+import json,math,argparse
 R=Path(__file__).resolve().parents[1]
+# Use --topic g_blocks to write only the block intent.
+p=argparse.ArgumentParser();p.add_argument('--topic');topic=p.parse_args().topic
 MOD=['AC1015','AC1018','AC1021','AC1024','AC1027','AC1032'];ALL=['AC1009']+MOD
 JUST=['LEFT','CENTER','RIGHT','ALIGNED','MIDDLE','FIT','BOTTOM_LEFT','BOTTOM_CENTER','BOTTOM_RIGHT','MIDDLE_LEFT','MIDDLE_CENTER','MIDDLE_RIGHT','TOP_LEFT','TOP_CENTER','TOP_RIGHT']
 def load(topic):return json.loads((R/'intent'/('feature_'+topic+'.json')).read_text())
@@ -10,7 +12,8 @@ def field(i,layer,typ,attr,value,versions=MOD):
  if any(f['id']==key for f in i['expected']):return
  i['features']=sorted(set(i['features']+[layer]))
  i['expected'].append(dict(id=key,value=value,selector=dict(kind='feature_attr',name=layer,table=typ,attr=attr),reference=dict(section=typ+'; '+attr,source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2026/ENU/',basis='DXF Reference; independently authored generator constants'),tolerance=1e-8,versions=versions))
-def save(i):(R/'intent'/(i['intent_id']+'.json')).write_text(json.dumps(i,indent=2)+'\n')
+def save(i):
+ if topic is None or i['intent_id']=='feature_'+topic:(R/'intent'/(i['intent_id']+'.json')).write_text(json.dumps(i,indent=2)+'\n')
 i=load('a_text')
 for n,j in enumerate(JUST):
  h,v=({'LEFT':(0,0),'CENTER':(1,0),'RIGHT':(2,0),'ALIGNED':(3,0),'MIDDLE':(4,0),'FIT':(5,0)}.get(j) or ({'LEFT':0,'CENTER':1,'RIGHT':2}[j.split('_')[1]],{'BOTTOM':1,'MIDDLE':2,'TOP':3}[j.split('_')[0]]))
@@ -32,6 +35,14 @@ i['features']=sorted({f['selector']['name'] for f in i['expected']})
 save(i)
 i=load('g_blocks')
 for layer,typ,attr,value in [('F100_block_basepoint','INSERT','name','G_BASEOFF'),('F101_nested_outer','INSERT','name','G_OUTER'),('F105_insert_minsert','INSERT','column_count',3),('F106_unused_block','CIRCLE','radius',2),('F107_wipeout_in_block','WIPEOUT','boundary_path',[[-.5,.5],[.5,.5],[.5,-.5],[-.5,-.5],[-.5,.5]]),('F108_wipeout_block_text','TEXT','text','OVER WIPE'),('F111_anonymous_block','INSERT','name','*U77')]:field(i,layer,typ,attr,value)
+field(i,'F111_anonymous_block','INSERT','block_circle_radius',3)
+key='F111_anonymous_block.block_circle_radius'
+next(f for f in i['expected'] if f['id']==key)['reference']=dict(
+ section='Anonymous Blocks; BLOCK group 70; Open Design Specification section 20.4.52',
+ source='Autodesk DXF Reference and AutoLISP Reference; Open Design Specification',
+ url='https://help.autodesk.com/cloudhelp/2026/PLK/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm',
+ basis='Resolve the INSERT reference using Anonymous Blocks; BLOCK flags: https://help.autodesk.com/cloudhelp/2021/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm; Open Design Specification section 20.4.52: https://static.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf; independently authored circle radius 3; any circle may match')
+if key not in i['feature_fields']['F111_anonymous_block']:i['feature_fields']['F111_anonymous_block'].append(key)
 save(i)
 i=load('h_attributes')
 for n,name,flags in [(113,'constant',2),(114,'invisible',1),(115,'verify',4),(116,'preset',8),(117,'lockpos',0),(118,'rotinsert',0),(119,'mirinsert',0),(120,'textmirror',0),(121,'valuediff',0),(122,'nodef',0)]:

@@ -8,9 +8,9 @@
   "encoding": "binary",
   "made_by": {
     "script": "generators/run_cross.py",
-    "input_digest": "21136ec37e43b1d642bdf5cf1d1551ce78cb976e6e4807800891c9fc719e1c2e"
+    "input_digest": "041c04c6d45e1dbc948bb6fe8f231df0075ab826eaeb84097263e06c3849d9a8"
   },
-  "content_digest": "4ca76246733ba79205f251dd83768c76888ee45c0597b68f2b2012b3ebd3dcf7",
+  "content_digest": "3cfdc95617be32ffa54b3277566d46f79ac7e55df2ce5652325624628a4cb374",
   "ezdxf_based": true,
-  "digest_reader": "oda 27.1.0.143450"
+  "digest_reader": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)"
 }

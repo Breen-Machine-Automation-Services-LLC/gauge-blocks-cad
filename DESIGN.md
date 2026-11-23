@@ -14,8 +14,11 @@ features. 3D modeling and other domains come in later releases.
 
 1. **Intent** (`intent/`). Each test drawing is defined once, independently of any program: its features, the
    invented values, and the expected result of reading it, per the public DXF Reference. Expected values come from the
-   intent, never from one program's output. Where the Reference is silent, AutoCAD's behavior is the tie-breaker and the
-   intent says so.
+   intent, never from one program's output. The applicable published DXF Reference or DWG specification governs first. Where published standards
+   leave a case unsettled, the intent seeks maximal compatibility using documented application semantics and
+   independent read/write evidence. [Autodesk symbol-table semantics](https://help.autodesk.com/cloudhelp/2018/ENU/OARX-DevGuide/files/GUID-83ABF20A-57D4-4AB3-8A49-D91E0F70DBFF.htm)
+   supplies name-comparison behavior; the [Open Design Specification](https://static.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf)
+   defines DWG structures. Each field identifies its basis.
 2. **Native set** (`native/<program>/`). The same intent built from scratch in each program by that program's
    generator, saved at every format and version it can write. Shows how each program writes the same content; tests
    readers.

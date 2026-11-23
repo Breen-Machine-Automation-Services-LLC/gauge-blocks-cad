@@ -35,3 +35,13 @@ ODA's 2000 DXF output also stores drawing-properties timestamps in an XRECORD ma
 Every field changed on that input was already excluded. Two regenerations of the BricsCAD region and solid generator (`results/bricscad_generator_rerun_evidence.json`) exposed two more volatile fields, now excluded for ACIS entities only (`REGION`, `3DSOLID`, `BODY`): the per-save unique id in group code 2 (a `{GUID}`), and the build time written in the ACIS data header (SAT text or SAB binary, for example `Sun Nov 22 13:24:09 2026`, blanked before hashing). After the exclusions the region and solid digests match across two runs (DXF 2018 and DWG 2004 sampled); `checker/test_digest.py` still passes, and no ezdxf or ODA drawing contains ACIS data, so no existing digest changed.
 
 **Known exception.** The table drawing read back from BricsCAD's DWG 2004 and 2007 does not always reproduce across two generator runs: one entity (handle 38C in one read-back) lists two owner pointers (group 330) in swapped order, which changes the digest (`results/bricscad_generator_rerun_evidence.json`, entry `k_tables:k_tables_2004_binary.dwg`). DWG 2018 of the same drawing reproduced in every run. Which of the 2004 and 2007 files changes varies from run to run (a regeneration run, `results/bricscad_regeneration_stability.json`, rewrote only `k_tables_2007_binary.dwg`). The cause (writer ordering or the ODA read-back) is not established, and the swapped-pointer entry is a hypothesis about ordering, not a confirmed mechanism. Regeneration may therefore rewrite one of these files. A one-field change (a layer name) changed the digest for both programs. The samples do not establish that no other volatile field exists for other drawings. Two runs of the BricsCAD table and region generator also left every drawing and provenance record byte-identical (`generators/run_bricscad.py` rewrites a file only when its digest or build changes).
+
+## Semantic status and digest
+
+The content digest is unaffected by semantic name comparison. It is a regeneration
+fingerprint, not a kept/changed comparison. Case, anonymous names, handles, references,
+proxy envelopes, layer flags and tag order remain in its input under the exclusions
+above. [Autodesk symbol-name semantics](https://help.autodesk.com/cloudhelp/2018/ENU/OARX-DevGuide/files/GUID-83ABF20A-57D4-4AB3-8A49-D91E0F70DBFF.htm)
+and [anonymous-number allocation](https://help.autodesk.com/cloudhelp/2026/PLK/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm)
+govern semantic status only; they do not authorize dropping reference-graph identity
+from the digest. Compute the digest on the drawing as read, before any audit.

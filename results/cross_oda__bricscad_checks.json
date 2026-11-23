@@ -86941,18 +86941,6 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
-    "file": "cross/oda__bricscad/g_blocks_2000_ASCII.dwg",
-    "converter": "oda 27.1.0.143450",
-    "self_read": false
-  },
-  {
-    "intent_id": "feature_g_blocks",
-    "field": "F100_block_basepoint.layer",
-    "reader": "ezdxf 1.4.4",
-    "expected": "F100_block_basepoint",
-    "tolerance": 0,
-    "actual": "F100_block_basepoint",
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2000_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -86960,6 +86948,18 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F100_block_basepoint.layer",
+    "reader": "ezdxf 1.4.4",
+    "expected": "F100_block_basepoint",
+    "tolerance": 0,
+    "actual": "F100_block_basepoint",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2000_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F101_nested_inner.layer",
     "reader": "ezdxf 1.4.4",
     "expected": "F101_nested_inner",
@@ -87116,6 +87116,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2000_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -87625,18 +87639,6 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
-    "file": "cross/oda__bricscad/g_blocks_2000_binary.dwg",
-    "converter": "oda 27.1.0.143450",
-    "self_read": false
-  },
-  {
-    "intent_id": "feature_g_blocks",
-    "field": "F100_block_basepoint.layer",
-    "reader": "ezdxf 1.4.4",
-    "expected": "F100_block_basepoint",
-    "tolerance": 0,
-    "actual": "F100_block_basepoint",
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2000_binary.dwg",
     "converter": "oda 27.1.0.143450",
@@ -87644,6 +87646,18 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F100_block_basepoint.layer",
+    "reader": "ezdxf 1.4.4",
+    "expected": "F100_block_basepoint",
+    "tolerance": 0,
+    "actual": "F100_block_basepoint",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2000_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F101_nested_inner.layer",
     "reader": "ezdxf 1.4.4",
     "expected": "F101_nested_inner",
@@ -87800,6 +87814,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2000_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -88309,18 +88337,6 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
-    "file": "cross/oda__bricscad/g_blocks_2004_ASCII.dwg",
-    "converter": "oda 27.1.0.143450",
-    "self_read": false
-  },
-  {
-    "intent_id": "feature_g_blocks",
-    "field": "F100_block_basepoint.layer",
-    "reader": "ezdxf 1.4.4",
-    "expected": "F100_block_basepoint",
-    "tolerance": 0,
-    "actual": "F100_block_basepoint",
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2004_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -88328,6 +88344,18 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F100_block_basepoint.layer",
+    "reader": "ezdxf 1.4.4",
+    "expected": "F100_block_basepoint",
+    "tolerance": 0,
+    "actual": "F100_block_basepoint",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2004_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F101_nested_inner.layer",
     "reader": "ezdxf 1.4.4",
     "expected": "F101_nested_inner",
@@ -88484,6 +88512,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2004_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -88993,18 +89035,6 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
-    "file": "cross/oda__bricscad/g_blocks_2004_binary.dwg",
-    "converter": "oda 27.1.0.143450",
-    "self_read": false
-  },
-  {
-    "intent_id": "feature_g_blocks",
-    "field": "F100_block_basepoint.layer",
-    "reader": "ezdxf 1.4.4",
-    "expected": "F100_block_basepoint",
-    "tolerance": 0,
-    "actual": "F100_block_basepoint",
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2004_binary.dwg",
     "converter": "oda 27.1.0.143450",
@@ -89012,6 +89042,18 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F100_block_basepoint.layer",
+    "reader": "ezdxf 1.4.4",
+    "expected": "F100_block_basepoint",
+    "tolerance": 0,
+    "actual": "F100_block_basepoint",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2004_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F101_nested_inner.layer",
     "reader": "ezdxf 1.4.4",
     "expected": "F101_nested_inner",
@@ -89168,6 +89210,20 @@
   },
   {
     "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2004_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
     "field": "F102_insert_rotated.rotation",
     "reader": "ezdxf 1.4.4",
     "expected": 30,
@@ -89677,7 +89733,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
+    "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2007_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -89845,6 +89901,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2007_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2007_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -90361,7 +90431,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
+    "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2007_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -90529,6 +90599,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2007_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2007_binary.dwg",
     "converter": "oda 27.1.0.143450",
@@ -91045,7 +91129,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
+    "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2010_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -91213,6 +91297,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2010_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2010_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -91729,7 +91827,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
+    "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2010_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -91897,6 +91995,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2010_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2010_binary.dwg",
     "converter": "oda 27.1.0.143450",
@@ -92413,7 +92525,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
+    "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2013_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -92581,6 +92693,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2013_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2013_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -93097,7 +93223,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
+    "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2013_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -93265,6 +93391,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2013_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2013_binary.dwg",
     "converter": "oda 27.1.0.143450",
@@ -93781,7 +93921,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
+    "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2018_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -93949,6 +94089,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2018_ASCII.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2018_ASCII.dwg",
     "converter": "oda 27.1.0.143450",
@@ -94465,7 +94619,7 @@
     "expected": "*U77",
     "tolerance": 1e-08,
     "actual": "*U11",
-    "status": "differs",
+    "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2018_binary.dwg",
     "converter": "oda 27.1.0.143450",
     "self_read": false
@@ -94633,6 +94787,20 @@
     "expected": "F112_blockdefs_marker",
     "tolerance": 0,
     "actual": "F112_blockdefs_marker",
+    "status": "same",
+    "file": "cross/oda__bricscad/g_blocks_2018_binary.dwg",
+    "converter": "oda 27.1.0.143450",
+    "self_read": false
+  },
+  {
+    "intent_id": "feature_g_blocks",
+    "field": "F111_anonymous_block.block_circle_radius",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 1e-08,
+    "actual": [
+      3.0
+    ],
     "status": "same",
     "file": "cross/oda__bricscad/g_blocks_2018_binary.dwg",
     "converter": "oda 27.1.0.143450",

@@ -683,6 +683,31 @@
         "AC1027",
         "AC1032"
       ]
+    },
+    {
+      "id": "F111_anonymous_block.block_circle_radius",
+      "value": 3,
+      "selector": {
+        "kind": "feature_attr",
+        "name": "F111_anonymous_block",
+        "table": "INSERT",
+        "attr": "block_circle_radius"
+      },
+      "reference": {
+        "section": "Anonymous Blocks; BLOCK group 70; Open Design Specification section 20.4.52",
+        "source": "Autodesk DXF Reference and AutoLISP Reference; Open Design Specification",
+        "url": "https://help.autodesk.com/cloudhelp/2026/PLK/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm",
+        "basis": "Resolve the INSERT reference using Anonymous Blocks; BLOCK flags: https://help.autodesk.com/cloudhelp/2021/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm; Open Design Specification section 20.4.52: https://static.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf; independently authored circle radius 3; any circle may match"
+      },
+      "tolerance": 1e-08,
+      "versions": [
+        "AC1015",
+        "AC1018",
+        "AC1021",
+        "AC1024",
+        "AC1027",
+        "AC1032"
+      ]
     }
   ],
   "feature_fields": {
@@ -734,7 +759,8 @@
     ],
     "F111_anonymous_block": [
       "F111_anonymous_block.name",
-      "F111_anonymous_block.layer"
+      "F111_anonymous_block.layer",
+      "F111_anonymous_block.block_circle_radius"
     ],
     "F112_blockdefs_marker": [
       "F112_blockdefs_marker.layer"

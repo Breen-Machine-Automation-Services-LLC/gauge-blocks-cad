@@ -61,6 +61,7 @@ def master_g():
     msp.add_linear_dim(base=(60, 70), p1=(60, 60), p2=(90, 60), dimstyle='G_NONE', dxfattribs={'layer': 'F110_none_arrowhead'}).render()
     lay(d, 'F111_anonymous_block')
     an = d.blocks.new('*U77')
+    an.block.dxf.flags |= 1
     an.add_circle((0, 0), 3, dxfattribs={'layer': 'F111_anonymous_block'})
     msp.add_blockref('*U77', (110, 70), dxfattribs={'layer': 'F111_anonymous_block'})
     lay(d, 'F112_blockdefs_marker')

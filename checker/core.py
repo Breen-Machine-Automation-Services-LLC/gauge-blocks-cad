@@ -34,6 +34,50 @@ def digest(d):
   if e.dxftype() in ACIS_TYPES:canonical=acis_canonical(tags)
   entities.append(canonical)
  return hashlib.sha256(json.dumps([sorted(headers),entities],sort_keys=True).encode()).hexdigest()
+# Names use ASCII case equivalence for the authored symbol alphabet. Other text stays literal.
+def name_key(value):
+ return value.translate(str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')) if isinstance(value,str) else value
+def same_name(a,b):return name_key(a)==name_key(b)
+def symbol_item(table,name):
+ return next(e for e in table if same_name(e.name if hasattr(e,'block') else e.dxf.name,name))
+def dictionary_item(dictionary,name):
+ keys=[key for key in dictionary.keys() if same_name(key,name)]
+ if len(keys)>1:raise ValueError('Ambiguous dictionary key: '+name)
+ if not keys:raise KeyError(name)
+ return dictionary[keys[0]]
+def named_layout(d,name):
+ entry=dictionary_item(dictionary_item(d.rootdict,'ACAD_LAYOUT'),name)
+ return d.layouts.get(entry.dxf.name)
+def app_data(e,name):
+ keys=[key for key in e.xdata.data if same_name(key,name)] if e.xdata else []
+ if len(keys)!=1:raise KeyError('Missing or ambiguous application: '+name)
+ return e.get_xdata(keys[0])
+SYMBOL_ATTRS={'layer','linetype','style','dimstyle','ucs','view','viewport','appid'}
+SYMBOL_TABLES={'layers','linetypes','styles','dimstyles','views','ucs','viewports','appids','blocks'}
+def symbol_attr(attr,table):
+ return attr in SYMBOL_ATTRS or (attr=='name' and table in SYMBOL_TABLES|{'INSERT','DIMENSION'})
+def feature_entity(d,s):
+ return next(e for e in d.entitydb.values() if e.is_alive and e.dxftype()==s['table'] and same_name(layer_of(e),s['name']))
+def symbol_query(space,query):
+ # Select entity types publicly and apply the shared symbol-name rule ourselves.
+ if re.fullmatch(r'\s*(?:[A-Z0-9_]+\s*)+\s*',query):return list(space.query(query))
+ match=re.fullmatch(r"\s*(\*|[A-Z0-9_]+)\s*\[\s*(layer|name)\s*==\s*(['\"])(.*?)\3\s*\]\s*",query)
+ if not match:raise ValueError('Unsupported query_count query: '+query)
+ typ,attr,_,value=match.groups()
+ if attr=='name' and typ!='INSERT':raise ValueError('Unsupported query_count name operand: '+query)
+ return [e for e in space.query(typ) if same_name(getattr(e.dxf,attr),value)]
+
+def proxy_payload(e):
+ tags=TagCollector.dxftags(e);subclass=None;envelope=None;values=[]
+ for t in tags:
+  if t.code==100:subclass=t.value
+  if t.code in (90,40):
+   if e.dxftype() in {'ACAD_PROXY_OBJECT','ACAD_PROXY_ENTITY'} and subclass in {'AcDbProxyObject','AcDbProxyEntity'} and envelope is None and t.code==90:
+    if t.value!={'ACAD_PROXY_OBJECT':499,'ACAD_PROXY_ENTITY':498}[e.dxftype()]:raise ValueError('Invalid proxy class-ID envelope for '+e.dxftype())
+    envelope=t.value;continue
+   values.append([t.code,t.value])
+ if e.dxftype() in {'ACAD_PROXY_OBJECT','ACAD_PROXY_ENTITY'} and envelope is None:raise ValueError('Missing proxy class-ID envelope')
+ return values
 def layer_of(e):
  # Exported tags first (as before); ezdxf exports no tags for ACIS entities before R2013, so fall back to the loaded attribute.
  value=next((t.value for t in TagCollector.dxftags(e) if t.code==8),None)
@@ -43,7 +87,7 @@ def table_tags(e):
  tags=[(t.code,t.value) for t in TagCollector.dxftags(e)]
  return tags[next(i for i,t in enumerate(tags) if t==(100,'AcDbTable')):]
 def redraw_layout(d, name):
- e=next(e for e in d.entitydb.values() if e.is_alive and layer_of(e)==name and hasattr(e,'get_layout'))
+ e=next(e for e in d.entitydb.values() if e.is_alive and same_name(layer_of(e),name) and hasattr(e,'get_layout'))
  layout=e.get_layout()
  if layout is None:raise ValueError('Draw-order entity has no space: '+name)
  return layout
@@ -61,7 +105,7 @@ def literal_redraw_order(layout):
 def extract(d,s):
  kind=s['kind'];name=s.get('name');attr=s.get('attr')
  if kind=='feature_attr':
-  e=next(e for e in d.entitydb.values() if e.is_alive and e.dxftype()==s['table'] and layer_of(e)==name)
+  e=feature_entity(d,s)
   if attr=='alignment_rotation_error':
    delta=e.dxf.align_point-e.dxf.insert
    angle=math.degrees(math.atan2(delta.y,delta.x))
@@ -81,7 +125,11 @@ def extract(d,s):
   if attr=='loop_flags':return [p.path_type_flags for p in e.paths]
   if attr=='gradient_rotation':return e.gradient.rotation
   if attr=='fit_points':return [list(v) for v in e.fit_points]
-  if attr=='extension_record':return [list(t) for t in e.get_extension_dict()['G_XR'].tags]
+  if attr=='extension_record':return [list(t) for t in dictionary_item(e.get_extension_dict(),'G_XR').tags]
+  if attr=='block_circle_radius':
+   radii=[x.dxf.radius for x in symbol_item(d.blocks,e.dxf.name) if x.dxftype()=='CIRCLE']
+   if not radii:raise ValueError('Referenced block contains no CIRCLE')
+   return radii
   if attr=='opaque_values':return [list(t) for t in TagCollector.dxftags(e) if t.code in [90,40]]
   if attr=='has_embedded_mtext':return e.has_embedded_mtext_entity
   if attr=='points':return [list(p) for p in e.get_points('xyseb')]
@@ -90,51 +138,75 @@ def extract(d,s):
   value=getattr(e.dxf,attr)
   return 0 if value is None and attr=='width' else value
  if kind=='table':
-  value=getattr(getattr(d,s['table']).get(name).dxf,attr)
+  value=getattr(symbol_item(getattr(d,s['table']),name).dxf,attr)
   # VIEW center is a 2D DCS point in the Reference.
   if s['table']=='views' and attr=='center':return list(value)[:2]
   return value
  if kind=='block':
-  b=d.blocks.get(name)
-  if attr=='inserts':return len(d.modelspace().query('INSERT[name=="'+name+'"]'))
+  b=symbol_item(d.blocks,name)
+  if attr=='inserts':return sum(same_name(e.dxf.name,name) for e in d.modelspace().query('INSERT'))
   return [e.dxf.get(attr) for e in b if e.dxftype()=='ATTDEF']
- if kind=='identity':return [t.value for t in d.modelspace().block_record.block.get_xdata('ZEV_IDENTITY')]
- if kind=='query_count':return len(d.modelspace().query(s['name']))
+ if kind=='identity':return [t.value for t in app_data(d.modelspace().block_record.block,'ZEV_IDENTITY')]
+ if kind=='query_count':return len(symbol_query(d.modelspace(),s['name']))
  if kind=='insert_attributes':return [[a.dxf.tag,a.dxf.text] for e in d.modelspace().query('INSERT') for a in e.attribs]
- if kind=='linetype_pattern':return [list(t) for t in d.linetypes.get(name).pattern_tags.tags if t.code in [72,73,40,49]]
+ if kind=='linetype_pattern':return [list(t) for t in symbol_item(d.linetypes,name).pattern_tags.tags if t.code in [72,73,40,49]]
  if kind=='complex_pattern':
-  tags=d.linetypes.get(name).pattern_tags.tags
+  tags=symbol_item(d.linetypes,name).pattern_tags.tags
   if attr=='style':return d.entitydb[next(t.value for t in tags if t.code==340)].dxf.name
   code={'text':9,'scale':46,'rotation':50,'xoffset':44,'yoffset':45,'element_type':74}[attr]
   return next(t.value for t in tags if t.code==code and (code!=74 or t.value!=0))
- if kind=='layer_count':return len([x for x in d.layers if x.dxf.name.startswith('ZEV_')])
- if kind=='layout_count':return len(d.layouts.get(name))
- if kind=='viewport_freeze':return list(next(v for v in d.layouts.get('ZEV_PAPER').viewports() if v.dxf.id!=1).frozen_layers)
+ if kind=='layer_count':return len([x for x in d.layers if name_key(x.dxf.name).startswith(name_key('ZEV_'))])
+ if kind=='layout_count':return len(named_layout(d,name))
+ if kind=='viewport_freeze':return list(next(v for v in named_layout(d,'ZEV_PAPER').viewports() if v.dxf.id!=1).frozen_layers)
  if kind=='viewport_color':
-  v=next(v for v in d.layouts.get('ZEV_PAPER').viewports() if v.dxf.id!=1)
-  return d.layers.get(name).get_vp_overrides().get_color(v.dxf.handle)
+  v=next(v for v in named_layout(d,'ZEV_PAPER').viewports() if v.dxf.id!=1)
+  return symbol_item(d.layers,name).get_vp_overrides().get_color(v.dxf.handle)
  if kind=='object':
-  e=d.rootdict[name] if s['dictionary']=='ROOT' else d.rootdict[s['dictionary']][name]
+  e=dictionary_item(d.rootdict,name) if s['dictionary']=='ROOT' else dictionary_item(dictionary_item(d.rootdict,s['dictionary']),name)
   if attr=='tags':return [list(t) for t in e.tags]
   if attr=='opaque_values':return [list(t) for t in TagCollector.dxftags(e) if t.code in [90,40]]
-  if attr=='acad_marker':return [list(t) for t in e.get_xdata('ACAD')]
-  if s['dictionary']=='ACAD_SCALELIST':
+  if attr=='acad_marker':return [list(t) for t in app_data(e,'ACAD')]
+  if same_name(s['dictionary'],'ACAD_SCALELIST'):
    code={'name':300,'paper_units':140,'drawing_units':141}[attr]
    return next(t.value for t in TagCollector.dxftags(e) if t.code==code)
   return e.dxf.get(attr)
- if kind=='xdata':return [list(t) for t in next(e for e in d.modelspace() if e.has_xdata('ZEV_APP')).get_xdata('ZEV_APP')]
- if kind=='xrecord':return [list(t) for t in next(e for e in d.modelspace() if e.has_extension_dict).get_extension_dict()['ZEV_RECORD'].tags]
- if kind=='group':return len(d.groups.get(name))
+ if kind=='xdata':
+  for e in d.modelspace():
+   if e.xdata and any(same_name(key,'ZEV_APP') for key in e.xdata.data):return [list(t) for t in app_data(e,'ZEV_APP')]
+  raise KeyError('ZEV_APP')
+ if kind=='xrecord':return [list(t) for t in dictionary_item(next(e for e in d.modelspace() if e.has_extension_dict).get_extension_dict(),'ZEV_RECORD').tags]
+ if kind=='group':return len(dictionary_item(dictionary_item(d.rootdict,'ACAD_GROUP'),name))
  raise ValueError(kind)
 def equal(a,b,tol):
  if isinstance(a,(int,float)) and isinstance(b,(int,float)):return math.isclose(a,b,abs_tol=tol,rel_tol=0)
  if isinstance(a,list) and isinstance(b,list):return len(a)==len(b) and all(equal(x,y,tol) for x,y in zip(a,b))
  return a==b
+def semantic_equal(d,f,actual):
+ s=f['selector'];kind=s['kind'];attr=s.get('attr');expected=f['value'];tol=f['tolerance']
+ if kind=='feature_attr' and s.get('table')=='INSERT' and attr=='name' and re.fullmatch(r'\*U[0-9]+',expected,re.I):
+  b=symbol_item(d.blocks,actual)
+  return bool(re.fullmatch(r'\*U[0-9]+',actual,re.I) and b.block.dxf.flags & 1)
+ if attr=='block_circle_radius':return any(equal(radius,expected,tol) for radius in actual)
+ if attr=='frozen_layers' or kind=='viewport_freeze':return {name_key(x) for x in actual}=={name_key(x) for x in expected}
+ if attr=='redraw_order':return equal([name_key(x) for x in actual if any(same_name(x,y) for y in expected)],[name_key(x) for x in expected],tol)
+ if symbol_attr(attr,s.get('table')) or (kind=='complex_pattern' and attr=='style'):return same_name(actual,expected)
+ if kind=='table' and s['table']=='layers' and attr=='flags':return equal(actual & ~64,expected & ~64,tol)
+ if attr=='opaque_values':
+  e=feature_entity(d,s) if kind=='feature_attr' else (dictionary_item(d.rootdict,s['name']) if s['dictionary']=='ROOT' else dictionary_item(dictionary_item(d.rootdict,s['dictionary']),s['name']))
+  return equal(proxy_payload(e),expected,tol)
+ if kind=='linetype_pattern':
+  def pattern(tags):return sorted([t for t in tags if t[0]!=49],key=lambda t:t[0])+[t for t in tags if t[0]==49]
+  return equal(pattern(actual),pattern(expected),tol)
+ return equal(actual,expected,tol)
 def recomputed_fit_width(d, selector):
  from ezdxf.tools.text_size import text_size
- e=next(e for e in d.entitydb.values() if e.is_alive and e.dxftype()==selector['table'] and layer_of(e)==selector['name'])
+ e=feature_entity(d,selector)
  span=(e.dxf.align_point-e.dxf.insert).magnitude
- unscaled=text_size(e).width/e.dxf.width
+ # Resolve the font's symbol reference without changing the loaded entity.
+ measured=e.copy()
+ try:measured.dxf.style=symbol_item(d.styles,e.dxf.style).dxf.name
+ except StopIteration:pass
+ unscaled=text_size(measured).width/e.dxf.width
  return span/unscaled
 
 def compare(d,intent,reader,source_version=None):
@@ -146,14 +218,14 @@ def compare(d,intent,reader,source_version=None):
    actual=extract(d,f['selector'])
    if f['selector'].get('attr')=='redraw_order':
     row['detail']={'literal_table':literal_redraw_order(redraw_layout(d,f['selector']['name'])),'effective_space_order':actual}
-    actual=[name for name in actual if name in f['value']]
    actual=json.loads(json.dumps(actual,default=list));row['actual']=actual
-   same=equal(actual,f['value'],f['tolerance'])
+   same=semantic_equal(d,f,actual)
    if not same and 'recomputed_width_relative_tolerance' in f:
     recomputed=recomputed_fit_width(d,f['selector'])
     same=abs(actual-recomputed)<=abs(recomputed)*f['recomputed_width_relative_tolerance']
     row['detail']='Font-measured Fit width factor '+str(recomputed)+'; relative tolerance '+str(f['recomputed_width_relative_tolerance'])
    row['status']='same' if same else 'differs'
-  except (KeyError,StopIteration,AttributeError,TypeError,IndexError,ValueError,DXFError) as ex:row.update(status='absent',actual=None,detail=str(ex))
+  except (KeyError,StopIteration,AttributeError,TypeError,IndexError,ValueError,DXFError) as ex:
+   row.update(status='absent',detail=str(ex));row.setdefault('actual',None)
   rows.append(row)
  return rows
