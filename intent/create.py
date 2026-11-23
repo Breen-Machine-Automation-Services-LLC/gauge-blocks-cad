@@ -1,7 +1,12 @@
 """Author explicit independent expectations, never read generated drawings."""
 import json
 from pathlib import Path
-from references import author_references
+try:
+ from intent.references import author_references
+except ModuleNotFoundError as exc:
+ if exc.name != 'intent':
+  raise
+ from references import author_references
 ROOT=Path(__file__).resolve().parent
 ALL=['AC1009','AC1015','AC1018','AC1021','AC1024','AC1027','AC1032']; MOD=ALL[1:]
 def make(topic):return {'intent_id':'background_'+topic,'title':topic.title(),'description':'Synthetic background '+topic,'representation_id':'reference_1','features':[],'expected':[]}
