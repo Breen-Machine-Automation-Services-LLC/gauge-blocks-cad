@@ -23,7 +23,9 @@ ran, their outcomes, and anything you did not run.
 
 Use synthetic content only: invented values with no real company, person, or place
 names, local paths, or third-party fonts and images. Code and data are
-[MIT](LICENSE-MIT) OR [Apache-2.0](LICENSE-APACHE).
+[MIT](LICENSE-MIT) OR [Apache-2.0](LICENSE-APACHE). Unless you say otherwise,
+anything you contribute is licensed the same way, as MIT OR Apache-2.0, with no
+additional terms.
 
 ## Report a result that looks wrong
 
