@@ -5,7 +5,15 @@ Synthetic drawings to help you build CAD software that works across programs.
 ## Why this exists
 
 We want to support the creation and testing of open CAD programs for maximum interoperability with other CAD applications and standards.
-You can use these examples to find where drawing content survives an exchange and where it changes.
+It helps you answer:
+
+1. Can my program read what other programs write, and everything the standard allows?
+2. Can other programs read what my program writes?
+3. Does my program follow the standard where one is published?
+4. What does each program write for each feature?
+5. Is there a read set and a write set I can check my program against automatically?
+
+The read set is here now: the drawings in this repository, covering the variety of forms we have collected. A write set will follow in a later release, derived from measured results: forms every measured program reads back intact, with the most widely compatible form used where a standard is silent.
 
 ## What this is
 
