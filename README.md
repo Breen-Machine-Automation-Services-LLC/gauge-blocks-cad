@@ -3,7 +3,8 @@
 This repo includes synthetic CAD drawings, the scripts that create them, and measured results.
 It is for you if you build or maintain software that reads or writes DWG or DXF and want to
 know which content survives a trip between programs. The drawings are ordinary files,
-about 560 MB checked out. They are not calibrated standards or a certification of any program.
+about 560 MB checked out. They're a best-effort example of how these programs represent
+features and settings, not affiliated with any CAD vendor or standards body.
 
 ## Quick start
 
