@@ -11,7 +11,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -31,6 +31,40 @@
   {
     "intent_id": "future_k_regions_solids",
     "field": "F152_region.acis_body_count",
+    "reader": "ezdxf 1.4.4",
+    "expected": 1,
+    "tolerance": 0,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
+    "file": "cross/bricscad__oda/k_regions_solids_2000_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_regions_solids",
+    "field": "F154_solid3d.count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
@@ -40,7 +74,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -59,17 +93,22 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.count",
+    "field": "F154_solid3d.acis_body_count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2000_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -88,54 +127,34 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_body_count",
+    "field": "F154_solid3d.acis_bbox_size",
     "reader": "ezdxf 1.4.4",
-    "expected": 1,
-    "tolerance": 0,
-    "actual": 1,
+    "expected": [
+      12,
+      8,
+      6
+    ],
+    "tolerance": 1e-06,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2000_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_bbox_size",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      12,
-      8,
-      6
-    ],
-    "tolerance": 1e-06,
-    "actual": [
-      12.0,
-      8.0,
-      6.0
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_regions_solids_2000_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -164,7 +183,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -184,6 +203,40 @@
   {
     "intent_id": "future_k_regions_solids",
     "field": "F152_region.acis_body_count",
+    "reader": "ezdxf 1.4.4",
+    "expected": 1,
+    "tolerance": 0,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
+    "file": "cross/bricscad__oda/k_regions_solids_2000_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_regions_solids",
+    "field": "F154_solid3d.count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
@@ -193,7 +246,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -212,17 +265,22 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.count",
+    "field": "F154_solid3d.acis_body_count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2000_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -241,54 +299,34 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_body_count",
+    "field": "F154_solid3d.acis_bbox_size",
     "reader": "ezdxf 1.4.4",
-    "expected": 1,
-    "tolerance": 0,
-    "actual": 1,
+    "expected": [
+      12,
+      8,
+      6
+    ],
+    "tolerance": 1e-06,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2000_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_bbox_size",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      12,
-      8,
-      6
-    ],
-    "tolerance": 1e-06,
-    "actual": [
-      12.0,
-      8.0,
-      6.0
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_regions_solids_2000_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -317,7 +355,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -340,14 +378,19 @@
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2000_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -376,7 +419,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -399,14 +442,19 @@
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2000_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -433,14 +481,23 @@
       6
     ],
     "tolerance": 1e-06,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2000_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -469,7 +526,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -489,6 +546,40 @@
   {
     "intent_id": "future_k_regions_solids",
     "field": "F152_region.acis_body_count",
+    "reader": "ezdxf 1.4.4",
+    "expected": 1,
+    "tolerance": 0,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
+    "file": "cross/bricscad__oda/k_regions_solids_2004_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_regions_solids",
+    "field": "F154_solid3d.count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
@@ -498,7 +589,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -517,17 +608,22 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.count",
+    "field": "F154_solid3d.acis_body_count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2004_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -546,54 +642,34 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_body_count",
+    "field": "F154_solid3d.acis_bbox_size",
     "reader": "ezdxf 1.4.4",
-    "expected": 1,
-    "tolerance": 0,
-    "actual": 1,
+    "expected": [
+      12,
+      8,
+      6
+    ],
+    "tolerance": 1e-06,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2004_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_bbox_size",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      12,
-      8,
-      6
-    ],
-    "tolerance": 1e-06,
-    "actual": [
-      12.0,
-      8.0,
-      6.0
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_regions_solids_2004_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -622,7 +698,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -642,6 +718,40 @@
   {
     "intent_id": "future_k_regions_solids",
     "field": "F152_region.acis_body_count",
+    "reader": "ezdxf 1.4.4",
+    "expected": 1,
+    "tolerance": 0,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
+    "file": "cross/bricscad__oda/k_regions_solids_2004_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_regions_solids",
+    "field": "F154_solid3d.count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
@@ -651,7 +761,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -670,17 +780,22 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.count",
+    "field": "F154_solid3d.acis_body_count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2004_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -699,54 +814,34 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_body_count",
+    "field": "F154_solid3d.acis_bbox_size",
     "reader": "ezdxf 1.4.4",
-    "expected": 1,
-    "tolerance": 0,
-    "actual": 1,
+    "expected": [
+      12,
+      8,
+      6
+    ],
+    "tolerance": 1e-06,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2004_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_bbox_size",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      12,
-      8,
-      6
-    ],
-    "tolerance": 1e-06,
-    "actual": [
-      12.0,
-      8.0,
-      6.0
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_regions_solids_2004_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -775,7 +870,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -798,14 +893,19 @@
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2004_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -834,7 +934,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -857,14 +957,19 @@
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2004_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -891,14 +996,23 @@
       6
     ],
     "tolerance": 1e-06,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2004_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -927,7 +1041,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -947,6 +1061,40 @@
   {
     "intent_id": "future_k_regions_solids",
     "field": "F152_region.acis_body_count",
+    "reader": "ezdxf 1.4.4",
+    "expected": 1,
+    "tolerance": 0,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
+    "file": "cross/bricscad__oda/k_regions_solids_2007_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_regions_solids",
+    "field": "F154_solid3d.count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
@@ -956,7 +1104,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -975,17 +1123,22 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.count",
+    "field": "F154_solid3d.acis_body_count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2007_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1004,54 +1157,34 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_body_count",
+    "field": "F154_solid3d.acis_bbox_size",
     "reader": "ezdxf 1.4.4",
-    "expected": 1,
-    "tolerance": 0,
-    "actual": 1,
+    "expected": [
+      12,
+      8,
+      6
+    ],
+    "tolerance": 1e-06,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2007_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_bbox_size",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      12,
-      8,
-      6
-    ],
-    "tolerance": 1e-06,
-    "actual": [
-      12.0,
-      8.0,
-      6.0
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_regions_solids_2007_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1080,7 +1213,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1100,6 +1233,40 @@
   {
     "intent_id": "future_k_regions_solids",
     "field": "F152_region.acis_body_count",
+    "reader": "ezdxf 1.4.4",
+    "expected": 1,
+    "tolerance": 0,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
+    "file": "cross/bricscad__oda/k_regions_solids_2007_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_regions_solids",
+    "field": "F154_solid3d.count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
@@ -1109,7 +1276,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1128,17 +1295,22 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.count",
+    "field": "F154_solid3d.acis_body_count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2007_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1157,54 +1329,34 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_body_count",
+    "field": "F154_solid3d.acis_bbox_size",
     "reader": "ezdxf 1.4.4",
-    "expected": 1,
-    "tolerance": 0,
-    "actual": 1,
+    "expected": [
+      12,
+      8,
+      6
+    ],
+    "tolerance": 1e-06,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2007_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_bbox_size",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      12,
-      8,
-      6
-    ],
-    "tolerance": 1e-06,
-    "actual": [
-      12.0,
-      8.0,
-      6.0
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_regions_solids_2007_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1233,7 +1385,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1256,14 +1408,19 @@
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2007_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1292,7 +1449,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1315,14 +1472,19 @@
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2007_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1349,14 +1511,23 @@
       6
     ],
     "tolerance": 1e-06,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2007_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1385,7 +1556,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1405,6 +1576,40 @@
   {
     "intent_id": "future_k_regions_solids",
     "field": "F152_region.acis_body_count",
+    "reader": "ezdxf 1.4.4",
+    "expected": 1,
+    "tolerance": 0,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
+    "file": "cross/bricscad__oda/k_regions_solids_2010_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_regions_solids",
+    "field": "F154_solid3d.count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
@@ -1414,7 +1619,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1433,17 +1638,22 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.count",
+    "field": "F154_solid3d.acis_body_count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2010_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1462,54 +1672,34 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_body_count",
+    "field": "F154_solid3d.acis_bbox_size",
     "reader": "ezdxf 1.4.4",
-    "expected": 1,
-    "tolerance": 0,
-    "actual": 1,
+    "expected": [
+      12,
+      8,
+      6
+    ],
+    "tolerance": 1e-06,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2010_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_bbox_size",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      12,
-      8,
-      6
-    ],
-    "tolerance": 1e-06,
-    "actual": [
-      12.0,
-      8.0,
-      6.0
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_regions_solids_2010_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1538,7 +1728,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1558,6 +1748,40 @@
   {
     "intent_id": "future_k_regions_solids",
     "field": "F152_region.acis_body_count",
+    "reader": "ezdxf 1.4.4",
+    "expected": 1,
+    "tolerance": 0,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
+    "file": "cross/bricscad__oda/k_regions_solids_2010_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_regions_solids",
+    "field": "F154_solid3d.count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
@@ -1567,7 +1791,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1586,17 +1810,22 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.count",
+    "field": "F154_solid3d.acis_body_count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2010_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1615,54 +1844,34 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_body_count",
+    "field": "F154_solid3d.acis_bbox_size",
     "reader": "ezdxf 1.4.4",
-    "expected": 1,
-    "tolerance": 0,
-    "actual": 1,
+    "expected": [
+      12,
+      8,
+      6
+    ],
+    "tolerance": 1e-06,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2010_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_bbox_size",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      12,
-      8,
-      6
-    ],
-    "tolerance": 1e-06,
-    "actual": [
-      12.0,
-      8.0,
-      6.0
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_regions_solids_2010_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1691,7 +1900,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1714,14 +1923,19 @@
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2010_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1750,7 +1964,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1773,14 +1987,19 @@
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2010_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1807,14 +2026,23 @@
       6
     ],
     "tolerance": 1e-06,
-    "status": "absent",
-    "detail": "list index out of range",
-    "actual": null,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": null,
+      "status": "reader_error",
+      "detail": "ezdxf 1.4.4 IndexError: list index out of range; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2010_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1843,7 +2071,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1863,6 +2091,40 @@
   {
     "intent_id": "future_k_regions_solids",
     "field": "F152_region.acis_body_count",
+    "reader": "ezdxf 1.4.4",
+    "expected": 1,
+    "tolerance": 0,
+    "actual": 1,
+    "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
+    "file": "cross/bricscad__oda/k_regions_solids_2013_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_regions_solids",
+    "field": "F154_solid3d.count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
@@ -1872,7 +2134,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1891,17 +2153,22 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.count",
+    "field": "F154_solid3d.acis_body_count",
     "reader": "ezdxf 1.4.4",
     "expected": 1,
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2013_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1920,54 +2187,34 @@
   },
   {
     "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_body_count",
+    "field": "F154_solid3d.acis_bbox_size",
     "reader": "ezdxf 1.4.4",
-    "expected": 1,
-    "tolerance": 0,
-    "actual": 1,
+    "expected": [
+      12,
+      8,
+      6
+    ],
+    "tolerance": 1e-06,
+    "actual": [
+      12.0,
+      8.0,
+      6.0
+    ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2013_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_regions_solids",
-    "field": "F154_solid3d.acis_bbox_size",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      12,
-      8,
-      6
-    ],
-    "tolerance": 1e-06,
-    "actual": [
-      12.0,
-      8.0,
-      6.0
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_regions_solids_2013_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -1996,7 +2243,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2021,11 +2268,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2013_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2054,7 +2306,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2079,11 +2331,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2013_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2116,11 +2373,20 @@
       6.0
     ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2013_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2149,7 +2415,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2174,11 +2440,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2013_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2207,7 +2478,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2232,11 +2503,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2013_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2269,11 +2545,20 @@
       6.0
     ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2013_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2302,7 +2587,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2327,11 +2612,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2018_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2360,7 +2650,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2385,11 +2675,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2018_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2422,11 +2717,20 @@
       6.0
     ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2018_ASCII.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2455,7 +2759,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2480,11 +2784,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2018_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2513,7 +2822,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2538,11 +2847,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2018_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2575,11 +2889,20 @@
       6.0
     ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2018_binary.dwg",
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2608,7 +2931,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2633,11 +2956,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2018_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2666,7 +2994,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2691,11 +3019,16 @@
     "tolerance": 0,
     "actual": 1,
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": 1,
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2018_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2728,11 +3061,20 @@
       6.0
     ],
     "status": "same",
+    "read_observation": {
+      "reader": "ezdxf 1.4.4",
+      "actual": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "status": "same"
+    },
     "file": "cross/bricscad__oda/k_regions_solids_2018_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2761,7 +3103,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2790,7 +3132,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2841,7 +3183,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2870,7 +3212,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2899,7 +3241,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2942,7 +3284,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -2971,7 +3313,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3000,7 +3342,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3051,7 +3393,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3080,7 +3422,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3109,7 +3451,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3152,7 +3494,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3181,7 +3523,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3210,7 +3552,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3261,7 +3603,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3290,7 +3632,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3319,7 +3661,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3362,7 +3704,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3391,7 +3733,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3420,7 +3762,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3471,7 +3813,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3500,7 +3842,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3529,7 +3871,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3572,7 +3914,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3601,7 +3943,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3630,7 +3972,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3681,7 +4023,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3710,7 +4052,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3739,7 +4081,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3782,7 +4124,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3811,7 +4153,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3840,7 +4182,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3891,7 +4233,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3920,7 +4262,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3949,7 +4291,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -3992,7 +4334,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4021,7 +4363,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4050,7 +4392,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4101,7 +4443,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4130,7 +4472,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4159,7 +4501,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4202,7 +4544,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4231,7 +4573,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4260,7 +4602,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4311,7 +4653,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4340,7 +4682,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4369,7 +4711,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4412,7 +4754,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4441,7 +4783,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4470,7 +4812,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4521,7 +4863,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4550,7 +4892,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4579,7 +4921,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4621,7 +4963,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4650,7 +4992,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4679,7 +5021,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4730,7 +5072,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4759,7 +5101,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4788,7 +5130,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4831,7 +5173,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4860,7 +5202,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4889,7 +5231,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4940,7 +5282,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4969,7 +5311,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -4998,7 +5340,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -5041,7 +5383,7 @@
     "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -5070,7 +5412,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -5099,7 +5441,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -5150,7 +5492,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -5179,7 +5521,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -5208,636 +5550,7 @@
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F151_table_plain.table_cell_text",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      "A1",
-      "B1",
-      "A2",
-      "B2",
-      "A3",
-      "B3"
-    ],
-    "tolerance": 0,
-    "actual": [
-      "A1",
-      "A2",
-      "B2",
-      "A3",
-      "B3"
-    ],
-    "status": "differs",
-    "file": "cross/bricscad__oda/k_tables_2013_binary.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F150_table_merged_title.table_rows",
-    "reader": "ezdxf 1.4.4",
-    "expected": 4,
-    "tolerance": 0,
-    "actual": 4,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F150_table_merged_title.table_columns",
-    "reader": "ezdxf 1.4.4",
-    "expected": 3,
-    "tolerance": 0,
-    "actual": 3,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F150_table_merged_title.table_cell_text",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      "Merged Title Row",
-      "Item",
-      "Qty",
-      "Note",
-      "Widget",
-      "12",
-      "red",
-      "Gadget",
-      "7",
-      "blue"
-    ],
-    "tolerance": 0,
-    "actual": [
-      "Merged Title Row",
-      "Item",
-      "Qty",
-      "Note",
-      "Widget",
-      "12",
-      "red",
-      "Gadget",
-      "7",
-      "blue"
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F151_table_plain.table_rows",
-    "reader": "ezdxf 1.4.4",
-    "expected": 3,
-    "tolerance": 0,
-    "actual": 3,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F151_table_plain.table_columns",
-    "reader": "ezdxf 1.4.4",
-    "expected": 2,
-    "tolerance": 0,
-    "actual": 2,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F151_table_plain.table_cell_text",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      "A1",
-      "B1",
-      "A2",
-      "B2",
-      "A3",
-      "B3"
-    ],
-    "tolerance": 0,
-    "actual": [
-      "A1",
-      "B1",
-      "A2",
-      "B2",
-      "A3",
-      "B3"
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F150_table_merged_title.table_rows",
-    "reader": "ezdxf 1.4.4",
-    "expected": 4,
-    "tolerance": 0,
-    "actual": 4,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F150_table_merged_title.table_columns",
-    "reader": "ezdxf 1.4.4",
-    "expected": 3,
-    "tolerance": 0,
-    "actual": 3,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F150_table_merged_title.table_cell_text",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      "Merged Title Row",
-      "Item",
-      "Qty",
-      "Note",
-      "Widget",
-      "12",
-      "red",
-      "Gadget",
-      "7",
-      "blue"
-    ],
-    "tolerance": 0,
-    "actual": [
-      "Merged Title Row",
-      "Item",
-      "Qty",
-      "Note",
-      "Widget",
-      "12",
-      "red",
-      "Gadget",
-      "7",
-      "blue"
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F151_table_plain.table_rows",
-    "reader": "ezdxf 1.4.4",
-    "expected": 3,
-    "tolerance": 0,
-    "actual": 3,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F151_table_plain.table_columns",
-    "reader": "ezdxf 1.4.4",
-    "expected": 2,
-    "tolerance": 0,
-    "actual": 2,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F151_table_plain.table_cell_text",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      "A1",
-      "B1",
-      "A2",
-      "B2",
-      "A3",
-      "B3"
-    ],
-    "tolerance": 0,
-    "actual": [
-      "A1",
-      "B1",
-      "A2",
-      "B2",
-      "A3",
-      "B3"
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
-    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "oda-teigha",
-    "shared_engine": true
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F150_table_merged_title.table_rows",
-    "reader": "ezdxf 1.4.4",
-    "expected": 4,
-    "tolerance": 0,
-    "actual": 4,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F150_table_merged_title.table_columns",
-    "reader": "ezdxf 1.4.4",
-    "expected": 3,
-    "tolerance": 0,
-    "actual": 3,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F150_table_merged_title.table_cell_text",
-    "reader": "ezdxf 1.4.4",
-    "expected": [
-      "Merged Title Row",
-      "Item",
-      "Qty",
-      "Note",
-      "Widget",
-      "12",
-      "red",
-      "Gadget",
-      "7",
-      "blue"
-    ],
-    "tolerance": 0,
-    "actual": [
-      "Merged Title Row",
-      "Item",
-      "Qty",
-      "Note",
-      "Widget",
-      "12",
-      "red",
-      "Gadget",
-      "7",
-      "blue"
-    ],
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F151_table_plain.table_rows",
-    "reader": "ezdxf 1.4.4",
-    "expected": 3,
-    "tolerance": 0,
-    "actual": 3,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
-      "ezdxf": "1.4.4",
-      "versions": {
-        "2000": "AC1015",
-        "2004": "AC1018",
-        "2007": "AC1021",
-        "2010": "AC1024",
-        "2013": "AC1027",
-        "2018": "AC1032",
-        "R12": "AC1009"
-      },
-      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
-    },
-    "writer_engine": "oda-teigha",
-    "reader_engine": "ezdxf",
-    "shared_engine": false
-  },
-  {
-    "intent_id": "future_k_tables",
-    "field": "F151_table_plain.table_columns",
-    "reader": "ezdxf 1.4.4",
-    "expected": 2,
-    "tolerance": 0,
-    "actual": 2,
-    "status": "same",
-    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
-    "converter": null,
-    "self_read": false,
-    "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -5875,11 +5588,640 @@
       "B3"
     ],
     "status": "differs",
+    "file": "cross/bricscad__oda/k_tables_2013_binary.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F150_table_merged_title.table_rows",
+    "reader": "ezdxf 1.4.4",
+    "expected": 4,
+    "tolerance": 0,
+    "actual": 4,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F150_table_merged_title.table_columns",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 0,
+    "actual": 3,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F150_table_merged_title.table_cell_text",
+    "reader": "ezdxf 1.4.4",
+    "expected": [
+      "Merged Title Row",
+      "Item",
+      "Qty",
+      "Note",
+      "Widget",
+      "12",
+      "red",
+      "Gadget",
+      "7",
+      "blue"
+    ],
+    "tolerance": 0,
+    "actual": [
+      "Merged Title Row",
+      "Item",
+      "Qty",
+      "Note",
+      "Widget",
+      "12",
+      "red",
+      "Gadget",
+      "7",
+      "blue"
+    ],
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F151_table_plain.table_rows",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 0,
+    "actual": 3,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F151_table_plain.table_columns",
+    "reader": "ezdxf 1.4.4",
+    "expected": 2,
+    "tolerance": 0,
+    "actual": 2,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F151_table_plain.table_cell_text",
+    "reader": "ezdxf 1.4.4",
+    "expected": [
+      "A1",
+      "B1",
+      "A2",
+      "B2",
+      "A3",
+      "B3"
+    ],
+    "tolerance": 0,
+    "actual": [
+      "A1",
+      "B1",
+      "A2",
+      "B2",
+      "A3",
+      "B3"
+    ],
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_ASCII.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F150_table_merged_title.table_rows",
+    "reader": "ezdxf 1.4.4",
+    "expected": 4,
+    "tolerance": 0,
+    "actual": 4,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F150_table_merged_title.table_columns",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 0,
+    "actual": 3,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F150_table_merged_title.table_cell_text",
+    "reader": "ezdxf 1.4.4",
+    "expected": [
+      "Merged Title Row",
+      "Item",
+      "Qty",
+      "Note",
+      "Widget",
+      "12",
+      "red",
+      "Gadget",
+      "7",
+      "blue"
+    ],
+    "tolerance": 0,
+    "actual": [
+      "Merged Title Row",
+      "Item",
+      "Qty",
+      "Note",
+      "Widget",
+      "12",
+      "red",
+      "Gadget",
+      "7",
+      "blue"
+    ],
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F151_table_plain.table_rows",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 0,
+    "actual": 3,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F151_table_plain.table_columns",
+    "reader": "ezdxf 1.4.4",
+    "expected": 2,
+    "tolerance": 0,
+    "actual": 2,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F151_table_plain.table_cell_text",
+    "reader": "ezdxf 1.4.4",
+    "expected": [
+      "A1",
+      "B1",
+      "A2",
+      "B2",
+      "A3",
+      "B3"
+    ],
+    "tolerance": 0,
+    "actual": [
+      "A1",
+      "B1",
+      "A2",
+      "B2",
+      "A3",
+      "B3"
+    ],
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dwg",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "oda-teigha",
+    "shared_engine": true
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F150_table_merged_title.table_rows",
+    "reader": "ezdxf 1.4.4",
+    "expected": 4,
+    "tolerance": 0,
+    "actual": 4,
+    "status": "same",
     "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
     "converter": null,
     "self_read": false,
     "scored_with": {
-      "checker": "e4e79a9622da8a3a08336a8c54ce546ec33589852750349df3072fa7cbfe0282",
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F150_table_merged_title.table_columns",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 0,
+    "actual": 3,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F150_table_merged_title.table_cell_text",
+    "reader": "ezdxf 1.4.4",
+    "expected": [
+      "Merged Title Row",
+      "Item",
+      "Qty",
+      "Note",
+      "Widget",
+      "12",
+      "red",
+      "Gadget",
+      "7",
+      "blue"
+    ],
+    "tolerance": 0,
+    "actual": [
+      "Merged Title Row",
+      "Item",
+      "Qty",
+      "Note",
+      "Widget",
+      "12",
+      "red",
+      "Gadget",
+      "7",
+      "blue"
+    ],
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F151_table_plain.table_rows",
+    "reader": "ezdxf 1.4.4",
+    "expected": 3,
+    "tolerance": 0,
+    "actual": 3,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F151_table_plain.table_columns",
+    "reader": "ezdxf 1.4.4",
+    "expected": 2,
+    "tolerance": 0,
+    "actual": 2,
+    "status": "same",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "writer_engine": "oda-teigha",
+    "reader_engine": "ezdxf",
+    "shared_engine": false
+  },
+  {
+    "intent_id": "future_k_tables",
+    "field": "F151_table_plain.table_cell_text",
+    "reader": "ezdxf 1.4.4",
+    "expected": [
+      "A1",
+      "B1",
+      "A2",
+      "B2",
+      "A3",
+      "B3"
+    ],
+    "tolerance": 0,
+    "actual": [
+      "A1",
+      "A2",
+      "B2",
+      "A3",
+      "B3"
+    ],
+    "status": "differs",
+    "file": "cross/bricscad__oda/k_tables_2018_binary.dxf",
+    "converter": null,
+    "self_read": false,
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",

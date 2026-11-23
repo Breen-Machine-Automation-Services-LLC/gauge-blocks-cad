@@ -1,0 +1,135 @@
+{
+  "cross/bricscad__oda/k_regions_solids_R12_ASCII.dxf": {
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "reader": "ezdxf 1.4.4",
+    "converter": null,
+    "read_input_digest": null
+  },
+  "cross/bricscad__oda/k_regions_solids_R12_binary.dxf": {
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "8fa9b13ebff4f16c2e1bb2445c2a4fb0b7760d04ff3801f61e3239bbff7ad84c"
+    },
+    "reader": "ezdxf 1.4.4",
+    "converter": null,
+    "read_input_digest": null
+  },
+  "cross/bricscad__oda/k_tables_2000_ASCII.dxf": {
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "reader": "ezdxf 1.4.4",
+    "converter": null,
+    "read_input_digest": null
+  },
+  "cross/bricscad__oda/k_tables_2000_binary.dwg": {
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "reader": "ezdxf 1.4.4",
+    "converter": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)",
+    "read_input_digest": null
+  },
+  "cross/bricscad__oda/k_tables_2000_binary.dxf": {
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "reader": "ezdxf 1.4.4",
+    "converter": null,
+    "read_input_digest": null
+  },
+  "cross/bricscad__oda/k_tables_R12_ASCII.dxf": {
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "reader": "ezdxf 1.4.4",
+    "converter": null,
+    "read_input_digest": null
+  },
+  "cross/bricscad__oda/k_tables_R12_binary.dxf": {
+    "scored_with": {
+      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "ezdxf": "1.4.4",
+      "versions": {
+        "2000": "AC1015",
+        "2004": "AC1018",
+        "2007": "AC1021",
+        "2010": "AC1024",
+        "2013": "AC1027",
+        "2018": "AC1032",
+        "R12": "AC1009"
+      },
+      "intent": "6f66a0f3768d45b95918c411ab343c0aab6f0b4b61a1a8ed1e9977ce5dd6b3e0"
+    },
+    "reader": "ezdxf 1.4.4",
+    "converter": null,
+    "read_input_digest": null
+  }
+}
