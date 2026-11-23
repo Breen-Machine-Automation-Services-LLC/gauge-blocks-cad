@@ -80,7 +80,7 @@ To add a feature, drawing, or program, start with [CONTRIBUTING.md](CONTRIBUTING
 
 ## What is covered
 
-The scope is 2D drafting for industrial automation schematics and panel layouts; 3D and other domains come later.
+Our initial focus is 2D drafting for industrial automation schematics and panel layouts. We'll add 3D and other domains in the future.
 Formats include DWG, ASCII DXF, and binary DXF, with R12 inputs and versions 2000, 2004, 2007, 2010, 2013, and 2018 where supported.
 Features include text, geometry, blocks, attributes, dimensions, layouts, images, tables, regions, and background settings such as layers, styles, and metadata.
 See the [coverage table](COVERAGE.md) for details and planned work.
