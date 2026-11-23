@@ -2,13 +2,15 @@
 
 Build with `python map/build.py`. Open `map/index.html` directly; it needs no server or network. The builder reads intents, native/cross provenance records, and result checks, and writes only `map/index.html`. Its presentation template is `map/template.html`.
 
-Use Coverage or Compatibility, select a program pair, format, and status, and expand topics to see individual features. Table view shows all features with text status labels. Declared pairs are selectable, including unmeasured pairs that remain not run. Counts describe feature cells, before status filtering, rather than topic summary squares. The evidence panel compares measured output with intent values; source drawings and their provenance records are linked by provenance digest.
+The default **Standard and programs** view groups the DXF inventory by kind, shows dataset coverage, and gives each program Reads, Writes and Round trip cells. **Program A to program B** offers writers and resavers from the declared pairs, with feature outcomes, slot counts, reader/converter evidence, and a feature summary. Select a cell in either view to inspect its evidence and follow its filtered link into **Detailed coverage and compatibility**.
+
+The detailed view retains Coverage and Compatibility modes, pair/format/status filters, expandable topics, and the accessible table. Counts name feature cells, measured features, or format/version/encoding slots as appropriate; unknown measurements remain unknown.
 
 `python map/test_build.py` exercises refused conversion evidence when no output provenance record exists, using temporary fixtures.
 
 `python map/check_links.py` checks all embedded links and writes `map/link-checks.json`.
 
-For the browser suite, install `marionette_driver` in a temporary Python environment. Create two temporary Firefox profiles with these `user.js` preferences:
+For the browser suite, install `marionette_driver` in a temporary Python environment. Create your own scratch directory (for example `/tmp/wp6-codex/`) and two temporary Firefox profiles within it with these `user.js` preferences:
 
 ```js
 // Light profile
@@ -20,11 +22,11 @@ user_pref("layout.css.prefers-color-scheme.content-override", 1);
 Run each Firefox in a separate foreground terminal:
 
 ```sh
-firefox --headless --no-remote --profile /tmp/cad-map-v2-profile --marionette about:blank
-firefox --headless --no-remote --profile /tmp/cad-map-v2-dark --marionette about:blank
+firefox --headless --no-remote --profile /tmp/wp6-codex/light --marionette about:blank
+firefox --headless --no-remote --profile /tmp/wp6-codex/dark --marionette about:blank
 ```
 
-Then run `python map/browser_test.py` in that Python environment. Ports can be changed with `MARIONETTE_PORT` and `MARIONETTE_DARK_PORT`. Results go to `map/browser-checks.json`, and six screenshots go to `map/screens/`. Firefox clamps desktop windows to 500 CSS pixels; the phone check uses an exact 390 × 844 iframe browsing context, checks the page inside it, and captures the frame. Desktop screenshots have a 1400 × 900 content viewport.
+Then run `python map/browser_test.py` in that Python environment. Ports can be changed with `MARIONETTE_PORT` and `MARIONETTE_DARK_PORT`. Results go to `map/browser-checks.json`, and screenshots of both new views in light/dark and at phone width, plus the detailed view, go to `map/screens/`. Firefox clamps desktop windows to 500 CSS pixels; the phone check uses an exact 390 × 844 iframe browsing context, checks the page inside it, and captures the frame. Desktop screenshots have a 1400 × 900 content viewport.
 
 `map/palette-check.txt` contains the required validator's raw output for the fixed status colors on both surfaces. Those exact required hexes fail its categorical lightness and separation gates. They have been preserved, with distinct icons, text labels, and neutral planned/wanted patterns. Resolving every validator FAIL requires changing the fixed palette or the validation requirement.
 

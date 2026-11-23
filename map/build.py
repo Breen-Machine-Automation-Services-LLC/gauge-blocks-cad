@@ -11,6 +11,254 @@ VERSIONS = dict(zip(['R12','2000','2004','2007','2010','2013','2018'],
 def read(path):
     return json.loads(path.read_text())
 
+from urllib.parse import urlencode
+
+
+def _inventory(root):
+    path = root/'standard/dxf-inventory.json'
+    items = read(path) if path.is_file() else []
+    names = defaultdict(int)
+    for item in items:
+        names[item['name']] += 1
+    for item in items:
+        if names[item['name']] > 1:
+            item['duplicate_name'] = True
+    return items
+
+
+def _view_inputs(root):
+    intents = {i['intent_id']: i for p in sorted((root/'intent').glob('*.json'))
+               if not p.name.endswith('.schema.json') for i in [read(p)]}
+    provenance = {}
+    for folder in ('native', 'cross'):
+        for p in sorted((root/folder).rglob('*.provenance.json')):
+            provenance[p.relative_to(root).as_posix()[:-len('.provenance.json')]] = read(p)
+    rows, seen = [], set()
+    for p in sorted((root/'results').glob('*checks.json')):
+        data = read(p)
+        if not isinstance(data, list):
+            continue
+        for row in data:
+            key = tuple(row.get(k) for k in ('file', 'field', 'reader', 'converter'))
+            if key not in seen:
+                rows.append(row)
+                seen.add(key)
+    return intents, provenance, rows
+
+
+def _status(rows):
+    states = {r['status'] for r in rows}
+    for raw, label in [('refused', 'refused'), ('absent', 'lost'), ('differs', 'changed'),
+                       ('not_scored', 'not scored'), ('same', 'kept')]:
+        if raw in states:
+            return label
+    return 'not measured'
+
+
+def _cell(status, item, program, evidence, label=None, pair=None, **extra):
+    query = dict(item=item['name'], program=program)
+    if item.get('duplicate_name'):
+        query['kind'] = item['kind']
+    if pair:
+        query['pair'] = pair
+    icons = {'kept': '✓', 'changed': '≠', 'lost': '−', 'refused': '×',
+             'measured': '✓', 'native drawing': '✓', 'included': '✓', 'partial': '◐',
+             'present': '□', 'future': '◇', 'omitted': '·'}
+    return dict(status=status, label=label or status, icon=icons.get(status, '?'),
+                evidence=evidence, detail_link='#detailed?' + urlencode(query), **extra)
+
+
+def _item_features(intent, item):
+    for feature in intent.get('features', [intent['title']]):
+        if feature.lower() == 'file identity':
+            continue
+        fields = set(intent.get('feature_fields', {}).get(feature, []))
+        expected = [e for e in intent.get('expected', []) if not fields or e['id'] in fields]
+        if any(e.get('reference', {}).get('url') == item['reference_url'] for e in expected):
+            yield feature
+
+
+def _refused_open(row):
+    return row['status'] == 'refused' and row.get('field') in (None, '', 'open')
+
+
+def _item_evidence(item, intents, rows):
+    fields = {iid: {e['id'] for e in intents.get(iid, {}).get('expected', [])
+                    if e.get('reference', {}).get('url') == item['reference_url']}
+              for iid in item['dataset']['intents']}
+    return [r for r in rows if r.get('field') in fields.get(r.get('intent_id'), set())
+            or (r.get('intent_id') in fields and _refused_open(r))]
+
+
+def _feature_rows(intent, feature, rows):
+    fields = set(intent.get('feature_fields', {}).get(feature, []))
+    return [r for r in rows if r.get('intent_id') == intent['intent_id'] and
+            (not fields or r.get('field') in fields or (_refused_open(r)))]
+
+
+def comparison_rows(writer, resaver, root):
+    intents, provenance, rows = _view_inputs(root)
+    pair = writer + '__' + resaver
+    declared = any(p['writer'] == writer and p['resaver'] == resaver
+                   for p in read(root/'programs/pairs.json'))
+    selected = [r for r in rows if r['file'].startswith('cross/' + pair + '/')] if declared else []
+    selected_by_intent = defaultdict(list)
+    for row in selected:
+        selected_by_intent[row.get('intent_id')].append(row)
+    native_ids = {p.get('intent_id') for path, p in provenance.items() if path.startswith('native/' + writer + '/')}
+    summarized = set()
+    groups, summary = [], dict(total=0, kept=0, changed=0, lost=0, refused=0, not_measured=0)
+    for item in _inventory(root):
+        features = []
+        for iid in item['dataset']['intents']:
+            intent = intents.get(iid)
+            if not intent:
+                continue
+            for feature in _item_features(intent, item):
+                # A feature has one outcome across every inventory item it references.
+                evidence = _feature_rows(intent, feature, selected_by_intent[iid])
+                slots = defaultdict(list)
+                for r in evidence:
+                    meta = provenance.get(r['file'], {})
+                    slot = tuple(meta.get(k) for k in ('format', 'version', 'encoding'))
+                    # Refusals without an output sidecar still identify a file slot.
+                    slots[slot if any(slot) else r['file']].append(r)
+                kept = sum(_status(rs) == 'kept' for rs in slots.values())
+                status = _status(evidence)
+                shared = any(r.get('shared_engine') for r in evidence)
+                label = f'{status}: kept {kept} of {len(slots)} format/version/encoding slots (including not scored)'
+                if shared:
+                    label += ' · shared engine'
+                native = iid in native_ids
+                features.append(dict(intent_id=iid, feature=feature, native=native,
+                                     round_trip=_cell(status, item, resaver, evidence, label,
+                                                      pair, kept=kept, total=len(slots), shared_engine=shared)))
+                if (iid, feature) not in summarized:
+                    summarized.add((iid, feature))
+                    summary['total'] += 1
+                    summary_status = status
+                    summary[summary_status if summary_status in ('kept', 'changed', 'lost', 'refused') else 'not_measured'] += 1
+        if features:
+            groups.append(dict(kind=item['kind'], name=item['name'], rows=features))
+    summary['label'] = f"{summary['total']} features"
+    return dict(declared=declared, label='measured' if selected else 'not measured', groups=groups, summary=summary)
+
+
+def main_view_rows(root):
+    intents, provenance, rows = _view_inputs(root)
+    by_intent = defaultdict(list)
+    for row in rows:
+        by_intent[row.get('intent_id')].append(row)
+    caps = read(root/'programs/capabilities.json')
+    programs = []
+    for pid, cap in caps.items():
+        engine = cap.get('engine', pid)
+        shared = sum(c.get('engine', p) == engine for p, c in caps.items()) > 1
+        name = 'ODA File Converter' if pid == 'oda' else cap['name']
+        programs.append(dict(id=pid, name=name, engine=engine, shared_engine=shared,
+                             label=name + ' · ' + engine + (' · shared engine' if shared else '')))
+    declarations = read(root/'programs/pairs.json')
+    groups = []
+    for kind in ('entity', 'object', 'table', 'header'):
+        items = []
+        for item in _inventory(root):
+            if item['kind'] != kind:
+                continue
+            ids = item['dataset']['intents']
+            relevant = _item_evidence(item, intents, [row for iid in ids for row in by_intent[iid]])
+            cells = {}
+            for program in programs:
+                pid = program['id']
+                reads = [r for r in relevant if r.get('intent_id') in ids and
+                         str(r.get('reader', '')).split(' ')[0] == pid and r['status'] != 'not_scored']
+                writes = [p for path, p in provenance.items() if path.startswith('native/' + pid + '/') and p.get('intent_id') in ids]
+                pairs = {p['writer']+'__'+p['resaver'] for p in declarations if p['resaver'] == pid}
+                evidence = [r for r in relevant if r.get('intent_id') in ids and
+                            len(r['file'].split('/')) > 2 and r['file'].split('/')[0] == 'cross' and r['file'].split('/')[1] in pairs]
+                measured = []
+                for iid in ids:
+                    intent = intents.get(iid, {})
+                    for feature in _item_features(intent, item):
+                        rs = _feature_rows(intent, feature, evidence)
+                        if any(r['status'] != 'not_scored' for r in rs):
+                            measured.append(_status(rs))
+                kept, total = measured.count('kept'), len(measured)
+                status = _status(evidence) if total else 'not measured'
+                if total and kept == total:
+                    status = 'kept'
+                cells[pid] = dict(reads=_cell('measured' if reads else 'not measured', item, pid, reads),
+                                  writes=_cell('native drawing' if writes else 'no native drawing', item, pid, writes),
+                                  round_trip=_cell(status, item, pid, evidence,
+                                                   f'kept {kept} of {total}' if total else 'not measured', kept=kept, total=total))
+            dataset = _cell(item['dataset']['status'], item, '', [item['dataset']], intents=ids)
+            items.append(dict(item, dataset=dataset, programs=cells))
+        groups.append(dict(kind=kind, rows=items))
+    return dict(programs=programs, groups=groups)
+
+
+def _page_evidence(data):
+    """Share compact evidence across cells; detailed runs retain expected/actual values."""
+    # Small datasets retain inline evidence without a shared-table indirection.
+    views = [data['main_view'], data['comparisons']]
+    if len(json.dumps(views)) < 1_000_000:
+        return
+    rows, indices = [], {}
+
+    def pack(node):
+        if isinstance(node, dict):
+            for key, value in list(node.items()):
+                if key == 'evidence':
+                    refs = []
+                    for row in value:
+                        # Result cells show field identity and measurement provenance.
+                        # Dataset and native-writing cells retain their own metadata.
+                        compact = ({k: row[k] for k in
+                                    ('intent_id', 'field', 'file', 'status', 'reader',
+                                     'converter', 'shared_engine') if k in row}
+                                   if 'file' in row else row)
+                        signature = json.dumps(compact, sort_keys=True, ensure_ascii=False)
+                        if signature not in indices:
+                            indices[signature] = len(rows)
+                            rows.append(compact)
+                        refs.append(indices[signature])
+                    # Consecutive evidence indices use inclusive ranges on disk.
+                    spans = []
+                    for index in refs:
+                        if spans and index == spans[-1][1] + 1:
+                            spans[-1][1] = index
+                        else:
+                            spans.append([index, index])
+                    node[key] = ','.join(str(a) if a == b else f'{a}:{b}'
+                                         for a, b in spans)
+                else:
+                    pack(value)
+        elif isinstance(node, list):
+            for value in node:
+                pack(value)
+
+    pack(data['main_view'])
+    pack(data['comparisons'])
+    # File and reader metadata is shared by the fields measured in that context.
+    contexts, context_ids, fields, field_ids, packed = [], {}, [], {}, []
+    for row in rows:
+        if 'file' not in row:
+            packed.append(row)
+            continue
+        context = {k: v for k, v in row.items() if k not in ('field', 'status')}
+        signature = json.dumps(context, sort_keys=True)
+        if signature not in context_ids:
+            context_ids[signature] = len(contexts)
+            contexts.append(context)
+        field = row.get('field')
+        if field not in field_ids:
+            field_ids[field] = len(fields)
+            fields.append(field)
+        packed.append([context_ids[signature], field_ids[field], row['status']])
+    data['evidence_rows'] = packed
+    data['evidence_contexts'] = contexts
+    data['evidence_fields'] = fields
+
+
 def main():
     intents = [read(p) for p in sorted((ROOT/'intent').glob('*.json')) if not p.name.endswith('.schema.json')]
     declared = read(ROOT/'programs/pairs.json')
@@ -124,11 +372,12 @@ def main():
                 cells.append(dict(coverage=coverage, missing=missing, impossible=impossible, applicable=applicable, runs=runs, files=[s['path'] for s in fs if not s.get('unavailable')]))
             topic['features'].append(dict(name=feature,cells=cells))
         topics.append(topic)
-    data = dict(topics=topics, columns=columns, pairs=list(pairs), builds=sorted(builds), generated=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'))
+    data = dict(main_view=main_view_rows(ROOT), comparisons={key: comparison_rows(p['writer'], p['resaver'], ROOT) for key, p in pairs.items()}, topics=topics, columns=columns, pairs=list(pairs), builds=sorted(builds), generated=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'))
+    _page_evidence(data)
     from collections import Counter
     print('Coverage cells:', dict(Counter(c['coverage'] for t in topics for f in t['features'] for c in f['cells'])))
     template = (ROOT/'map/template.html').read_text()
-    (ROOT/'map/index.html').write_text(template.replace('/*DATA*/',json.dumps(data,ensure_ascii=False).replace('<','\\u003c')))
+    (ROOT/'map/index.html').write_text(template.replace('/*DATA*/',json.dumps(data,ensure_ascii=False,separators=(',', ':')).replace('<','\\u003c')))
     print(f'{len(topics)} topics; {sum(len(t["features"]) for t in topics)} features; {sum(map(len,checks.values()))} measured fields')
 
 if __name__=='__main__':

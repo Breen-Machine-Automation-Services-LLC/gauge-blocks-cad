@@ -2,6 +2,81 @@
   "browser": "159.0.1",
   "checks": [
     {
+      "behavior": "light default standard view",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light standard reference, dataset, engines and three program columns",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light standard labels and icons name measured feature denominator",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light standard evidence and filtered detail link",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light standard evidence retains fields files statuses",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light standard detail link filters item",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light declared writer and resaver choices",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light refused ezdxf to cadcraft slot stays refused",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light pair choice renders comparison and summary denominator",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light comparison reader converter shared engine labels",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light comparison status labels and icons",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light comparison evidence retains fields files statuses",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light comparison detail link filters pair and item",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light main phone width has internal scroll only",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light comparison phone width has internal scroll only",
+      "passed": true,
+      "evidence": true
+    },
+    {
       "behavior": "Coverage collapsed: all 30 topics fit 1400 \u00d7 900",
       "passed": true,
       "evidence": true
@@ -96,7 +171,7 @@
       "evidence": true
     },
     {
-      "behavior": "Changed panel lists every one of the 50 differing linetypes and both values",
+      "behavior": "Changed panel lists differing fields and both values",
       "passed": true,
       "evidence": true
     },
@@ -127,6 +202,81 @@
     },
     {
       "behavior": "Standalone page has no remote resources",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark default standard view",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark standard reference, dataset, engines and three program columns",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark standard labels and icons name measured feature denominator",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark standard evidence and filtered detail link",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark standard evidence retains fields files statuses",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark standard detail link filters item",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark declared writer and resaver choices",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark refused ezdxf to cadcraft slot stays refused",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark pair choice renders comparison and summary denominator",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark comparison reader converter shared engine labels",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark comparison status labels and icons",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark comparison evidence retains fields files statuses",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark comparison detail link filters pair and item",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark main phone width has internal scroll only",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark comparison phone width has internal scroll only",
       "passed": true,
       "evidence": true
     },
