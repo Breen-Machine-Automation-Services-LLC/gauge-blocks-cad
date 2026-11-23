@@ -58,8 +58,10 @@ are checked separately when deciding whether a cross output needs re-scoring.
 `not_scored` is limited to ambiguous dictionary keys or application names,
 unsupported query forms or operands, unsupported selector kinds, and unsupported
 draw-order layouts. These raise `CheckerLimit`; `detail` gives the reason.
-Every other extraction exception produces `absent`, including missing gradients,
-extension dictionaries, alignment points, and decodable ACIS bodies.
+Shared object resolution reports missing gradients, extension dictionaries and
+alignment points as `absent`; missing selected entities, attributes and decodable
+ACIS bodies are also absent. Unexpected library exceptions produce `reader_error`
+with the library version and exception instead of hiding them as missing data.
 
 `writer_engine` names the family that writes the file. `reader_engine` names
 ezdxf's family for direct DXF reading, or the converter family for DWG reading.
@@ -113,3 +115,10 @@ Attribution uses provenance input digests and matching readers to compare each
 cross field with its source. `source_not_readable`, `writer_or_converter`, and
 `unreadable_by_reader` are separate summary buckets; native direct success paired
 with converted failure is labeled lost by converter. Raw grading rows remain intact.
+Kept rows stay kept regardless of their baseline. Only an existing non-kept source
+row excuses a non-kept cross row as source not readable; a missing baseline records
+`source_status: "not measured"` and charges the resaver. A DWG writer-or-converter
+excuse requires every directly read DXF output of the same pair, intent, field and
+version to be kept. Real losses, changes and unreadable outputs outrank these
+excuses in roll-ups. The Teigha SAT note requires binary DXF and an unpadded
+encrypted A in that entity's raw SAT records.

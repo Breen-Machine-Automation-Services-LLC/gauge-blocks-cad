@@ -111,6 +111,7 @@ def comparison_rows(writer, resaver, root, _inputs=None):
         if row['file'].startswith('native/'+writer+'/'):
             native_by_intent[row.get('intent_id')].append(row)
     summarized = set()
+    summarized_fields = {}
     groups, summary = [], counts([])
     for item in _inventory(root):
         features = []
@@ -140,15 +141,20 @@ def comparison_rows(writer, resaver, root, _inputs=None):
                     'lost by converter: '+', '.join(sorted({r['converter'] for r in converter_evidence if r.get('converter')})) if converter_evidence else None)
                 features.append(dict(intent_id=iid, feature=feature, native=native, native_read=native_read,
                                      round_trip=_cell(status, item, resaver, evidence, label,
-                                                      pair, kept=kept, total=len(slots), shared_engine=shared)))
+                                                      pair, kept=kept, total=len(slots), shared_engine=shared,
+                                                      field_counts=counts(outcome([r]) for r in evidence))))
                 if (iid, feature) not in summarized:
                     summarized.add((iid, feature))
+                    for row in evidence:
+                        key = tuple(row.get(k) for k in ('file', 'field', 'reader', 'converter'))
+                        summarized_fields[key] = row
                     summary['total'] += 1
                     summary_status = status
                     summary[BUCKETS.get(summary_status, 'not_measured')] += 1
         if features:
             groups.append(dict(kind=item['kind'], name=item['name'], rows=features))
     summary['label'] = f"{summary['total']} features"
+    summary['field_counts'] = counts(outcome([r]) for r in summarized_fields.values())
     return dict(declared=declared, label='measured' if selected else 'not measured', groups=groups, summary=summary)
 
 
@@ -209,7 +215,8 @@ def main_view_rows(root, _inputs=None):
                     read_label += ': '+', '.join(sorted({r['converter'] for r in converter_evidence if r.get('converter')}))
                 cells[pid] = dict(reads=_cell(read_status, item, pid, reads+converter_evidence, read_label, reader_error=len(public_errors)),
                                   writes=_cell('native drawing' if writes else 'no native drawing', item, pid, writes),
-                                  round_trip=_cell(status, item, pid, evidence, label, **totals))
+                                  round_trip=_cell(status, item, pid, evidence, label,
+                                                   field_counts=counts(outcome([r]) for r in evidence), **totals))
             dataset = _cell(item['dataset']['status'], item, '', [item['dataset']], intents=ids)
             items.append(dict(item, dataset=dataset, programs=cells))
         groups.append(dict(kind=kind, rows=items))
@@ -218,6 +225,16 @@ def main_view_rows(root, _inputs=None):
 
 def _page_evidence(data):
     """Share compact evidence across cells; detailed runs retain expected/actual values."""
+    # Score stamps remain in the result files; repeating them in each
+    # detailed difference adds no evidence about the field's value or attribution.
+    for topic in data.get('topics', []):
+        for feature in topic['features']:
+            for cell in feature['cells']:
+                for run in cell['runs']:
+                    run['diffs'] = [{k:v for k,v in row.items() if k!='scored_with'} for row in run['diffs']]
+                    # Missing flags are false in the page; keep positive provenance flags.
+                    for key in ('stale', 'unavailable', 'self', 'shared_engine'):
+                        if run.get(key) is False:run.pop(key)
     # Small datasets retain inline evidence without a shared-table indirection.
     views = [data['main_view'], data['comparisons']]
     if len(json.dumps(views)) < 1_000_000:
@@ -389,6 +406,7 @@ def main():
                                    (declaration['writer']=='ezdxf' or x['format']==s['format'])]
                         stale = bool(sources)
                     runs.append(dict(pair=s['pair'], status=state, diffs=diffs, stale=stale,
+                                     field_counts={k:v for k,v in counts(outcome([r]) for r in selected).items() if v},
                                      readers=sorted({r.get('reader','unspecified')+(' via '+str(r['converter']) if r.get('converter') else '') for r in selected}),
                                      self=any(r.get('shared_engine',r.get('self_read')) for r in selected), shared_engine=any(r.get('shared_engine') for r in selected), output=s['path'], unavailable=s.get('unavailable',False), inputs=[x['path'] for x in sources]))
                 cells.append(dict(coverage=coverage, missing=missing, impossible=impossible, applicable=applicable, runs=runs, files=[s['path'] for s in fs if not s.get('unavailable')]))

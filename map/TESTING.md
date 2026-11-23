@@ -35,10 +35,23 @@ Then run `python map/browser_test.py` in that Python environment. Ports can be c
 Run every `checker/test_*.py` script with the configured Python. When CAD saves are prohibited, run `test_privacy.py --existing-evidence` and `test_volatile_new.py --existing-evidence`; these validate stored integration evidence, and the privacy mode also scans every current drawing. They do not claim fresh program saves. The other digest tests run ezdxf or ODA.
 
 Round trips use source baselines matched by provenance digest and reading path.
-A field without a clean source is source not readable; a DWG-only loss with DXF
-success is lost in writer or converter, naming the converter. A resaved query that
-raises after a clean source read is unreadable by reader. These outcomes have
+A kept field stays kept. A non-kept field with an existing non-kept source is
+source not readable; a missing source baseline counts against the resaver and
+records source status not measured. A DWG-only loss is lost in writer or converter
+only when every directly read DXF output for the same pair, intent, field and
+version is kept, naming the converter. A resaved query that raises after a clean
+or unmeasured source read is unreadable by reader. These outcomes have
 separate summary buckets and reconcile with kept, changed, lost and refused.
 Reads cells expose `reader_error` counts and public `read_observation` evidence,
 including the ezdxf SAT binary Teigha gap; a native conversion failure after direct
 success is lost by converter. Packed evidence preserves the cause and source status.
+Real losses, changes and unreadable outputs outrank source and converter excuses
+in every roll-up. Round-trip cells, comparison summaries and detailed output runs
+also expose `field_counts`, independently of feature and slot totals; output runs
+omit zero-valued counters to keep the standalone page within 12,000,000 bytes.
+Serialized output runs also omit false flags and repeated `scored_with` stamps
+from differences; result files retain the stamps, and positive flags and all
+expected/actual values, reading evidence and attribution remain in the page.
+Comparison summary field counts deduplicate observations across inventory items
+and features. The SAT note applies only to binary DXF with unpadded raw SAT records;
+other public-reader failures retain their exception text.

@@ -5,8 +5,8 @@ BUCKETS = {'kept':'kept', 'changed':'changed', 'lost':'lost', 'refused':'refused
            'source not readable':'source_not_readable',
            'lost in writer or converter':'writer_or_converter',
            'unreadable by reader':'unreadable_by_reader'}
-ORDER = ['refused','lost in writer or converter','unreadable by reader',
-         'source not readable','lost','changed','reader_error','not scored','kept']
+ORDER = ['refused','lost','changed','unreadable by reader','reader_error',
+         'lost in writer or converter','source not readable','not scored','kept']
 RAW = {'same':'kept','differs':'changed','absent':'lost','not_scored':'not scored',
        'reader_error':'reader_error','refused':'refused'}
 
@@ -26,9 +26,13 @@ class Attribution:
         self.provenance = provenance
         self.rows = rows
         self.declarations = {p['writer']+'__'+p['resaver']:p for p in declarations}
-        self.dxf_kept = {(r["file"].split("/")[1],r.get("intent_id")) for r in rows
-                         if r["file"].startswith("cross/") and r["status"]=="same" and not r.get("converter")
-                         and provenance.get(r["file"],{}).get("format")=="DXF"}
+        direct = defaultdict(list)
+        for row in rows:
+            meta = provenance.get(row['file'], {})
+            if row['file'].startswith('cross/') and not row.get('converter') and meta.get('format')=='DXF':
+                direct[(row['file'].split('/')[1], row.get('intent_id'), row.get('field'), meta.get('version'))].append(row)
+        self.dxf_kept = {key for key, observations in direct.items()
+                         if all(r['status']=='same' for r in observations)}
         self.by_file = defaultdict(list)
         self.by_digest = defaultdict(list)
         for row in rows:self.by_file[row['file']].append(row)
@@ -55,8 +59,11 @@ class Attribution:
 
     def attribute(self, row):
         result = dict(row)
+        # Attribution is derived afresh; kept observations never inherit an excuse.
+        result.pop('attribution', None)
+        result.pop('source_status', None)
         path = row['file'];parts = path.split('/')
-        if len(parts)<3 or parts[0]!='cross' or row['status']=='not_scored':return result
+        if len(parts)<3 or parts[0]!='cross' or row['status'] in ('same','not_scored'):return result
         if row['status']=='refused' and row.get('field') in (None,'','open'):return result
         meta=self.provenance.get(path,{})
         declaration=self.declarations.get(parts[1],{})
@@ -73,12 +80,11 @@ class Attribution:
         candidates=exact or direct
         source=next((r for r in candidates if r['status']=='same'),next(iter(candidates),{}))
         if source.get('status')!='same':result['source_status']=source.get('status','not measured')
-        # A measured converter failure takes precedence over an ineligible baseline.
-        converter_bad=[r for r in exact if r['status'] in ('absent','differs','reader_error')]
-        dxf_kept=(parts[1],row.get('intent_id')) in self.dxf_kept
-        if row.get('converter') and row['status'] in ('absent','differs') and (converter_bad or (meta.get('format')=='DWG' and dxf_kept)):
+        # Every directly read DXF output of this field and version supports a DWG excuse.
+        dxf_kept=(parts[1],row.get('intent_id'),row.get('field'),meta.get('version')) in self.dxf_kept
+        if row.get('converter') and row['status'] in ('absent','differs') and meta.get('format')=='DWG' and dxf_kept:
             result['attribution']='lost in writer or converter'
-        elif source.get('status')!='same':result['attribution']='source not readable'
+        elif source and source.get('status')!='same':result['attribution']='source not readable'
         elif row['status']=='reader_error':result['attribution']='unreadable by reader'
         return result
 

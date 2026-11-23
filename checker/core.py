@@ -130,23 +130,39 @@ def decode_sat_records(tags):
    if c==94 and i<len(record) and record[i]==' ':i+=1
   yield ''.join(decoded)
 
-def raw_sat(entity):
+def raw_sat_tags(entity):
  # Loaded SAT has already passed through the library decoder; read original tags by handle.
  from ezdxf.lldxf.tagger import binary_tags_loader, ascii_tags_loader
  from io import StringIO
  path=entity.doc.filename
- if not path:return entity.sat
+ if not path:return []
  data=Path(path).read_bytes()
  tags=binary_tags_loader(data) if data.startswith(b'AutoCAD Binary DXF') else ascii_tags_loader(StringIO(data.decode(entity.doc.encoding,errors='surrogateescape')))
  selected=[];handle=None
  for tag in tags:
   if tag.code==0:
-   if handle==entity.dxf.handle:return list(decode_sat_records(selected))
+   if handle==entity.dxf.handle:return selected
    selected=[];handle=None
   if tag.code==5:handle=tag.value
   selected.append(tag)
- if handle==entity.dxf.handle:return list(decode_sat_records(selected))
- return entity.sat
+ if handle==entity.dxf.handle:return selected
+ return []
+
+def raw_sat(entity):
+ tags=raw_sat_tags(entity)
+ return list(decode_sat_records(tags)) if tags else entity.sat
+
+def unpadded_binary_sat(entity):
+ path=entity.doc.filename
+ if not path:return False
+ with Path(path).open('rb') as stream:
+  if not stream.read(22).startswith(b'AutoCAD Binary DXF'):return False
+ # Join continuation tags before checking the encrypted A's following byte.
+ records=[]
+ for tag in raw_sat_tags(entity):
+  if tag.code==1:records.append(tag.value)
+  elif tag.code==3 and records:records[-1]+=tag.value
+ return any(re.search(r'\^(?! )', record) for record in records)
 
 def acis_value(entity, attr, public=False):
  from ezdxf.acis import api as acis
@@ -160,13 +176,24 @@ def acis_value(entity, attr, public=False):
  box=ezdxf.math.BoundingBox([v for m in acis.mesh_from_body(bodies[0]) for v in m.vertices])
  return list(box.size)
 
+def resolve_object(obj, *steps):
+ """Resolve required query objects; missing intermediates are absent, not reader faults."""
+ from ezdxf.entities.dxfns import DXFNamespace
+ for step in steps:
+  if obj is None:raise KeyError('Missing selected object')
+  if callable(step):obj=step(obj)
+  else:
+   if isinstance(obj,DXFNamespace) and not obj.hasattr(step):raise KeyError('Missing selected attribute: '+step)
+   obj=getattr(obj,step,None)
+ if obj is None:raise KeyError('Missing selected object')
+ return obj
+
 def extract(d,s):
  kind=s['kind'];name=s.get('name');attr=s.get('attr')
  if kind=='feature_attr':
   e=feature_entity(d,s)
   if attr=='alignment_rotation_error':
-   if not e.dxf.hasattr('align_point'):raise KeyError('Missing alignment point')
-   delta=e.dxf.align_point-e.dxf.insert
+   delta=resolve_object(e,'dxf','align_point')-e.dxf.insert
    angle=math.degrees(math.atan2(delta.y,delta.x))
    return (e.dxf.rotation-angle+180)%360-180
   if attr=='table_rows':return next(v for c,v in table_tags(e) if c==91)
@@ -178,11 +205,10 @@ def extract(d,s):
    return effective_redraw_order(redraw_layout(d,name))
   if attr=='image_size':return list(e.dxf.image_size)[:2]
   if attr=='loop_flags':return [p.path_type_flags for p in e.paths]
-  if attr=='gradient_rotation':return e.gradient.rotation if e.gradient is not None else None
+  if attr=='gradient_rotation':return resolve_object(e,'gradient','rotation')
   if attr=='fit_points':return [list(v) for v in e.fit_points]
   if attr=='extension_record':
-   if not e.has_extension_dict:raise KeyError('Missing extension dictionary')
-   return [list(t) for t in dictionary_item(e.get_extension_dict(),'G_XR').tags]
+   return [list(t) for t in resolve_object(e,'extension_dict',lambda x:dictionary_item(x,'G_XR'),'tags')]
   if attr=='block_circle_radius':
    radii=[x.dxf.radius for x in symbol_item(d.blocks,e.dxf.name) if x.dxftype()=='CIRCLE']
    if not radii:raise KeyError('Referenced block contains no CIRCLE')
@@ -296,7 +322,7 @@ def compare(d,intent,reader,source_version=None,source_encoding=None):
    except (KeyError,StopIteration):observation.update(status='absent')
    except Exception as ex:
     detail=f'ezdxf {ezdxf.__version__} {type(ex).__name__}: {ex}'
-    if isinstance(ex,IndexError) and d.dxfversion<'AC1027':
+    if isinstance(ex,IndexError) and d.dxfversion<'AC1027' and unpadded_binary_sat(feature_entity(d,f['selector'])):
      detail+='; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010'
     observation.update(status='reader_error',detail=detail)
    row['read_observation']=observation

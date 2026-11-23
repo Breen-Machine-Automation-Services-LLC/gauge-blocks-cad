@@ -19,7 +19,7 @@
 const DATA=/*DATA*/;
 const icons={'source not readable':'?','lost in writer or converter':'≠','unreadable by reader':'×','reader_error':'×','not_scored':'?','kept':'✓','covered':'✓','changed':'≠','partial':'◐','lost':'−','refused':'×','not run':'·','no source':'−','not applicable':'/','planned':'□','wanted':'◇','blocked':'⚿'};
 const sets={coverage:['covered','partial','planned','wanted','blocked','no source','not applicable'],compatibility:['source not readable','lost in writer or converter','unreadable by reader','reader_error','not_scored','kept','changed','lost','refused','not run','not applicable']};
-const rank={'source not readable':3.2,'lost in writer or converter':3.5,'unreadable by reader':3.4,reader_error:3.3,'not applicable':-1,'no source':-0.5,not_scored:1,kept:0,covered:0,planned:2,wanted:3,'not run':1,partial:1,changed:2,lost:3,blocked:4,refused:4};
+const rank={'source not readable':1.2,'lost in writer or converter':1.5,'unreadable by reader':1.8,reader_error:1.7,'not applicable':-1,'no source':-0.5,not_scored:1,kept:0,covered:0,planned:2,wanted:3,'not run':1,partial:1,changed:2,lost:3,blocked:4,refused:4};
 const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function evidence(cell){
  const refs=typeof cell.evidence==='string'?(cell.evidence?cell.evidence.split(',').flatMap(span=>{const [a,b]=span.split(':').map(Number);return Array.from({length:(b??a)-a+1},(_,n)=>a+n)}):[]):cell.evidence;
