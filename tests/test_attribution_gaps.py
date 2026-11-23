@@ -165,14 +165,14 @@ def test_resaved_reader_error_has_own_bucket_only_with_clean_same_reader(
     rt = features(comparison)[('synthetic', 'field_0')]['round_trip']
     for cell in (rt, main):
         assert cell['kept'] == 0 and cell['total'] == 1
-        assert cell['status'] == ('unreadable by reader' if matching_reader else 'source not readable')
+        assert cell['status'] == 'unreadable by reader'
         if matching_reader:
             assert 'unreadable by ' + READER in cell['label']
         assert any(r['status'] == 'reader_error' and r['reader'] == READER
                    for r in cell['evidence'])
     for summary in (comparison['summary'], main):
-        assert summary['unreadable_by_reader'] == int(matching_reader)
-        assert summary['source_not_readable'] == int(not matching_reader)
+        assert summary['unreadable_by_reader'] == 1
+        assert summary['source_not_readable'] == 0
         assert summary['kept'] == summary['lost'] == summary['changed'] == 0
         assert summary['total'] == 1
 
@@ -195,8 +195,8 @@ def test_reader_errors_are_visible_and_counted_against_reader(builder, attributi
     assert any(r['status'] == 'reader_error' for r in cell['evidence'])
     comparison, main = cells(builder, root)
     for summary in (comparison['summary'], main):
-        assert summary['source_not_readable'] == 1
-        assert summary['kept'] == 1 and summary['total'] == 2
+        assert summary['source_not_readable'] == 0
+        assert summary['kept'] == 2 and summary['total'] == 2
 
 
 def acis_corpus(root, rows):

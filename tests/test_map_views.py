@@ -185,12 +185,18 @@ def test_every_program_cell(builder, corpus, item, program):
     assert (rt['status'], rt['label'], rt['kept'], rt['total']) == expected_round_trip
 
 
-def test_round_trip_without_source_baseline_is_not_readable(builder, corpus):
+@pytest.mark.parametrize('status,expected', [('same', 'kept'), ('absent', 'lost'), ('differs', 'changed')])
+def test_round_trip_without_source_baseline_is_not_readable(builder, corpus, status, expected):
     rows = json.loads((corpus / 'results/fixture_checks.json').read_text())
     rows = [r for r in rows if r['file'] != 'native/bricscad/layers_2018.dxf']
+    for row in rows:
+        if row['file'].startswith('cross/bricscad__oda/'):
+            row['status'] = status
     write_json(corpus, 'results/fixture_checks.json', rows)
     cell = item_rows(main_rows(builder, corpus))['LAYER']['programs']['oda']['round_trip']
-    assert cell['status'] == 'source not readable'
+    assert cell['status'] == expected
+    if status != 'same':
+        assert all(r['source_status'] == 'not measured' for r in cell['evidence'])
 
 
 def test_groups_and_reference_links(builder, corpus):

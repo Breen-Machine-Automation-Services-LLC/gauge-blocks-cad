@@ -190,8 +190,8 @@ def cells(builder, root):
     ('differs', 'absent', 'source not readable'),
     ('not_scored', 'absent', 'source not readable'),
     ('refused', 'absent', 'source not readable'),
-    (None, 'absent', 'source not readable'),
-    ('absent', 'same', 'source not readable'),
+    (None, 'absent', 'lost'),
+    ('absent', 'same', 'kept'),
 ])
 def test_baseline_relative_status_in_both_views(builder, attribution_corpus, source, cross, status):
     root = populate(attribution_corpus, [dict(source=source, cross=cross)])
@@ -211,11 +211,13 @@ def test_baseline_relative_status_in_both_views(builder, attribution_corpus, sou
 
 
 @pytest.mark.parametrize('override', [dict(source_reader='other synthetic-public'), dict(digest='unmatched')])
-def test_unmatched_source_cannot_authorize_loss(builder, attribution_corpus, override):
+def test_unmatched_source_counts_loss_with_unmeasured_baseline(builder, attribution_corpus, override):
     root = populate(attribution_corpus, [dict(source='same', cross='absent', **override)])
     comparison, main = cells(builder, root)
-    assert main['status'] == 'source not readable'
-    assert features(comparison)[('synthetic', 'field_0')]['round_trip']['status'] == 'source not readable'
+    assert main['status'] == 'lost'
+    rt = features(comparison)[('synthetic', 'field_0')]['round_trip']
+    assert rt['status'] == 'lost'
+    assert all(r['source_status'] == 'not measured' for r in rt['evidence'])
 
 
 def test_source_bucket_and_totals_reconcile_in_both_views(builder, attribution_corpus):
