@@ -5,6 +5,7 @@ No migration behavior is specified here.
 """
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -139,7 +140,7 @@ def harness(tree, monkeypatch):
         def save(self, source, path, fmt, version, encoding):
             saved.append((self.name, Path(path).suffix, version, encoding))
             Path(path).parent.mkdir(parents=True, exist_ok=True)
-            Path(path).write_text('synthetic saved drawing')
+            Path(path).write_bytes(saved_bytes(self.name, fmt, version, encoding))
         def save_many(self, jobs):
             for job in jobs:
                 self.save(*job)
@@ -194,7 +195,8 @@ def harness(tree, monkeypatch):
         out = Path(re.search(r'\(setq \*out-dir\* "([^"]+)"\)', script).group(1))
         (out / 'make_bricscad_masters.log').write_text('Synthetic generation\n')
         for encoding in ('ASCII', 'binary'):
-            (out / f'k_tables_2000_{encoding}.dxf').write_text('synthetic drawing')
+            (out / f'k_tables_2000_{encoding}.dxf').write_bytes(
+                saved_bytes('bricscad', 'DXF', '2000', encoding))
             saved.append(('bricscad', '.dxf', '2000', encoding))
         return 0
     monkeypatch.setattr(bc, 'run_script', fake_script)
@@ -300,3 +302,155 @@ def test_force_bricscad_runner_resaves_selected_natives(harness, monkeypatch):
     assert sorted(save for save in h.saved if save[0] == 'bricscad') == [
         ('bricscad', '.dxf', '2000', 'ASCII'), ('bricscad', '.dxf', '2000', 'binary')]
     assert not any(save[0] == 'ezdxf' for save in h.saved)
+
+
+# Pin both sides: a newly added module must receive an explicit classification.
+DRAWING_MODULES = {
+    'background.py', 'features.py', 'master_l.py', 'masters_abcd.py',
+    'masters_ghijn.py',
+}
+EXCLUDED_MODULES = {
+    'run_bricscad.py', 'run_cross.py', 'run_features.py', 'run_independent.py',
+    'summarize_cross.py', 'write_coverage.py',
+}
+
+
+def assert_generator_classification(root):
+    modules = {p.name for p in (root / 'generators').glob('*.py')}
+    assert not DRAWING_MODULES & EXCLUDED_MODULES
+    assert modules == DRAWING_MODULES | EXCLUDED_MODULES, 'Unclassified generator modules'
+
+
+def test_excluded_generator_modules_are_pinned(tree):
+    assert_generator_classification(tree)
+    # Exercise the actual digest policy, including its run_ prefix exclusion.
+    excluded = set()
+    baseline = inputs(tree)['feature_synthetic']
+    for name in sorted(DRAWING_MODULES | EXCLUDED_MODULES):
+        path = tree / 'generators' / name
+        original = path.read_bytes()
+        try:
+            path.write_bytes(original + b'\n# synthetic classification probe\n')
+            if inputs(tree)['feature_synthetic'] == baseline:
+                excluded.add(name)
+        finally:
+            path.write_bytes(original)
+    assert excluded == EXCLUDED_MODULES
+    assert set(scoring.ORCHESTRATION_MODULES) == {
+        'summarize_cross.py', 'write_coverage.py',
+    }
+
+
+@pytest.mark.parametrize('name', ['synthetic_new.py', 'run_synthetic_new.py'])
+def test_unclassified_generator_module_fails_classification(tree, name):
+    assert_generator_classification(tree)
+    (tree / 'generators' / name).write_text('# Synthetic unclassified module\n')
+    with pytest.raises(AssertionError, match='Unclassified generator modules'):
+        assert_generator_classification(tree)
+
+
+def saved_bytes(program, fmt, version, encoding):
+    return f'new synthetic save: {program} {fmt} {version} {encoding}\n'.encode()
+
+
+@pytest.mark.parametrize('runner', ['native', 'feature', 'cross', 'bricscad'])
+def test_force_replaces_destination_bytes(harness, runner):
+    h = harness
+    if runner == 'native':
+        iid = 'background_background'
+        intent = json.loads((h.root / 'intent' / f'{iid}.json').read_text())
+        targets = [(h.root / 'native/ezdxf' / f'background_2000_{enc}.dxf',
+                    saved_bytes('ezdxf', 'DXF', '2000', enc))
+                   for enc in ('ASCII', 'binary')]
+        def run():
+            for enc in ('ASCII', 'binary'):
+                h.regen.run_case((intent, 'background', '2000', enc,
+                                 h.helper(h.root, iid)[0]), cross=False, force=True)
+    elif runner == 'feature':
+        targets = [(h.root / 'native/ezdxf' / f'synthetic_2000_{enc}.dxf',
+                    saved_bytes('ezdxf', 'DXF', '2000', enc))
+                   for enc in ('ASCII', 'binary')]
+        def run():
+            h.feature.main('feature_synthetic', force=True)
+    elif runner == 'cross':
+        targets = [(dest, saved_bytes('oda', fmt, version, enc))
+                   for _, dest, fmt, version, enc, _ in
+                   h.cross.jobs_for('ezdxf__oda', intent='feature_synthetic')]
+        def run():
+            h.cross.run_pair('ezdxf__oda', intent='feature_synthetic',
+                             reader_name='oda', force=True)
+    else:
+        targets = [(h.root / 'native/bricscad' / f'k_tables_2000_{enc}.dxf',
+                    saved_bytes('bricscad', 'DXF', '2000', enc))
+                   for enc in ('ASCII', 'binary')]
+        def run():
+            h.bc.main('future_synthetic', force=True)
+    assert targets
+    # Matching content digests/builds deliberately prevent ordinary publication
+    # from replacing these bytes; force must override that optimization.
+    for dest, expected in targets:
+        assert dest.exists() and dest.read_bytes() != expected
+    run()
+    for dest, expected in targets:
+        assert dest.read_bytes() == expected, str(dest.relative_to(h.root))
+
+
+def test_selected_bricscad_run_preserves_other_intent_stale_stamp(harness, monkeypatch):
+    h = harness
+    other = 'future_other_synthetic'
+    intent = json.loads((h.root / 'intent/future_synthetic.json').read_text())
+    intent['intent_id'] = other
+    dump(h.root / 'intent' / f'{other}.json', intent)
+    monkeypatch.setattr(h.bc, 'TOPICS', {
+        'k_tables': 'future_synthetic', 'k_regions_solids': other,
+    })
+    stale = dict(scoring.stamp(h.root, other), checker='synthetic obsolete checker')
+    carried = dict(file='native/bricscad/k_regions_solids_2000_ASCII.dxf',
+                   intent_id=other, field='count', status='same', converter=None,
+                   scored_with=stale)
+    path = h.root / 'results/native_bricscad_checks.json'
+    dump(path, [carried])
+    monkeypatch.setattr(h.bc, 'compare', lambda *a, **kw: [
+        dict(intent_id='future_synthetic', field='count', status='same')])
+    h.bc.main('future_synthetic', force=True)
+    rows = json.loads(path.read_text())
+    selected = [r for r in rows if r['intent_id'] == 'future_synthetic']
+    assert selected, 'The selected intent must actually be scored'
+    assert all(r['scored_with'] == scoring.stamp(h.root, 'future_synthetic')
+               for r in selected)
+    assert [r for r in rows if r['intent_id'] == other] == [carried]
+
+
+@pytest.mark.parametrize('staleness', ['input', 'missing'])
+def test_bricscad_dry_run_counts_whole_topic_rebuild(harness, monkeypatch, capsys, staleness):
+    h = harness
+    dest = h.root / 'native/bricscad/k_tables_2000_ASCII.dxf'
+    if staleness == 'missing':
+        dest.unlink()
+    else:
+        sc = dest.with_suffix('.dxf.provenance.json')
+        meta = json.loads(sc.read_text())
+        meta['made_by']['input_digest'] = 'synthetic stale input'
+        dump(sc, meta)
+    invoke(h, monkeypatch, '--intent', 'future_synthetic', '--pairs', 'ezdxf__oda',
+           '--with-bricscad', '--dry-run')
+    output = capsys.readouterr().out
+    count = int(re.search(r'native bricscad: (\d+) resave', output).group(1))
+    assert not h.saved, 'Dry run must never save'
+    h.bc.main('future_synthetic')
+    rebuilt = [save for save in h.saved if save[0] == 'bricscad']
+    assert len(rebuilt) == 2, 'One stale file must rebuild both files of the topic'
+    assert count == len(rebuilt), output
+
+
+@pytest.mark.parametrize('mechanic', [
+    'programs/bricscad_batch.py', 'bcad_run.sh',
+    'generators/run_bricscad.py', 'programs/adapters.py',
+])
+def test_volatile_docs_name_save_mechanics_and_force(tree, mechanic):
+    text = (tree / 'checker/VOLATILE.md').read_text()
+    # The file must be named in the save-mechanics guidance, not elsewhere in
+    # historical digest evidence that happens to mention the same runner.
+    guidance = text[text.index('Native drawings rebuild'):]
+    assert mechanic in guidance
+    assert '--force' in guidance
