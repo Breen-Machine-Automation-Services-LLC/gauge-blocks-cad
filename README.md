@@ -1,25 +1,54 @@
 # BMAS Gauge Blocks: CAD
 
-This repo includes synthetic CAD drawings, the scripts that create them, and measured results.
-It is for you if you build or maintain software that reads or writes DWG or DXF and want to
-know which content survives a trip between programs. The drawings are ordinary files,
-about 560 MB checked out. They're a best-effort example of how these programs represent
-features and settings, not affiliated with any CAD vendor or standards body.
+Synthetic drawings to help you build CAD software that works across programs.
 
-## Quick start
+## Why this exists
 
-Clone the repo and install the pinned Python dependencies. This check reads a DXF with
-ezdxf, an open-source Python library for reading and writing DXF:
+We want to support the creation and testing of open CAD programs for maximum interoperability with other CAD applications and standards.
+You can use these examples to find where drawing content survives an exchange and where it changes.
+
+## What this is
+
+This is a test set of synthetic DWG and DXF drawings, two computer-aided design (CAD) file formats, giving you examples of each feature and variation in each file type, one feature or related topic per file.
+Each drawing comes with an **intent**, its expected values written independently of any program, and a **provenance record**, which tells you how it was made.
+Several programs write the same content and others open and save it again, so you can see how existing software represents each feature; the [coverage table](COVERAGE.md) shows what is covered and on the roadmap.
+This is a best-effort project, not affiliated with any CAD vendor or standards body.
+
+## Pick your path
+
+### Use the test set
+
+You do not need to install anything to use the drawings.
+Get the drawings archive, with drawings, intents, provenance records, and results, from the [latest GitHub release](https://github.com/Breen-Machine-Automation-Services-LLC/gauge-blocks-cad/releases/latest), or clone the repo (about 560 MB):
 
 ```sh
 git clone https://github.com/Breen-Machine-Automation-Services-LLC/gauge-blocks-cad.git
-cd gauge-blocks-cad
+```
+
+Here is how the test set is organized:
+
+- `native/<program>/` holds drawings as each program wrote them.
+- `cross/<writer>__<resaver>/` holds drawings after another program opened and saved them again.
+- `intent/` holds the expected values. Each drawing has a `<drawing>.provenance.json` beside it.
+
+File names give you the feature or topic, version, and encoding (how the file stores its data).
+For example, `native/ezdxf/layers_2018_ASCII.dxf` tests layers in the 2018 version using ASCII text encoding; `native/ezdxf/a_text_2000_binary.dxf` tests text in the 2000 version using binary encoding.
+Here, ezdxf is an open-source Python library for reading and writing DXF.
+
+Open a drawing beside its intent, such as the layers drawing and [its expected values](intent/background_layers.json).
+The [interactive map](map/index.html) and `results/` show what each program kept or changed.
+Point your reader at `native/` and compare what it reads with the intents, or compare how two programs wrote the same feature.
+
+### Run it, test your program, or extend it
+
+From the repository root, use a Python environment with pip and install the pinned dependencies, then run one check:
+
+```sh
 python -m pip install -r requirements.txt
 python checker/check.py native/ezdxf/layers_2018_ASCII.dxf
 ```
 
-Each drawing has an **intent**, an independent file of expected values. The check prints
-JSON comparing the drawing with its intent. Here are a few lines from this run, trimmed:
+The checker reads DXF directly with ezdxf. Here are a few real lines of output, trimmed:
 
 ```json
       "field": "layer_count",
@@ -30,58 +59,43 @@ JSON comparing the drawing with its intent. Here are a few lines from this run, 
       "status": "same",
 ```
 
-`same` means the value matches within the intent's tolerance; `differs` means it does not;
-`absent` means the expected field could not be found. Numeric tolerances come from the intent.
-
-## Test your own program
-
-Open a supplied drawing in your program and save it to a new file. Pass the original
-intent with `--intent` so the checker knows what your output should contain:
+`same` means the field matches within the intent's tolerance, `differs` means it changed, and `absent` means it was not found.
+To test your program, open a native drawing, save it to a new file, and check that output against the original drawing's intent with `--intent`.
+Replace the drawing path with your saved file:
 
 ```sh
-python checker/check.py /path/to/your-output.dxf --intent intent/background_layers.json
-python checker/check.py /path/to/your-output.dwg --intent intent/background_layers.json --converter oda
+python checker/check.py native/ezdxf/layers_2018_ASCII.dxf --intent intent/background_layers.json
 ```
 
-DWG needs `--converter oda` for ODA File Converter, a DWG/DXF conversion tool, or
-`--converter bricscad` for BricsCAD, a desktop CAD program. Configure the installed program
-as described below. The converter produces DXF for ezdxf to read; rows name both tools.
-When the converter cannot open the DWG, the checker prints `"status": "refused"` with the converter's message and exits with code 2.
-For comparisons across your program's builds, see [compare your build](CONTRIBUTING.md#program-developers-compare-your-build).
+DWG checking needs ODA File Converter, a DWG/DXF conversion tool, or BricsCAD, a desktop CAD program, installed and configured as described in [CONTRIBUTING.md](CONTRIBUTING.md#checks-and-regeneration).
+The converter makes DXF for ezdxf to read. You can also use `--converter bricscad`:
+
+```sh
+python checker/check.py cross/ezdxf__bricscad/layers_2018_ASCII.dwg --intent intent/background_layers.json --converter oda
+```
+
+When the converter cannot open the DWG, the checker prints `"status": "refused"` with the converter's message in `detail` and exits with code 2.
+To track your program across builds, follow [compare your build](CONTRIBUTING.md#program-developers-compare-your-build).
+To add a feature, drawing, or program, start with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## What is covered
 
-The scope is 2D drafting for industrial automation schematics and panel layouts.
-Drawings exercise text, geometry, dimensions, layouts, blocks, attributes, dictionaries,
-raster images, synthetic proxies, tables, regions, solids, and background settings such as
-layers, styles, and metadata. Formats include DWG, ASCII DXF, and binary DXF, with R12
-inputs and versions from 2000 through 2018 where supported.
-A **native drawing** is written by the program that authored it. A **resaved** or **cross
-drawing** is opened and saved again by another program. CADCraft, an open-source CAD program,
-is also measured as a re-saver. See [program capabilities](programs/CAPABILITIES.md) for builds and limits.
+The scope is 2D drafting for industrial automation schematics and panel layouts; 3D and other domains come later.
+Formats include DWG, ASCII DXF, and binary DXF, with R12 inputs and versions 2000, 2004, 2007, 2010, 2013, and 2018 where supported.
+Features include text, geometry, blocks, attributes, dimensions, layouts, images, tables, regions, and background settings such as layers, styles, and metadata.
+See the [coverage table](COVERAGE.md) for details and planned work.
 
-## Where to find results
+## Results
 
-Use [the interactive map](map/index.html) to explore coverage and compatibility, or
-[COVERAGE.md](COVERAGE.md) for a summary. The `results/` folder holds measured fields and audits.
-In [the ezdxf-to-BricsCAD results](results/cross_ezdxf__bricscad_checks.json), **97.4% of measured
-DXF fields match their intents after BricsCAD resaves ezdxf drawings**, read directly by
-ezdxf 1.4.4. This includes ASCII and binary DXF; it is a field count, not a drawing pass rate.
-BricsCAD and ODA File Converter use the same DWG library, so agreement between them is not
-independent confirmation. See [open questions](OPEN-ITEMS.md) for observations needing follow-up.
+Explore the [interactive map](map/index.html) or inspect `results/` for measurements.
+In [the ezdxf-to-BricsCAD results](results/cross_ezdxf__bricscad_checks.json), **97.4% of measured DXF fields match their intents after BricsCAD resaves ezdxf drawings**, read directly by ezdxf 1.4.4.
+This includes ASCII and binary DXF; it is a field count, not a drawing pass rate.
+BricsCAD and ODA File Converter use the same DWG library, so agreement between them is not independent confirmation.
+CADCraft, an open-source CAD program, is also measured as a resaver. See [open items](OPEN-ITEMS.md) for observations needing follow-up.
 
-## Contribute or regenerate
+## Contributing and regenerating
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for synthetic-content and provenance rules,
-[DESIGN.md](DESIGN.md) for the design, and [AGENTS.md](AGENTS.md) for coding-agent instructions.
-Coverage, the map, and `results/` are generated. Expected values come from intents,
-never from a program's saved output.
-
-Regeneration needs the relevant programs installed. Copy [settings.example.json](settings.example.json)
-to `settings.local.json` and configure their locations. ODA also needs `xvfb-run`, a C compiler
-named `cc`, and the installed build listed in [program capabilities](programs/CAPABILITIES.md).
-Run `python regenerate.py --with-bricscad` to rebuild drawings, checks, and the map.
-See [the intent schema](intent/SCHEMA.md) and [digest limitations](checker/VOLATILE.md) before changing generators.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for contribution and regeneration steps, [AGENTS.md](AGENTS.md) for coding-agent instructions, and [DESIGN.md](DESIGN.md) for the design. Regeneration needs the CAD programs installed and configured.
 
 Made by Breen Machine Automation Services.
 Code and data: [MIT](LICENSE-MIT) OR [Apache-2.0](LICENSE-APACHE), at your option.
