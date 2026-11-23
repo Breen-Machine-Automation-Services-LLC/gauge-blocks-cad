@@ -31,19 +31,25 @@ def observe(doc):
     return dict(seen)
 
 
-def main():
+def main(intent_id=None, force=False):
     bc, oda = BricsCad(), Oda(); rows = []; written = []
     observation_path=R/'results/native_bricscad_observations.json'
     saved=json.loads(observation_path.read_text()) if observation_path.exists() else {}
     observations=saved.get('modelspace_entities_by_file',{});steps=saved.get('generator_steps',{})
+    selected_intent = intent_id
+    previous_rows = load_rows(R/'results/native_bricscad_checks.json')
+    if selected_intent:
+        rows = [r for r in previous_rows if r['intent_id'] != selected_intent]
     for topic, intent_id in TOPICS.items():
+        if selected_intent and intent_id != selected_intent:
+            continue
         intent = json.loads((R / 'intent' / (intent_id + '.json')).read_text())
         input_digest = native_input(R,intent_id,'bricscad',Path(__file__),LSP)[0]
         existing=sorted((R/'native/bricscad').glob(topic+'_*.provenance.json'))
         previous=load_rows(R/'results/native_bricscad_checks.json')
         if existing:
             complete=all(json.loads(p.read_text()).get('build')==bc.build and json.loads(p.read_text()).get('made_by',{}).get('input_digest')==input_digest and Path(str(p).removesuffix('.provenance.json')).exists() for p in existing)
-            if complete:
+            if complete and not force:
                 paths=[Path(str(p).removesuffix('.provenance.json')) for p in existing]
                 for dest in paths:
                     rel=dest.relative_to(R).as_posix();old=[row for row in previous if row['file']==rel]
@@ -109,7 +115,7 @@ def main():
                 meta['ezdxf_based'] = False; meta['made_by']['script'] = 'generators/run_bricscad.py'
                 if fmt == 'DWG':
                     meta['digest_reader'] = converter
-                before = dest.exists(); publish(p, dest, meta); written.append(dest.name)
+                before = dest.exists(); publish(p, dest, meta, force=force); written.append(dest.name)
                 if dest.exists() and json.loads(dest.with_suffix(dest.suffix + '.provenance.json').read_text()).get('content_digest') != meta['content_digest']:
                     raise RuntimeError('sidecar digest mismatch ' + p.name)
                 observations[p.name] = observe(doc)

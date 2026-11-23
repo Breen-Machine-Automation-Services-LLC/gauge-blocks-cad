@@ -8,7 +8,7 @@
   "encoding": "binary",
   "made_by": {
     "script": "generators/run_features.py",
-    "input_digest": "ae692cc16e6fee953b40f46cd8fc7daaa7b19ff0ad88440a51b3bb948cdcb438"
+    "input_digest": "5e67bc148e12c8e103951523967168db5608ca35802fbacebf402c188dac65fd"
   },
   "content_digest": "6b48b174d926f927d56e9866eff187c4849688324a8271105300d28af3e7f580",
   "ezdxf_based": true

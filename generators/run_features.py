@@ -9,7 +9,7 @@ from checker.core import compare
 from regenerate import sidecar,publish,write_json
 import tempfile
 
-def main(intent_id=None):
+def main(intent_id=None, force=False):
  ez=Ezdxf();rows=[];audits=[]
  if intent_id:
   rows=[r for r in json.loads((R/'results/features_checks.json').read_text()) if r['intent_id']!=intent_id]
@@ -22,7 +22,7 @@ def main(intent_id=None):
     dest=R/'native/ezdxf'/f'{topic}_{version}_{encoding}.dxf'
     sc=dest.with_suffix('.dxf.provenance.json')
     old=json.loads(sc.read_text()) if sc.exists() else {}
-    if dest.exists() and old.get('build')==ez.build and old.get('made_by',{}).get('input_digest')==inp:
+    if not force and dest.exists() and old.get('build')==ez.build and old.get('made_by',{}).get('input_digest')==inp:
      previous=[r for r in load_rows(R/'results/features_checks.json') if r['file']==dest.relative_to(R).as_posix()]
      if current(previous,R,intent['intent_id']):checks=previous
      else:
@@ -38,7 +38,7 @@ def main(intent_id=None):
      checks=compare(loaded,intent,'ezdxf '+ez.build)
      audit=loaded.audit()
      assert not audit.errors and not audit.fixes,(topic,version,audit.errors,audit.fixes)
-     meta['made_by']['script']='generators/run_features.py';publish(tmp,dest,meta)
+     meta['made_by']['script']='generators/run_features.py';publish(tmp,dest,meta,force=force)
      sc=dest.with_suffix('.dxf.provenance.json')
      if json.loads(sc.read_text())!=meta:write_json(sc,meta)
      for row in checks:row.update(file=dest.relative_to(R).as_posix(),converter=None,self_read=False)

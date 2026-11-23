@@ -8,7 +8,7 @@
   "encoding": "ASCII",
   "made_by": {
     "script": "generators/run_bricscad.py",
-    "input_digest": "36d610ccb87fb7463b6c4df421e397d92d4b4c819e1c0531772791962e4f6586"
+    "input_digest": "cfa4dce996959a577b63cc0c81fc24ce9c7f71ee40f22aa92254ffac15df2533"
   },
   "content_digest": "0eb1864063c7b71c8fbc14fc9774ed80cb357cc196a8a6be8c73e9cd6ea2e8a7",
   "ezdxf_based": false

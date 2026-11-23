@@ -550,7 +550,8 @@ def test_dry_run_reports_native_and_pair_resave_and_rescore_counts(runner_case, 
     i = dict(i, intent_id=iid)
     ip = root / 'intent' / (iid + '.json')
     dump(ip, i)
-    inp = hashlib.sha256(ip.read_bytes() + (root / 'generators/background.py').read_bytes()).hexdigest()
+    from checker.scoring import native_input
+    inp = native_input(root, iid)[0]
     rows, _ = regenerate.run_case((i, 'synthetic', '2000', 'ASCII', inp), cross=False)
     for row in rows:
         row['scored_with'] = dict(expected_stamp(root, iid), checker='0' * 64)

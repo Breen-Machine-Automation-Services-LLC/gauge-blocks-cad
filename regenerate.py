@@ -14,16 +14,17 @@ def write_json(p,v):
  p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,indent=2)+'\n')
 def sidecar(p,doc,intent,adapter,version,encoding,input_digest):
  return {'intent_id':intent['intent_id'],'representation_id':intent['representation_id'],'program':adapter.name,'build':adapter.build,'format':p.suffix[1:].upper(),'version':version,'encoding':encoding,'made_by':{'script':'regenerate.py','input_digest':input_digest},'content_digest':digest(doc),'ezdxf_based':True}
-def publish(temp,dest,meta):
+def publish(temp,dest,meta,force=False):
  sc=dest.with_suffix(dest.suffix+'.provenance.json');old=json.loads(sc.read_text()) if sc.exists() else {}
- if not dest.exists() or any(old.get(k)!=meta[k] for k in ['content_digest','build','encoding']):
-  dest.parent.mkdir(parents=True,exist_ok=True);temp.replace(dest);write_json(sc,meta)
-def run_case(case, cross=True):
+ if force or not dest.exists() or any(old.get(k)!=meta[k] for k in ['content_digest','build','encoding']):
+  dest.parent.mkdir(parents=True,exist_ok=True);temp.replace(dest)
+ if old!=meta:write_json(sc,meta)
+def run_case(case, cross=True, force=False):
  intent,topic,version,encoding,input_digest=case;ez=Ezdxf();oda=Oda();rows=[]
  dest=ROOT/'native/ezdxf'/f'{topic}_{version}_{encoding}.dxf'
  sc=dest.with_suffix('.dxf.provenance.json')
  old=json.loads(sc.read_text()) if sc.exists() else {}
- if not cross and dest.exists() and old.get('build')==ez.build and old.get('made_by',{}).get('input_digest')==input_digest:
+ if not force and not cross and dest.exists() and old.get('build')==ez.build and old.get('made_by',{}).get('input_digest')==input_digest:
   previous=[r for r in load_rows(ROOT/'results/checks.json') if r['file']==dest.relative_to(ROOT).as_posix()]
   if current(previous,ROOT,intent['intent_id']):
    return previous,dict(intent_id=intent['intent_id'],version=version,encoding=encoding,errors=0,fixes=0)
@@ -40,14 +41,14 @@ def run_case(case, cross=True):
   a=loaded.audit()
   audit={'intent_id':intent['intent_id'],'version':version,'encoding':encoding,'errors':len(a.errors),'fixes':len(a.fixes)}
   if a.errors:raise RuntimeError(str(a.errors))
-  publish(p,dest,meta)
+  publish(p,dest,meta,force=force)
   for row in checks:
    row.update(file=str(dest.relative_to(ROOT)),converter=None,self_read=False);rows.append(row)
   for fmt in (['DXF','DWG'] if cross else []):
    out=Path(tmp)/('cross.'+fmt.lower());oda.save(dest,out,fmt,version,encoding if fmt=='DXF' else 'binary')
    dd=ez.open(out) if fmt=='DXF' else oda.read_dwg(out)
    target=ROOT/'cross/ezdxf__oda'/f'{topic}_{version}_{encoding}.{fmt.lower()}'
-   publish(out,target,sidecar(target,dd,intent,oda,version,encoding if fmt=='DXF' else 'binary',meta['content_digest']))
+   publish(out,target,sidecar(target,dd,intent,oda,version,encoding if fmt=='DXF' else 'binary',meta['content_digest']),force=force)
    for row in compare(dd,intent,'ezdxf '+ez.build, VERSIONS[version]):
     row.update(file=str(target.relative_to(ROOT)),converter='oda '+oda.build if fmt=='DWG' else None,self_read=(fmt=='DWG'));rows.append(row)
  annotate(rows,ROOT,intent['intent_id'],'ezdxf','ezdxf')
@@ -62,6 +63,7 @@ def main():
  parser.add_argument('--intent')
  parser.add_argument('--pairs',help='Comma-separated declared pair IDs')
  parser.add_argument('--dry-run',action='store_true')
+ parser.add_argument('--force',action='store_true',help='Resave selected outputs regardless of input digests')
  parser.add_argument('--with-bricscad',action='store_true',help='Include pairs that launch BricsCAD')
  args=parser.parse_args()
  if args.intent or args.pairs or args.dry_run:
@@ -86,8 +88,9 @@ def main():
      for enc in [e for v,e in cases if v==version]:
       dest=ROOT/'native/ezdxf'/f'{topic}_{version}_{enc}.dxf';sc=dest.with_suffix('.dxf.provenance.json')
       old=json.loads(sc.read_text()) if sc.exists() else {}
-      if not dest.exists() or old.get('build')!=Ezdxf.build or old.get('made_by',{}).get('input_digest')!=inp:native_save+=1
-      elif not current([r for r in previous if r['file']==dest.relative_to(ROOT).as_posix()],ROOT,ip.stem):native_score+=1
+      rel=dest.relative_to(ROOT).as_posix()
+      if args.force or not dest.exists() or old.get('build')!=Ezdxf.build or old.get('made_by',{}).get('input_digest')!=inp:native_save+=1
+      elif not current([r for r in previous if r['file']==rel],ROOT,ip.stem):native_score+=1
    print(f'native: {native_save} resave, {native_score} rescore')
    from generators import run_bricscad as bc_runner
    from programs.adapters import BricsCad
@@ -101,14 +104,16 @@ def main():
     inp,_=native_input(ROOT,iid,'bricscad',Path(bc_runner.__file__),bc_runner.LSP)
     for sc in sorted((ROOT/'native/bricscad').glob(topic+'_*.provenance.json')):
      dest=Path(str(sc).removesuffix('.provenance.json'));old=json.loads(sc.read_text())
-     if not dest.exists() or old.get('build')!=BricsCad.build or old.get('made_by',{}).get('input_digest')!=inp:bc_save+=1
-     elif not current([r for r in previous if r['file']==dest.relative_to(ROOT).as_posix()],ROOT,iid):bc_score+=1
+     rel=dest.relative_to(ROOT).as_posix()
+     if args.force or not dest.exists() or old.get('build')!=BricsCad.build or old.get('made_by',{}).get('input_digest')!=inp:bc_save+=1
+     elif not current([r for r in previous if r['file']==rel],ROOT,iid):bc_score+=1
    print(f'native bricscad: {bc_save} resave, {bc_score} rescore')
    previous=load_rows(ROOT/'results/cross_ezdxf__oda_read_by_bricscad_checks.json');bc_score=0
    for dest in sorted((ROOT/'cross/ezdxf__oda').glob('*.dwg')):
     side=json.loads(dest.with_suffix('.dwg.provenance.json').read_text());iid=side['intent_id']
     if args.intent and args.intent!=iid:continue
-    old=[r for r in previous if r['file']==dest.relative_to(ROOT).as_posix()]
+    rel=dest.relative_to(ROOT).as_posix()
+    old=[r for r in previous if r['file']==rel]
     identity=hashlib.sha256(dest.read_bytes()).hexdigest()
     if not current(old,ROOT,iid) or not reading_current(old,'ezdxf '+ezdxf.__version__,'bricscad '+BricsCad.build) or any(r.get('read_input_digest')!=identity for r in old):bc_score+=1
    print(f'read by bricscad: 0 resave, {bc_score} rescore')
@@ -120,17 +125,18 @@ def main():
     for src,dest,fmt,version,enc,side in jobs_for(pair,intent=args.intent):
      sc=dest.with_suffix(dest.suffix+'.provenance.json')
      old=json.loads(sc.read_text()) if sc.exists() else {}
-     if not dest.exists() or old.get('made_by',{}).get('input_digest')!=side['content_digest'] or old.get('build')!=build:
+     rel=dest.relative_to(ROOT).as_posix()
+     if args.force or not dest.exists() or old.get('made_by',{}).get('input_digest')!=side['content_digest'] or old.get('build')!=build:
       resaves+=1
       print('Would rewrite '+dest.relative_to(ROOT).as_posix()+' from '+src.relative_to(ROOT).as_posix())
      else:
-      if not current([r for r in previous if r['file']==dest.relative_to(ROOT).as_posix()],ROOT,side['intent_id']):rescores+=1
+      if not current([r for r in previous if r['file']==rel],ROOT,side['intent_id']):rescores+=1
     print(f'{pair}: {resaves} resave, {rescores} rescore')
    return
   if args.intent:
    if args.intent.startswith('feature_'):
     from generators.run_features import main as feature_main
-    feature_main(args.intent)
+    feature_main(args.intent, force=args.force)
    elif args.intent.startswith('background_'):
     ip=ROOT/'intent'/f'{args.intent}.json';intent=json.loads(ip.read_text())
     topic=args.intent.removeprefix('background_')
@@ -140,10 +146,14 @@ def main():
     for version in VERSIONS:
      if (version,'ASCII') not in native_input(ROOT,ip.stem)[1]:continue
      for enc in (['ASCII'] if version=='R12' else ['ASCII','binary']):
-      rs,a=run_case((intent,topic,version,enc,inp),cross=False);rows.extend(rs);audits.append(a)
+      rs,a=run_case((intent,topic,version,enc,inp),cross=False,force=args.force);rows.extend(rs);audits.append(a)
     write_json(ROOT/'results/checks.json',rows);write_json(ROOT/'results/audits.json',audits)
+   elif args.with_bricscad:
+    from generators.run_bricscad import main as bricscad_main, TOPICS
+    if args.intent not in TOPICS.values():parser.error('Intent has no native generator')
+    bricscad_main(args.intent, force=args.force)
    else:parser.error('Intent has no ezdxf native generator')
-  for pair in pairs:run_pair(pair,intent=args.intent,reader_name=None if args.with_bricscad else 'oda')
+  for pair in pairs:run_pair(pair,intent=args.intent,reader_name=None if args.with_bricscad else 'oda',force=args.force)
   return
  cases=[]
  for ip in sorted((ROOT/'intent').glob('background_*.json')):
@@ -153,21 +163,24 @@ def main():
    for encoding in (['ASCII'] if version=='R12' else ['ASCII','binary']):cases.append((intent,topic,version,encoding,input_digest))
  rows=[];audits=[]
  with ThreadPoolExecutor(max_workers=3) as pool:
-  for rs,a in pool.map(lambda case:run_case(case,cross=False),cases):
+  for rs,a in pool.map(lambda case:run_case(case,cross=False,force=args.force),cases):
    rows.extend(rs);audits.append(a);print(f"Completed {len(audits)}/{len(cases)} native inputs",flush=True)
  barriers=[{'program':'oda','status':'resolved','cause':'Original launcher referenced a missing executable; direct AppRun under xvfb works.','blocked':'cross generation, DWG reading, exact executable build and save-digest evidence'}]
  write_json(ROOT/'results/checks.json',rows);write_json(ROOT/'results/audits.json',audits);write_json(ROOT/'results/barriers.json',barriers)
  with (ROOT/'results/checks.csv').open('w') as f:
   w=csv.DictWriter(f,fieldnames=['file','intent_id','field','reader','converter','self_read','scored_with','writer_engine','reader_engine','shared_engine','status','expected','actual','tolerance','detail']);w.writeheader();w.writerows(rows)
  from generators.run_features import main as feature_main
- feature_main()
+ feature_main(force=args.force)
+ if args.with_bricscad:
+  from generators.run_bricscad import main as bricscad_main
+  bricscad_main(force=args.force)
  from generators.run_cross import PAIRS,jobs_for,run_pair
  for pair in PAIRS:
   if pair.split('__')[1]=='bricscad' and not args.with_bricscad:
    for _,dest,*_ in jobs_for(pair):print('Skipped BricsCAD '+dest.relative_to(ROOT).as_posix())
   elif pair.split('__')[1]=='oda' and not args.with_bricscad:
-   run_pair(pair,reader_name='oda')
-  else:run_pair(pair)
+   run_pair(pair,reader_name='oda',force=args.force)
+  else:run_pair(pair,force=args.force)
  from map.build import main as map_main
  map_main()
  from intent.validate import main as validate

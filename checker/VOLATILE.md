@@ -50,7 +50,8 @@ from the digest. Compute the digest on the drawing as read, before any audit.
 
 Every result carries `scored_with`, with SHA-256 values `checker` for
 `checker/core.py` (the status implementation and its local helpers) and `intent`
-for the exact intent JSON bytes, plus `ezdxf` for the installed ezdxf version
+for canonical expected fields without reference metadata, plus `ezdxf` for
+the installed ezdxf version
 and `versions` for the complete version mapping passed to `compare()`.
 `checker/scoring.py` computes this stamp. Reader and converter build strings
 are checked separately when deciding whether a cross output needs re-scoring.
@@ -65,3 +66,10 @@ ezdxf's family for direct DXF reading, or the converter family for DWG reading.
 The stored family names are `ezdxf`, `oda-teigha`, and `cadcraft`.
 `shared_engine` is true when these families match. A different program that
 uses the same DWG engine does not provide independent engine confirmation.
+
+Native drawings rebuild when drawing generator code, expected fields without
+references, or the writer build changes; cross drawings rebuild when their source
+content digest or writer build changes. Checker and reader changes trigger a
+re-score of existing drawings, while runner edits, citations and explanations do
+not trigger a rebuild. Use `regenerate.py --force` with the usual intent and pair
+filters to resave after changes to save mechanics outside the drawing input digest.

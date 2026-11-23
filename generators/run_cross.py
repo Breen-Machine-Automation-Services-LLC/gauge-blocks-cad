@@ -66,7 +66,7 @@ def main():
             return
 
 
-def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None, retain_unreadable=False):
+def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None, retain_unreadable=False, force=False):
     writer_name, resaver_name = pair.split('__'); resaver = ADAPTERS[resaver_name](); reader = ADAPTERS[reader_name or READER[resaver_name]]()
     folder = R / 'cross' / pair; folder.mkdir(parents=True, exist_ok=True)
     checks_path = R / 'results' / f'cross_{pair}_checks.json'
@@ -79,7 +79,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
     jobs = jobs_for(pair, limit, intent); todo = []; rescore = []
     for src, dest, fmt, version, enc, side in jobs:
         sc = dest.with_suffix(dest.suffix + '.provenance.json')
-        if dest.exists() and sc.exists():
+        if not force and dest.exists() and sc.exists():
             m = json.loads(sc.read_text())
             if m['made_by']['input_digest'] == side['content_digest'] and m['build'] == resaver.build:
                 if not current(rows_by_file[dest.relative_to(R).as_posix()],R,side['intent_id']) or not reading_current(rows_by_file[dest.relative_to(R).as_posix()], f'ezdxf {ezdxf.__version__}', None if fmt=='DXF' else f'{reader.name} {reader.build}'):
@@ -164,7 +164,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
                 if digest_reader:
                     meta['digest_reader'] = digest_reader
                 privacy.assert_clean(staged[dest])
-                publish(staged[dest], dest, meta)
+                publish(staged[dest], dest, meta, force=force)
                 sc = dest.with_suffix(dest.suffix + '.provenance.json')
                 if json.loads(sc.read_text()) != meta:   # publish keeps an unchanged output; its sidecar must still name the current source
                     write_json(sc, meta)

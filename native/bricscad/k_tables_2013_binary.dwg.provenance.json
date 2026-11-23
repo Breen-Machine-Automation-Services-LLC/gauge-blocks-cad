@@ -8,7 +8,7 @@
   "encoding": "binary",
   "made_by": {
     "script": "generators/run_bricscad.py",
-    "input_digest": "4fc181478f1f7f0747358460d97246928d3757d179e48092d04c68eca0216940"
+    "input_digest": "44508c3321c42548a6fd22ddadcc451babe97d471e84c73ceed5b3a278436192"
   },
   "content_digest": "cf0338190ca06ac612e4b46fee2240c3ab34c9b66daf45365d2f674a2103ae53",
   "ezdxf_based": false,
