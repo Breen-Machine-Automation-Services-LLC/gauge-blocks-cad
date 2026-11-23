@@ -105,7 +105,7 @@ def test_ambiguous_dictionary_key_fails_loudly():
     nested.add_dict_var('Key', 'one')
     nested.add_dict_var('KEY', 'two')
     result = row(d, dict(kind='object', dictionary='ZEV_DICT', name='key', attr='value'), 'one')
-    assert result['status'] == 'absent'
+    assert result['status'] == 'not_scored'
     assert 'ambigu' in result['detail'].lower()
 
 
@@ -243,7 +243,7 @@ def test_query_count_layer_case():
 def test_unsupported_query_fails_loudly():
     d = ezdxf.new()
     result = row(d, dict(kind='query_count', name='*[color>1]'), 0)
-    assert result['status'] == 'absent'
+    assert result['status'] == 'not_scored'
     assert result['detail']
 
 

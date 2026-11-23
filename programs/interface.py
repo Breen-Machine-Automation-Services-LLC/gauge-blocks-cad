@@ -4,5 +4,6 @@ from pathlib import Path
 class Adapter(Protocol):
     name: str
     build: str
+    engine: str
     def open(self, path: Path) -> Any: ...
     def save(self, opened: Any, path: Path, format: str, version: str, encoding: str) -> None: ...

@@ -21,7 +21,9 @@ with contextlib.ExitStack() as stack:
  out=io.StringIO()
  with contextlib.redirect_stdout(out):regenerate.main()
 lines=out.getvalue().splitlines()
-assert len(lines)==52,len(lines)
+skipped=[line for line in lines if line.startswith('Skipped BricsCAD ')]
+assert len(skipped)==52,len(skipped)
+assert any(line.startswith('native: ') and 'resave' in line and 'rescore' in line for line in lines)
 for pair in ['ezdxf__bricscad','oda__bricscad']:
  jobs=jobs_for(pair,intent='feature_a_text')
  assert len(jobs)==26

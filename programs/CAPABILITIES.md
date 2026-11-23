@@ -28,7 +28,7 @@ The plain table's drawn block (`*T2`) omits B1 although its cell data holds it. 
 
 **Native BricsCAD set.** Tables, regions and solids; 40 files across writable formats, versions and encodings. Other intents have cross-set measurements.
 
-**Independence of readers.** BricsCAD writes and reads DWG through the Open Design Alliance's Teigha libraries (the DWG files carry `Teigha(R) 26.9.0.0`), and ODA File Converter is built on the same libraries. Reading a BricsCAD-written DWG with ODA, or an ODA-written DWG with BricsCAD, uses a different program but not an independent DWG engine. CADCraft's DWG code is separate; no CADCraft reader rows exist yet, so every DWG row still shares an engine with one of its programs.
+**Shared engine readers.** BricsCAD writes and reads DWG through the Open Design Alliance's Teigha libraries (the DWG files carry `Teigha(R) 26.9.0.0`), and ODA File Converter is built on the same libraries. Reading a BricsCAD-written DWG with ODA, or an ODA-written DWG with BricsCAD, uses a different program but not an independent DWG engine. CADCraft's DWG code is separate; no CADCraft reader rows exist yet, so every DWG row still shares an engine with one of its programs.
 
 ## Privacy: where each program writes the user or author name
 
@@ -44,8 +44,15 @@ BricsCAD ignores `USER` and `LOGNAME`; `LOGINNAME` is read-only and comes from t
 
 ## Cross sets and readers
 
-DWG outputs are read through an independent converter: ODA reads BricsCAD- and CADCraft-written DWG; BricsCAD reads ODA-written DWG (`results/cross_ezdxf__oda_independent_checks.json` adds BricsCAD rows for the 77 existing ODA-written DWG files, next to the original self-read rows). Binary DXF written by BricsCAD is also read through ODA (binary to ASCII DXF) in the native set. The reader and converter are named on every row. A request a program cannot write (CADCraft: R12 and binary DXF; BricsCAD: DWG R12) is a capability gap in `results/cross_not_run.json`, not a failed row.
+DWG outputs are read through a configured converter with a shared engine for ODA and BricsCAD: ODA reads BricsCAD- and CADCraft-written DWG; BricsCAD reads ODA-written DWG (`results/cross_ezdxf__oda_read_by_bricscad_checks.json` adds BricsCAD rows for the 77 existing ODA-written DWG files, next to the original self-read rows). Binary DXF written by BricsCAD is also read through ODA (binary to ASCII DXF) in the native set. The reader and converter are named on every row. A request a program cannot write (CADCraft: R12 and binary DXF; BricsCAD: DWG R12) is a capability gap in `results/cross_not_run.json`, not a failed row.
 
 DWG comparisons identify the converter and ezdxf as reader.
 
 Machine-readable output capabilities are in `capabilities.json`. A capability gap is not a failed measurement.
+
+## Engine families
+
+Program declarations in `capabilities.json` and adapter `engine` attributes
+identify ezdxf as `ezdxf`, ODA File Converter and BricsCAD as `oda-teigha`
+(ODA Teigha), and CADCraft as `cadcraft`. BricsCAD reading ODA-written DWG
+is a shared-engine observation, even though the programs differ.

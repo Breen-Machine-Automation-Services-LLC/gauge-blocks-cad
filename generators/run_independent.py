@@ -1,22 +1,33 @@
-"""Independent reader rows for the existing ODA-written DWG files (cross/ezdxf__oda).
+"""BricsCAD reader rows for the existing ODA-written DWG files (cross/ezdxf__oda).
 
-Those files were read only through ODA (self-read rows in results/checks.json, kept as they are). BricsCAD opens each
+ODA reader rows live in results/cross_ezdxf__oda_checks.json. BricsCAD opens each
 DWG and writes ASCII DXF 2018, which ezdxf reads and the checker grades against the intent. Rows go to
-results/cross_ezdxf__oda_independent_checks.json. BricsCAD uses ODA libraries internally, so this is an independent
-program, not an independent DWG engine; programs/CAPABILITIES.md records that. Usage: python -I generators/run_independent.py
+results/cross_ezdxf__oda_read_by_bricscad_checks.json. BricsCAD uses ODA libraries internally, so this is a shared engine
+reader cohort; programs/CAPABILITIES.md records that. Usage: python -I generators/run_independent.py
 """
 from pathlib import Path
 import sys, json, collections
 R = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(R))
 import ezdxf
 from checker.core import compare
+from checker.scoring import annotate, current, load_rows, reading_current
+import hashlib
 from programs.adapters import BricsCad, VERSIONS
 from regenerate import write_json
 
 
 def main():
     bc = BricsCad(); intents = {p.stem: json.loads(p.read_text()) for p in (R / 'intent').glob('*.json') if not p.name.endswith('.schema.json')}
-    files = sorted((R / 'cross/ezdxf__oda').glob('*.dwg')); rows = []; refused = 0
+    path = R / 'results/cross_ezdxf__oda_read_by_bricscad_checks.json'
+    previous = load_rows(path); rows = []; refused = 0; files = []
+    for p in sorted((R / 'cross/ezdxf__oda').glob('*.dwg')):
+        side = json.loads(p.with_suffix('.dwg.provenance.json').read_text())
+        old = [r for r in previous if r['file'] == p.relative_to(R).as_posix()]
+        identity = hashlib.sha256(p.read_bytes()).hexdigest()
+        if current(old,R,side['intent_id']) and reading_current(old,'ezdxf '+ezdxf.__version__,'bricscad '+bc.build) and all(r.get('read_input_digest') == identity for r in old):
+            rows.extend(old)
+        else:
+            files.append(p)
     for i in range(0, len(files), 20):
         part = files[i:i + 20]
         docs = bc.read_dwg_many(part)
@@ -29,7 +40,10 @@ def main():
             for row in compare(d, intents[side['intent_id']], 'ezdxf ' + ezdxf.__version__, VERSIONS[side['version']]):
                 row.update(file=rel, converter='bricscad ' + bc.build, self_read=False); rows.append(row)
         print(f'{min(i + 20, len(files))}/{len(files)} read', flush=True)
-    write_json(R / 'results/cross_ezdxf__oda_independent_checks.json', rows)
+    for row in rows:
+        row['read_input_digest'] = hashlib.sha256((R / row['file']).read_bytes()).hexdigest()
+        annotate([row],R,row['intent_id'],'oda','bricscad')
+    write_json(R / 'results/cross_ezdxf__oda_read_by_bricscad_checks.json', rows)
     print(len(files), 'DWG files;', dict(collections.Counter(r['status'] for r in rows)), '; refused', refused)
 
 

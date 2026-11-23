@@ -2,6 +2,9 @@ import hashlib,json,math,re
 import ezdxf.math
 from ezdxf.lldxf.tagwriter import TagCollector
 from ezdxf.lldxf.const import DXFError
+class CheckerLimit(Exception):
+ """The selector requires unsupported or ambiguous checker behavior."""
+
 VOLATILE={'$TDCREATE','$TDUPDATE','$TDUCREATE','$TDUUPDATE','$TDINDWG','$TDUSRTIMER','$VERSIONGUID','$FINGERPRINTGUID','$HANDSEED'}
 ACIS_TYPES={'REGION','3DSOLID','BODY'}
 # ACIS data (SAT text or SAB binary) starts with a header that records the build time of the body, e.g. Sun Nov 22 13:24:09 2026.
@@ -42,7 +45,7 @@ def symbol_item(table,name):
  return next(e for e in table if same_name(e.name if hasattr(e,'block') else e.dxf.name,name))
 def dictionary_item(dictionary,name):
  keys=[key for key in dictionary.keys() if same_name(key,name)]
- if len(keys)>1:raise ValueError('Ambiguous dictionary key: '+name)
+ if len(keys)>1:raise CheckerLimit('Ambiguous dictionary key: '+name)
  if not keys:raise KeyError(name)
  return dictionary[keys[0]]
 def named_layout(d,name):
@@ -50,7 +53,8 @@ def named_layout(d,name):
  return d.layouts.get(entry.dxf.name)
 def app_data(e,name):
  keys=[key for key in e.xdata.data if same_name(key,name)] if e.xdata else []
- if len(keys)!=1:raise KeyError('Missing or ambiguous application: '+name)
+ if len(keys)>1:raise CheckerLimit('Ambiguous application: '+name)
+ if not keys:raise KeyError('Missing application: '+name)
  return e.get_xdata(keys[0])
 SYMBOL_ATTRS={'layer','linetype','style','dimstyle','ucs','view','viewport','appid'}
 SYMBOL_TABLES={'layers','linetypes','styles','dimstyles','views','ucs','viewports','appids','blocks'}
@@ -62,9 +66,9 @@ def symbol_query(space,query):
  # Select entity types publicly and apply the shared symbol-name rule ourselves.
  if re.fullmatch(r'\s*(?:[A-Z0-9_]+\s*)+\s*',query):return list(space.query(query))
  match=re.fullmatch(r"\s*(\*|[A-Z0-9_]+)\s*\[\s*(layer|name)\s*==\s*(['\"])(.*?)\3\s*\]\s*",query)
- if not match:raise ValueError('Unsupported query_count query: '+query)
+ if not match:raise CheckerLimit('Unsupported query_count query: '+query)
  typ,attr,_,value=match.groups()
- if attr=='name' and typ!='INSERT':raise ValueError('Unsupported query_count name operand: '+query)
+ if attr=='name' and typ!='INSERT':raise CheckerLimit('Unsupported query_count name operand: '+query)
  return [e for e in space.query(typ) if same_name(getattr(e.dxf,attr),value)]
 
 def proxy_payload(e):
@@ -73,10 +77,10 @@ def proxy_payload(e):
   if t.code==100:subclass=t.value
   if t.code in (90,40):
    if e.dxftype() in {'ACAD_PROXY_OBJECT','ACAD_PROXY_ENTITY'} and subclass in {'AcDbProxyObject','AcDbProxyEntity'} and envelope is None and t.code==90:
-    if t.value!={'ACAD_PROXY_OBJECT':499,'ACAD_PROXY_ENTITY':498}[e.dxftype()]:raise ValueError('Invalid proxy class-ID envelope for '+e.dxftype())
+    if t.value!={'ACAD_PROXY_OBJECT':499,'ACAD_PROXY_ENTITY':498}[e.dxftype()]:raise KeyError('Invalid proxy class-ID envelope for '+e.dxftype())
     envelope=t.value;continue
    values.append([t.code,t.value])
- if e.dxftype() in {'ACAD_PROXY_OBJECT','ACAD_PROXY_ENTITY'} and envelope is None:raise ValueError('Missing proxy class-ID envelope')
+ if e.dxftype() in {'ACAD_PROXY_OBJECT','ACAD_PROXY_ENTITY'} and envelope is None:raise KeyError('Missing proxy class-ID envelope')
  return values
 def layer_of(e):
  # Exported tags first (as before); ezdxf exports no tags for ACIS entities before R2013, so fall back to the loaded attribute.
@@ -89,7 +93,7 @@ def table_tags(e):
 def redraw_layout(d, name):
  e=next(e for e in d.entitydb.values() if e.is_alive and same_name(layer_of(e),name) and hasattr(e,'get_layout'))
  layout=e.get_layout()
- if layout is None:raise ValueError('Draw-order entity has no space: '+name)
+ if layout is None:raise CheckerLimit('Unsupported draw-order layout: '+name)
  return layout
 
 def effective_redraw_order(layout):
@@ -116,6 +120,7 @@ def extract(d,s):
   if attr in ('acis_body_count','acis_bbox_size'):
    from ezdxf.acis import api as acis
    bodies=acis.load_dxf(e)
+   if not bodies:raise KeyError('ACIS entity has no decodable body')
    if attr=='acis_body_count':return len(bodies)
    box=ezdxf.math.BoundingBox([v for m in acis.mesh_from_body(bodies[0]) for v in m.vertices])
    return list(box.size)
@@ -128,7 +133,7 @@ def extract(d,s):
   if attr=='extension_record':return [list(t) for t in dictionary_item(e.get_extension_dict(),'G_XR').tags]
   if attr=='block_circle_radius':
    radii=[x.dxf.radius for x in symbol_item(d.blocks,e.dxf.name) if x.dxftype()=='CIRCLE']
-   if not radii:raise ValueError('Referenced block contains no CIRCLE')
+   if not radii:raise KeyError('Referenced block contains no CIRCLE')
    return radii
   if attr=='opaque_values':return [list(t) for t in TagCollector.dxftags(e) if t.code in [90,40]]
   if attr=='has_embedded_mtext':return e.has_embedded_mtext_entity
@@ -176,7 +181,7 @@ def extract(d,s):
   raise KeyError('ZEV_APP')
  if kind=='xrecord':return [list(t) for t in dictionary_item(next(e for e in d.modelspace() if e.has_extension_dict).get_extension_dict(),'ZEV_RECORD').tags]
  if kind=='group':return len(dictionary_item(dictionary_item(d.rootdict,'ACAD_GROUP'),name))
- raise ValueError(kind)
+ raise CheckerLimit('Unsupported selector kind: '+kind)
 def equal(a,b,tol):
  if isinstance(a,(int,float)) and isinstance(b,(int,float)):return math.isclose(a,b,abs_tol=tol,rel_tol=0)
  if isinstance(a,list) and isinstance(b,list):return len(a)==len(b) and all(equal(x,y,tol) for x,y in zip(a,b))
@@ -216,6 +221,7 @@ def compare(d,intent,reader,source_version=None):
   row={'intent_id':intent['intent_id'],'field':f['id'],'reader':reader,'expected':f['value'],'tolerance':f['tolerance']}
   try:
    actual=extract(d,f['selector'])
+   if actual is None:raise KeyError('Missing selected attribute')
    if f['selector'].get('attr')=='redraw_order':
     row['detail']={'literal_table':literal_redraw_order(redraw_layout(d,f['selector']['name'])),'effective_space_order':actual}
    actual=json.loads(json.dumps(actual,default=list));row['actual']=actual
@@ -225,7 +231,9 @@ def compare(d,intent,reader,source_version=None):
     same=abs(actual-recomputed)<=abs(recomputed)*f['recomputed_width_relative_tolerance']
     row['detail']='Font-measured Fit width factor '+str(recomputed)+'; relative tolerance '+str(f['recomputed_width_relative_tolerance'])
    row['status']='same' if same else 'differs'
-  except (KeyError,StopIteration,AttributeError,TypeError,IndexError,ValueError,DXFError) as ex:
+  except CheckerLimit as ex:
+   row.update(status='not_scored',detail=str(ex));row.setdefault('actual',None)
+  except Exception as ex:
    row.update(status='absent',detail=str(ex));row.setdefault('actual',None)
   rows.append(row)
  return rows

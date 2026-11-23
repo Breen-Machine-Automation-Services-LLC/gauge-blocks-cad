@@ -45,3 +45,23 @@ above. [Autodesk symbol-name semantics](https://help.autodesk.com/cloudhelp/2018
 and [anonymous-number allocation](https://help.autodesk.com/cloudhelp/2026/PLK/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm)
 govern semantic status only; they do not authorize dropping reference-graph identity
 from the digest. Compute the digest on the drawing as read, before any audit.
+
+## Score identity and reader limits
+
+Every result carries `scored_with`, with SHA-256 values `checker` for
+`checker/core.py` (the status implementation and its local helpers) and `intent`
+for the exact intent JSON bytes, plus `ezdxf` for the installed ezdxf version
+and `versions` for the complete version mapping passed to `compare()`.
+`checker/scoring.py` computes this stamp. Reader and converter build strings
+are checked separately when deciding whether a cross output needs re-scoring.
+`not_scored` is limited to ambiguous dictionary keys or application names,
+unsupported query forms or operands, unsupported selector kinds, and unsupported
+draw-order layouts. These raise `CheckerLimit`; `detail` gives the reason.
+Every other extraction exception produces `absent`, including missing gradients,
+extension dictionaries, alignment points, and decodable ACIS bodies.
+
+`writer_engine` names the family that writes the file. `reader_engine` names
+ezdxf's family for direct DXF reading, or the converter family for DWG reading.
+The stored family names are `ezdxf`, `oda-teigha`, and `cadcraft`.
+`shared_engine` is true when these families match. A different program that
+uses the same DWG engine does not provide independent engine confirmation.

@@ -197,3 +197,11 @@ foreground and wait for it to finish.
 Coverage, the HTML map, and results are generated artifacts. Never edit them by
 hand. Regenerate them from intents, provenance records, and measured runs. Review
 generated diffs along with source changes.
+
+Published results must be current. `python checker/check_artifacts.py` rejects
+missing or stale `scored_with` stamps and reports the row count per results file.
+Re-score with `python regenerate.py --intent <intent_id> --pairs <pair_ids>`;
+`python generators/run_features.py` refreshes all feature scores, and
+`python generators/run_bricscad.py` refreshes native BricsCAD scores.
+Current drawings are read again when their scores are stale, without resaving.
+`python regenerate.py --dry-run` lists resave and rescore counts before running.

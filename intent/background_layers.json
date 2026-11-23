@@ -15293,7 +15293,7 @@
         "section": "LAYER extension dictionary; XRECORD viewport override (Reference silent on mapping)",
         "source": "Autodesk DXF Reference",
         "url": "https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3",
-        "basis": "Reference silent; AutoCAD tie-breaker required, not verified in Phase 1"
+        "basis": "Compatibility policy, provisional: no published standard settles the override mapping"
       },
       "tolerance": 0,
       "versions": [

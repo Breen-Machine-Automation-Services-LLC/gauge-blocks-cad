@@ -25,10 +25,14 @@ def main():
             files.append(dict(s, path=path, pair=pair, unavailable=not (ROOT/path).is_file()))
             builds.add(s['program']+' '+s['build'])
     checks = defaultdict(list)
+    seen = set()
     for p in sorted((ROOT/'results').glob('*checks.json')):
         rows = read(p)
         if not isinstance(rows, list): continue
         for row in rows:
+            key = tuple(row.get(k) for k in ('file','field','reader','converter'))
+            if key in seen: continue
+            seen.add(key)
             checks[row['file']].append(row)
     # A refused open may leave no cross drawing or sidecar. Recover its
     # target slot from the checked path and the matching native source sidecar.
@@ -103,7 +107,7 @@ def main():
                     diffs = [r for r in selected if r['status']!='same']
                     state = 'not run'
                     if selected:
-                        state = 'refused' if any(r['status']=='refused' for r in selected) else 'lost' if any(r['status']=='absent' for r in selected) else 'changed' if diffs else 'kept'
+                        state = 'refused' if any(r['status']=='refused' for r in selected) else 'lost' if any(r['status']=='absent' for r in selected) else 'changed' if any(r['status']=='differs' for r in selected) else 'not_scored' if any(r['status']=='not_scored' for r in selected) else 'kept'
                     # Match the source by provenance digest, including DXF-to-DWG conversion.
                     sources = [x for x in own if not x.get('unavailable') and x['path']!=s['path'] and x['content_digest']==s.get('made_by',{}).get('input_digest')]
                     stale = False
@@ -116,7 +120,7 @@ def main():
                         stale = bool(sources)
                     runs.append(dict(pair=s['pair'], status=state, diffs=diffs, stale=stale,
                                      readers=sorted({r.get('reader','unspecified')+(' via '+str(r['converter']) if r.get('converter') else '') for r in selected}),
-                                     self=any(r.get('self_read') for r in selected), output=s['path'], unavailable=s.get('unavailable',False), inputs=[x['path'] for x in sources]))
+                                     self=any(r.get('shared_engine',r.get('self_read')) for r in selected), shared_engine=any(r.get('shared_engine') for r in selected), output=s['path'], unavailable=s.get('unavailable',False), inputs=[x['path'] for x in sources]))
                 cells.append(dict(coverage=coverage, missing=missing, impossible=impossible, applicable=applicable, runs=runs, files=[s['path'] for s in fs if not s.get('unavailable')]))
             topic['features'].append(dict(name=feature,cells=cells))
         topics.append(topic)

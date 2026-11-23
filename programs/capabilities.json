@@ -82,7 +82,8 @@
         "2018",
         "binary"
       ]
-    ]
+    ],
+    "engine": "ezdxf"
   },
   "oda": {
     "name": "ODA",
@@ -210,7 +211,8 @@
         "2018",
         "binary"
       ]
-    ]
+    ],
+    "engine": "oda-teigha"
   },
   "bricscad": {
     "name": "BricsCAD",
@@ -333,7 +335,8 @@
         "2018",
         "binary"
       ]
-    ]
+    ],
+    "engine": "oda-teigha"
   },
   "cadcraft": {
     "name": "CADCraft",
@@ -414,6 +417,7 @@
         "2018",
         "binary"
       ]
-    ]
+    ],
+    "engine": "cadcraft"
   }
 }

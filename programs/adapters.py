@@ -16,6 +16,7 @@ def workdir(prefix='work-'):
  """A private scratch directory inside the repository results folder (callers remove it)."""
  return tempfile.mkdtemp(dir=SCRATCH_ROOT,prefix=prefix)
 class Ezdxf:
+ engine = 'ezdxf'
  name='ezdxf';build=ezdxf.__version__
  def open(self,path):return ezdxf.readfile(path)
  def save(self,doc,path,format,version,encoding):
@@ -33,6 +34,7 @@ def identity_library():
    subprocess.run(['cc','-shared','-fPIC','-o',str(lib),str(Path(__file__).with_name('oda_identity.c')),'-ldl'],check=True,capture_output=True,text=True,timeout=60)
   return str(Path(_identity_temp.name)/'identity.so')
 class Oda:
+ engine = 'oda-teigha'
  name='oda';build=SETTINGS['oda_build']
  def open(self,path):return Path(path)
  def _run(self,inp,out,version,output_type,pattern,count=1,identity=True):
@@ -94,6 +96,7 @@ class Oda:
   finally:shutil.rmtree(tmp,ignore_errors=True)
   return results
 class BricsCad:
+ engine = 'oda-teigha'
  """BricsCAD V26 driven through the shared locked wrapper; see programs/bricscad_batch.py."""
  name='bricscad'
  build='26.2.07-1 (bricscadv26 rpm, Linux x86_64)'
@@ -149,6 +152,7 @@ class BricsCad:
   finally:shutil.rmtree(tmp,ignore_errors=True)
   return results
 class CadCraft:
+ engine = 'cadcraft'
  """CADCraft command-line server. Public upstream commit only; never a local fix build."""
  name='cadcraft'
  build='a70b9b02 (upstream main, cadcraft-cli 0.21.0-dev)'

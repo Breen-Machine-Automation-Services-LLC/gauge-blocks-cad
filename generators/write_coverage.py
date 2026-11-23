@@ -37,18 +37,22 @@ def main():
             m = json.loads(sc.read_text()); where = sc.relative_to(R).parts[:2]
             key = '/'.join(where[:2]) if folder == 'cross' else 'native/' + where[1]
             files[key] += 1; formats[key].add(f"{m['format']} {m['encoding']}" if m['format'] == 'DXF' else 'DWG')
-    text += '\n## Drawings by set\n\nEach drawing has a sidecar. Rows are checker results per expected field.\n\n| Set | Drawings | Formats and encodings | Rows same | Rows differs | Rows absent | Rows refused |\n| --- | ---: | --- | ---: | ---: | ---: | ---: |\n'
+    text += '\n## Drawings by set\n\nEach drawing has a sidecar. Rows are checker results per expected field.\n\n| Set | Drawings | Formats and encodings | Rows same | Rows differs | Rows absent | Rows not_scored | Rows refused |\n| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: |\n'
     rows = collections.defaultdict(collections.Counter)
+    seen = set()
     for p in sorted((R / 'results').glob('*checks.json')):
         measured=json.loads(p.read_text())
         if not isinstance(measured,list): continue
         for r in measured:
+            observation = tuple(r.get(k) for k in ('file','field','reader','converter'))
+            if observation in seen: continue
+            seen.add(observation)
             parts = Path(r['file']).parts
             key = '/'.join(parts[:2]) if parts[0] == 'cross' else 'native/' + parts[1]
             rows[key][r['status']] += 1
     for key in sorted(files):
         c = rows[key]
-        text += f"| {key} | {files[key]} | {', '.join(sorted(formats[key]))} | {c['same']} | {c['differs']} | {c['absent']} | {c['refused']} |\n"
+        text += f"| {key} | {files[key]} | {', '.join(sorted(formats[key]))} | {c['same']} | {c['differs']} | {c['absent']} | {c['not_scored']} | {c['refused']} |\n"
     nr = json.loads((R / 'results/cross_not_run.json').read_text()) if (R / 'results/cross_not_run.json').exists() else {}
     if nr:
         text += '\n## Not run: the re-saver cannot write the requested format\n\nCapability gaps, recorded in `results/cross_not_run.json`; they are not failed rows.\n\n| Pair | Outputs not run | Reasons |\n| --- | ---: | --- |\n'

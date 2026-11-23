@@ -24,7 +24,7 @@ for topic in ['blocks','layers','styles','plots','metadata','named']:
   for n in range(100):add(i,f'layer_usage_{n:03}',int(n<3),{'kind':'query_count','name':f'*[layer=="ZEV_{n:03}"]'},'Common entity code 8')
   add(i,'vp.freeze',['ZEV_001'],{'kind':'viewport_freeze'},'VIEWPORT code 331',True)
   add(i,'vp.color',6,{'kind':'viewport_color','name':'ZEV_002'},'LAYER extension dictionary; XRECORD viewport override (Reference silent on mapping)',True)
-  i['expected'][-1]['reference']['basis']='Reference silent; AutoCAD tie-breaker required, not verified in Phase 1'
+  i['expected'][-1]['reference']['basis']='Compatibility policy, provisional: no published standard settles the override mapping'
  if topic=='styles':
   i['features']=['unused linetype','unused text style','unused dimension style']
   for table,name,attrs,ref in [('linetypes','ZEV_DASH',{'description':'ZEV pattern'},'LTYPE code 3; pattern codes 40,49'),('styles','ZEV_TEXT',{'font':'txt','height':2.5,'width':.8},'STYLE codes 3,40,41'),('dimstyles','ZEV_DIM',{'dimscale':2.,'dimasz':3.},'DIMSTYLE codes 40,41')]:
@@ -51,4 +51,10 @@ for topic in ['blocks','layers','styles','plots','metadata','named']:
   for k,v in {'origin':[3.,4.,0.],'xaxis':[1.,0.,0.],'yaxis':[0.,1.,0.]}.items():tab(i,'ucs','ZEV_UCS',k,v,'UCS codes 10,11,12')
   add(i,'group',1,{'kind':'group','name':'ZEV_GROUP'},'GROUP code 340',True)
   for k,v in {'name':'ZEV_SCALE','paper_units':1.,'drawing_units':5.}.items():add(i,'scale.'+k,v,{'kind':'object','dictionary':'ACAD_SCALELIST','name':'ZEV_SCALE','attr':k},'SCALE codes 300,140,141',True)
- (ROOT/(i['intent_id']+'.json')).write_text(json.dumps(i,indent=2)+'\n')
+ path=ROOT/(i['intent_id']+'.json')
+ if path.exists():
+  existing=json.loads(path.read_text())
+  for key in ('title','description','feature_fields'):
+   if key in existing:i[key]=existing[key]
+  existing.update(i);i=existing
+ path.write_text(json.dumps(i,indent=2)+'\n')
