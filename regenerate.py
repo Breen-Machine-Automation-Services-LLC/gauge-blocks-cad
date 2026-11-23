@@ -102,11 +102,15 @@ def main():
     if args.intent and args.intent!=iid:continue
     if not (ROOT/'intent'/f'{iid}.json').exists():continue
     inp,_=native_input(ROOT,iid,'bricscad',Path(bc_runner.__file__),bc_runner.LSP)
-    for sc in sorted((ROOT/'native/bricscad').glob(topic+'_*.provenance.json')):
+    sidecars=sorted((ROOT/'native/bricscad').glob(topic+'_*.provenance.json'))
+    stale=args.force or any(not Path(str(sc).removesuffix('.provenance.json')).exists() or json.loads(sc.read_text()).get('build')!=BricsCad.build or json.loads(sc.read_text()).get('made_by',{}).get('input_digest')!=inp for sc in sidecars)
+    if stale:
+     bc_save+=len(sidecars)
+     continue
+    for sc in sidecars:
      dest=Path(str(sc).removesuffix('.provenance.json'));old=json.loads(sc.read_text())
      rel=dest.relative_to(ROOT).as_posix()
-     if args.force or not dest.exists() or old.get('build')!=BricsCad.build or old.get('made_by',{}).get('input_digest')!=inp:bc_save+=1
-     elif not current([r for r in previous if r['file']==rel],ROOT,iid):bc_score+=1
+     if not current([r for r in previous if r['file']==rel],ROOT,iid):bc_score+=1
    print(f'native bricscad: {bc_save} resave, {bc_score} rescore')
    previous=load_rows(ROOT/'results/cross_ezdxf__oda_read_by_bricscad_checks.json');bc_score=0
    for dest in sorted((ROOT/'cross/ezdxf__oda').glob('*.dwg')):
@@ -115,7 +119,7 @@ def main():
     rel=dest.relative_to(ROOT).as_posix()
     old=[r for r in previous if r['file']==rel]
     identity=hashlib.sha256(dest.read_bytes()).hexdigest()
-    if not current(old,ROOT,iid) or not reading_current(old,'ezdxf '+ezdxf.__version__,'bricscad '+BricsCad.build) or any(r.get('read_input_digest')!=identity for r in old):bc_score+=1
+    if args.force or not current(old,ROOT,iid) or not reading_current(old,'ezdxf '+ezdxf.__version__,'bricscad '+BricsCad.build) or any(r.get('read_input_digest')!=identity for r in old):bc_score+=1
    print(f'read by bricscad: 0 resave, {bc_score} rescore')
 
    for pair in pairs:
@@ -154,6 +158,9 @@ def main():
     bricscad_main(args.intent, force=args.force)
    else:parser.error('Intent has no ezdxf native generator')
   for pair in pairs:run_pair(pair,intent=args.intent,reader_name=None if args.with_bricscad else 'oda',force=args.force)
+  if args.with_bricscad:
+   from generators.run_independent import main as independent_main
+   independent_main(args.intent, force=args.force, root=ROOT)
   return
  cases=[]
  for ip in sorted((ROOT/'intent').glob('background_*.json')):
@@ -181,6 +188,9 @@ def main():
   elif pair.split('__')[1]=='oda' and not args.with_bricscad:
    run_pair(pair,reader_name='oda',force=args.force)
   else:run_pair(pair,force=args.force)
+ if args.with_bricscad:
+  from generators.run_independent import main as independent_main
+  independent_main(args.intent, force=args.force, root=ROOT)
  from map.build import main as map_main
  map_main()
  from intent.validate import main as validate

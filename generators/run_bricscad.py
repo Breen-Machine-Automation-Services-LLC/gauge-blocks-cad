@@ -40,6 +40,7 @@ def main(intent_id=None, force=False):
     previous_rows = load_rows(R/'results/native_bricscad_checks.json')
     if selected_intent:
         rows = [r for r in previous_rows if r['intent_id'] != selected_intent]
+    carried_count = len(rows)
     for topic, intent_id in TOPICS.items():
         if selected_intent and intent_id != selected_intent:
             continue
@@ -132,7 +133,7 @@ def main(intent_id=None, force=False):
                     row.update(file=f'native/bricscad/{p.name}', converter=converter, self_read=False); rows.append(row)
         finally:
             shutil.rmtree(work, ignore_errors=True)
-    for row in rows:
+    for row in rows[carried_count:]:
         annotate([row],R,row['intent_id'],'bricscad','oda' if row.get('converter') or row['file'].endswith('.dwg') else 'ezdxf')
     write_json(R / 'results/native_bricscad_checks.json', rows)
     if not written and observation_path.exists():

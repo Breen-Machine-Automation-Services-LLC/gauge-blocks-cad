@@ -16,18 +16,22 @@ from programs.adapters import BricsCad, VERSIONS
 from regenerate import write_json
 
 
-def main():
+def main(intent_id=None, force=False, root=R):
+    R = root
     bc = BricsCad(); intents = {p.stem: json.loads(p.read_text()) for p in (R / 'intent').glob('*.json') if not p.name.endswith('.schema.json')}
     path = R / 'results/cross_ezdxf__oda_read_by_bricscad_checks.json'
-    previous = load_rows(path); rows = []; refused = 0; files = []
+    previous = load_rows(path); rows = [r for r in previous if intent_id and r['intent_id'] != intent_id]; refused = 0; files = []
     for p in sorted((R / 'cross/ezdxf__oda').glob('*.dwg')):
         side = json.loads(p.with_suffix('.dwg.provenance.json').read_text())
+        if intent_id and side['intent_id'] != intent_id:
+            continue
         old = [r for r in previous if r['file'] == p.relative_to(R).as_posix()]
         identity = hashlib.sha256(p.read_bytes()).hexdigest()
-        if current(old,R,side['intent_id']) and reading_current(old,'ezdxf '+ezdxf.__version__,'bricscad '+bc.build) and all(r.get('read_input_digest') == identity for r in old):
+        if not force and current(old,R,side['intent_id']) and reading_current(old,'ezdxf '+ezdxf.__version__,'bricscad '+bc.build) and all(r.get('read_input_digest') == identity for r in old):
             rows.extend(old)
         else:
             files.append(p)
+    carried_count = len(rows)
     for i in range(0, len(files), 20):
         part = files[i:i + 20]
         docs = bc.read_dwg_many(part)
@@ -40,7 +44,7 @@ def main():
             for row in compare(d, intents[side['intent_id']], 'ezdxf ' + ezdxf.__version__, VERSIONS[side['version']]):
                 row.update(file=rel, converter='bricscad ' + bc.build, self_read=False); rows.append(row)
         print(f'{min(i + 20, len(files))}/{len(files)} read', flush=True)
-    for row in rows:
+    for row in rows[carried_count:]:
         row['read_input_digest'] = hashlib.sha256((R / row['file']).read_bytes()).hexdigest()
         annotate([row],R,row['intent_id'],'oda','bricscad')
     write_json(R / 'results/cross_ezdxf__oda_read_by_bricscad_checks.json', rows)

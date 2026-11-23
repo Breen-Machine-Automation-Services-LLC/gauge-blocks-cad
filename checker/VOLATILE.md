@@ -73,3 +73,7 @@ content digest or writer build changes. Checker and reader changes trigger a
 re-score of existing drawings, while runner edits, citations and explanations do
 not trigger a rebuild. Use `regenerate.py --force` with the usual intent and pair
 filters to resave after changes to save mechanics outside the drawing input digest.
+These mechanics include the author shield and font folder handling in
+`programs/bricscad_batch.py`, the external `bcad_run.sh` wrapper, BricsCAD
+setvars in `generators/run_bricscad.py`, and the hardcoded BricsCAD build
+constant in `programs/adapters.py`. Use `--force` after changing any of them.
