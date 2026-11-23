@@ -5,8 +5,8 @@
 | Program | Exact build | Output | Versions and encoding |
 | --- | --- | --- | --- |
 | ezdxf | 1.4.4 | DXF | R12 ASCII; 2000, 2004, 2007, 2010, 2013 and 2018 ASCII and binary |
-| ODA File Converter | Build 27.1.0.143450 | DWG | R12, 2000, 2004, 2007, 2010, 2013 and 2018, binary |
-| ODA File Converter | Build 27.1.0.143450 | DXF | R12, 2000, 2004, 2007, 2010, 2013 and 2018, ASCII and binary |
+| ODA File Converter | 27.1.0.143450 | DWG | R12, 2000, 2004, 2007, 2010, 2013 and 2018, binary |
+| ODA File Converter | 27.1.0.143450 | DXF | R12, 2000, 2004, 2007, 2010, 2013 and 2018, ASCII and binary |
 | BricsCAD | V26, rpm `bricscadv26-26.2.07-1.x86_64` (its files carry Teigha 26.9.0.0) | DXF | R12, 2000, 2004, 2007, 2010, 2013 and 2018, ASCII (`SaveAs`) and binary (`DXFOUT`) |
 | BricsCAD | same | DWG | 2000, 2004, 2007, 2010, 2013 and 2018, binary. No DWG R12 (no `SaveAs` type for it; recorded as not run) |
 | CADCraft | upstream commit a70b9b02 (`cadcraft-cli 0.21.0 (dev)`, binary sha256 `c6849d54...0092`) | DXF | 2000, 2004, 2007, 2010, 2013 and 2018, ASCII only |

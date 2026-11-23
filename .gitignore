@@ -1,7 +1,4 @@
 __pycache__/
 *.pyc
 settings.local.json
-
-# Cross-set drawings ship as versioned release archives; their provenance records stay in git.
-cross/**/*.dwg
-cross/**/*.dxf
+logs/

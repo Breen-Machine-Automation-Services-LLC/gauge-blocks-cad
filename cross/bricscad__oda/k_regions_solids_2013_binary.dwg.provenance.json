@@ -2,7 +2,7 @@
   "intent_id": "future_k_regions_solids",
   "representation_id": "reference_1",
   "program": "oda",
-  "build": "Build 27.1.0.143450",
+  "build": "27.1.0.143450",
   "format": "DWG",
   "version": "2013",
   "encoding": "binary",

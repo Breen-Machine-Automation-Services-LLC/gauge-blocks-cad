@@ -35,6 +35,6 @@ for n,v in projection.items():text+=f'| {n} | {v:,} | {v/1048576:.2f} |\n'
 text+='''
 These estimates assume all programs can build every intent and all ordered cross streams exist. They are capacity estimates, not measured output sizes. Tables, images, dense hatches, embedded previews, and conversion behavior can increase or decrease the average considerably. AutoCAD-only dynamic blocks and proxies remain placeholders, without fabricated byte estimates.
 
-Recommendation: publish the expanded drawing sets as versioned release archives, with source, schemas, intents, and compact results in plain git. The measured sample is small enough for plain git. Git LFS is an alternative if direct checkout of all expanded binaries is essential, but adds client and hosting requirements for public consumers. Re-measure the expanded set before choosing final release storage. Regeneration preserves drawing and sidecar bytes and mtimes when the content digest and writer build are unchanged; it never commits anything.
+Every drawing, native and resaved, is stored in git.
 '''
 (R/'SIZE.md').write_text(text);print(json.dumps(stats))

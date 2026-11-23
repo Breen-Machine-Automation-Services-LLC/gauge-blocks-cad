@@ -2,7 +2,7 @@
   "intent_id": "future_k_tables",
   "representation_id": "reference_1",
   "program": "oda",
-  "build": "Build 27.1.0.143450",
+  "build": "27.1.0.143450",
   "format": "DXF",
   "version": "2010",
   "encoding": "ASCII",
@@ -10,6 +10,6 @@
     "script": "generators/run_cross.py",
     "input_digest": "b65b9b8adff0f45d840a173e07bae2b8268f9cbdfbfcfdc62b50dc1f665a296b"
   },
-  "content_digest": "e473a8cf179052985a3ef736c0794c560a0ff4623621368f54f5a62dfc4a2830",
+  "content_digest": "da1ce5963d83f3e7c10a395a8868d7a8584273d68f306e5b7ecff73456235edd",
   "ezdxf_based": false
 }

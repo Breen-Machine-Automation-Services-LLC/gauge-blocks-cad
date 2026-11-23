@@ -8,7 +8,7 @@
   "encoding": "ASCII",
   "made_by": {
     "script": "generators/run_features.py",
-    "input_digest": "ae40238e13d9205b5a03f4f7a3f0b7b83bf6b020abd85af8319b08de318f616a"
+    "input_digest": "d8c74324b01fdeb7152368c63e0a48f172b8b1dd9586130dbc306f292aee061d"
   },
   "content_digest": "764960a9e15bb2b424d029af2335a8b3f3076effa04d2797806fa259a2c94ada",
   "ezdxf_based": true

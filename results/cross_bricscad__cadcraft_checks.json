@@ -76,7 +76,7 @@
     "actual": 0,
     "status": "differs",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2000_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -89,7 +89,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2000_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -101,7 +101,7 @@
     "actual": 0,
     "status": "differs",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2000_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -114,7 +114,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2000_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -131,7 +131,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2000_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -211,7 +211,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -223,7 +223,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -235,7 +235,7 @@
     "actual": 0,
     "status": "differs",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -248,7 +248,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -265,7 +265,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -345,7 +345,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -357,7 +357,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -369,7 +369,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -381,7 +381,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -401,7 +401,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -481,7 +481,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -493,7 +493,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -505,7 +505,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -517,7 +517,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -537,7 +537,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -617,7 +617,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -629,7 +629,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -641,7 +641,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -653,7 +653,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -673,7 +673,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -753,7 +753,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -765,7 +765,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -777,7 +777,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -789,7 +789,7 @@
     "actual": 1,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -809,7 +809,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_regions_solids_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -929,7 +929,7 @@
     "actual": 4,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -941,7 +941,7 @@
     "actual": 3,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -975,7 +975,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -988,7 +988,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_tables_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1001,7 +1001,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_tables_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1021,7 +1021,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_tables_2004_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1141,7 +1141,7 @@
     "actual": 4,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1153,7 +1153,7 @@
     "actual": 3,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1187,7 +1187,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1200,7 +1200,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_tables_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1213,7 +1213,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_tables_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1233,7 +1233,7 @@
     "actual": null,
     "detail": "",
     "file": "cross/bricscad__cadcraft/k_tables_2007_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1353,7 +1353,7 @@
     "actual": 4,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1365,7 +1365,7 @@
     "actual": 3,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1399,7 +1399,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1411,7 +1411,7 @@
     "actual": 3,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1423,7 +1423,7 @@
     "actual": 2,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1449,7 +1449,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2010_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1569,7 +1569,7 @@
     "actual": 4,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1581,7 +1581,7 @@
     "actual": 3,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1615,7 +1615,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1627,7 +1627,7 @@
     "actual": 3,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1639,7 +1639,7 @@
     "actual": 2,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1665,7 +1665,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2013_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1785,7 +1785,7 @@
     "actual": 4,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1797,7 +1797,7 @@
     "actual": 3,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1831,7 +1831,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1843,7 +1843,7 @@
     "actual": 3,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1855,7 +1855,7 @@
     "actual": 2,
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   },
   {
@@ -1881,7 +1881,7 @@
     ],
     "status": "same",
     "file": "cross/bricscad__cadcraft/k_tables_2018_binary.dwg",
-    "converter": "oda Build 27.1.0.143450",
+    "converter": "oda 27.1.0.143450",
     "self_read": false
   }
 ]

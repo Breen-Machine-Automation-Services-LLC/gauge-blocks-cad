@@ -8,33 +8,33 @@
     },
     "cross/bricscad__oda": {
       "drawings": 40,
-      "drawing_bytes": 16728516,
-      "sidecar_bytes": 19138,
-      "total_bytes": 16747654
+      "drawing_bytes": 16728578,
+      "sidecar_bytes": 18898,
+      "total_bytes": 16747476
     },
     "cross/ezdxf__bricscad": {
       "drawings": 449,
-      "drawing_bytes": 248594427,
-      "sidecar_bytes": 225814,
-      "total_bytes": 248820241
+      "drawing_bytes": 248594573,
+      "sidecar_bytes": 225742,
+      "total_bytes": 248820315
     },
     "cross/ezdxf__cadcraft": {
       "drawings": 322,
-      "drawing_bytes": 10245248,
-      "sidecar_bytes": 167230,
-      "total_bytes": 10412478
+      "drawing_bytes": 10245892,
+      "sidecar_bytes": 167158,
+      "total_bytes": 10413050
     },
     "cross/ezdxf__oda": {
-      "drawings": 154,
-      "drawing_bytes": 9908014,
-      "sidecar_bytes": 68327,
-      "total_bytes": 9976341
+      "drawings": 466,
+      "drawing_bytes": 33605272,
+      "sidecar_bytes": 217983,
+      "total_bytes": 33823255
     },
     "cross/oda__bricscad": {
-      "drawings": 149,
-      "drawing_bytes": 81926903,
-      "sidecar_bytes": 74936,
-      "total_bytes": 82001839
+      "drawings": 449,
+      "drawing_bytes": 249212901,
+      "sidecar_bytes": 224950,
+      "total_bytes": 249437851
     },
     "native/bricscad": {
       "drawings": 40,
@@ -44,16 +44,16 @@
     },
     "native/ezdxf": {
       "drawings": 233,
-      "drawing_bytes": 8649513,
+      "drawing_bytes": 8650211,
       "sidecar_bytes": 102569,
-      "total_bytes": 8752082
+      "total_bytes": 8752780
     }
   },
-  "total_bytes": 395416163,
+  "total_bytes": 586700255,
   "estimated_four_program_bytes_by_intent_count": {
-    "19": 489960663,
-    "40": 1031496133,
-    "80": 2062992267
+    "19": 1396152237,
+    "40": 2939267867,
+    "80": 5878535733
   },
   "assumptions": {
     "baseline_intents": 6,

@@ -2,7 +2,7 @@
   "intent_id": "future_k_tables",
   "representation_id": "reference_1",
   "program": "oda",
-  "build": "Build 27.1.0.143450",
+  "build": "27.1.0.143450",
   "format": "DWG",
   "version": "2013",
   "encoding": "binary",
@@ -10,7 +10,7 @@
     "script": "generators/run_cross.py",
     "input_digest": "cf0338190ca06ac612e4b46fee2240c3ab34c9b66daf45365d2f674a2103ae53"
   },
-  "content_digest": "fb2c592a06ff16a136fe4524408a2d2649d9367574fcb26be2629f755ccc7550",
+  "content_digest": "a7e46b7ff2ca8ed063e4a37e08550cbfd5af66cb34dad6cb9cec5239b57a21d2",
   "ezdxf_based": false,
   "digest_reader": "bricscad 26.2.07-1 (bricscadv26 rpm, Linux x86_64)"
 }

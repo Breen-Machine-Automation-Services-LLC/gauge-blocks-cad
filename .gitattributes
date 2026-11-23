@@ -1,0 +1,3 @@
+# Preserve drawing bytes and disable content diffs.
+*.[dD][xX][fF] -text -diff
+*.[dD][wW][gG] binary

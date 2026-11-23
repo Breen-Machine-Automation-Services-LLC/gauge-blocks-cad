@@ -21,10 +21,11 @@ CHUNK = {'bricscad': 40, 'cadcraft': 16, 'oda': 60}
 PAIRS = {p['writer']+'__'+p['resaver']: (p['sources'], p['resaver']) for p in json.loads((R/'programs/pairs.json').read_text())}
 READER = {'bricscad': 'oda', 'cadcraft': 'oda', 'oda': 'bricscad'}   # independent DWG reader for each re-saver's output
 CAPABILITY_GAP = ('cannot write', 'requires binary')
-LOG = R / '.codex-runs/phase2b-progress.log'
+LOG = R / 'logs/run_cross.log'
 
 
 def log(msg):
+    LOG.parent.mkdir(parents=True, exist_ok=True)
     with LOG.open('a') as f:
         f.write(time.strftime('%Y-%m-%dT%H:%M:%S') + ' ' + msg + '\n')
     print(msg, flush=True)
