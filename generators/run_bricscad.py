@@ -43,7 +43,7 @@ def _outputs(root, topic):
 
 
 def plan(intent_id=None, force=False, root=None):
-    from checker.scoring import empty_plan, file_current
+    from checker.scoring import empty_plan, file_current, refusal_current
     root=R if root is None else Path(root)
     work=empty_plan();path=root/'results/native_bricscad_checks.json';previous=load_rows(path)
     for topic,iid in TOPICS.items():
@@ -54,17 +54,19 @@ def plan(intent_id=None, force=False, root=None):
         def stale(dest):
             sc=dest.with_suffix(dest.suffix+'.provenance.json')
             old=json.loads(sc.read_text()) if sc.exists() else {}
+            rows=[r for r in previous if r['file']==dest.relative_to(root).as_posix()]
+            if refusal_current(rows,inp,BricsCad.build):return False
             return not dest.exists() or old.get('build')!=BricsCad.build or old.get('made_by',{}).get('input_digest')!=inp
         rebuild=force or any(stale(p) for p in paths)
         for dest in paths:
             rel=dest.relative_to(root).as_posix();rows=[r for r in previous if r['file']==rel]
-            kind='resave' if rebuild else 'carried' if file_current(rows,root,iid,path,rel,current) else 'rescore'
+            kind='resave' if rebuild else 'carried' if (refusal_current(rows,inp,BricsCad.build) or file_current(rows,root,iid,path,rel,current)) else 'rescore'
             work[kind].append(rel)
     return work
 
 
 def main(intent_id=None, force=False, root=None):
-    from checker.scoring import record_score
+    from checker.scoring import record_score, stamp_refusal
     root=R if root is None else Path(root)
     work_plan=plan(intent_id,force,root)
     bc, oda = BricsCad(), Oda(); rows = []; written = []
@@ -178,7 +180,11 @@ def main(intent_id=None, force=False, root=None):
                     row.update(file=f'native/bricscad/{p.name}', converter=converter, self_read=False); rows.append(row)
         finally:
             shutil.rmtree(work, ignore_errors=True)
+    refusal_inputs={iid:native_input(root,iid,'bricscad',Path(__file__),LSP)[0]
+                    for iid in {r['intent_id'] for r in rows[carried_count:] if r['status']=='refused'}}
     for row in rows[carried_count:]:
+        if row['status']=='refused':
+            stamp_refusal([row],refusal_inputs[row['intent_id']],bc.build)
         annotate([row],root,row['intent_id'],'bricscad','oda' if row.get('converter') or row['file'].endswith('.dwg') else 'ezdxf')
     write_json(root / 'results/native_bricscad_checks.json', rows)
     if not written and observation_path.exists():

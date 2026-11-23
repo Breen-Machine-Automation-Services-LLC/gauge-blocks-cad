@@ -291,7 +291,7 @@ def test_force_bricscad_dry_run_counts_selected_natives(harness, monkeypatch, ca
     output = capsys.readouterr().out
     assert 'native bricscad: 2 resave, 0 rescore' in output
     assert 'native:' not in output
-    assert 'bricscad__oda: 4 resave, 0 rescore' in output
+    assert 'bricscad__oda: 2 resave, 0 rescore' in output
     assert not h.saved
 
 

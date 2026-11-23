@@ -84,12 +84,22 @@ Each runner exposes a read-only `plan(intent_id=None, force=False, root=None)`
 re-score, carry, or skip as capability gaps; execution consumes that plan.
 `regenerate.py --dry-run` prints those lists and counts without launching programs
 or writing files. BricsCAD native saves rebuild the whole topic when any output
-needs saving. The BricsCAD reading step runs only with `--with-bricscad` and the
-`ezdxf__oda` pair selected.
+needs saving. With `--pairs`, native steps run for the source programs of the selected pairs:
+ezdxf natives and features for `ezdxf__*`, and BricsCAD natives for `bricscad__*`.
+Without `--pairs`, native steps retain their usual selection, including BricsCAD
+with `--with-bricscad`. The BricsCAD reading step runs only with
+`--with-bricscad` and the `ezdxf__oda` pair selected.
 
 A comparison with no applicable fields records its score stamp in the results
 file's companion `.scores.json`, without inventing a field result. Capability
-refusals remain in `cross_not_run.json`; `cross_gap_builds.json` identifies the
-build that reports each gap, so a changed build retries it. Legacy gap records use
-the pair's published writer build until execution records that identity.
-`--force` retries every selected output, including known gaps.
+gaps come from the output tuples in `programs/capabilities.json`, never error
+wording. They remain in `cross_not_run.json`; `cross_gap_builds.json` identifies
+the build that judges each gap. A changed or missing build retries the gap.
+Alternate output roots use their own capability declaration when present, otherwise
+they use the runner repository's declaration.
+
+A refused output records `attempt_input_digest` and `attempt_build` on its refused
+rows. The planner carries that refusal for the same input and writer build, even
+when no drawing exists. An input or writer build change retries it. Reading-only
+refusals retain the reader build and input identity used by that reading step.
+`--force` retries every selected output, including refusals and known gaps.

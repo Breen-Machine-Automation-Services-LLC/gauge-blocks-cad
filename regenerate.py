@@ -93,6 +93,8 @@ def run_native(intent_id=None, force=False, root=None):
  with (root/'results/checks.csv').open('w') as stream:
   writer=csv.DictWriter(stream,fieldnames=['file','intent_id','field','reader','converter','self_read','scored_with','writer_engine','reader_engine','shared_engine','status','expected','actual','tolerance','detail'])
   writer.writeheader();writer.writerows(rows)
+ if any(r['status']!='same' for r in rows if r['file'].startswith('native/')):
+  raise RuntimeError('Native expected-field failures; see results/checks.json')
 
 def main():
  import argparse
@@ -107,6 +109,10 @@ def main():
  pairs=args.pairs.split(',') if args.pairs else list(run_cross.PAIRS)
  if any(p not in run_cross.PAIRS for p in pairs):parser.error('Unknown declared pair')
  if args.intent and not (ROOT/'intent'/f'{args.intent}.json').is_file():parser.error('Unknown intent')
+ if args.intent and not (args.intent in run_bricscad.TOPICS.values() or args.intent in {'feature_'+t for t in run_features.TOPICS} or any(j[0]==args.intent for j in _jobs(args.intent,ROOT))):
+  parser.error('Intent has no native generator')
+ native_ezdxf=not args.pairs or any(p.startswith('ezdxf__') for p in pairs)
+ native_bricscad=(args.with_bricscad and not args.pairs) or (bool(args.pairs) and any(p.startswith('bricscad__') for p in pairs))
  pairs=[p for p in pairs if args.with_bricscad or p.split('__')[1]!='bricscad']
  reader=None if args.with_bricscad else 'oda'
  if args.dry_run:
@@ -115,19 +121,23 @@ def main():
    print(f"{label}: {len(combined['resave'])} resave, {len(combined['rescore'])} rescore, {len(combined['carried'])} carried, {len(combined['gaps'])} capability gaps")
    for kind in ('resave','rescore','carried','gaps'):
     for rel in combined[kind]:print(f'  {kind}: {rel}')
-  report('native',[plan(args.intent,force=args.force,root=ROOT),run_features.plan(args.intent,force=args.force,root=ROOT)])
-  if args.with_bricscad:report('native bricscad',[run_bricscad.plan(args.intent,force=args.force,root=ROOT)])
+  if native_ezdxf:report('native',[plan(args.intent,force=args.force,root=ROOT),run_features.plan(args.intent,force=args.force,root=ROOT)])
+  if native_bricscad:report('native bricscad',[run_bricscad.plan(args.intent,force=args.force,root=ROOT)])
   for pair in pairs:report(pair,[run_cross.plan(pair,intent_id=args.intent,force=args.force,root=ROOT,reader_name=reader)])
   if args.with_bricscad and 'ezdxf__oda' in pairs:report('read by bricscad',[run_independent.plan(args.intent,force=args.force,root=ROOT)])
   return
- if not args.intent or args.intent.startswith('background_'):run_native(args.intent,force=args.force,root=ROOT)
- if not args.intent or args.intent.startswith('feature_'):run_features.main(args.intent,force=args.force,root=ROOT)
- if args.with_bricscad and (not args.intent or args.intent in run_bricscad.TOPICS.values()):run_bricscad.main(args.intent,force=args.force,root=ROOT)
+ if native_ezdxf and (not args.intent or args.intent.startswith('background_')):run_native(args.intent,force=args.force,root=ROOT)
+ if native_ezdxf and (not args.intent or args.intent.startswith('feature_')):run_features.main(args.intent,force=args.force,root=ROOT)
+ if native_bricscad and (not args.intent or args.intent in run_bricscad.TOPICS.values()):run_bricscad.main(args.intent,force=args.force,root=ROOT)
  for pair in pairs:run_cross.run_pair(pair,intent=args.intent,reader_name=reader,force=args.force,root=ROOT)
  if args.with_bricscad and 'ezdxf__oda' in pairs:run_independent.main(args.intent,force=args.force,root=ROOT)
  if not args.intent and not args.pairs:
+  barriers=load_rows(ROOT/'results/barriers.json')
+  write_json(ROOT/'results/barriers.json',barriers)
+  rows=load_rows(ROOT/'results/checks.json');audits=load_rows(ROOT/'results/audits.json')
   from map.build import main as map_main
   map_main()
   from intent.validate import main as validate
   validate();subprocess.run([SETTINGS['python'],'-I',str(ROOT/'measure_size.py')],check=True,cwd=ROOT)
+  print(json.dumps(dict(files=len(audits),fields=len(rows),statuses={s:sum(r['status']==s for r in rows) for s in ('same','differs','absent')},barriers=barriers)))
 if __name__=='__main__':main()

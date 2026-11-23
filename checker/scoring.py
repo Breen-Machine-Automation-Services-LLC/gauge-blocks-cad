@@ -112,3 +112,26 @@ def native_plan(jobs, root, force, build, result, current_fn):
             kind = 'carried'
         result_plan[kind].append(rel)
     return result_plan
+
+
+def refusal_current(rows, input_digest, build):
+    """A completed refusal remains valid for the same drawing input and writer."""
+    return bool(rows) and all(r.get('status') == 'refused'
+                             and r.get('attempt_input_digest') == input_digest
+                             and r.get('attempt_build') == build for r in rows)
+
+
+def stamp_refusal(rows, input_digest, build):
+    for row in rows:
+        if row.get('status') == 'refused':
+            row.update(attempt_input_digest=input_digest, attempt_build=build)
+
+
+def writable(root, program, fmt, version, encoding):
+    """The declared output tuples define the re-saver's capability gaps."""
+    path = root / 'programs/capabilities.json'
+    if not path.exists():
+        # Alternate output roots share the runner's declarations unless they supply their own.
+        path = Path(__file__).resolve().parents[1] / 'programs/capabilities.json'
+    caps = json.loads(path.read_text())[program]
+    return [fmt, version, encoding] in caps['outputs']

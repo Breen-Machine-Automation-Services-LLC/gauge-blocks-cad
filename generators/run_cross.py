@@ -39,7 +39,6 @@ ADAPTERS = AdapterRegistry()
 CHUNK = {'bricscad': 40, 'cadcraft': 16, 'oda': 60}
 PAIRS = {p['writer']+'__'+p['resaver']: (p['sources'], p['resaver']) for p in json.loads((R/'programs/pairs.json').read_text())}
 READER = {'bricscad': 'oda', 'cadcraft': 'oda', 'oda': 'bricscad'}   # DWG reader program; engine families record shared implementations
-CAPABILITY_GAP = ('cannot write', 'requires binary')
 LOG = R / 'logs/run_cross.log'
 
 
@@ -79,24 +78,25 @@ def reader_for(pair, root, reader_name):
 
 
 def plan(pair, intent_id=None, force=False, root=None, reader_name=None):
-    from checker.scoring import empty_plan, file_current
+    from checker.scoring import empty_plan, file_current, refusal_current, writable
     root=R if root is None else Path(root)
     work=empty_plan();resaver=ADAPTERS[pair.split('__')[1]]()
     reader=ADAPTERS[reader_for(pair,root,reader_name)]
     path=root/'results'/f'cross_{pair}_checks.json'
     previous=load_json(path,[])
+    if pair.startswith('oda__'):
+        previous += load_json(root/'results'/f'cross_{pair}_refused.json',[])
     gaps=load_json(root/'results/cross_not_run.json',{})
     builds=load_json(root/'results/cross_gap_builds.json',{})
-    published_builds={load_json(p,{}).get('build') for p in (root/'cross'/pair).glob('*.provenance.json')}
-    published_builds.discard(None)
-    gap_build=next(iter(published_builds)) if len(published_builds)==1 else resaver.build
     for src,dest,fmt,version,enc,side in jobs_for(pair,intent=intent_id,root=root):
         rel=dest.relative_to(root).as_posix();key=pair+'|'+rel
         sc=dest.with_suffix(dest.suffix+'.provenance.json');old=load_json(sc,{})
         rows=[r for r in previous if r['file']==rel]
-        if not force and key in gaps and builds.get(key,gap_build)==resaver.build:
+        if not force and key in gaps and builds.get(key)==resaver.build and not writable(root,resaver.name,fmt,version,enc):
             kind='gaps'
-        elif force or not dest.exists() or old.get('build')!=resaver.build or old.get('made_by',{}).get('input_digest')!=side['content_digest']:
+        elif not force and refusal_current(rows,side['content_digest'],resaver.build):
+            kind='carried'
+        elif force or key in gaps or not dest.exists() or old.get('build')!=resaver.build or old.get('made_by',{}).get('input_digest')!=side['content_digest']:
             kind='resave'
         elif not file_current(rows,root,side['intent_id'],path,rel,current, f'ezdxf {ezdxf.__version__}',None if fmt=='DXF' else f'{reader.name} {reader.build}',reading_fn=reading_current):
             kind='rescore'
@@ -121,7 +121,7 @@ def main():
 
 
 def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None, retain_unreadable=False, force=False, root=None):
-    from checker.scoring import record_score
+    from checker.scoring import record_score, stamp_refusal, writable
     root=R if root is None else Path(root)
     work_plan=plan(pair,intent_id=intent,force=force,root=root,reader_name=reader_name)
     def emit(message):
@@ -138,7 +138,9 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
     checks_path = root / 'results' / f'cross_{pair}_checks.json'
     refused_path = root / 'results' / (f'cross_{pair}_refused.json' if writer_name == 'oda' else f'cross_{pair}_refused_checks.json')
     rows_by_file = collections.defaultdict(list)
-    for r in load_json(checks_path, []):
+    previous=load_json(checks_path, [])
+    if writer_name=='oda':previous+=load_json(refused_path,[])
+    for r in previous:
         rows_by_file[r['file']].append(r)
     not_run = load_json(root/'results/cross_not_run.json',{})
     gap_builds = load_json(root/'results/cross_gap_builds.json',{})
@@ -158,11 +160,15 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
         else:
             rows=compare(doc,intents[side['intent_id']],f'ezdxf {ezdxf.__version__}',VERSIONS[version] if fmt=='DWG' else None)
             for row in rows:row.update(file=rel,converter=converter,self_read=(fmt=='DWG' and reader.name==resaver.name))
+        stamp_refusal(rows,side['content_digest'],resaver.build)
         annotate(rows,root,side['intent_id'],resaver_name,'ezdxf' if fmt=='DXF' else (reader_name or READER[resaver_name]))
         rows_by_file[rel]=rows
         record_score(rows,root,side['intent_id'],checks_path,rel,f'ezdxf {ezdxf.__version__}',converter)
     if rescore:
-        write_json(checks_path,[r for k,v in sorted(rows_by_file.items()) for r in v])
+        write_json(checks_path,[r for k,v in sorted(rows_by_file.items())
+                               if writer_name!='oda' or not v or v[0]['status']!='refused' for r in v])
+        if writer_name=='oda':
+            write_json(refused_path,[r for v in rows_by_file.values() if v and v[0]['status']=='refused' for r in v])
     emit(f'{pair}: {len(jobs)} outputs planned, {len(todo)} to resave, {len(rescore)} to rescore')
     size = CHUNK[resaver_name]
     for start in range(0, len(todo), size):
@@ -175,7 +181,8 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
             not_run.pop(key,None);gap_builds.pop(key,None)
         try:
             staged = {dest: stage / f'{i}{dest.suffix}' for i, (src, dest, *_ ) in enumerate(chunk)}
-            sjobs = [(src, staged[dest], fmt, version, enc) for src, dest, fmt, version, enc, side in chunk]
+            sjobs = [(src, staged[dest], fmt, version, enc) for src, dest, fmt, version, enc, side in chunk
+                     if writable(root,resaver_name,fmt,version,enc)]
             if resaver_name == 'cadcraft':
                 from concurrent.futures import ThreadPoolExecutor
                 groups = [sjobs[i::4] for i in range(4)]
@@ -184,16 +191,18 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
                     for part in pool.map(resaver.save_many, [g for g in groups if g]):
                         results.update(part)
             else:
-                results = resaver.save_many(sjobs)
+                results = resaver.save_many(sjobs) if sjobs else {}
             written = []
             for src, dest, fmt, version, enc, side in chunk:
                 err = results.get(staged[dest])
+                if not writable(root,resaver_name,fmt,version,enc):
+                    err = f'Undeclared output: {fmt} {version} {enc}'
                 if err is None and not staged[dest].exists():
                     err = f'{resaver.name} produced no output'
                 rel = dest.relative_to(root).as_posix()
                 if err is None:
                     written.append((src, dest, fmt, version, enc, side)); continue
-                if any(k in err for k in CAPABILITY_GAP):
+                if not writable(root,resaver_name,fmt,version,enc):
                     not_run[f'{pair}|{rel}'] = err
                     gap_builds[f'{pair}|{rel}'] = resaver.build
                     rows_by_file.pop(rel,None)
@@ -223,8 +232,6 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
                         write_json(dest.with_suffix(dest.suffix + '.provenance.json'), meta)
                     rows_by_file[rel] = [dict(file=rel, intent_id=side['intent_id'], field='open', reader=f'ezdxf {ezdxf.__version__}', converter=converter, self_read=False,
                                               status='refused', expected=None, actual=None, tolerance=0, detail=doc[:300])]
-                    if fmt == 'DXF' or True:
-                        pass
                     continue
                 meta = sidecar(dest, doc, intent, resaver, version, enc, side['content_digest'])
                 meta['ezdxf_based'] = side['ezdxf_based']; meta['made_by']['script'] = 'generators/run_cross.py'
@@ -243,9 +250,10 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
             del docs
         finally:
             shutil.rmtree(stage, ignore_errors=True)
-        for _, dest, *_ in chunk:
+        for src, dest, fmt, version, enc, side in chunk:
             rel=dest.relative_to(root).as_posix();rows=rows_by_file[rel]
             if rows:
+                stamp_refusal(rows,side['content_digest'],resaver.build)
                 record_score(rows,root,rows[0]['intent_id'],checks_path,rel)
                 annotate(rows,root,rows[0]['intent_id'],resaver_name,'ezdxf' if rel.endswith('.dxf') else (reader_name or READER[resaver_name]))
         refused = {k: v for k, v in rows_by_file.items() if v and v[0]['status'] == 'refused'}

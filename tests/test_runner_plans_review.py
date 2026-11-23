@@ -308,5 +308,8 @@ def test_without_pairs_native_steps_remain_selected(corpus, monkeypatch, dry):
     args = ['--with-bricscad'] + (['--dry-run'] if dry else [])
     invoke(h, monkeypatch, *args)
     for name in spies:
-        assert spies[name].call_count == int(not dry), name
-        assert planners[name].call_count == int(dry), name
+        count = len(h.cross.PAIRS) if name == 'cross' else 1
+        assert spies[name].call_count == count * int(not dry), name
+        assert planners[name].call_count == count * int(dry), name
+    calls = planners['cross'].call_args_list if dry else spies['cross'].call_args_list
+    assert sorted(call.args[0] for call in calls) == sorted(h.cross.PAIRS)

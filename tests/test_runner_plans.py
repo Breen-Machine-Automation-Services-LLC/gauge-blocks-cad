@@ -300,9 +300,15 @@ def test_zero_applicable_fields_current_after_one_run(corpus, monkeypatch, kind)
 def test_capability_gaps_are_separate_from_resaves(corpus, monkeypatch, capsys):
     h = corpus
     paths = h.paths['cross']
-    gap = paths[0]
+    gap = next(p for p in paths if p.endswith('_binary.dxf'))
     (h.root / gap).unlink()
-    dump(h.root / 'results/cross_not_run.json', {'ezdxf__oda|' + gap: 'cannot write synthetic format'})
+    key = 'ezdxf__oda|' + gap
+    caps_path = h.root / 'programs/capabilities.json'
+    caps = json.loads(caps_path.read_text())
+    caps['oda']['outputs'] = [o for o in caps['oda']['outputs'] if o != ['DXF', '2000', 'binary']]
+    dump(caps_path, caps)
+    dump(h.root / 'results/cross_not_run.json', {key: 'Synthetic declared limitation'})
+    dump(h.root / 'results/cross_gap_builds.json', {key: h.cross.ADAPTERS['oda'].build})
     expected = dict(resave=[], rescore=[], carried=sorted(set(paths) - {gap}), gaps=[gap])
     assert normalized(plan(h, 'cross')) == expected
     run(h, 'cross')
