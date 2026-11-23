@@ -3,6 +3,9 @@ from pathlib import Path
 from collections import defaultdict
 from datetime import datetime, timezone
 import json
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from checker.attribution import Attribution, outcome, counts, BUCKETS, reading_label
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSIONS = dict(zip(['R12','2000','2004','2007','2010','2013','2018'],
@@ -43,16 +46,12 @@ def _view_inputs(root):
             if key not in seen:
                 rows.append(row)
                 seen.add(key)
-    return intents, provenance, rows
+    attribution = Attribution(provenance, rows, read(root/'programs/pairs.json'))
+    return intents, provenance, [attribution.attribute(r) for r in rows]
 
 
 def _status(rows):
-    states = {r['status'] for r in rows}
-    for raw, label in [('refused', 'refused'), ('absent', 'lost'), ('differs', 'changed'),
-                       ('not_scored', 'not scored'), ('same', 'kept')]:
-        if raw in states:
-            return label
-    return 'not measured'
+    return outcome(rows)
 
 
 def _cell(status, item, program, evidence, label=None, pair=None, **extra):
@@ -96,8 +95,9 @@ def _feature_rows(intent, feature, rows):
             (not fields or r.get('field') in fields or (_refused_open(r)))]
 
 
-def comparison_rows(writer, resaver, root):
-    intents, provenance, rows = _view_inputs(root)
+def comparison_rows(writer, resaver, root, _inputs=None):
+    intents, provenance, rows = _inputs or _view_inputs(root)
+    attribution = Attribution(provenance, rows, read(root/'programs/pairs.json'))
     pair = writer + '__' + resaver
     declared = any(p['writer'] == writer and p['resaver'] == resaver
                    for p in read(root/'programs/pairs.json'))
@@ -106,8 +106,12 @@ def comparison_rows(writer, resaver, root):
     for row in selected:
         selected_by_intent[row.get('intent_id')].append(row)
     native_ids = {p.get('intent_id') for path, p in provenance.items() if path.startswith('native/' + writer + '/')}
+    native_by_intent = defaultdict(list)
+    for row in rows:
+        if row['file'].startswith('native/'+writer+'/'):
+            native_by_intent[row.get('intent_id')].append(row)
     summarized = set()
-    groups, summary = [], dict(total=0, kept=0, changed=0, lost=0, refused=0, not_measured=0)
+    groups, summary = [], counts([])
     for item in _inventory(root):
         features = []
         for iid in item['dataset']['intents']:
@@ -126,26 +130,30 @@ def comparison_rows(writer, resaver, root):
                 kept = sum(_status(rs) == 'kept' for rs in slots.values())
                 status = _status(evidence)
                 shared = any(r.get('shared_engine') for r in evidence)
-                label = f'{status}: kept {kept} of {len(slots)} format/version/encoding slots (including not scored)'
+                label = f'{reading_label(status, evidence)}: kept {kept} of {len(slots)} format/version/encoding slots (including not scored)'
                 if shared:
                     label += ' · shared engine'
                 native = iid in native_ids
-                features.append(dict(intent_id=iid, feature=feature, native=native,
+                native_rows = _feature_rows(intent, feature, native_by_intent[iid])
+                converter_evidence = attribution.native_converter(native_rows)
+                native_read = _cell('lost by converter' if converter_evidence else 'not measured', item, resaver, converter_evidence,
+                    'lost by converter: '+', '.join(sorted({r['converter'] for r in converter_evidence if r.get('converter')})) if converter_evidence else None)
+                features.append(dict(intent_id=iid, feature=feature, native=native, native_read=native_read,
                                      round_trip=_cell(status, item, resaver, evidence, label,
                                                       pair, kept=kept, total=len(slots), shared_engine=shared)))
                 if (iid, feature) not in summarized:
                     summarized.add((iid, feature))
                     summary['total'] += 1
                     summary_status = status
-                    summary[summary_status if summary_status in ('kept', 'changed', 'lost', 'refused') else 'not_measured'] += 1
+                    summary[BUCKETS.get(summary_status, 'not_measured')] += 1
         if features:
             groups.append(dict(kind=item['kind'], name=item['name'], rows=features))
     summary['label'] = f"{summary['total']} features"
     return dict(declared=declared, label='measured' if selected else 'not measured', groups=groups, summary=summary)
 
 
-def main_view_rows(root):
-    intents, provenance, rows = _view_inputs(root)
+def main_view_rows(root, _inputs=None):
+    intents, provenance, rows = _inputs or _view_inputs(root)
     by_intent = defaultdict(list)
     for row in rows:
         by_intent[row.get('intent_id')].append(row)
@@ -158,6 +166,7 @@ def main_view_rows(root):
         programs.append(dict(id=pid, name=name, engine=engine, shared_engine=shared,
                              label=name + ' · ' + engine + (' · shared engine' if shared else '')))
     declarations = read(root/'programs/pairs.json')
+    attribution = Attribution(provenance, rows, declarations)
     groups = []
     for kind in ('entity', 'object', 'table', 'header'):
         items = []
@@ -182,14 +191,25 @@ def main_view_rows(root):
                         rs = _feature_rows(intent, feature, evidence)
                         if any(r['status'] != 'not_scored' for r in rs):
                             measured.append(_status(rs))
-                kept, total = measured.count('kept'), len(measured)
+                totals = counts(measured)
+                kept, total = totals['kept'], totals['total']
                 status = _status(evidence) if total else 'not measured'
-                if total and kept == total:
-                    status = 'kept'
-                cells[pid] = dict(reads=_cell('measured' if reads else 'not measured', item, pid, reads),
+                if total and kept == total:status = 'kept'
+                label = f'kept {kept} of {total}' if total else 'not measured'
+                if status in ('source not readable','lost in writer or converter','unreadable by reader') or (total and len(set(measured))==1 and status!='kept'):
+                    label += ' · '+reading_label(status, evidence)
+                public_errors = [r for r in reads if r.get('read_observation',{}).get('status')=='reader_error' or r['status']=='reader_error']
+                converted = [r for r in relevant if r.get('converter','') and r['converter'].split(' ')[0]==pid]
+                converter_evidence = attribution.native_converter(converted)
+                read_status = 'reader_error' if public_errors else 'lost by converter' if converter_evidence else 'measured' if reads else 'not measured'
+                read_label = read_status
+                if public_errors:
+                    read_label += ': '+ '; '.join(sorted({r.get('read_observation',r).get('reader','')+' '+str(r.get('read_observation',r).get('detail','')) for r in public_errors}))
+                elif converter_evidence:
+                    read_label += ': '+', '.join(sorted({r['converter'] for r in converter_evidence if r.get('converter')}))
+                cells[pid] = dict(reads=_cell(read_status, item, pid, reads+converter_evidence, read_label, reader_error=len(public_errors)),
                                   writes=_cell('native drawing' if writes else 'no native drawing', item, pid, writes),
-                                  round_trip=_cell(status, item, pid, evidence,
-                                                   f'kept {kept} of {total}' if total else 'not measured', kept=kept, total=total))
+                                  round_trip=_cell(status, item, pid, evidence, label, **totals))
             dataset = _cell(item['dataset']['status'], item, '', [item['dataset']], intents=ids)
             items.append(dict(item, dataset=dataset, programs=cells))
         groups.append(dict(kind=kind, rows=items))
@@ -214,7 +234,7 @@ def _page_evidence(data):
                         # Dataset and native-writing cells retain their own metadata.
                         compact = ({k: row[k] for k in
                                     ('intent_id', 'field', 'file', 'status', 'reader',
-                                     'converter', 'shared_engine') if k in row}
+                                     'converter', 'shared_engine', 'read_observation', 'source_status', 'attribution', 'detail') if k in row}
                                    if 'file' in row else row)
                         signature = json.dumps(compact, sort_keys=True, ensure_ascii=False)
                         if signature not in indices:
@@ -282,6 +302,8 @@ def main():
             if key in seen: continue
             seen.add(key)
             checks[row['file']].append(row)
+    attribution = Attribution({s['path']:s for s in files}, [r for rs in checks.values() for r in rs], declared)
+    checks = defaultdict(list, {path:[attribution.attribute(r) for r in rs] for path,rs in checks.items()})
     # A refused open may leave no cross drawing or sidecar. Recover its
     # target slot from the checked path and the matching native source sidecar.
     known_paths = {s['path'] for s in files}
@@ -355,7 +377,7 @@ def main():
                     diffs = [r for r in selected if r['status']!='same']
                     state = 'not run'
                     if selected:
-                        state = 'refused' if any(r['status']=='refused' for r in selected) else 'lost' if any(r['status']=='absent' for r in selected) else 'changed' if any(r['status']=='differs' for r in selected) else 'not_scored' if any(r['status']=='not_scored' for r in selected) else 'kept'
+                        state = _status(selected).replace('not scored','not_scored')
                     # Match the source by provenance digest, including DXF-to-DWG conversion.
                     sources = [x for x in own if not x.get('unavailable') and x['path']!=s['path'] and x['content_digest']==s.get('made_by',{}).get('input_digest')]
                     stale = False
@@ -372,7 +394,8 @@ def main():
                 cells.append(dict(coverage=coverage, missing=missing, impossible=impossible, applicable=applicable, runs=runs, files=[s['path'] for s in fs if not s.get('unavailable')]))
             topic['features'].append(dict(name=feature,cells=cells))
         topics.append(topic)
-    data = dict(main_view=main_view_rows(ROOT), comparisons={key: comparison_rows(p['writer'], p['resaver'], ROOT) for key, p in pairs.items()}, topics=topics, columns=columns, pairs=list(pairs), builds=sorted(builds), generated=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'))
+    inputs = _view_inputs(ROOT)
+    data = dict(main_view=main_view_rows(ROOT, inputs), comparisons={key: comparison_rows(p['writer'], p['resaver'], ROOT, inputs) for key, p in pairs.items()}, topics=topics, columns=columns, pairs=list(pairs), builds=sorted(builds), generated=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'))
     _page_evidence(data)
     from collections import Counter
     print('Coverage cells:', dict(Counter(c['coverage'] for t in topics for f in t['features'] for c in f['cells'])))

@@ -103,3 +103,13 @@ rows. The planner carries that refusal for the same input and writer build, even
 when no drawing exists. An input or writer build change retries it. Reading-only
 refusals retain the reader build and input identity used by that reading step.
 `--force` retries every selected output, including refusals and known gaps.
+
+Grading decodes raw SAT group 1/3 records without dropping unpadded characters.
+The public ezdxf ACIS call is measured separately in `read_observation`; a library
+exception records `reader_error` with its reader, version and exception, and other
+fields continue. Missing optional gradient data remains `absent`.
+
+Attribution uses provenance input digests and matching readers to compare each
+cross field with its source. `source_not_readable`, `writer_or_converter`, and
+`unreadable_by_reader` are separate summary buckets; native direct success paired
+with converted failure is labeled lost by converter. Raw grading rows remain intact.

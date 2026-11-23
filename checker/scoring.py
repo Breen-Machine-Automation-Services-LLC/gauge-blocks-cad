@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib
 import json
 import ezdxf
+from checker.core import applicable_fields
 
 ENGINES = {'ezdxf': 'ezdxf', 'oda': 'oda-teigha', 'bricscad': 'oda-teigha', 'cadcraft': 'cadcraft'}
 

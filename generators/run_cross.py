@@ -13,7 +13,7 @@ import sys, json, shutil, collections, time, hashlib
 R = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(R))
 import ezdxf
 from checker.scoring import annotate, current, reading_current
-from checker.core import digest, compare
+from checker.core import encoding_intent, digest, compare
 from programs import privacy
 from programs import adapters
 from programs.adapters import VERSIONS, workdir
@@ -158,7 +158,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
         if isinstance(doc,str):
             rows=[dict(file=rel,intent_id=side['intent_id'],field='open',reader=f'ezdxf {ezdxf.__version__}',converter=converter,self_read=False,status='refused',expected=None,actual=None,tolerance=0,detail=doc)]
         else:
-            rows=compare(doc,intents[side['intent_id']],f'ezdxf {ezdxf.__version__}',VERSIONS[version] if fmt=='DWG' else None)
+            rows=compare(doc, encoding_intent(intents[side['intent_id']], enc), f'ezdxf {ezdxf.__version__}', VERSIONS[version] if fmt=='DWG' else None)
             for row in rows:row.update(file=rel,converter=converter,self_read=(fmt=='DWG' and reader.name==resaver.name))
         stamp_refusal(rows,side['content_digest'],resaver.build)
         annotate(rows,root,side['intent_id'],resaver_name,'ezdxf' if fmt=='DXF' else (reader_name or READER[resaver_name]))
@@ -242,7 +242,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
                 sc = dest.with_suffix(dest.suffix + '.provenance.json')
                 if json.loads(sc.read_text()) != meta:   # publish keeps an unchanged output; its sidecar must still name the current source
                     write_json(sc, meta)
-                rows = compare(doc, intent, f'ezdxf {ezdxf.__version__}', VERSIONS[version] if fmt == 'DWG' else None)
+                rows = compare(doc, encoding_intent(intent, enc), f'ezdxf {ezdxf.__version__}', VERSIONS[version] if fmt=='DWG' else None)
                 for row in rows:
                     row.update(file=rel, converter=converter, self_read=(fmt == 'DWG' and reader.name == resaver.name))
                 rows_by_file[rel] = rows

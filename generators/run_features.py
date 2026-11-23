@@ -5,7 +5,7 @@ R=Path(__file__).resolve().parents[1];sys.path.insert(0,str(R))
 from generators.features import TOPICS,build
 from programs.adapters import Ezdxf,VERSIONS
 from checker.scoring import annotate, current, load_rows, native_input
-from checker.core import compare
+from checker.core import encoding_intent, compare
 from regenerate import sidecar,publish,write_json
 import tempfile
 
@@ -39,13 +39,13 @@ def main(intent_id=None, force=False, root=None):
   intent=json.loads((root/'intent'/f'{iid}.json').read_text())
   errors=fixes=0
   if rel in work['rescore']:
-   checks=compare(ez.open(dest),intent,'ezdxf '+ez.build)
+   checks=compare(ez.open(dest), encoding_intent(intent, encoding), 'ezdxf '+ez.build, None)
   else:
    d=build(topic,version)
    with tempfile.TemporaryDirectory(dir=root/'results') as td:
     tmp=Path(td)/'drawing.dxf';ez.save(d,tmp,'DXF',version,encoding);loaded=ez.open(tmp)
     meta=sidecar(dest,loaded,intent,ez,version,encoding,inp)
-    checks=compare(loaded,intent,'ezdxf '+ez.build)
+    checks=compare(loaded, encoding_intent(intent, encoding), 'ezdxf '+ez.build, None)
     audit=loaded.audit();errors=len(audit.errors);fixes=len(audit.fixes)
     assert not errors and not fixes,(topic,version,audit.errors,audit.fixes)
     meta['made_by']['script']='generators/run_features.py';publish(tmp,dest,meta,force=force)

@@ -9,7 +9,7 @@ from pathlib import Path
 import sys, json, collections
 R = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(R))
 import ezdxf
-from checker.core import compare
+from checker.core import encoding_intent, compare
 from checker.scoring import annotate, current, load_rows, reading_current
 import hashlib
 from programs.adapters import BricsCad, VERSIONS
@@ -57,7 +57,7 @@ def main(intent_id=None, force=False, root=None):
                 refused += 1
                 rows.append(dict(file=rel, intent_id=side['intent_id'], field='open', reader='ezdxf ' + ezdxf.__version__, converter='bricscad ' + bc.build, self_read=False,
                                  status='refused', expected=None, actual=None, tolerance=0, detail=d[:300])); continue
-            checks=compare(d, intents[side['intent_id']], 'ezdxf ' + ezdxf.__version__, VERSIONS[(side['version'] if 'version' in side else p.stem.rsplit('_',2)[-2])])
+            checks=compare(d, encoding_intent(intents[side['intent_id']], side.get('encoding')), 'ezdxf ' + ezdxf.__version__, VERSIONS[(side['version'] if 'version' in side else p.stem.rsplit('_',2)[-2])])
             record_score(checks,root,side['intent_id'],path,rel,'ezdxf '+ezdxf.__version__,'bricscad '+bc.build,hashlib.sha256(p.read_bytes()).hexdigest())
             for row in checks:
                 row.update(file=rel, converter='bricscad ' + bc.build, self_read=False); rows.append(row)

@@ -33,3 +33,12 @@ Then run `python map/browser_test.py` in that Python environment. Ports can be c
 `python map/test_coverage.py` builds a synthetic repository with complete, missing-pair, capability-gap, cross-folder DWG source, undeclared-pair, and no-source cells. Browser checks include named missing pairs and the descriptive provenance link. The Coverage screenshot shows the collapsed topics and no-source legend.
 
 Run every `checker/test_*.py` script with the configured Python. When CAD saves are prohibited, run `test_privacy.py --existing-evidence` and `test_volatile_new.py --existing-evidence`; these validate stored integration evidence, and the privacy mode also scans every current drawing. They do not claim fresh program saves. The other digest tests run ezdxf or ODA.
+
+Round trips use source baselines matched by provenance digest and reading path.
+A field without a clean source is source not readable; a DWG-only loss with DXF
+success is lost in writer or converter, naming the converter. A resaved query that
+raises after a clean source read is unreadable by reader. These outcomes have
+separate summary buckets and reconcile with kept, changed, lost and refused.
+Reads cells expose `reader_error` counts and public `read_observation` evidence,
+including the ezdxf SAT binary Teigha gap; a native conversion failure after direct
+success is lost by converter. Packed evidence preserves the cause and source status.

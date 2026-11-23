@@ -54,12 +54,13 @@ def test_unsupported_forms_are_not_scored(selector, reason):
     assert reason in row['detail'].lower()
 
 
-def test_arbitrary_extraction_exception_is_absent(monkeypatch):
+def test_arbitrary_extraction_exception_is_reader_error(monkeypatch):
     def broken(*args):
         raise RuntimeError('synthetic checker failure')
     monkeypatch.setattr(core, 'extract', broken)
     row = scored(ezdxf.new(), {'kind': 'layer_count'})
-    assert row['status'] == 'absent'
+    assert row['status'] == 'reader_error'
+    assert 'RuntimeError' in row['detail']
     assert 'synthetic checker failure' in row['detail']
 
 

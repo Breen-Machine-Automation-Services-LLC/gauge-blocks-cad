@@ -1,4 +1,5 @@
 import hashlib,json,math,re
+from pathlib import Path
 import ezdxf.math
 from ezdxf.lldxf.tagwriter import TagCollector
 from ezdxf.lldxf.const import DXFError
@@ -106,11 +107,65 @@ def effective_redraw_order(layout):
 def literal_redraw_order(layout):
  return [dict(entity_handle=h,sort_handle=k) for h,k in layout.get_redraw_order()]
 
+def applicable_fields(intent, version, encoding=None):
+ return [f for f in intent['expected'] if version in f['versions']
+         and (encoding is None or encoding in f.get('encodings', ['ASCII','binary']))]
+
+def encoding_intent(intent, encoding):
+ # Preserve version selection by compare and apply the shared rule to encoding restrictions.
+ if not any('encodings' in f for f in intent['expected']):return intent
+ fields=[f for f in intent['expected'] if applicable_fields({'expected':[f]}, f['versions'][0], encoding)]
+ return dict(intent,expected=fields)
+
+def decode_sat_records(tags):
+ records=[]
+ for tag in tags:
+  if tag.code==1:records.append(tag.value)
+  elif tag.code==3 and records:records[-1]+=tag.value
+ for record in records:
+  decoded=[];i=0
+  while i<len(record):
+   c=ord(record[i]);i+=1
+   decoded.append({32:' ',64:'_',95:'@'}.get(c,chr(159-c) if 65<=c<=94 else chr(c^95)))
+   if c==94 and i<len(record) and record[i]==' ':i+=1
+  yield ''.join(decoded)
+
+def raw_sat(entity):
+ # Loaded SAT has already passed through the library decoder; read original tags by handle.
+ from ezdxf.lldxf.tagger import binary_tags_loader, ascii_tags_loader
+ from io import StringIO
+ path=entity.doc.filename
+ if not path:return entity.sat
+ data=Path(path).read_bytes()
+ tags=binary_tags_loader(data) if data.startswith(b'AutoCAD Binary DXF') else ascii_tags_loader(StringIO(data.decode(entity.doc.encoding,errors='surrogateescape')))
+ selected=[];handle=None
+ for tag in tags:
+  if tag.code==0:
+   if handle==entity.dxf.handle:return list(decode_sat_records(selected))
+   selected=[];handle=None
+  if tag.code==5:handle=tag.value
+  selected.append(tag)
+ if handle==entity.dxf.handle:return list(decode_sat_records(selected))
+ return entity.sat
+
+def acis_value(entity, attr, public=False):
+ from ezdxf.acis import api as acis
+ if public:bodies=acis.load_dxf(entity)
+ else:
+  data=entity.sab if entity.has_binary_data else raw_sat(entity)
+  if not data:raise KeyError('Missing ACIS data')
+  bodies=acis.load(data)
+ if not bodies:raise KeyError('ACIS entity has no decodable body')
+ if attr=='acis_body_count':return len(bodies)
+ box=ezdxf.math.BoundingBox([v for m in acis.mesh_from_body(bodies[0]) for v in m.vertices])
+ return list(box.size)
+
 def extract(d,s):
  kind=s['kind'];name=s.get('name');attr=s.get('attr')
  if kind=='feature_attr':
   e=feature_entity(d,s)
   if attr=='alignment_rotation_error':
+   if not e.dxf.hasattr('align_point'):raise KeyError('Missing alignment point')
    delta=e.dxf.align_point-e.dxf.insert
    angle=math.degrees(math.atan2(delta.y,delta.x))
    return (e.dxf.rotation-angle+180)%360-180
@@ -118,19 +173,16 @@ def extract(d,s):
   if attr=='table_columns':return next(v for c,v in table_tags(e) if c==92)
   if attr=='table_cell_text':return [v for c,v in table_tags(e) if c==1 and v!='']
   if attr in ('acis_body_count','acis_bbox_size'):
-   from ezdxf.acis import api as acis
-   bodies=acis.load_dxf(e)
-   if not bodies:raise KeyError('ACIS entity has no decodable body')
-   if attr=='acis_body_count':return len(bodies)
-   box=ezdxf.math.BoundingBox([v for m in acis.mesh_from_body(bodies[0]) for v in m.vertices])
-   return list(box.size)
+   return acis_value(e,attr)
   if attr=='redraw_order':
    return effective_redraw_order(redraw_layout(d,name))
   if attr=='image_size':return list(e.dxf.image_size)[:2]
   if attr=='loop_flags':return [p.path_type_flags for p in e.paths]
-  if attr=='gradient_rotation':return e.gradient.rotation
+  if attr=='gradient_rotation':return e.gradient.rotation if e.gradient is not None else None
   if attr=='fit_points':return [list(v) for v in e.fit_points]
-  if attr=='extension_record':return [list(t) for t in dictionary_item(e.get_extension_dict(),'G_XR').tags]
+  if attr=='extension_record':
+   if not e.has_extension_dict:raise KeyError('Missing extension dictionary')
+   return [list(t) for t in dictionary_item(e.get_extension_dict(),'G_XR').tags]
   if attr=='block_circle_radius':
    radii=[x.dxf.radius for x in symbol_item(d.blocks,e.dxf.name) if x.dxftype()=='CIRCLE']
    if not radii:raise KeyError('Referenced block contains no CIRCLE')
@@ -214,10 +266,9 @@ def recomputed_fit_width(d, selector):
  unscaled=text_size(measured).width/e.dxf.width
  return span/unscaled
 
-def compare(d,intent,reader,source_version=None):
+def compare(d,intent,reader,source_version=None,source_encoding=None):
  rows=[]
- for f in intent['expected']:
-  if (source_version or d.dxfversion) not in f['versions']:continue
+ for f in applicable_fields(intent,source_version or d.dxfversion,source_encoding):
   row={'intent_id':intent['intent_id'],'field':f['id'],'reader':reader,'expected':f['value'],'tolerance':f['tolerance']}
   try:
    actual=extract(d,f['selector'])
@@ -233,7 +284,21 @@ def compare(d,intent,reader,source_version=None):
    row['status']='same' if same else 'differs'
   except CheckerLimit as ex:
    row.update(status='not_scored',detail=str(ex));row.setdefault('actual',None)
-  except Exception as ex:
+  except (KeyError,StopIteration,DXFError) as ex:
    row.update(status='absent',detail=str(ex));row.setdefault('actual',None)
+  except Exception as ex:
+   row.update(status='reader_error',detail=f'ezdxf {ezdxf.__version__} {type(ex).__name__}: {ex}');row.setdefault('actual',None)
+  if f['selector'].get('attr','').startswith('acis_'):
+   observation=dict(reader=reader,actual=None)
+   try:
+    actual=acis_value(feature_entity(d,f['selector']),f['selector']['attr'],public=True)
+    observation.update(actual=actual,status='same' if equal(actual,f['value'],f['tolerance']) else 'differs')
+   except (KeyError,StopIteration):observation.update(status='absent')
+   except Exception as ex:
+    detail=f'ezdxf {ezdxf.__version__} {type(ex).__name__}: {ex}'
+    if isinstance(ex,IndexError) and d.dxfversion<'AC1027':
+     detail+='; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010'
+    observation.update(status='reader_error',detail=detail)
+   row['read_observation']=observation
   rows.append(row)
  return rows

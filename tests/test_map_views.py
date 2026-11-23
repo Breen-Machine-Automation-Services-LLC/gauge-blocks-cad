@@ -127,6 +127,7 @@ def corpus(tmp_path):
                 check(path, field, status)
     for program in ('ezdxf', 'bricscad'):
         check(drawing('layers', program), 'color', 'same')
+    check(drawing('layers', 'bricscad', version='2018'), 'color', 'same')
     check(drawing('layers', 'cadcraft', 'ezdxf__cadcraft'), 'color', 'same')
     check(drawing('layers', 'oda', 'bricscad__oda', '2018', 'DWG'), 'color', 'same', True)
     write_json(root, 'results/fixture_checks.json', rows)
@@ -182,6 +183,14 @@ def test_every_program_cell(builder, corpus, item, program):
     assert cells['writes']['status'] == cells['writes']['label'] == written
     rt = cells['round_trip']
     assert (rt['status'], rt['label'], rt['kept'], rt['total']) == expected_round_trip
+
+
+def test_round_trip_without_source_baseline_is_not_readable(builder, corpus):
+    rows = json.loads((corpus / 'results/fixture_checks.json').read_text())
+    rows = [r for r in rows if r['file'] != 'native/bricscad/layers_2018.dxf']
+    write_json(corpus, 'results/fixture_checks.json', rows)
+    cell = item_rows(main_rows(builder, corpus))['LAYER']['programs']['oda']['round_trip']
+    assert cell['status'] == 'source not readable'
 
 
 def test_groups_and_reference_links(builder, corpus):

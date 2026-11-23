@@ -12,7 +12,7 @@ R = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(R))
 import ezdxf
 from ezdxf.lldxf.tagwriter import TagCollector
 from checker.scoring import annotate, current, load_rows, native_input
-from checker.core import digest, compare
+from checker.core import encoding_intent, digest, compare
 from programs import privacy
 from programs.adapters import BricsCad, Oda, VERSIONS, workdir
 from programs.bricscad_batch import run_script
@@ -94,7 +94,7 @@ def main(intent_id=None, force=False, root=None):
                     checks=[dict(intent_id=intent_id,field='open',reader='ezdxf '+ezdxf.__version__,status='refused',expected=None,actual=None,tolerance=0,detail=doc)]
                 else:
                     version=NAME.match(dest.name).group(2)
-                    checks=compare(doc,intent,'ezdxf '+ezdxf.__version__,VERSIONS[version] if dwg else None)
+                    checks=compare(doc, encoding_intent(intent, 'binary' if dwg else NAME.match(dest.name).group(3)), 'ezdxf '+ezdxf.__version__, VERSIONS[version] if dwg else None)
                 for row in checks:row.update(file=rel,converter='oda '+oda.build if dwg else None,self_read=False)
                 rows.extend(checks)
                 record_score(checks,root,intent_id,root/'results/native_bricscad_checks.json',rel)
@@ -105,7 +105,7 @@ def main(intent_id=None, force=False, root=None):
                         version=NAME.match(dest.name).group(2)
                         status=oda.save_many([(dest,target,'DXF',version,'ASCII')])[target]
                         if status is None:
-                            secondary=compare(ezdxf.readfile(target),intent,'ezdxf '+ezdxf.__version__)
+                            secondary=compare(ezdxf.readfile(target), encoding_intent(intent, 'binary'), 'ezdxf '+ezdxf.__version__, None)
                         else:
                             secondary=[dict(intent_id=intent_id,field='open',reader='ezdxf '+ezdxf.__version__,status='refused',expected=None,actual=None,tolerance=0,detail=status)]
                         for row in secondary:row.update(file=rel,converter='oda '+oda.build+' (binary DXF to ASCII DXF)',self_read=False)
@@ -171,10 +171,10 @@ def main(intent_id=None, force=False, root=None):
                         rows.append(dict(file=f'native/bricscad/{p.name}', intent_id=intent['intent_id'], field='open', reader='ezdxf ' + ezdxf.__version__, converter='oda ' + oda.build + ' (binary DXF to ASCII DXF)',
                                          self_read=False, status='refused', expected=None, actual=None, tolerance=0, detail=d2))
                     else:
-                        for row in compare(d2, intent, 'ezdxf ' + ezdxf.__version__):
+                        for row in compare(d2, encoding_intent(intent, encoding), 'ezdxf ' + ezdxf.__version__, None):
                             row.update(file=f'native/bricscad/{p.name}', converter='oda ' + oda.build + ' (binary DXF to ASCII DXF)', self_read=False); rows.append(row)
                 reader = 'ezdxf ' + ezdxf.__version__
-                checks=compare(doc, intent, reader, VERSIONS[version] if fmt == 'DWG' else None)
+                checks=compare(doc, encoding_intent(intent, 'binary' if fmt == 'DWG' else encoding), reader, VERSIONS[version] if fmt == 'DWG' else None)
                 record_score(checks,root,intent_id,root/'results/native_bricscad_checks.json',dest.relative_to(root).as_posix())
                 for row in checks:
                     row.update(file=f'native/bricscad/{p.name}', converter=converter, self_read=False); rows.append(row)

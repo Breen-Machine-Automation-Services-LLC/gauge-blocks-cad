@@ -12,7 +12,7 @@ if a.drawing.suffix.lower()=='.dwg':
  if isinstance(d,str):print(json.dumps({'status':'refused','detail':d}));sys.exit(2)
 else:d=Ezdxf().open(a.drawing)
 metadata=json.loads(side.read_text()) if side.exists() else {}
-rows=compare(d,intent,'ezdxf '+Ezdxf.build,VERSIONS.get(metadata.get('version')) if a.drawing.suffix.lower()=='.dwg' else None)
+rows=compare(d,intent,'ezdxf '+Ezdxf.build,VERSIONS.get(metadata.get('version')),metadata.get('encoding'))
 writer=json.loads(side.read_text()).get('program') if side.exists() else None
 for r in rows:
  r['converter']=((Oda.name+' '+Oda.build) if a.converter=='oda' else (BricsCad.name+' '+BricsCad.build)) if a.converter else None

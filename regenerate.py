@@ -6,7 +6,7 @@ sys.path.insert(0,str(ROOT))
 from programs.settings import SETTINGS
 from generators.background import build
 from checker.scoring import annotate, current, load_rows, native_input
-from checker.core import digest,compare
+from checker.core import encoding_intent, digest,compare
 from programs.adapters import Ezdxf,Oda,VERSIONS
 
 def write_json(p,v):
@@ -29,7 +29,7 @@ def run_case(case, cross=True, force=False, root=None, action=None):
   if action is None and current(previous,root,intent['intent_id']):
    return previous,dict(intent_id=intent['intent_id'],version=version,encoding=encoding,errors=0,fixes=0)
   loaded=ez.open(dest)
-  checks=compare(loaded,intent,'ezdxf '+ez.build)
+  checks=compare(loaded, encoding_intent(intent, encoding), 'ezdxf '+ez.build, None)
   for row in checks:row.update(file=dest.relative_to(root).as_posix(),converter=None,self_read=False)
   annotate(checks,root,intent['intent_id'],'ezdxf','ezdxf')
   return checks,dict(intent_id=intent['intent_id'],version=version,encoding=encoding,errors=0,fixes=0)
@@ -37,7 +37,7 @@ def run_case(case, cross=True, force=False, root=None, action=None):
  with tempfile.TemporaryDirectory(dir=root/'results') as tmp:
   p=Path(tmp)/'drawing.dxf';ez.save(d,p,'DXF',version,encoding);loaded=ez.open(p)
   dest=root/'native/ezdxf'/f'{topic}_{version}_{encoding}.dxf';meta=sidecar(dest,loaded,intent,ez,version,encoding,input_digest)
-  checks=compare(loaded,intent,'ezdxf '+ez.build)
+  checks=compare(loaded, encoding_intent(intent, encoding), 'ezdxf '+ez.build, None)
   a=loaded.audit()
   audit={'intent_id':intent['intent_id'],'version':version,'encoding':encoding,'errors':len(a.errors),'fixes':len(a.fixes)}
   if a.errors:raise RuntimeError(str(a.errors))
@@ -49,7 +49,7 @@ def run_case(case, cross=True, force=False, root=None, action=None):
    dd=ez.open(out) if fmt=='DXF' else oda.read_dwg(out)
    target=root/'cross/ezdxf__oda'/f'{topic}_{version}_{encoding}.{fmt.lower()}'
    publish(out,target,sidecar(target,dd,intent,oda,version,encoding if fmt=='DXF' else 'binary',meta['content_digest']),force=force)
-   for row in compare(dd,intent,'ezdxf '+ez.build, VERSIONS[version]):
+   for row in compare(dd, encoding_intent(intent, encoding if fmt=='DXF' else 'binary'), 'ezdxf '+ez.build, VERSIONS[version]):
     row.update(file=str(target.relative_to(root)),converter='oda '+oda.build if fmt=='DWG' else None,self_read=(fmt=='DWG'));rows.append(row)
  annotate(rows,root,intent['intent_id'],'ezdxf','ezdxf')
  for row in rows:
@@ -91,7 +91,7 @@ def run_native(intent_id=None, force=False, root=None):
   audits.append(a)
  write_json(path,rows);write_json(root/'results/audits.json',audits)
  with (root/'results/checks.csv').open('w') as stream:
-  writer=csv.DictWriter(stream,fieldnames=['file','intent_id','field','reader','converter','self_read','scored_with','writer_engine','reader_engine','shared_engine','status','expected','actual','tolerance','detail'])
+  writer=csv.DictWriter(stream,fieldnames=['file','intent_id','field','reader','converter','self_read','scored_with','writer_engine','reader_engine','shared_engine','status','expected','actual','tolerance','detail','read_observation'])
   writer.writeheader();writer.writerows(rows)
  if any(r['status']!='same' for r in rows if r['file'].startswith('native/')):
   raise RuntimeError('Native expected-field failures; see results/checks.json')
