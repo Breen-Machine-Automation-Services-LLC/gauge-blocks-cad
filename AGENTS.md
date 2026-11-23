@@ -1,6 +1,7 @@
 # Working in this repository
 
 Use synthetic content only. Follow [CONTRIBUTING.md](CONTRIBUTING.md) for content and provenance rules.
+Follow CONTRIBUTING.md's claim and accountability rules before starting or submitting work.
 Expected values come from independent intents, never from a program's saved output.
 
 Regeneration launches desktop CAD programs and can run a long time. Run it in the

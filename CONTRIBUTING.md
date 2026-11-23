@@ -1,43 +1,197 @@
 # Contributing
 
-Intents are the source of truth. Propose a feature by submitting a pull request with a `wanted` intent containing `intent_id`, `title`, `description`, and `status`, or open an issue describing the desired behavior. Use invented content with no real company, person, or place names, local paths, or third-party fonts and images. Code and data are MIT OR Apache-2.0.
+Glad you're here. Here are a few ways to help; pick the one that fits.
 
-Accept a request by writing its expected result and setting `planned`. Add a generator under `generators/` and independent expected fields with DXF Reference sections, selectors, tolerances, and version applicability. Do not derive expected values from a writer's saved output. Put each feature on a distinct named layer. Omit status once drawings exist. Coverage derives covered and partial from native files and measured writable cross pairs. Use `blocked` only for a request awaiting a required capability and name that capability in the description.
+- [Report a result that looks wrong](#report-a-result-that-looks-wrong)
+- [Request a feature or drawing variation](#request-a-feature-or-drawing-variation)
+- [Add a drawing for an existing feature](#add-a-drawing-for-an-existing-feature)
+- [Add a program (adapter)](#add-a-program-adapter)
+- [Compare your own program's builds](#program-developers-compare-your-build)
+- [Fix or improve the scripts](#fix-or-improve-the-scripts)
 
-Use stable lowercase intent IDs and representation IDs. Drawing filenames use topic, version, and encoding with underscores, no spaces or parentheses. Store native drawings under `native/<program>/` and cross drawings under `cross/<writer>__<resaver>/`. Every drawing needs embedded intent and representation IDs plus `<drawing>.provenance.json`. Record the exact program build, format, version, encoding, generator script, input digest, content digest, and whether the content is ezdxf-based. An input digest identifies the intent and generator inputs; it is separate from the normalized drawing digest.
+## Before you start
 
-To add a representation, keep the same intent and semantic expectations, assign a distinct representation ID, and declare the accepted IDs in the intent. Update validation and generator selection together; the initial schema currently supports one representation ID, so that extension remains planned. Do not invent a second intent for an alternative valid encoding of the same meaning.
+Search existing issues and open and closed pull requests before starting. Read the
+issue comments, and say which part you are working on in an issue comment. If someone
+is already working on it, coordinate there before starting a duplicate. Recheck for
+related work before opening your pull request. If you stop, leave an update.
 
-To add a program adapter, implement the interface in `programs/interface.py`, register its name in the provenance record schema and adapter selection, record the exact public build and measured capabilities, and generate the native and cross sets. Report refused opens as refused, with the error and reader, rather than missing fields. DXF rows name the direct reader; DWG rows name both the reader and converter. Self-read DWG rows must be identified and need an independent reader before claiming independent fidelity. Do not publish results from private fix builds.
+Keep each pull request to one change. Describe the behavior you changed, why, and
+how you checked it. A person is accountable for every contribution, including
+AI-assisted work. Review everything you submit. Report only the checks you actually
+ran, their outcomes, and anything you did not run.
 
-Run these commands from the repository root using Python with the pinned requirements installed:
+Use synthetic content only: invented values with no real company, person, or place
+names, local paths, or third-party fonts and images. Code and data are
+[MIT](LICENSE-MIT) OR [Apache-2.0](LICENSE-APACHE).
+
+## Report a result that looks wrong
+
+Open an issue with the drawing file, exact result row and field, program and exact
+public build, reader, and converter if used. Include expected and actual values,
+the intent, reproduction steps, and any error message. Name the program and feature
+in the issue title. [Open items](OPEN-ITEMS.md) contains entries ready to copy into issues.
+
+Check the expected value against the intent first. For a DXF, you can check a file
+without launching a CAD program:
 
 ```sh
-python -I intent/validate.py
-python -I generators/run_features.py
-python -I map/build.py
-python -I map/check_links.py
-python -I checker/check_map_browser.py
+python checker/check.py native/ezdxf/layers_2018_ASCII.dxf
 ```
 
-`regenerate.py` rebuilds the original background native and ODA cross sets, then the feature native set and map. The browser check requires Firefox. `generators/run_features.py` builds and checks feature native DXFs without running BricsCAD. Program generators run from the repository root.
+DXF rows name the direct reader. DWG rows name both reader and converter. Report a
+refused open as `refused`, with the error and reader, rather than as missing fields.
+Identify self-read DWG rows, where the writer also supplies the reading engine.
+Those rows need an independent reader before you claim independent fidelity.
+Describe the observation without assuming which program caused it. Do not publish
+results from private fix builds; use the [build comparison workflow](#program-developers-compare-your-build).
 
-Coverage, the HTML map, and results are generated artifacts. Never hand-edit them. Regenerate them from intentions, provenance records, and measured runs. Review generated diffs along with source changes. Changes and questions about measured behavior go to issues labeled by program and feature, with the exact result row and build. Each entry in `OPEN-ITEMS.md` is ready to copy into an issue.
+## Request a feature or drawing variation
 
-Copy `settings.example.json` to ignored `settings.local.json` and configure executable locations. All program adapters read these common settings. `CAD_DATASET_SETTINGS` can select a different settings file.
+Open an issue describing the desired behavior, a small synthetic example, and what
+you expect a reader to find. Name the feature, formats, versions, and encodings you
+need. Check [coverage](COVERAGE.md) and [open items](OPEN-ITEMS.md) for existing work.
+An issue needs no command checks; say what evidence you inspected.
 
-Declare requested writer and re-saver pairs in `programs/pairs.json`, with the source folder. Both the cross runner and map read this list. A declared pair without measurements appears as "not yet run"; undeclared pairs are not expected. A cell has a source when a declared source folder contains its intent, format, version, and encoding. Every writable declared pair with a source in that cell needs a measured result for covered status.
+You can instead submit a `wanted` intent with `intent_id`, `title`, `description`,
+and `status`. Intents are the source of truth. To accept a request, write its
+expected result and set `planned`. Use `blocked` only when a required capability is
+unavailable, and name it in the description. Omit status once drawings exist.
+Coverage derives `covered` and `partial` from native files and measured writable
+cross pairs. Run `python intent/validate.py` for an intent submission.
 
-Use `regenerate.py --intent feature_a_text --pairs ezdxf__oda,ezdxf__cadcraft` for a limited regeneration. `--dry-run` lists stale outputs without launching any program or writing files.
+A representation is an accepted encoding of the same meaning. For an alternative
+valid encoding, keep the same intent and semantic expectations, assign a distinct
+representation ID, and declare the accepted IDs in the intent. Do not create a
+second intent for it. The initial schema supports one representation ID; extending
+that remains planned. Update validation and generator selection together when
+adding that support. See the [intent schema](intent/SCHEMA.md).
+
+## Add a drawing for an existing feature
+
+Add a generator under `generators/` and independently authored expected fields to
+the intent. Give each field a DXF Reference section, selector (how to find the
+value), tolerance, and applicable versions. Never derive expected values from a
+program's saved output. Put each feature on a distinct named layer.
+
+Use stable lowercase intent and representation IDs. Drawing filenames use topic,
+version, and encoding separated by underscores, with no spaces or parentheses.
+Store native drawings under `native/<program>/` and cross drawings under
+`cross/<writer>__<resaver>/`.
+
+Every drawing needs embedded intent and representation IDs and a sidecar file,
+`<drawing>.provenance.json`, recording how it was made. Include the exact program
+build, format, version, encoding, generator script, input digest, content digest,
+and whether the content is ezdxf-based. The input digest identifies intent and
+generator inputs; it is separate from the normalized drawing content digest.
+Compute the content digest on the drawing as read, before any audit. See
+[digest limitations](checker/VOLATILE.md).
+
+Submit the generator, intent, provenance, and regenerated drawings and measurements
+together. Run the [shared checks](#checks-and-regeneration) and regenerate the
+changed set. For feature native DXFs, run:
+
+```sh
+python generators/run_features.py
+python map/build.py
+python map/check_links.py
+python checker/check_map_browser.py
+```
+
+The feature runner builds and checks feature native DXFs without running BricsCAD.
+The browser check requires Firefox; see [map testing](map/TESTING.md).
+
+## Add a program (adapter)
+
+An adapter connects a program's open and save operations to the dataset scripts.
+Implement [the interface](programs/interface.py), register the name in the
+[provenance schema](intent/provenance.schema.json) and adapter selection, and record
+the exact public build and measured capabilities. Generate the native and cross
+sets. Include those measurements, provenance, and any refused-open evidence in
+your pull request. Follow the reader and self-read rules in
+[result reports](#report-a-result-that-looks-wrong).
+
+Declare requested writer and re-saver pairs with their source folder in
+[programs/pairs.json](programs/pairs.json). Both the cross runner and map read it.
+A declared pair without measurements appears as "not yet run"; undeclared pairs
+are not expected. A cell has a source when a declared source folder contains its
+intent, format, version, and encoding. Every writable declared pair with a source
+in that cell needs a measured result for covered status.
+
+Use the [common settings and regeneration steps](#checks-and-regeneration), run
+the shared checks, and review generated diffs with your adapter changes. Published
+results must use public builds, never private fix builds.
 
 ## Program developers: compare your build
 
 Use the configured Python environment and an output directory outside this repository:
 
 ```sh
-python -B -I compare_build.py --program cadcraft --binary /path/to/cadcraft-cli --label my-fix --out /path/to/comparisons
+python compare_build.py --program cadcraft --binary /path/to/cadcraft-cli --label my-fix --out /path/to/comparisons
 ```
 
-This runs every declared pair re-saved by CADCraft, using ODA for DWG checking, without launching BricsCAD. Restrict a run with `--pairs ezdxf__cadcraft,bricscad__cadcraft` or `--intent feature_a_text`. Each label needs a new destination. Drawings, provenance, checks, scratch files, and progress logs live in `<out>/<label>/`; `<out>/<label>-compare.json` and `.md` compare published and new statuses and actual values by pair, file, and field. Feature/cell summaries count field transitions. Status order follows the map: same (kept), not run, differs (changed), absent (lost), refused. A refused open supplies the status for each field when the other build can read the file. Equal statuses count as unchanged even if their actual values differ; both values remain available in the report.
+This runs every declared pair re-saved by CADCraft, using ODA for DWG checking,
+without launching BricsCAD. Restrict a run with
+`--pairs ezdxf__cadcraft,bricscad__cadcraft` or `--intent feature_a_text`.
+Each label needs a new destination. Drawings, provenance, checks, scratch files,
+and progress logs live in `<out>/<label>/`. The `<out>/<label>-compare.json` and
+`.md` reports compare published and new statuses and actual values by pair, file,
+and field. Feature/cell summaries count field transitions.
 
-The report records the binary digest and its worktree commit where available, and checks the Git tracked/untracked file list and SHA-256 digests before and after. Imports suppress bytecode writes. Run the configured published binary with label `main` first; it should have zero improved and worsened fields. Private build results stay outside the published dataset.
+Status order follows the map: same (kept), not run, differs (changed), absent
+(lost), refused. A refused open supplies the status for each field when the other
+build can read the file. Equal statuses count as unchanged even if actual values
+differ; both values remain in the report.
+
+The report records the binary digest and its worktree commit where available.
+It checks the Git tracked/untracked file list and SHA-256 digests before and after.
+Imports suppress bytecode writes. As your baseline check, run the configured
+published binary with label `main` first; it should have zero improved and worsened
+fields. Keep private build results outside the published dataset. If you report a
+published result, include the evidence listed in
+[result reports](#report-a-result-that-looks-wrong).
+
+## Fix or improve the scripts
+
+Describe the problem and the resulting behavior in your pull request. Include a
+small synthetic reproduction and a regression test when behavior needs one. Keep
+unrelated cleanup separate. Run the shared checks below and any tests for the
+changed code. If the change affects generated output, regenerate the affected set
+and review its diff with the source changes.
+
+## Checks and regeneration
+
+Run commands from the repository root with Python and the pinned requirements:
+
+```sh
+python -m pip install -r requirements.txt
+python intent/validate.py
+python -m pytest tests -q
+python map/check_links.py
+python checker/test_phase2.py
+python checker/check_artifacts.py
+```
+
+These checks do not replace regeneration when you change drawing generation.
+For full verification, `python checker/verify.py` also regenerates outputs and
+requires the configured CAD programs. Say explicitly if you could not run it.
+
+Copy [settings.example.json](settings.example.json) to ignored `settings.local.json`
+and configure executable locations. All adapters read these common settings.
+`CAD_DATASET_SETTINGS` can select another settings file.
+
+`regenerate.py` rebuilds the original background native and ODA cross sets, then
+the feature native set and map. Program generators run from the repository root.
+Use a limited regeneration for the affected intent and pairs:
+
+```sh
+python regenerate.py --intent feature_a_text --pairs ezdxf__oda,ezdxf__cadcraft
+```
+
+Add `--dry-run` to list stale outputs without launching programs or writing files.
+Regeneration can launch desktop CAD programs and take a long time. Run it in the
+foreground and wait for it to finish.
+
+Coverage, the HTML map, and results are generated artifacts. Never edit them by
+hand. Regenerate them from intents, provenance records, and measured runs. Review
+generated diffs along with source changes.

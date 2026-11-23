@@ -17,7 +17,7 @@ Each drawing carries identity as `ZEV_IDENTITY` XDATA on the model-space BLOCK: 
 Run from the repository root:
 
 ```sh
-python -I intent/validate.py
+python intent/validate.py
 ```
 
 Validation checks every intent JSON and every native/cross provenance record, rejects unknown keys and duplicate expected-field IDs, checks identity links and file existence, and requires a provenance record for every drawing. `checker/verify.py` additionally checks embedded identities, provenance record digests, every expected value, audits, and regeneration stability.
@@ -26,4 +26,4 @@ Feature selectors resolve entity type and feature layer, then compare an explici
 
 `feature_fields` maps each feature to its expected-field IDs. The validator checks every mapping and the map uses these associations to show feature-specific differences and version applicability. An unsupported version appears as not applicable, rather than implying the feature exists because the same file carries another feature.
 
-The `identity` selector is checked for every file and is excluded from feature associations and map feature counts. `python -I intent/alignment_expectations.py` applies the independently authored Aligned and Fit policy. `python -I checker/recheck_alignment.py` rechecks those fields using existing DXFs and saved DWG measurements, without CAD saves. An optional `recomputed_width_relative_tolerance` accepts the measured two-point span divided by reader-font width for Fit text, within the declared relative tolerance.
+The `identity` selector is checked for every file and is excluded from feature associations and map feature counts. `python intent/alignment_expectations.py` applies the independently authored Aligned and Fit policy. `python checker/recheck_alignment.py` rechecks those fields using existing DXFs and saved DWG measurements, without CAD saves. An optional `recomputed_width_relative_tolerance` accepts the measured two-point span divided by reader-font width for Fit text, within the declared relative tolerance.
