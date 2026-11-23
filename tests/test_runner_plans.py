@@ -192,7 +192,9 @@ def test_plan_lists_and_execution(corpus, monkeypatch, capsys, kind, state):
     actual = normalized(plan(h, kind, iid, state == 'force'))
     assert actual == expected
     assert before == {p.relative_to(h.root).as_posix(): p.read_bytes() for p in h.root.rglob('*') if p.is_file()}, 'Planning must be read-only'
-    arguments = ['--pairs', 'ezdxf__oda', '--with-bricscad', '--dry-run']
+    pair = 'bricscad__oda' if kind == 'bricscad' else 'ezdxf__oda'
+    monkeypatch.setattr(h.cross, 'PAIRS', dict(h.cross.PAIRS, bricscad__oda=('native/bricscad', 'oda')))
+    arguments = ['--pairs', pair, '--with-bricscad', '--dry-run']
     if iid:
         arguments += ['--intent', iid]
     if state == 'force':
@@ -348,13 +350,18 @@ def test_regenerate_passes_intent_force_root(corpus, monkeypatch, kind, force):
     cross = Mock(); reading = Mock()
     monkeypatch.setattr(h.cross, 'run_pair', cross)
     monkeypatch.setattr(h.independent, 'main', reading)
-    arguments = ['--intent', h.iids[kind], '--pairs', 'ezdxf__oda', '--with-bricscad']
+    pair = 'bricscad__oda' if kind == 'bricscad' else 'ezdxf__oda'
+    monkeypatch.setattr(h.cross, 'PAIRS', dict(h.cross.PAIRS, bricscad__oda=('native/bricscad', 'oda')))
+    arguments = ['--intent', h.iids[kind], '--pairs', pair, '--with-bricscad']
     if force:
         arguments.append('--force')
     invoke(h, monkeypatch, *arguments)
     native.assert_called_once_with(h.iids[kind], force=force, root=h.root)
-    cross.assert_called_once_with('ezdxf__oda', intent=h.iids[kind], reader_name=None, force=force, root=h.root)
-    reading.assert_called_once_with(h.iids[kind], force=force, root=h.root)
+    cross.assert_called_once_with(pair, intent=h.iids[kind], reader_name=None, force=force, root=h.root)
+    if pair == 'ezdxf__oda':
+        reading.assert_called_once_with(h.iids[kind], force=force, root=h.root)
+    else:
+        reading.assert_not_called()
 
 
 @pytest.mark.parametrize('force', [False, True])
@@ -382,10 +389,13 @@ def test_dry_run_prints_runner_plans_without_deciding(corpus, monkeypatch, capsy
     invoke(h, monkeypatch, *arguments)
     output = capsys.readouterr().out
     for kind, spy in spies.items():
-        assert spy.call_count == 1, kind
+        assert spy.call_count == int(kind != 'bricscad'), kind
+        if kind == 'bricscad':
+            continue
         assert spy.call_args.kwargs.get('root') == h.root
         assert spy.call_args.kwargs.get('force') is force
-    for line in ['native: 1 resave, 2 rescore', 'native bricscad: 3 resave, 0 rescore',
+    for line in ['native: 1 resave, 2 rescore',
                  'ezdxf__oda: 2 resave, 1 rescore', 'read by bricscad: 0 resave, 1 rescore']:
         assert line in output
+    assert 'native bricscad:' not in output
     assert not h.saved and not h.published and not h.scored and not h.read

@@ -183,7 +183,8 @@ def harness(tree, monkeypatch):
     monkeypatch.setattr(regen, 'digest', lambda *a: 'synthetic-content')
     monkeypatch.setattr(cross, 'reading_current', lambda *a: True)
     monkeypatch.setattr(cross, 'ADAPTERS', adapters.ADAPTERS)
-    monkeypatch.setattr(cross, 'PAIRS', {'ezdxf__oda': ('native/ezdxf', 'oda')})
+    monkeypatch.setattr(cross, 'PAIRS', {'ezdxf__oda': ('native/ezdxf', 'oda'),
+                                      'bricscad__oda': ('native/bricscad', 'oda')})
     monkeypatch.setattr(cross, 'LOG', tree / 'logs/cross.log')
     monkeypatch.setattr(cross, 'workdir', lambda *a: __import__('tempfile').mkdtemp(dir=tree / 'results'))
     monkeypatch.setattr(cross.privacy, 'assert_clean', lambda *a: None)
@@ -248,7 +249,8 @@ def test_runners_and_dry_run_use_one_helper(harness, monkeypatch, capsys, kind):
     runner_calls = [digest for intent, digest in h.calls if intent == iid]
     assert runner_calls, 'Runner must call checker.scoring.native_input'
     h.calls.clear()
-    invoke(h, monkeypatch, '--intent', iid, '--pairs', 'ezdxf__oda', '--dry-run', '--with-bricscad')
+    pair = 'bricscad__oda' if kind == 'bricscad' else 'ezdxf__oda'
+    invoke(h, monkeypatch, '--intent', iid, '--pairs', pair, '--dry-run', '--with-bricscad')
     dry_calls = [digest for intent, digest in h.calls if intent == iid]
     assert dry_calls, 'Dry run must call checker.scoring.native_input'
     assert set(runner_calls) == set(dry_calls)
@@ -281,15 +283,15 @@ def test_force_runner_resaves_every_selected_output(harness, monkeypatch, iid):
 
 def test_force_bricscad_dry_run_counts_selected_natives(harness, monkeypatch, capsys):
     h = harness
-    invoke(h, monkeypatch, '--intent', 'future_synthetic', '--pairs', 'ezdxf__oda',
+    invoke(h, monkeypatch, '--intent', 'future_synthetic', '--pairs', 'bricscad__oda',
            '--with-bricscad', '--dry-run')
     assert 'native bricscad: 0 resave, 0 rescore' in capsys.readouterr().out
-    invoke(h, monkeypatch, '--intent', 'future_synthetic', '--pairs', 'ezdxf__oda',
+    invoke(h, monkeypatch, '--intent', 'future_synthetic', '--pairs', 'bricscad__oda',
            '--with-bricscad', '--dry-run', '--force')
     output = capsys.readouterr().out
     assert 'native bricscad: 2 resave, 0 rescore' in output
-    assert 'native: 0 resave, 0 rescore' in output
-    assert 'ezdxf__oda: 0 resave, 0 rescore' in output
+    assert 'native:' not in output
+    assert 'bricscad__oda: 4 resave, 0 rescore' in output
     assert not h.saved
 
 
@@ -297,7 +299,7 @@ def test_force_bricscad_runner_resaves_selected_natives(harness, monkeypatch):
     h = harness
     h.bc.main()
     assert not h.saved
-    invoke(h, monkeypatch, '--intent', 'future_synthetic', '--pairs', 'ezdxf__oda',
+    invoke(h, monkeypatch, '--intent', 'future_synthetic', '--pairs', 'bricscad__oda',
            '--with-bricscad', '--force')
     assert sorted(save for save in h.saved if save[0] == 'bricscad') == [
         ('bricscad', '.dxf', '2000', 'ASCII'), ('bricscad', '.dxf', '2000', 'binary')]
@@ -432,7 +434,7 @@ def test_bricscad_dry_run_counts_whole_topic_rebuild(harness, monkeypatch, capsy
         meta = json.loads(sc.read_text())
         meta['made_by']['input_digest'] = 'synthetic stale input'
         dump(sc, meta)
-    invoke(h, monkeypatch, '--intent', 'future_synthetic', '--pairs', 'ezdxf__oda',
+    invoke(h, monkeypatch, '--intent', 'future_synthetic', '--pairs', 'bricscad__oda',
            '--with-bricscad', '--dry-run')
     output = capsys.readouterr().out
     count = int(re.search(r'native bricscad: (\d+) resave', output).group(1))
