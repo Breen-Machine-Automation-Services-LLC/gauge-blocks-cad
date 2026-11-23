@@ -21,11 +21,14 @@ def run_case(case, cross=True):
  intent,topic,version,encoding,input_digest=case;ez=Ezdxf();oda=Oda();rows=[]
  d=build(topic,version)
  with tempfile.TemporaryDirectory(dir=ROOT/'results') as tmp:
-  p=Path(tmp)/'drawing.dxf';ez.save(d,p,'DXF',version,encoding);loaded=ez.open(p);a=loaded.audit()
+  p=Path(tmp)/'drawing.dxf';ez.save(d,p,'DXF',version,encoding);loaded=ez.open(p)
+  dest=ROOT/'native/ezdxf'/f'{topic}_{version}_{encoding}.dxf';meta=sidecar(dest,loaded,intent,ez,version,encoding,input_digest)
+  checks=compare(loaded,intent,'ezdxf '+ez.build)
+  a=loaded.audit()
   audit={'intent_id':intent['intent_id'],'version':version,'encoding':encoding,'errors':len(a.errors),'fixes':len(a.fixes)}
   if a.errors:raise RuntimeError(str(a.errors))
-  dest=ROOT/'native/ezdxf'/f'{topic}_{version}_{encoding}.dxf';meta=sidecar(dest,loaded,intent,ez,version,encoding,input_digest);publish(p,dest,meta)
-  for row in compare(loaded,intent,'ezdxf '+ez.build):
+  publish(p,dest,meta)
+  for row in checks:
    row.update(file=str(dest.relative_to(ROOT)),converter=None,self_read=False);rows.append(row)
   for fmt in (['DXF','DWG'] if cross else []):
    out=Path(tmp)/('cross.'+fmt.lower());oda.save(dest,out,fmt,version,encoding if fmt=='DXF' else 'binary')

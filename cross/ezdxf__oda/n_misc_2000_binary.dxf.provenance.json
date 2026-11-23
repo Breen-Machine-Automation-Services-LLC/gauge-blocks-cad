@@ -8,7 +8,7 @@
   "encoding": "binary",
   "made_by": {
     "script": "generators/run_cross.py",
-    "input_digest": "30368f424832e9d9b7ec9eebdc1ee741b490ad3c89b6925f98de78602e57b930"
+    "input_digest": "167b36d854b459f113835ed2ec7f3e0d1eefbd7572d66288ba9335a47d5608ed"
   },
   "content_digest": "47fd8a95017e8da296c2a9d918b1f4925337eacd989b5dceda25c9f8512f35d2",
   "ezdxf_based": true

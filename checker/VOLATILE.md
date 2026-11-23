@@ -1,6 +1,6 @@
 # Content digest and volatile fields
 
-The digest is SHA-256 over canonical JSON containing sorted nonvolatile header variables and the exported tags of every live database entity. Entities are exported to a common R2018 tag vocabulary even when the input is R12, avoiding the unsupported direct export of R12's inferred BLOCK_RECORD objects. Binary and ASCII inputs are read before hashing. This is a program-save comparison digest, not a promise that arbitrary handle renumbering or entity reordering preserves the digest. Handles and references remain significant; the header handle seed alone is excluded.
+The digest is SHA-256 over canonical JSON containing sorted nonvolatile header variables and the exported tags of every live database entity. Entities are exported to a common R2018 tag vocabulary even when the input is R12, avoiding the unsupported direct export of R12's inferred BLOCK_RECORD objects. The digest is computed on the drawing as read, before any audit. ezdxf's audit adds structure to some drawings, including R12 and the misc drawing, while reporting no fixes. This is a program-save comparison digest, not a promise that arbitrary handle renumbering or entity reordering preserves the digest. Handles and references remain significant; the header handle seed alone is excluded.
 
 Excluded header fields:
 

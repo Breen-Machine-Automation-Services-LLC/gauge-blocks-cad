@@ -20,12 +20,14 @@ def main(intent_id=None):
    for encoding in (['ASCII'] if version=='R12' else ['ASCII','binary']):
     d=build(topic,version)
     with tempfile.TemporaryDirectory(dir=R/'results') as td:
-     tmp=Path(td)/'drawing.dxf';ez.save(d,tmp,'DXF',version,encoding);loaded=ez.open(tmp);audit=loaded.audit()
+     tmp=Path(td)/'drawing.dxf';ez.save(d,tmp,'DXF',version,encoding);loaded=ez.open(tmp)
+     dest=R/'native/ezdxf'/f'{topic}_{version}_{encoding}.dxf';meta=sidecar(dest,loaded,intent,ez,version,encoding,inp)
+     checks=compare(loaded,intent,'ezdxf '+ez.build)
+     audit=loaded.audit()
      assert not audit.errors and not audit.fixes,(topic,version,audit.errors,audit.fixes)
-     dest=R/'native/ezdxf'/f'{topic}_{version}_{encoding}.dxf';meta=sidecar(dest,loaded,intent,ez,version,encoding,inp);meta['made_by']['script']='generators/run_features.py';publish(tmp,dest,meta)
+     meta['made_by']['script']='generators/run_features.py';publish(tmp,dest,meta)
      sc=dest.with_suffix('.dxf.provenance.json')
      if json.loads(sc.read_text())!=meta:write_json(sc,meta)
-     checks=compare(loaded,intent,'ezdxf '+ez.build)
      for row in checks:row.update(file=dest.relative_to(R).as_posix(),converter=None,self_read=False)
      assert all(x['status']=='same' for x in checks),(topic,version,[x for x in checks if x["status"]!="same"])
      rows.extend(checks);audits.append(dict(file=dest.relative_to(R).as_posix(),errors=0,fixes=0))

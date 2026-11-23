@@ -8,8 +8,8 @@
   "encoding": "ASCII",
   "made_by": {
     "script": "generators/run_features.py",
-    "input_digest": "e47ea9e8e395e30f1f2c748e3fb44e96c479a95a309587249ff0b70b69490e82"
+    "input_digest": "3929ae96053c709567ee92f838dd6849b3fee7789f52b95a4b10a4c4643807ee"
   },
-  "content_digest": "fe51d93987c63105f524e7b314e57f2d2e24f03b1b8b951eefbab376d1d2a06e",
+  "content_digest": "7f0bb30243e82540f55cd1c779949b81ae04c8d1b274841a66eb12b46f3ec7d0",
   "ezdxf_based": true
 }

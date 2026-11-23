@@ -10,6 +10,6 @@
     "script": "regenerate.py",
     "input_digest": "f9c1b80fae9c60533a40a597fe2d596d2f3d5226e7ab325fd4d38138782f694e"
   },
-  "content_digest": "f00a15bddcdf6eb56c1e517b95e98e1ce654f86ce33789e8d96fa220d2f76d49",
+  "content_digest": "b7052f8d20387156f5937feb822444762a5a29d005306a73e1a1fe40242cc64c",
   "ezdxf_based": true
 }
