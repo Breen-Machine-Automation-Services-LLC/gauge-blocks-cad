@@ -9,43 +9,50 @@ from checker.core import compare
 from regenerate import sidecar,publish,write_json
 import tempfile
 
-def main(intent_id=None, force=False):
- ez=Ezdxf();rows=[];audits=[]
- if intent_id:
-  rows=[r for r in json.loads((R/'results/features_checks.json').read_text()) if r['intent_id']!=intent_id]
-  audits=[r for r in json.loads((R/'results/features_audits.json').read_text()) if not Path(r['file']).name.startswith(intent_id.removeprefix('feature_')+'_')]
+def _jobs(intent_id, root):
+ jobs=[]
  for topic in sorted(TOPICS):
-  if intent_id and intent_id != 'feature_'+topic: continue
-  ip=R/'intent'/('feature_'+topic+'.json');intent=json.loads(ip.read_text());inp,cases= native_input(R,intent['intent_id'],versions=VERSIONS)
-  for version in VERSIONS:
-   for encoding in [e for v,e in cases if v==version]:
-    dest=R/'native/ezdxf'/f'{topic}_{version}_{encoding}.dxf'
-    sc=dest.with_suffix('.dxf.provenance.json')
-    old=json.loads(sc.read_text()) if sc.exists() else {}
-    if not force and dest.exists() and old.get('build')==ez.build and old.get('made_by',{}).get('input_digest')==inp:
-     previous=[r for r in load_rows(R/'results/features_checks.json') if r['file']==dest.relative_to(R).as_posix()]
-     if current(previous,R,intent['intent_id']):checks=previous
-     else:
-      checks=compare(ez.open(dest),intent,'ezdxf '+ez.build)
-      for row in checks:row.update(file=dest.relative_to(R).as_posix(),converter=None,self_read=False)
-     annotate(checks,R,intent['intent_id'],'ezdxf','ezdxf')
-     assert all(x['status']=='same' for x in checks),(topic,version,checks)
-     rows.extend(checks);audits.append(dict(file=dest.relative_to(R).as_posix(),errors=0,fixes=0));continue
-    d=build(topic,version)
-    with tempfile.TemporaryDirectory(dir=R/'results') as td:
-     tmp=Path(td)/'drawing.dxf';ez.save(d,tmp,'DXF',version,encoding);loaded=ez.open(tmp)
-     dest=R/'native/ezdxf'/f'{topic}_{version}_{encoding}.dxf';meta=sidecar(dest,loaded,intent,ez,version,encoding,inp)
-     checks=compare(loaded,intent,'ezdxf '+ez.build)
-     audit=loaded.audit()
-     assert not audit.errors and not audit.fixes,(topic,version,audit.errors,audit.fixes)
-     meta['made_by']['script']='generators/run_features.py';publish(tmp,dest,meta,force=force)
-     sc=dest.with_suffix('.dxf.provenance.json')
-     if json.loads(sc.read_text())!=meta:write_json(sc,meta)
-     for row in checks:row.update(file=dest.relative_to(R).as_posix(),converter=None,self_read=False)
-     assert all(x['status']=='same' for x in checks),(topic,version,[x for x in checks if x["status"]!="same"])
-     annotate(checks,R,intent['intent_id'],'ezdxf','ezdxf')
-     rows.extend(checks);audits.append(dict(file=dest.relative_to(R).as_posix(),errors=0,fixes=0))
-  print('Verified '+topic,flush=True)
- write_json(R/'results/features_checks.json',rows);write_json(R/'results/features_audits.json',audits)
- print(f'{len(audits)} files; {len(rows)} fields same; zero audit errors or fixes')
+  iid='feature_'+topic
+  if intent_id and iid!=intent_id:continue
+  inp,cases=native_input(root,iid,versions=VERSIONS)
+  for version,enc in cases:
+   jobs.append((iid,topic,version,enc,inp,root/'native/ezdxf'/f'{topic}_{version}_{enc}.dxf'))
+ return jobs
+
+def plan(intent_id=None, force=False, root=None):
+ from checker.scoring import native_plan
+ root=R if root is None else Path(root)
+ return native_plan(_jobs(intent_id,root),root,force,Ezdxf.build,root/'results/features_checks.json',current)
+
+def main(intent_id=None, force=False, root=None):
+ from checker.scoring import record_score
+ root=R if root is None else Path(root)
+ work=plan(intent_id,force,root);ez=Ezdxf()
+ path=root/'results/features_checks.json';previous=load_rows(path)
+ selected=set(sum(work.values(),[]))
+ rows=[r for r in previous if r['file'] not in selected]
+ audits=load_rows(root/'results/features_audits.json')
+ for iid,topic,version,encoding,inp,dest in _jobs(intent_id,root):
+  rel=dest.relative_to(root).as_posix()
+  if rel in work['carried']:
+   rows.extend(r for r in previous if r['file']==rel);continue
+  intent=json.loads((root/'intent'/f'{iid}.json').read_text())
+  errors=fixes=0
+  if rel in work['rescore']:
+   checks=compare(ez.open(dest),intent,'ezdxf '+ez.build)
+  else:
+   d=build(topic,version)
+   with tempfile.TemporaryDirectory(dir=root/'results') as td:
+    tmp=Path(td)/'drawing.dxf';ez.save(d,tmp,'DXF',version,encoding);loaded=ez.open(tmp)
+    meta=sidecar(dest,loaded,intent,ez,version,encoding,inp)
+    checks=compare(loaded,intent,'ezdxf '+ez.build)
+    audit=loaded.audit();errors=len(audit.errors);fixes=len(audit.fixes)
+    assert not errors and not fixes,(topic,version,audit.errors,audit.fixes)
+    meta['made_by']['script']='generators/run_features.py';publish(tmp,dest,meta,force=force)
+  for row in checks:row.update(file=rel,converter=None,self_read=False)
+  assert all(x['status']=='same' for x in checks),(topic,version,checks)
+  annotate(checks,root,iid,'ezdxf','ezdxf');rows.extend(checks)
+  record_score(checks,root,iid,path,rel)
+  audits=[a for a in audits if a.get('file')!=rel];audits.append(dict(file=rel,errors=errors,fixes=fixes))
+ write_json(path,rows);write_json(root/'results/features_audits.json',audits)
 if __name__=='__main__':main()

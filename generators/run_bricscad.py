@@ -3,7 +3,7 @@
 Each topic is built in a fresh BricsCAD session (see generators/bricscad/make_bricscad_masters.lsp) and saved at every
 format, version and encoding BricsCAD can write. DXF is read directly with ezdxf. DWG is read through ODA File
 Converter, a shared-engine reader of BricsCAD-written DWG (BricsCAD itself uses ODA libraries; see CAPABILITIES.md).
-A file is rewritten only when its content digest or the writer build changes. Run from the repository root:
+A stale drawing input or missing output rebuilds its topic; current files are only re-scored when needed. Run from the repository root:
 python -I generators/run_bricscad.py. Foreground only; it does not commit or push.
 """
 from pathlib import Path
@@ -31,54 +31,86 @@ def observe(doc):
     return dict(seen)
 
 
-def main(intent_id=None, force=False):
+def _outputs(root, topic):
+    # Existing manifests retain the measured output formats; first runs use the save matrix.
+    sides=list((root/'native/bricscad').glob(topic+'_*.provenance.json'))
+    formats={(json.loads(p.read_text()).get('format'),json.loads(p.read_text()).get('encoding')) for p in sides}
+    if hasattr(BricsCad,'TYPES') or not formats:
+        formats={('DXF','ASCII'),('DXF','binary'),('DWG','binary')}
+    formats.add(('DXF','ASCII'))
+    return sorted(root/'native/bricscad'/f'{topic}_{v}_{enc}.{fmt.lower()}'
+                  for v in VERSIONS for fmt,enc in formats if fmt!='DWG' or v!='R12')
+
+
+def plan(intent_id=None, force=False, root=None):
+    from checker.scoring import empty_plan, file_current
+    root=R if root is None else Path(root)
+    work=empty_plan();path=root/'results/native_bricscad_checks.json';previous=load_rows(path)
+    for topic,iid in TOPICS.items():
+        if intent_id and iid!=intent_id:continue
+        if not (root/'intent'/f'{iid}.json').exists():continue
+        inp=native_input(root,iid,'bricscad',Path(__file__),LSP)[0]
+        paths=_outputs(root,topic)
+        def stale(dest):
+            sc=dest.with_suffix(dest.suffix+'.provenance.json')
+            old=json.loads(sc.read_text()) if sc.exists() else {}
+            return not dest.exists() or old.get('build')!=BricsCad.build or old.get('made_by',{}).get('input_digest')!=inp
+        rebuild=force or any(stale(p) for p in paths)
+        for dest in paths:
+            rel=dest.relative_to(root).as_posix();rows=[r for r in previous if r['file']==rel]
+            kind='resave' if rebuild else 'carried' if file_current(rows,root,iid,path,rel,current) else 'rescore'
+            work[kind].append(rel)
+    return work
+
+
+def main(intent_id=None, force=False, root=None):
+    from checker.scoring import record_score
+    root=R if root is None else Path(root)
+    work_plan=plan(intent_id,force,root)
     bc, oda = BricsCad(), Oda(); rows = []; written = []
-    observation_path=R/'results/native_bricscad_observations.json'
+    observation_path=root/'results/native_bricscad_observations.json'
     saved=json.loads(observation_path.read_text()) if observation_path.exists() else {}
     observations=saved.get('modelspace_entities_by_file',{});steps=saved.get('generator_steps',{})
     selected_intent = intent_id
-    previous_rows = load_rows(R/'results/native_bricscad_checks.json')
+    previous_rows = load_rows(root/'results/native_bricscad_checks.json')
     if selected_intent:
         rows = [r for r in previous_rows if r['intent_id'] != selected_intent]
     carried_count = len(rows)
     for topic, intent_id in TOPICS.items():
         if selected_intent and intent_id != selected_intent:
             continue
-        intent = json.loads((R / 'intent' / (intent_id + '.json')).read_text())
-        input_digest = native_input(R,intent_id,'bricscad',Path(__file__),LSP)[0]
-        existing=sorted((R/'native/bricscad').glob(topic+'_*.provenance.json'))
-        previous=load_rows(R/'results/native_bricscad_checks.json')
-        if existing:
-            complete=all(json.loads(p.read_text()).get('build')==bc.build and json.loads(p.read_text()).get('made_by',{}).get('input_digest')==input_digest and Path(str(p).removesuffix('.provenance.json')).exists() for p in existing)
-            if complete and not force:
-                paths=[Path(str(p).removesuffix('.provenance.json')) for p in existing]
-                for dest in paths:
-                    rel=dest.relative_to(R).as_posix();old=[row for row in previous if row['file']==rel]
-                    if current(old,R,intent_id):rows.extend(old);continue
-                    dwg=dest.suffix=='.dwg'
-                    doc=oda.read_dwg_many([dest])[dest] if dwg else ezdxf.readfile(dest)
-                    if isinstance(doc,str):
-                        checks=[dict(intent_id=intent_id,field='open',reader='ezdxf '+ezdxf.__version__,status='refused',expected=None,actual=None,tolerance=0,detail=doc)]
-                    else:
+        intent = json.loads((root / 'intent' / (intent_id + '.json')).read_text())
+        input_digest = native_input(root,intent_id,'bricscad',Path(__file__),LSP)[0]
+        paths=_outputs(root,topic)
+        if not any(p.relative_to(root).as_posix() in work_plan['resave'] for p in paths):
+            for dest in paths:
+                rel=dest.relative_to(root).as_posix();old=[row for row in previous_rows if row['file']==rel]
+                if rel in work_plan['carried']:rows.extend(old);continue
+                dwg=dest.suffix=='.dwg'
+                doc=oda.read_dwg_many([dest])[dest] if dwg else ezdxf.readfile(dest)
+                if isinstance(doc,str):
+                    checks=[dict(intent_id=intent_id,field='open',reader='ezdxf '+ezdxf.__version__,status='refused',expected=None,actual=None,tolerance=0,detail=doc)]
+                else:
+                    version=NAME.match(dest.name).group(2)
+                    checks=compare(doc,intent,'ezdxf '+ezdxf.__version__,VERSIONS[version] if dwg else None)
+                for row in checks:row.update(file=rel,converter='oda '+oda.build if dwg else None,self_read=False)
+                rows.extend(checks)
+                record_score(checks,root,intent_id,root/'results/native_bricscad_checks.json',rel)
+                if not dwg and dest.name.endswith('_binary.dxf'):
+                    conversion=Path(workdir('bricscad-bin-'))
+                    try:
+                        target=conversion/dest.name
                         version=NAME.match(dest.name).group(2)
-                        checks=compare(doc,intent,'ezdxf '+ezdxf.__version__,VERSIONS[version] if dwg else None)
-                    for row in checks:row.update(file=rel,converter='oda '+oda.build if dwg else None,self_read=False)
-                    rows.extend(checks)
-                    if not dwg and dest.name.endswith('_binary.dxf'):
-                        conversion=Path(workdir('bricscad-bin-'))
-                        try:
-                            target=conversion/dest.name
-                            version=NAME.match(dest.name).group(2)
-                            status=oda.save_many([(dest,target,'DXF',version,'ASCII')])[target]
-                            if status is None:
-                                secondary=compare(ezdxf.readfile(target),intent,'ezdxf '+ezdxf.__version__)
-                            else:
-                                secondary=[dict(intent_id=intent_id,field='open',reader='ezdxf '+ezdxf.__version__,status='refused',expected=None,actual=None,tolerance=0,detail=status)]
-                            for row in secondary:row.update(file=rel,converter='oda '+oda.build+' (binary DXF to ASCII DXF)',self_read=False)
-                            rows.extend(secondary)
-                        finally:
-                            shutil.rmtree(conversion,ignore_errors=True)
-                continue
+                        status=oda.save_many([(dest,target,'DXF',version,'ASCII')])[target]
+                        if status is None:
+                            secondary=compare(ezdxf.readfile(target),intent,'ezdxf '+ezdxf.__version__)
+                        else:
+                            secondary=[dict(intent_id=intent_id,field='open',reader='ezdxf '+ezdxf.__version__,status='refused',expected=None,actual=None,tolerance=0,detail=status)]
+                        for row in secondary:row.update(file=rel,converter='oda '+oda.build+' (binary DXF to ASCII DXF)',self_read=False)
+                        rows.extend(secondary)
+                    finally:
+                        shutil.rmtree(conversion,ignore_errors=True)
+            continue
         work = Path(workdir('bricscad-gen-')); out = work / 'out'; out.mkdir()
         try:
             script = ('(setvar "FILEDIA" 0)\n(setvar "CMDECHO" 0)\n'
@@ -89,6 +121,17 @@ def main(intent_id=None, force=False):
             log = (out / 'make_bricscad_masters.log').read_text().replace(str(out), '<out>')
             steps[topic] = [ln for ln in log.splitlines() if ln.strip() and not ln.startswith('((-1')]
             files = sorted(p for p in out.iterdir() if NAME.match(p.name))
+            files = [p for p in files if (root/'native/bricscad'/p.name).relative_to(root).as_posix() in work_plan['resave']]
+            expected={Path(rel).name for rel in work_plan['resave'] if Path(rel).name.startswith(topic+'_')}
+            for name in sorted(expected-{p.name for p in files}):
+                rel = f'native/bricscad/{name}'
+                checks = [dict(file=rel, intent_id=intent_id, field='open',
+                               reader=f'{bc.name} {bc.build}', converter=None, self_read=False,
+                               status='refused', expected=None, actual=None, tolerance=0,
+                               detail='BricsCAD produced no output')]
+                record_score(checks,root,intent_id,root/'results/native_bricscad_checks.json',rel)
+                rows.extend(checks)
+                observations.pop(name, None)
             dwgs = [p for p in files if p.suffix == '.dwg']
             read_dwg = oda.read_dwg_many(dwgs)
             # Second reader for binary DXF: ODA rewrites it as ASCII DXF at the same version, then ezdxf reads that.
@@ -111,7 +154,7 @@ def main(intent_id=None, force=False):
                         rows.append(dict(file=f'native/bricscad/{p.name}', intent_id=intent['intent_id'], field='open', reader='oda ' + oda.build, converter=None,
                                          self_read=False, status='refused', expected=None, actual=None, tolerance=0, detail=doc)); continue
                     converter = 'oda ' + oda.build
-                dest = R / 'native/bricscad' / p.name
+                dest = root / 'native/bricscad' / p.name
                 meta = sidecar(dest, doc, intent, bc, version, 'binary' if fmt == 'DWG' else encoding, input_digest)
                 meta['ezdxf_based'] = False; meta['made_by']['script'] = 'generators/run_bricscad.py'
                 if fmt == 'DWG':
@@ -129,16 +172,18 @@ def main(intent_id=None, force=False):
                         for row in compare(d2, intent, 'ezdxf ' + ezdxf.__version__):
                             row.update(file=f'native/bricscad/{p.name}', converter='oda ' + oda.build + ' (binary DXF to ASCII DXF)', self_read=False); rows.append(row)
                 reader = 'ezdxf ' + ezdxf.__version__
-                for row in compare(doc, intent, reader, VERSIONS[version] if fmt == 'DWG' else None):
+                checks=compare(doc, intent, reader, VERSIONS[version] if fmt == 'DWG' else None)
+                record_score(checks,root,intent_id,root/'results/native_bricscad_checks.json',dest.relative_to(root).as_posix())
+                for row in checks:
                     row.update(file=f'native/bricscad/{p.name}', converter=converter, self_read=False); rows.append(row)
         finally:
             shutil.rmtree(work, ignore_errors=True)
     for row in rows[carried_count:]:
-        annotate([row],R,row['intent_id'],'bricscad','oda' if row.get('converter') or row['file'].endswith('.dwg') else 'ezdxf')
-    write_json(R / 'results/native_bricscad_checks.json', rows)
+        annotate([row],root,row['intent_id'],'bricscad','oda' if row.get('converter') or row['file'].endswith('.dwg') else 'ezdxf')
+    write_json(root / 'results/native_bricscad_checks.json', rows)
     if not written and observation_path.exists():
         return
-    write_json(R / 'results/native_bricscad_observations.json', {'generator_steps': steps, 'modelspace_entities_by_file': observations})
+    write_json(root / 'results/native_bricscad_observations.json', {'generator_steps': steps, 'modelspace_entities_by_file': observations})
     counts = collections.Counter(r['status'] for r in rows)
     print(f'{len(written)} native BricsCAD files; rows {dict(counts)}')
 

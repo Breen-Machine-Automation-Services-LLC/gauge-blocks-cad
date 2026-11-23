@@ -16,8 +16,24 @@ from programs.adapters import BricsCad, VERSIONS
 from regenerate import write_json
 
 
+def plan(intent_id=None, force=False, root=None):
+    from checker.scoring import empty_plan, file_current
+    root=R if root is None else Path(root)
+    work=empty_plan();path=root/'results/cross_ezdxf__oda_read_by_bricscad_checks.json';previous=load_rows(path)
+    for p in sorted((root/'cross/ezdxf__oda').glob('*.dwg')):
+        side=json.loads(p.with_suffix('.dwg.provenance.json').read_text());iid=side['intent_id']
+        if intent_id and iid!=intent_id:continue
+        rel=p.relative_to(root).as_posix();old=[r for r in previous if r['file']==rel]
+        identity=hashlib.sha256(p.read_bytes()).hexdigest()
+        kind='carried' if not force and file_current(old,root,iid,path,rel,current,'ezdxf '+ezdxf.__version__,'bricscad '+BricsCad.build,identity) else 'rescore'
+        work[kind].append(rel)
+    return work
+
+
 def main(intent_id=None, force=False, root=None):
-    root = R if root is None else root
+    from checker.scoring import record_score
+    root = R if root is None else Path(root)
+    work_plan=plan(intent_id,force,root)
     bc = BricsCad(); intents = {p.stem: json.loads(p.read_text()) for p in (root / 'intent').glob('*.json') if not p.name.endswith('.schema.json')}
     path = root / 'results/cross_ezdxf__oda_read_by_bricscad_checks.json'
     previous = load_rows(path); rows = [r for r in previous if intent_id and r['intent_id'] != intent_id]; refused = 0; files = []
@@ -26,10 +42,10 @@ def main(intent_id=None, force=False, root=None):
         if intent_id and side['intent_id'] != intent_id:
             continue
         old = [r for r in previous if r['file'] == p.relative_to(root).as_posix()]
-        identity = hashlib.sha256(p.read_bytes()).hexdigest()
-        if not force and current(old,root,side['intent_id']) and reading_current(old,'ezdxf '+ezdxf.__version__,'bricscad '+bc.build) and all(r.get('read_input_digest') == identity for r in old):
+        rel=p.relative_to(root).as_posix()
+        if rel in work_plan['carried']:
             rows.extend(old)
-        else:
+        elif rel in work_plan['rescore']:
             files.append(p)
     carried_count = len(rows)
     for i in range(0, len(files), 20):
@@ -41,7 +57,9 @@ def main(intent_id=None, force=False, root=None):
                 refused += 1
                 rows.append(dict(file=rel, intent_id=side['intent_id'], field='open', reader='ezdxf ' + ezdxf.__version__, converter='bricscad ' + bc.build, self_read=False,
                                  status='refused', expected=None, actual=None, tolerance=0, detail=d[:300])); continue
-            for row in compare(d, intents[side['intent_id']], 'ezdxf ' + ezdxf.__version__, VERSIONS[side['version']]):
+            checks=compare(d, intents[side['intent_id']], 'ezdxf ' + ezdxf.__version__, VERSIONS[(side['version'] if 'version' in side else p.stem.rsplit('_',2)[-2])])
+            record_score(checks,root,side['intent_id'],path,rel,'ezdxf '+ezdxf.__version__,'bricscad '+bc.build,hashlib.sha256(p.read_bytes()).hexdigest())
+            for row in checks:
                 row.update(file=rel, converter='bricscad ' + bc.build, self_read=False); rows.append(row)
         print(f'{min(i + 20, len(files))}/{len(files)} read', flush=True)
     for row in rows[carried_count:]:

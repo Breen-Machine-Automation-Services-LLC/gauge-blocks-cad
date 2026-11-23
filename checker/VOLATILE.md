@@ -77,3 +77,19 @@ These mechanics include the author shield and font folder handling in
 `programs/bricscad_batch.py`, the external `bcad_run.sh` wrapper, BricsCAD
 setvars in `generators/run_bricscad.py`, and the hardcoded BricsCAD build
 constant in `programs/adapters.py`. Use `--force` after changing any of them.
+
+
+Each runner exposes a read-only `plan(intent_id=None, force=False, root=None)`
+(`run_cross.plan` also selects a pair and reader). It lists drawings to resave,
+re-score, carry, or skip as capability gaps; execution consumes that plan.
+`regenerate.py --dry-run` prints those lists and counts without launching programs
+or writing files. BricsCAD native saves rebuild the whole topic when any output
+needs saving. The BricsCAD reading step runs only with `--with-bricscad` and the
+`ezdxf__oda` pair selected.
+
+A comparison with no applicable fields records its score stamp in the results
+file's companion `.scores.json`, without inventing a field result. Capability
+refusals remain in `cross_not_run.json`; `cross_gap_builds.json` identifies the
+build that reports each gap, so a changed build retries it. Legacy gap records use
+the pair's published writer build until execution records that identity.
+`--force` retries every selected output, including known gaps.

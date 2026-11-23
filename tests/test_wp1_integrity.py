@@ -304,6 +304,7 @@ def runner_case(tmp_path, monkeypatch):
         name = 'bricscad'
     monkeypatch.setattr(run_bricscad, 'BricsCad', FakeBrics)
     monkeypatch.setattr(run_bricscad, 'TOPICS', {'k_tables': 'synthetic'})
+    monkeypatch.setattr(run_bricscad, 'VERSIONS', {'2000': 'AC1015'})
     lsp = tmp_path / 'generators/synthetic.lsp'
     lsp.write_text('; synthetic')
     monkeypatch.setattr(run_bricscad, 'LSP', lsp)
@@ -577,6 +578,7 @@ def test_dry_run_reports_native_and_pair_resave_and_rescore_counts(runner_case, 
         if state != 'current':
             stamp[state] = '0' * 64
         pair_rows.append(dict(file=dest.relative_to(root).as_posix(), intent_id=iid, field='value',
+                              reader='ezdxf ' + ezdxf.__version__, converter=None,
                               status='same', scored_with=stamp))
     dump(root / 'results/cross_ezdxf__oda_checks.json', pair_rows)
     monkeypatch.setattr(run_cross, 'jobs_for', lambda *a, **k: jobs)
@@ -942,7 +944,7 @@ def test_dry_run_counts_bricscad_stale_cohorts(runner_case, monkeypatch, capsys,
     dump(path, rows)
     monkeypatch.setattr(regenerate, 'VERSIONS', {'2000': 'AC1015'})
     monkeypatch.setattr(run_cross, 'R', root)
-    monkeypatch.setattr(run_cross, 'PAIRS', {})
+    monkeypatch.setattr(run_cross, 'PAIRS', {'ezdxf__oda': ('native/ezdxf', 'oda')} if cohort == 'reader' else {})
     monkeypatch.setattr(adapters, 'BricsCad', run_bricscad.BricsCad)
     monkeypatch.setattr(adapters, 'Oda', run_bricscad.Oda)
     monkeypatch.setattr(run_bricscad, 'run_script', Mock(side_effect=AssertionError('dry run generated')))

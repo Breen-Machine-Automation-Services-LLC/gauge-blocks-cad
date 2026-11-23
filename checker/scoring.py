@@ -56,3 +56,59 @@ def native_input(root, intent_id, program='ezdxf', script=None, lsp=None, versio
 
 def reading_current(rows, reader, converter):
     return bool(rows) and all(r.get('reader') == reader and r.get('converter') == converter for r in rows)
+
+
+def empty_plan():
+    return {key: [] for key in ('resave', 'rescore', 'carried', 'gaps')}
+
+
+def score_records(path):
+    return path.with_suffix('.scores.json')
+
+
+def file_current(rows, root, intent_id, path, rel, current_fn=current,
+                 reader=None, converter=None, identity=None, reading_fn=reading_current):
+    """Empty comparisons retain score identity separately from field results."""
+    if current_fn(rows, root, intent_id):
+        return ((reader is None or reading_fn(rows, reader, converter))
+                and (identity is None or all(r.get('read_input_digest') == identity for r in rows)))
+    if rows:
+        return False
+    records = score_records(path)
+    saved = json.loads(records.read_text()).get(rel, {}) if records.exists() else {}
+    return (saved.get('scored_with') == stamp(root, intent_id)
+            and (reader is None or (saved.get('reader') == reader and saved.get('converter') == converter))
+            and (identity is None or saved.get('read_input_digest') == identity))
+
+
+def record_score(rows, root, intent_id, path, rel, reader=None, converter=None, identity=None):
+    """Persist completion of a comparison that has no applicable fields."""
+    records = score_records(path)
+    saved = json.loads(records.read_text()) if records.exists() else {}
+    if rows:
+        if rel not in saved:
+            return
+        del saved[rel]
+    else:
+        saved[rel] = dict(scored_with=stamp(root, intent_id), reader=reader,
+                          converter=converter, read_input_digest=identity)
+    records.parent.mkdir(parents=True, exist_ok=True)
+    records.write_text(json.dumps(saved, indent=2) + '\n')
+
+
+def native_plan(jobs, root, force, build, result, current_fn):
+    result_plan = empty_plan()
+    previous = load_rows(result)
+    for iid, topic, version, enc, inp, dest in jobs:
+        sc = dest.with_suffix('.dxf.provenance.json')
+        old = json.loads(sc.read_text()) if sc.exists() else {}
+        rel = dest.relative_to(root).as_posix()
+        rows = [r for r in previous if r['file'] == rel]
+        if force or not dest.exists() or old.get('build') != build or old.get('made_by', {}).get('input_digest') != inp:
+            kind = 'resave'
+        elif not file_current(rows, root, iid, result, rel, current_fn):
+            kind = 'rescore'
+        else:
+            kind = 'carried'
+        result_plan[kind].append(rel)
+    return result_plan
