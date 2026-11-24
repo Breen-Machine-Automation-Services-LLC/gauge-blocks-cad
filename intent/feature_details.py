@@ -12,7 +12,7 @@ def field(i,layer,typ,attr,value,versions=MOD,*,basis_type):
  key=layer+'.'+attr
  if any(f['id']==key for f in i['expected']):return
  i['features']=sorted(set(i['features']+[layer]))
- i['expected'].append(dict(id=key,value=value,selector=dict(kind='feature_attr',name=layer,table=typ,attr=attr),reference=dict(basis_type=basis_type,section=typ+'; '+attr,source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2026/ENU/',basis='DXF Reference; independently authored generator constants'),tolerance=1e-8,versions=versions))
+ i['expected'].append(dict(id=key,value=value,selector=dict(kind='feature_attr',name=layer,table=typ,attr=attr),reference=dict(basis_type=basis_type,section=typ+'; '+attr,source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2024/ENU/',basis='DXF Reference; independently authored generator constants'),tolerance=1e-8,versions=versions))
 def save(i):
  if topic is None or i['intent_id']=='feature_'+topic:(R/'intent'/(i['intent_id']+'.json')).write_text(json.dumps(author_references(i),indent=2)+'\n')
 i=load('a_text')
@@ -41,8 +41,8 @@ key='F111_anonymous_block.block_circle_radius'
 next(f for f in i['expected'] if f['id']==key)['reference']=dict(
  basis_type='synthetic',section='Anonymous Blocks; BLOCK group 70; Open Design Specification section 20.4.52',
  source='Autodesk DXF Reference and AutoLISP Reference; Open Design Specification',
- url='https://help.autodesk.com/cloudhelp/2026/PLK/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm',
- basis='Resolve the INSERT reference using Anonymous Blocks; BLOCK flags: https://help.autodesk.com/cloudhelp/2021/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm; Open Design Specification section 20.4.52: https://static.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf; independently authored circle radius 3; any circle may match')
+ url='https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm',
+ basis='Resolve the INSERT reference using Anonymous Blocks; BLOCK flags: https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm; Open Design Specification section 20.4.52: https://static.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf; independently authored circle radius 3; any circle may match')
 if key not in i['feature_fields']['F111_anonymous_block']:i['feature_fields']['F111_anonymous_block'].append(key)
 save(i)
 i=load('h_attributes')

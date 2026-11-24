@@ -8,7 +8,7 @@ The detailed view retains Coverage and Compatibility modes, pair/format/status f
 
 `python map/test_build.py` exercises refused conversion evidence when no output provenance record exists, using temporary fixtures.
 
-`python map/check_links.py` checks all embedded links and writes `map/link-checks.json`.
+`python map/check_links.py` checks that every drawing, provenance record and intent link in the page resolves, and that every Autodesk reference link points at the DXF reference edition set in `standard/reference_catalog.py`. It writes `map/link-checks.json`. Add `--online` to open every external link in the page and the tracked text files in headless Firefox (same `marionette_driver` setup as the browser suite below); it fails on any page that does not load or shows "Page Not Found", and writes `logs/link-check-online.json`. Autodesk's help pages answer normally and then hand over to a viewer that can still show "Page Not Found", so only a browser can check them. In a Chromium-based browser that viewer fails on the 2025 and later editions, while Firefox shows them, so the online check cannot catch that case; `tests/test_reference_links.py` instead keeps DXF reference links at exactly the 2024 edition and every other Autodesk help link at 2024 or older.
 
 For the browser suite, install `marionette_driver` in a temporary Python environment. Create your own scratch directory (for example `/tmp/wp6-codex/`) and two temporary Firefox profiles within it with these `user.js` preferences:
 

@@ -42,7 +42,7 @@ The content digest is unaffected by semantic name comparison. It is a regenerati
 fingerprint, not a kept/changed comparison. Case, anonymous names, handles, references,
 proxy envelopes, layer flags and tag order remain in its input under the exclusions
 above. [Autodesk symbol-name semantics](https://help.autodesk.com/cloudhelp/2018/ENU/OARX-DevGuide/files/GUID-83ABF20A-57D4-4AB3-8A49-D91E0F70DBFF.htm)
-and [anonymous-number allocation](https://help.autodesk.com/cloudhelp/2026/PLK/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm)
+and [anonymous-number allocation](https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm)
 govern semantic status only; they do not authorize dropping reference-graph identity
 from the digest. Compute the digest on the drawing as read, before any audit.
 

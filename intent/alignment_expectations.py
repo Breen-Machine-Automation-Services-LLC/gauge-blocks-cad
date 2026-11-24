@@ -3,7 +3,7 @@ from pathlib import Path
 from references import author_references
 import json,math,copy
 R=Path(__file__).resolve().parents[1];p=R/'intent/feature_a_text.json';d=json.loads(p.read_text());new=[]
-url='https://help.autodesk.com/cloudhelp/2023/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm'
+url='https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm'
 for f in d['expected']:
  if '_aligned.height' in f['id']:
   f['tolerance']=1.0

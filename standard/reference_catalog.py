@@ -4,12 +4,20 @@ Names are documentation labels, not necessarily literal group-0 DXF names.
 No network access or CAD execution is needed to rebuild the inventory.
 """
 
+import re
+
 READ_DATE = "2026-11-23"
-BASE = "https://help.autodesk.com/cloudhelp/{year}/ENU/AutoCAD-DXF/files/"
+# In a Chromium-based browser, Autodesk's help viewer shows "Page Not Found" for its 2025 and later
+# pages (Firefox shows them), so every reference link points at the 2024 edition of the same page.
+# tests/test_reference_links.py keeps DXF reference links at exactly this edition and every other
+# Autodesk help link at this edition or older.
+EDITION = 2024
+BASE = f"https://help.autodesk.com/cloudhelp/{EDITION}/ENU/AutoCAD-DXF/files/"
+ITEM_URL = re.compile(re.escape(BASE) + r"GUID-[A-F0-9-]+\.htm(?:#.*)?")
 
 
-def url(guid, year=2027):
-    return BASE.format(year=year) + "GUID-" + guid + ".htm"
+def url(guid):
+    return BASE + "GUID-" + guid + ".htm"
 
 
 ENTITIES = """
@@ -180,28 +188,28 @@ VERSIONS = {
 
 CONTENTS = {
     "entities": url("7D07C886-FD1D-4A0C-A7AB-B4D21F18E484"),
-    "objects": url("2D71EE99-A6BE-4060-9B43-808CF1E201C6", 2026),
-    "tables_and_nested_topics": BASE.format(year=2017) + "index.htm",
+    "objects": url("2D71EE99-A6BE-4060-9B43-808CF1E201C6"),
+    "tables_and_nested_topics": url("235B22E0-A567-4CF6-92D3-38A2306D73F3"),
     "header": url(HEADER_GUID),
-    "legacy_header": url(LEGACY_GUID, 2017),
+    "legacy_header": url(LEGACY_GUID),
 }
 
 
 def catalog():
     records = []
-    for kind, text, year in (("entity", ENTITIES, 2027), ("object", OBJECTS, 2026), ("table", TABLES, 2017)):
+    for kind, text in (("entity", ENTITIES), ("object", OBJECTS), ("table", TABLES)):
         for line in text.strip().splitlines():
             name, guid = line.split()
-            records.append(dict(kind=kind, name=name, reference_url=url(guid, year)))
+            records.append(dict(kind=kind, name=name, reference_url=url(guid)))
     for kind, text in (("entity", EXTRA_ENTITIES), ("object", EXTRA_OBJECTS)):
         for line in text.strip().splitlines():
             name, guid = line.split("|")
-            records.append(dict(kind=kind, name=name, reference_url=url(guid, 2017)))
+            records.append(dict(kind=kind, name=name, reference_url=url(guid)))
     names = HEADER_NAMES.split() + [f"USER{letter}{number}" for letter in "IR" for number in range(1, 6)]
     for name in names:
         records.append(dict(kind="header", name="$" + name, reference_url=url(HEADER_GUID)))
     for name in LEGACY_NAMES.split():
-        records.append(dict(kind="header", name="$" + name, reference_url=url(LEGACY_GUID, 2017), versions="Existed before Release 11; from Release 11 active VPORT entries override these HEADER settings, which OPEN still honors."))
+        records.append(dict(kind="header", name="$" + name, reference_url=url(LEGACY_GUID), versions="Existed before Release 11; from Release 11 active VPORT entries override these HEADER settings, which OPEN still honors."))
     for record in records:
         version = VERSIONS.get((record["kind"], record["name"]))
         if version:

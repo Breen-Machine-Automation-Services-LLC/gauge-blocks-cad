@@ -7,7 +7,7 @@ def load(t):return json.loads((R/'intent'/('feature_'+t+'.json')).read_text())
 def add(i,layer,typ,attr,value,versions=MOD,*,basis_type):
  key=layer+'.'+attr
  if any(f['id']==key for f in i['expected']):return
- i['features']=sorted(set(i['features']+[layer]));i['expected'].append(dict(id=key,value=value,selector=dict(kind='feature_attr',name=layer,table=typ,attr=attr),reference=dict(basis_type=basis_type,section=typ+'; '+attr,source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2026/ENU/',basis='DXF Reference; independently authored generator constants'),tolerance=1e-8,versions=versions))
+ i['features']=sorted(set(i['features']+[layer]));i['expected'].append(dict(id=key,value=value,selector=dict(kind='feature_attr',name=layer,table=typ,attr=attr),reference=dict(basis_type=basis_type,section=typ+'; '+attr,source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2024/ENU/',basis='DXF Reference; independently authored generator constants'),tolerance=1e-8,versions=versions))
 def save(i):(R/'intent'/(i['intent_id']+'.json')).write_text(json.dumps(author_references(i),indent=2)+'\n')
 i=load('b_geometry')
 for st in range(3):add(i,f'F20_hatch_solid_style{st}','HATCH','loop_flags',[3,2,2],basis_type='synthetic')
@@ -39,7 +39,7 @@ for topic,entries in [('n_misc',[('ACAD_SCALELIST','N_1_TO_37','name','N_1_TO_37
   if any(f['id']==key for f in i['expected']):continue
   feature='F169_scale_list_marker' if topic=='n_misc' else name
   i['features']=sorted(set(i['features']+[feature]))
-  i['expected'].append(dict(id=key,value=value,selector=dict(kind='object',dictionary=dictionary,name=name,attr=attr),reference=dict(basis_type='synthetic',section='SCALE codes 300,140,141' if topic=='n_misc' else 'VISUALSTYLE code 2',source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2026/ENU/',basis='DXF Reference; invented object values'),tolerance=1e-8,versions=MOD if topic=='n_misc' else MOD[2:]))
+  i['expected'].append(dict(id=key,value=value,selector=dict(kind='object',dictionary=dictionary,name=name,attr=attr),reference=dict(basis_type='synthetic',section='SCALE codes 300,140,141' if topic=='n_misc' else 'VISUALSTYLE code 2',source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2024/ENU/',basis='DXF Reference; invented object values'),tolerance=1e-8,versions=MOD if topic=='n_misc' else MOD[2:]))
  save(i)
 
 i=load('i_dictionaries')
@@ -58,5 +58,5 @@ save(i)
 for topic,name,attr,value,feature in [('e_objects','F72_xrecord','tags',[[1,'ZEV_RECORD'],[40,12.5],[70,42]],'F72_xrecord'),('e_objects','F73_dictionaryvar','value','ZEV_VAR','F73_dictionaryvar'),('l_proxy','SYNTH_OBJ_REF','opaque_values',[[90,3],[40,1.25]],'F182_proxy_object_marker')]:
  i=load(topic);key=name+'.'+attr
  if not any(f['id']==key for f in i['expected']):
-  i['features']=sorted(set(i['features']+[feature]));i['expected'].append(dict(id=key,value=value,selector=dict(kind='object',dictionary='ROOT',name=name,attr=attr),reference=dict(basis_type='synthetic',section='XRECORD; DICTIONARYVAR; CLASSES',source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2026/ENU/',basis='DXF Reference; invented payload'),tolerance=1e-8,versions=MOD))
+  i['features']=sorted(set(i['features']+[feature]));i['expected'].append(dict(id=key,value=value,selector=dict(kind='object',dictionary='ROOT',name=name,attr=attr),reference=dict(basis_type='synthetic',section='XRECORD; DICTIONARYVAR; CLASSES',source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2024/ENU/',basis='DXF Reference; invented payload'),tolerance=1e-8,versions=MOD))
  save(i)

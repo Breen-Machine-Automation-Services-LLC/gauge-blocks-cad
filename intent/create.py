@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parent
 ALL=['AC1009','AC1015','AC1018','AC1021','AC1024','AC1027','AC1032']; MOD=ALL[1:]
 def make(topic):return {'intent_id':'background_'+topic,'title':topic.title(),'description':'Synthetic background '+topic,'representation_id':'reference_1','features':[],'expected':[]}
 def add(i,key,value,selector,ref,modern=False,*,basis_type):
- i['expected'].append({'id':key,'value':value,'selector':selector,'reference':{'basis_type':basis_type,'section':ref,'source':'Autodesk DXF Reference','url':'https://help.autodesk.com/view/OARX/2026/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3','basis':'DXF Reference'},'tolerance':1e-9 if isinstance(value,float) else 0,'versions':MOD if modern else ALL})
+ i['expected'].append({'id':key,'value':value,'selector':selector,'reference':{'basis_type':basis_type,'section':ref,'source':'Autodesk DXF Reference','url':'https://help.autodesk.com/view/OARX/2024/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3','basis':'DXF Reference'},'tolerance':1e-9 if isinstance(value,float) else 0,'versions':MOD if modern else ALL})
 def tab(i,table,name,attr,value,ref,modern=False,*,basis_type):add(i,f'{name}.{attr}',value,{'kind':'table','table':table,'name':name,'attr':attr},ref,modern,basis_type=basis_type)
 for topic in ['blocks','layers','styles','plots','metadata','named']:
  i=make(topic)

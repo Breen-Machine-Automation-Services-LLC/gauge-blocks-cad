@@ -26,7 +26,7 @@
       "reference": {
         "section": "LINE group codes for end",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-FCEF5726-53AE-4C43-B4EA-C84EB8686A66.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-FCEF5726-53AE-4C43-B4EA-C84EB8686A66.htm",
         "basis": "DXF Reference; invented constants from the source generator",
         "basis_type": "synthetic"
       },
@@ -53,7 +53,7 @@
       "reference": {
         "section": "VISUALSTYLE; description",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-8A8BF2C4-FC56-44EC-A8C4-A60CE33A530C.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-8A8BF2C4-FC56-44EC-A8C4-A60CE33A530C.htm",
         "basis": "DXF Reference; invented object values",
         "basis_type": "synthetic"
       },
@@ -77,7 +77,7 @@
       "reference": {
         "section": "VISUALSTYLE; description",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-8A8BF2C4-FC56-44EC-A8C4-A60CE33A530C.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-8A8BF2C4-FC56-44EC-A8C4-A60CE33A530C.htm",
         "basis": "DXF Reference; invented object values",
         "basis_type": "synthetic"
       },
@@ -110,7 +110,7 @@
       "reference": {
         "section": "VISUALSTYLE; acad_marker",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-8A8BF2C4-FC56-44EC-A8C4-A60CE33A530C.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-8A8BF2C4-FC56-44EC-A8C4-A60CE33A530C.htm",
         "basis": "DXF Reference; invented object values; Autodesk VISUALSTYLE extended data identifies the application object type.",
         "basis_type": "compatibility_policy"
       },
@@ -147,7 +147,7 @@
       "reference": {
         "section": "XRECORD; tags",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-24668FAF-AE03-41AE-AFA4-276C3692827F.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-24668FAF-AE03-41AE-AFA4-276C3692827F.htm",
         "basis": "DXF Reference; invented payload",
         "basis_type": "synthetic"
       },
@@ -173,7 +173,7 @@
       "reference": {
         "section": "DICTIONARYVAR; value",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-D305303C-F9CE-4714-9C92-607BFDA891B4.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D305303C-F9CE-4714-9C92-607BFDA891B4.htm",
         "basis": "DXF Reference; invented payload",
         "basis_type": "synthetic"
       },

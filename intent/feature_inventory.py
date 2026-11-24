@@ -13,11 +13,11 @@ for filename,topics in [('masters_abcd.py',{'master_a':'a_text','master_b':'b_ge
   names|=set(i['features'])
   for name in sorted(names):
    key=name+'.layer'
-   if not any(f['id']==key for f in i['expected']):i['expected'].append(dict(id=key,value=name,selector=dict(kind='table',table='layers',name=name,attr='name'),reference=dict(basis_type='synthetic',section='LAYER code 2; common entity code 8',source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2026/ENU/',basis='DXF Reference; feature layer declared in source generator'),tolerance=0,versions=['AC1009','AC1015','AC1018','AC1021','AC1024','AC1027','AC1032']))
+   if not any(f['id']==key for f in i['expected']):i['expected'].append(dict(id=key,value=name,selector=dict(kind='table',table='layers',name=name,attr='name'),reference=dict(basis_type='synthetic',section='LAYER code 2; common entity code 8',source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2024/ENU/',basis='DXF Reference; feature layer declared in source generator'),tolerance=0,versions=['AC1009','AC1015','AC1018','AC1021','AC1024','AC1027','AC1032']))
   i['features']=sorted(names);p.write_text(json.dumps(author_references(i),indent=2)+'\n')
 p=R/'intent/feature_l_proxy.json'
 if p.exists():
  i=json.loads(p.read_text());i['features']=['F180_proxy_entity','F181_proxy_entity_b','F182_proxy_object_marker'];i['expected']=[]
  for name in i['features']:
-  i['expected'].append(dict(id=name+'.layer',value=name,selector=dict(kind='table',table='layers',name=name,attr='name'),reference=dict(basis_type='synthetic',section='LAYER code 2; CLASSES',source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2026/ENU/',basis='DXF Reference; invented custom classes'),tolerance=0,versions=['AC1009','AC1015','AC1018','AC1021','AC1024','AC1027','AC1032']))
+  i['expected'].append(dict(id=name+'.layer',value=name,selector=dict(kind='table',table='layers',name=name,attr='name'),reference=dict(basis_type='synthetic',section='LAYER code 2; CLASSES',source='Autodesk DXF Reference',url='https://help.autodesk.com/view/OARX/2024/ENU/',basis='DXF Reference; invented custom classes'),tolerance=0,versions=['AC1009','AC1015','AC1018','AC1021','AC1024','AC1027','AC1032']))
  p.write_text(json.dumps(author_references(i),indent=2)+'\n')

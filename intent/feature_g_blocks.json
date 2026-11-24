@@ -32,7 +32,7 @@
       "reference": {
         "section": "INSERT group codes for rotation",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
         "basis": "DXF Reference; invented constants from the source generator",
         "basis_type": "synthetic"
       },
@@ -59,7 +59,7 @@
       "reference": {
         "section": "INSERT group codes for xscale",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
         "basis": "DXF Reference; invented constants from the source generator",
         "basis_type": "synthetic"
       },
@@ -86,7 +86,7 @@
       "reference": {
         "section": "INSERT group codes for yscale",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
         "basis": "DXF Reference; invented constants from the source generator",
         "basis_type": "synthetic"
       },
@@ -113,7 +113,7 @@
       "reference": {
         "section": "INSERT group codes for row_count",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
         "basis": "DXF Reference; invented constants from the source generator",
         "basis_type": "synthetic"
       },
@@ -140,7 +140,7 @@
       "reference": {
         "section": "INSERT; name",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -166,7 +166,7 @@
       "reference": {
         "section": "INSERT; name",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -192,7 +192,7 @@
       "reference": {
         "section": "INSERT; column_count",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -218,7 +218,7 @@
       "reference": {
         "section": "CIRCLE; radius",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-8663262B-222C-414D-B133-4A8506A27C18.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-8663262B-222C-414D-B133-4A8506A27C18.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -265,7 +265,7 @@
       "reference": {
         "section": "WIPEOUT; boundary_path",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-2229F9C4-3C80-4C67-9EDA-45ED684808DC.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2229F9C4-3C80-4C67-9EDA-45ED684808DC.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -291,7 +291,7 @@
       "reference": {
         "section": "TEXT; text",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-62E5383D-8A14-47B4-BFC4-35824CAE8363.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -317,7 +317,7 @@
       "reference": {
         "section": "INSERT; name",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-28FA4CFB-9D5E-4880-9F11-36C97578252F.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -343,7 +343,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -370,7 +370,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -397,7 +397,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -424,7 +424,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -451,7 +451,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -478,7 +478,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -505,7 +505,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -532,7 +532,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -559,7 +559,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -586,7 +586,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -613,7 +613,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -640,7 +640,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -667,7 +667,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -694,7 +694,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -721,8 +721,8 @@
       "reference": {
         "section": "CIRCLE group 40; circle in INSERT-referenced block",
         "source": "Autodesk DXF Reference and AutoLISP Reference; Open Design Specification",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-8663262B-222C-414D-B133-4A8506A27C18.htm",
-        "basis": "Resolve the INSERT reference using Anonymous Blocks; BLOCK flags: https://help.autodesk.com/cloudhelp/2021/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm; Open Design Specification section 20.4.52: https://static.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf; independently authored circle radius 3; any circle may match; The expected value is an invented fixture choice.",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-8663262B-222C-414D-B133-4A8506A27C18.htm",
+        "basis": "Resolve the INSERT reference using Anonymous Blocks; BLOCK flags: https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm; Open Design Specification section 20.4.52: https://static.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf; independently authored circle radius 3; any circle may match; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
       "tolerance": 1e-08,

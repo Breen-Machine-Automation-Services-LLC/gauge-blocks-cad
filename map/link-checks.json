@@ -1,5 +1,6 @@
 {
   "links": 4076,
   "broken": 0,
-  "method": "All embedded intent, input/output drawing and provenance record targets resolve inside repository"
+  "reference_links": 107,
+  "method": "All embedded intent, input/output drawing and provenance record targets resolve inside repository; every Autodesk reference link is a DXF item page in the pinned edition"
 }

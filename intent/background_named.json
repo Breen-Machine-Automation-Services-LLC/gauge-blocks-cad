@@ -20,7 +20,7 @@
       "reference": {
         "section": "BLOCK extended data; APPID; codes 1001,1000",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -47,7 +47,7 @@
       "reference": {
         "section": "VIEW codes 40,41,10",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-CF3094AB-ECA9-43C1-8075-7791AC84F97C.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-CF3094AB-ECA9-43C1-8075-7791AC84F97C.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -74,7 +74,7 @@
       "reference": {
         "section": "VIEW codes 40,41,10",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-CF3094AB-ECA9-43C1-8075-7791AC84F97C.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-CF3094AB-ECA9-43C1-8075-7791AC84F97C.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -104,7 +104,7 @@
       "reference": {
         "section": "VIEW codes 40,41,10",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-CF3094AB-ECA9-43C1-8075-7791AC84F97C.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-CF3094AB-ECA9-43C1-8075-7791AC84F97C.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -135,7 +135,7 @@
       "reference": {
         "section": "UCS codes 10,11,12",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-1906E8A7-3393-4BF9-BD27-F9AE4352FB8B.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-1906E8A7-3393-4BF9-BD27-F9AE4352FB8B.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -166,7 +166,7 @@
       "reference": {
         "section": "UCS codes 10,11,12",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-1906E8A7-3393-4BF9-BD27-F9AE4352FB8B.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-1906E8A7-3393-4BF9-BD27-F9AE4352FB8B.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -197,7 +197,7 @@
       "reference": {
         "section": "UCS codes 10,11,12",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-1906E8A7-3393-4BF9-BD27-F9AE4352FB8B.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-1906E8A7-3393-4BF9-BD27-F9AE4352FB8B.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -222,7 +222,7 @@
       "reference": {
         "section": "GROUP code 340",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-5F1372C4-37C8-4056-9303-EE1715F58E67.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-5F1372C4-37C8-4056-9303-EE1715F58E67.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -248,7 +248,7 @@
       "reference": {
         "section": "OBJECTS section; scale-list entries",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
         "basis": "DXF Reference; No item page exists for SCALE in the cataloged Reference contents; the OBJECTS section is the available reference, not a specification of scale-entry codes.; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -274,7 +274,7 @@
       "reference": {
         "section": "OBJECTS section; scale-list entries",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
         "basis": "DXF Reference; No item page exists for SCALE in the cataloged Reference contents; the OBJECTS section is the available reference, not a specification of scale-entry codes.; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -300,7 +300,7 @@
       "reference": {
         "section": "OBJECTS section; scale-list entries",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
         "basis": "DXF Reference; No item page exists for SCALE in the cataloged Reference contents; the OBJECTS section is the available reference, not a specification of scale-entry codes.; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },

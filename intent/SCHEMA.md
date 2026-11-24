@@ -54,12 +54,12 @@ locale-wide Unicode equivalence claim.
 - Dictionary and extension-dictionary path segments compare without case; a matching
   case collision is an ambiguous lookup failure. Object values remain literal.
   [DBDictionary](https://help.autodesk.com/cloudhelp/2019/ENU/OARX-ManagedRefGuide/files/OREFNET-Autodesk_AutoCAD_DatabaseServices_DBDictionary.html)
-  defines key comparison; [DICTIONARY group 3](https://help.autodesk.com/cloudhelp/2020/ENU/AutoCAD-DXF/files/GUID-40B92C63-26F0-485B-A9C2-B349099B26D0.htm)
+  defines key comparison; [DICTIONARY group 3](https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-40B92C63-26F0-485B-A9C2-B349099B26D0.htm)
   identifies entry names separately from values.
 - XDATA application keys follow symbol-name comparison; payload strings and repeated
   tags retain case and order.
   [Autodesk Symbol Tables](https://help.autodesk.com/cloudhelp/2018/ENU/OARX-DevGuide/files/GUID-83ABF20A-57D4-4AB3-8A49-D91E0F70DBFF.htm),
-  [Extended Data](https://help.autodesk.com/cloudhelp/2015/ENU/AutoCAD-DXF/files/GUID-A2A628B0-3699-4740-A215-C560E7242F63.htm).
+  [Extended Data](https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-A2A628B0-3699-4740-A215-C560E7242F63.htm).
 - `F111_anonymous_block.name` follows the feature INSERT to a resolved block with
   a `*U` numeric name and BLOCK flag bit 1. The allocated number does not affect
   status. `F111_anonymous_block.block_circle_radius` uses a `feature_attr` selector
@@ -67,8 +67,8 @@ locale-wide Unicode equivalence claim.
   CIRCLE of independently authored radius 3. Missing references or circles are absent;
   any circle may match, and radii differ only when none matches. The raw `actual`
   contains every circle radius. Named blocks retain their name identity.
-  [Anonymous Blocks](https://help.autodesk.com/cloudhelp/2026/PLK/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm),
-  [BLOCK flags](https://help.autodesk.com/cloudhelp/2021/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm),
+  [Anonymous Blocks](https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-AutoLISP/files/GUID-EB9BFDAA-487A-4586-A556-1F5F84BCF2F3.htm),
+  [BLOCK flags](https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm),
   [Open Design Specification, section 20.4.52](https://static.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf).
 - Proxy payload comparison separates the first group-90 class ID in the proxy
   subclass from application data and requires envelope value 499 for ACAD_PROXY_OBJECT
@@ -80,11 +80,11 @@ locale-wide Unicode equivalence claim.
   [ACAD_PROXY_ENTITY](https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-89A690F9-E859-4D57-89EA-750F3FB76C6B.htm).
 - Layer flag comparisons mask only advisory bit 64. Freeze, new-viewport freeze,
   lock and external-reference bits remain significant.
-  [LAYER flags](https://help.autodesk.com/cloudhelp/2020/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm).
+  [LAYER flags](https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm).
 - Linetype pattern scalar groups 72, 73 and 40 compare independently of tag order;
   repeated group-49 dash lengths retain order and numeric tolerance.
-  [Object and Entity Codes](https://help.autodesk.com/cloudhelp/2020/ENU/AutoCAD-DXF/files/GUID-A35B8C2A-1885-4A8E-8533-E61D8A423D62.htm),
-  [LTYPE](https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm).
+  [Object and Entity Codes](https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-A35B8C2A-1885-4A8E-8533-E61D8A423D62.htm),
+  [LTYPE](https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-F57A316C-94A2-416C-8280-191E34B182AC.htm).
 
 ## Expectation basis and citations
 

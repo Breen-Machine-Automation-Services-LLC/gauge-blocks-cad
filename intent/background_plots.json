@@ -19,7 +19,7 @@
       "reference": {
         "section": "BLOCK extended data; APPID; codes 1001,1000",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-66D32572-005A-4E23-8B8B-8726E8C14302.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -44,7 +44,7 @@
       "reference": {
         "section": "LAYOUT; BLOCK_RECORD",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-433D25BF-655D-4697-834E-C666EDFD956D.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-433D25BF-655D-4697-834E-C666EDFD956D.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -70,7 +70,7 @@
       "reference": {
         "section": "PLOTSETTINGS; page_setup_name",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-1113675E-AB07-4567-801A-310CDE0D56E9.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-1113675E-AB07-4567-801A-310CDE0D56E9.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -96,7 +96,7 @@
       "reference": {
         "section": "PLOTSETTINGS; current_style_sheet",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-1113675E-AB07-4567-801A-310CDE0D56E9.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-1113675E-AB07-4567-801A-310CDE0D56E9.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -122,7 +122,7 @@
       "reference": {
         "section": "PLOTSETTINGS; paper_width",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-1113675E-AB07-4567-801A-310CDE0D56E9.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-1113675E-AB07-4567-801A-310CDE0D56E9.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -148,7 +148,7 @@
       "reference": {
         "section": "PLOTSETTINGS; paper_height",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-1113675E-AB07-4567-801A-310CDE0D56E9.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-1113675E-AB07-4567-801A-310CDE0D56E9.htm",
         "basis": "DXF Reference; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },

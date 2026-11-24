@@ -28,7 +28,7 @@
       "reference": {
         "section": "SOLID group codes for thickness",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-E0C5F04E-D0C5-48F5-AC09-32733E8848F2.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-E0C5F04E-D0C5-48F5-AC09-32733E8848F2.htm",
         "basis": "DXF Reference; invented constants from the source generator",
         "basis_type": "synthetic"
       },
@@ -55,7 +55,7 @@
       "reference": {
         "section": "VIEWPORT group codes for view_twist_angle",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-2602B0FB-02E4-4B9A-B03C-B1D904753D34.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2602B0FB-02E4-4B9A-B03C-B1D904753D34.htm",
         "basis": "DXF Reference; invented constants from the source generator",
         "basis_type": "synthetic"
       },
@@ -110,7 +110,7 @@
       "reference": {
         "section": "POLYLINE; vertices",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-ABF6B778-BE20-4B49-9B58-A94E64CEFFF3.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-ABF6B778-BE20-4B49-9B58-A94E64CEFFF3.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -137,7 +137,7 @@
       "reference": {
         "section": "POLYLINE; flags",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-ABF6B778-BE20-4B49-9B58-A94E64CEFFF3.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-ABF6B778-BE20-4B49-9B58-A94E64CEFFF3.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -164,7 +164,7 @@
       "reference": {
         "section": "POLYLINE; flags",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-ABF6B778-BE20-4B49-9B58-A94E64CEFFF3.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-ABF6B778-BE20-4B49-9B58-A94E64CEFFF3.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -191,7 +191,7 @@
       "reference": {
         "section": "VIEWPORT; view_height",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-2602B0FB-02E4-4B9A-B03C-B1D904753D34.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2602B0FB-02E4-4B9A-B03C-B1D904753D34.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -219,7 +219,7 @@
       "reference": {
         "section": "VIEWPORT; frozen_layers",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-2602B0FB-02E4-4B9A-B03C-B1D904753D34.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2602B0FB-02E4-4B9A-B03C-B1D904753D34.htm",
         "basis": "DXF Reference; independently authored generator constants; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -245,7 +245,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -272,7 +272,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -299,7 +299,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -326,7 +326,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -353,7 +353,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -380,7 +380,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -407,7 +407,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -434,7 +434,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -461,7 +461,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -488,7 +488,7 @@
       "reference": {
         "section": "LAYER code 2; common entity code 8",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2017/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-D94802B0-8BE8-4AC9-8054-17197688AFDB.htm",
         "basis": "DXF Reference; feature layer declared in source generator; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -515,7 +515,7 @@
       "reference": {
         "section": "OBJECTS section; scale-list entries",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
         "basis": "DXF Reference; invented object values; No item page exists for SCALE in the cataloged Reference contents; the OBJECTS section is the available reference, not a specification of scale-entry codes.",
         "basis_type": "synthetic"
       },
@@ -541,7 +541,7 @@
       "reference": {
         "section": "OBJECTS section; scale-list entries",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
         "basis": "DXF Reference; invented object values; No item page exists for SCALE in the cataloged Reference contents; the OBJECTS section is the available reference, not a specification of scale-entry codes.",
         "basis_type": "synthetic"
       },
@@ -567,7 +567,7 @@
       "reference": {
         "section": "OBJECTS section; scale-list entries",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
         "basis": "DXF Reference; invented object values; No item page exists for SCALE in the cataloged Reference contents; the OBJECTS section is the available reference, not a specification of scale-entry codes.",
         "basis_type": "synthetic"
       },
@@ -593,7 +593,7 @@
       "reference": {
         "section": "OBJECTS section; scale-list entries",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
         "basis": "DXF Reference; invented object values; No item page exists for SCALE in the cataloged Reference contents; the OBJECTS section is the available reference, not a specification of scale-entry codes.",
         "basis_type": "synthetic"
       },
@@ -619,7 +619,7 @@
       "reference": {
         "section": "OBJECTS section; scale-list entries",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
         "basis": "DXF Reference; invented object values; No item page exists for SCALE in the cataloged Reference contents; the OBJECTS section is the available reference, not a specification of scale-entry codes.",
         "basis_type": "synthetic"
       },
@@ -645,7 +645,7 @@
       "reference": {
         "section": "OBJECTS section; scale-list entries",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-2D71EE99-A6BE-4060-9B43-808CF1E201C6.htm",
         "basis": "DXF Reference; invented object values; No item page exists for SCALE in the cataloged Reference contents; the OBJECTS section is the available reference, not a specification of scale-entry codes.",
         "basis_type": "synthetic"
       },

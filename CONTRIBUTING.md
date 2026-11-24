@@ -174,6 +174,7 @@ python -m pip install -r requirements.txt
 python intent/validate.py
 python -m pytest tests -q
 python map/check_links.py
+python map/check_links.py --online   # opens every external link; needs Firefox, see map/TESTING.md
 python checker/test_phase2.py
 python checker/check_artifacts.py
 ```

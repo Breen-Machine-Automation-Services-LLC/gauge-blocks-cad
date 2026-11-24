@@ -18,7 +18,7 @@ from jsonschema.exceptions import ValidationError
 
 ROOT = Path(__file__).resolve().parents[1]
 BASIS_TYPES = {'normative', 'application_semantics', 'compatibility_policy', 'synthetic'}
-LANDING = 'https://help.autodesk.com/view/OARX/2026/ENU/'
+LANDING = 'https://help.autodesk.com/view/OARX/2024/ENU/'
 ITEM_URL = re.compile(r'https://help\.autodesk\.com/cloudhelp/\d{4}/ENU/AutoCAD-DXF/files/GUID-[A-F0-9-]+\.htm(?:#.*)?$')
 
 

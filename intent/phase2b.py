@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from references import author_references
 R = Path(__file__).resolve().parents[1]
-URL = 'https://help.autodesk.com/view/OARX/2026/ENU/'
+URL = 'https://help.autodesk.com/view/OARX/2024/ENU/'
 # ACAD_TABLE was introduced with AutoCAD 2005 (AC1018); REGION and 3DSOLID exist from AutoCAD R13, so AC1015 and later here.
 TABLE_VERSIONS = ['AC1018', 'AC1021', 'AC1024', 'AC1027', 'AC1032']
 ACIS_VERSIONS = ['AC1015', 'AC1018', 'AC1021', 'AC1024', 'AC1027', 'AC1032']

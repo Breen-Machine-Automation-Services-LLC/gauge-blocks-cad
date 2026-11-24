@@ -18,7 +18,7 @@
       "reference": {
         "section": "REGION entity (ACIS)",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-644BF0F0-FD79-4C5E-AD5A-0053FCC5A5A4.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-644BF0F0-FD79-4C5E-AD5A-0053FCC5A5A4.htm",
         "basis": "DXF Reference; one entity per layer in the generator in the intent description; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -44,7 +44,7 @@
       "reference": {
         "section": "REGION ACIS data (SAT text or SAB binary): one body",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-644BF0F0-FD79-4C5E-AD5A-0053FCC5A5A4.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-644BF0F0-FD79-4C5E-AD5A-0053FCC5A5A4.htm",
         "basis": "DXF Reference; one ACIS body per entity; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -68,7 +68,7 @@
       "reference": {
         "section": "3DSOLID entity (ACIS)",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-19AB1C40-0BE0-4F32-BCAB-04B37044A0D3.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-19AB1C40-0BE0-4F32-BCAB-04B37044A0D3.htm",
         "basis": "DXF Reference; one entity per layer in the generator in the intent description; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -94,7 +94,7 @@
       "reference": {
         "section": "3DSOLID ACIS data (SAT text or SAB binary): one body",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-19AB1C40-0BE0-4F32-BCAB-04B37044A0D3.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-19AB1C40-0BE0-4F32-BCAB-04B37044A0D3.htm",
         "basis": "DXF Reference; one ACIS body per entity; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
@@ -124,7 +124,7 @@
       "reference": {
         "section": "3DSOLID ACIS data: box 12 by 8 by 6",
         "source": "Autodesk DXF Reference",
-        "url": "https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-DXF/files/GUID-19AB1C40-0BE0-4F32-BCAB-04B37044A0D3.htm",
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/AutoCAD-DXF/files/GUID-19AB1C40-0BE0-4F32-BCAB-04B37044A0D3.htm",
         "basis": "DXF Reference; box dimensions from the generator in the intent description, read as a tessellation bounding box; The expected value is an invented fixture choice.",
         "basis_type": "synthetic"
       },
