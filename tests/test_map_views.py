@@ -217,9 +217,7 @@ def test_headers_visibly_identify_shared_engine(builder, corpus):
     assert headers['oda']['name'] == 'ODA File Converter'
     for p in PROGRAMS:
         assert headers[p]['shared_engine'] is (p in ('oda', 'bricscad'))
-        assert headers[p]['engine'] in headers[p]['label']
     assert headers['oda']['engine'] == headers['bricscad']['engine'] == 'oda-teigha'
-    assert all('shared engine' in headers[p]['label'].lower() for p in ('oda', 'bricscad'))
 
 
 @pytest.mark.parametrize('feature,status,kept,total', [

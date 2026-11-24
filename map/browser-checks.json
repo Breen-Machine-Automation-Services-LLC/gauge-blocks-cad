@@ -12,7 +12,17 @@
       "evidence": true
     },
     {
-      "behavior": "light standard labels and icons name measured feature denominator",
+      "behavior": "light standard squares have accessible labels",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light square focus shows full tooltip label",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "light Enter opens square evidence",
       "passed": true,
       "evidence": true
     },
@@ -47,12 +57,12 @@
       "evidence": true
     },
     {
-      "behavior": "light comparison reader converter shared engine labels",
+      "behavior": "light comparison squares and accessible labels",
       "passed": true,
       "evidence": true
     },
     {
-      "behavior": "light comparison status labels and icons",
+      "behavior": "light comparison reading path and native drawing notes stay in evidence",
       "passed": true,
       "evidence": true
     },
@@ -186,7 +196,7 @@
       "evidence": true
     },
     {
-      "behavior": "Generated timestamp and exact builds",
+      "behavior": "Exact builds match drawing provenance",
       "passed": true,
       "evidence": true
     },
@@ -216,7 +226,17 @@
       "evidence": true
     },
     {
-      "behavior": "dark standard labels and icons name measured feature denominator",
+      "behavior": "dark standard squares have accessible labels",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark square focus shows full tooltip label",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "behavior": "dark Enter opens square evidence",
       "passed": true,
       "evidence": true
     },
@@ -251,12 +271,12 @@
       "evidence": true
     },
     {
-      "behavior": "dark comparison reader converter shared engine labels",
+      "behavior": "dark comparison squares and accessible labels",
       "passed": true,
       "evidence": true
     },
     {
-      "behavior": "dark comparison status labels and icons",
+      "behavior": "dark comparison reading path and native drawing notes stay in evidence",
       "passed": true,
       "evidence": true
     },

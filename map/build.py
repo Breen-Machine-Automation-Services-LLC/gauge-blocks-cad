@@ -77,7 +77,10 @@ def _cell(status, item, program, evidence, label=None, pair=None, **extra):
         query['pair'] = pair
     icons = {'kept': '✓', 'changed': '≠', 'lost': '−', 'refused': '×',
              'measured': '✓', 'native drawing': '✓', 'included': '✓', 'partial': '◐',
-             'present': '□', 'future': '◇', 'omitted': '·'}
+             'present': '✓', 'future': '◇', 'omitted': '·',
+             'not measured': '·', 'no native drawing': '·', 'not scored': '·',
+             'reader_error': '×', 'source not readable': '×', 'unreadable by reader': '×',
+             'lost in writer or converter': '≠', 'lost by converter': '≠'}
     return dict(status=status, label=label or display(status), icon=icons.get(status, '?'),
                 evidence=evidence, detail_link='#detailed?' + urlencode(query), **extra)
 
