@@ -126,7 +126,7 @@ function render(){
   entries.forEach((f,fi)=>{
    const visible=cols.filter(({k})=>$('status').value==='all'||state(f.cells[k])===$('status').value);
    if(!visible.length && !(f.topic && t.features.some(ff=>cols.some(({k})=>state(ff.cells[k])===$('status').value))))return;
-   let label=f.topic?`<button class="topic" title="${esc(f.name)}" data-topic="${ti}" aria-expanded="${expanded.has(ti)}">${expanded.has(ti)?'▾':'▸'} ${esc(f.name)} <small>(${t.features.length} features)</small></button>`:`<span class="feature" title="${esc(f.name)}">${esc(f.name)}</span>`;
+   let label=f.topic?`<button class="topic" title="${esc(f.name)}" data-topic="${ti}" aria-expanded="${expanded.has(ti)}">${expanded.has(ti)?'▾':'▸'} ${esc(f.name)} <small>(${t.features.length} feature${t.features.length===1?'':'s'})</small></button>`:`<span class="feature" title="${esc(f.name)}">${esc(f.name)}</span>`;
    body+=`<tr><th class="rowlabel" scope="row">${label}</th>`;text+=`<tr><th scope="row">${esc(t.title===f.name?t.title:t.title+' / '+f.name)}</th>`;
    cols.forEach(({c,k},ci)=>{let cell=f.cells[k],s=state(cell),matches=$('status').value==='all'||s===$('status').value, self=view==='compatibility'&&runs(cell).some(r=>r.self), key=`${ti},${fi},${k}`;
     const title=`${f.name} • ${c.join(' ')} • ${view==='coverage'?'dataset':$('pair').selectedOptions[0].text} • ${detailDisplay(s)}${self?' • shared engine':''}`;

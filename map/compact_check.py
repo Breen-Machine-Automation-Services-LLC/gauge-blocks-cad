@@ -11,6 +11,9 @@ Measures, at a 1400 px desktop viewport and at a 390 px phone viewport:
     squares with no visible words, hovering a square shows the shared tooltip and clicking opens
     the evidence panel;
   * phone: the page itself does not scroll sideways (a table may scroll inside its own box).
+WP10b adds the "Program A to program B" view, checked collapsed and with every group expanded: one
+table, groups start collapsed, no horizontal scrolling at 1400 px, every row (group and feature) at
+most 24 px tall, two squares per row, and the page never scrolls sideways at 1400 or 390 px.
 Screenshots go to logs/screens/. One JSON summary line is printed; the exit code is non-zero if
 any check failed.
 """
@@ -77,6 +80,62 @@ def main():
     return 1 if failed else 0
 
 
+TABLE_FACTS = '''return [...document.querySelectorAll("#views table")].map(t=>{
+  const box=t.closest(".view-scroll")||t.parentElement, style=getComputedStyle(box);
+  return {width:t.getBoundingClientRect().width,box:box.clientWidth,scroll:box.scrollWidth,
+    scrolls:["auto","scroll"].includes(style.overflowX),
+    heights:[...t.querySelectorAll("tbody tr")].map(r=>r.getBoundingClientRect().height),
+    groups:t.querySelectorAll("tbody button.topic").length,
+    open:t.querySelectorAll('tbody button.topic[aria-expanded="true"]').length,
+    squares:t.querySelectorAll("tbody td button.cell").length}})'''
+EXPAND_ALL = '''let n=0;for(let i=0;i<500;i++){const b=document.querySelector('#views tbody button.topic[aria-expanded="false"]');
+  if(!b)break;b.click();n++}return n'''
+
+
+def comparison_checks(m, js, shot, label, width):
+    """WP10b: the comparison view is one grid (groups collapsed, then every group expanded), one line
+    of squares per row, and fits the page. `shot` is None where the caller takes the screenshot."""
+    name = f'{label} comparison'
+    collapsed = js(TABLE_FACTS)
+    check(f'{name}: one table', len(collapsed) == 1, len(collapsed))
+    if len(collapsed) != 1:
+        return
+    t = collapsed[0]
+    check(f'{name}: groups start collapsed, one row each', t['groups'] > 0 and t['open'] == 0 and len(t['heights']) == t['groups'],
+          dict(groups=t['groups'], open=t['open'], rows=len(t['heights'])))
+    check(f'{name}: page does not scroll sideways (collapsed)',
+          js('return innerWidth===%d && document.documentElement.scrollWidth<=innerWidth' % width),
+          js('return [innerWidth,document.documentElement.scrollWidth]'))
+    if label == 'desktop':
+        check('desktop comparison: no horizontal scrolling in the table', t['scroll'] <= t['box'] + 1 and t['width'] <= t['box'] + 1,
+              (t['width'], t['box'], t['scroll']))
+        check(f'desktop comparison: group rows are at most {MAX_ROW} px tall (one line of squares)', max(t['heights']) <= MAX_ROW,
+              dict(rows=len(t['heights']), max=max(t['heights'])))
+        shot('wp10b-comparison-desktop-collapsed')
+    else:
+        check('phone comparison: the table fits its box or scrolls inside it',
+              t['width'] <= t['box'] + 1 or t['scrolls'], (t['width'], t['box'], t['scroll'], t['scrolls']))
+    clicked = js(EXPAND_ALL)
+    opened = js(TABLE_FACTS)[0]
+    check(f'{name}: every group expands', clicked == t['groups'] and opened['open'] == t['groups'] and len(opened['heights']) > t['groups'],
+          dict(clicked=clicked, groups=t['groups'], open=opened['open'], rows=len(opened['heights'])))
+    check(f'{name}: still one table and two squares per row after expanding',
+          len(js(TABLE_FACTS)) == 1 and opened['squares'] == 2 * len(opened['heights']), (opened['squares'], len(opened['heights'])))
+    check(f'{name}: page does not scroll sideways (expanded)',
+          js('return innerWidth===%d && document.documentElement.scrollWidth<=innerWidth' % width),
+          js('return [innerWidth,document.documentElement.scrollWidth]'))
+    if label == 'desktop':
+        check('desktop comparison: no horizontal scrolling in the table (expanded)',
+              opened['scroll'] <= opened['box'] + 1 and opened['width'] <= opened['box'] + 1, (opened['width'], opened['box'], opened['scroll']))
+        check(f'desktop comparison: every row is at most {MAX_ROW} px tall (expanded)', max(opened['heights']) <= MAX_ROW,
+              dict(rows=len(opened['heights']), max=max(opened['heights'])))
+        shot('wp10b-comparison-desktop-expanded')
+    else:
+        check('phone comparison: the table fits its box or scrolls inside it (expanded)',
+              opened['width'] <= opened['box'] + 1 or opened['scrolls'], (opened['width'], opened['box'], opened['scroll'], opened['scrolls']))
+        # the caller screenshots the phone frame, so wp10-comparison-phone.png shows this expanded state
+
+
 def run(m):
     def js(script):
         return m.execute_script(script, sandbox=None)
@@ -124,8 +183,7 @@ def run(m):
     shot('wp10-main-desktop-panel')
     m.find_element(By.ID, 'close').click()
     js('document.getElementById("view").value="comparison";document.getElementById("view").dispatchEvent(new Event("change"))')
-    check('desktop: comparison view page does not scroll sideways', js('return document.documentElement.scrollWidth<=innerWidth'))
-    shot('wp10-comparison-desktop')
+    comparison_checks(m, js, shot, 'desktop', 1400)
 
     # ---- phone, 390 px: a 390 px iframe gives an exact phone viewport (Firefox clamps desktop windows)
     harness = ROOT / 'map/phone-harness.html'
@@ -141,7 +199,10 @@ def run(m):
             check(f'phone {view}: page does not scroll sideways',
                   js('return innerWidth===390 && document.documentElement.scrollWidth<=innerWidth'),
                   js('return [innerWidth,document.documentElement.scrollWidth]'))
-            check(f'phone {view}: tables scroll inside their own box', js('return !!document.querySelector(".view-scroll")'))
+            if view == 'main':
+                check('phone main: tables scroll inside their own box', js('return !!document.querySelector(".view-scroll")'))
+            else:
+                comparison_checks(m, js, None, 'phone', 390)
             m.switch_to_frame()
             (SHOTS / f'wp10-{view}-phone.png').write_bytes(base64.b64decode(m.screenshot(element=frame)))
     finally:

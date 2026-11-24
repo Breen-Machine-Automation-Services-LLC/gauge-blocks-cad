@@ -1,7 +1,7 @@
 // Test harness for tests/test_compact_map.py. Runs the page script from a built map page
 // against a minimal fake DOM (no browser) and prints one JSON document.
 //   node compact_map_harness.js <page.html> <scenario.json>
-// scenario: {view, mode?, writer?, resaver?, hover?: [attrs...], click?: [attrs...]}
+// scenario: {view, mode?, writer?, resaver?, expand?: [attrs...], hover?: [attrs...], click?: [attrs...]}
 // hover/click entries are attribute dicts of an element the page rendered; each is turned into a
 // fake element that answers matches()/closest()/dataset/getAttribute from those attributes, then
 // the page's own document-level mouseover, focusin and click listeners are fired on it.
@@ -90,7 +90,17 @@ if (scenario.view === 'comparison') {
   $('writer').value = scenario.writer; $('writer').onchange();
   $('resaver').value = scenario.resaver; $('resaver').onchange();
 }
+// expand: attribute dicts of group toggle buttons (taken from a render of the same view); each is
+// clicked in order with the page's own click listener, and #views is recorded after every click
+// (the page must re-render #views.innerHTML when a group opens or closes). Hover and click
+// scenarios run after the expansions, so a viewCells index taken from the expanded render holds.
+const afterExpand = [];
+for (const attrs of scenario.expand || []) {
+  fire('click', attrs);
+  afterExpand.push($('views').innerHTML);
+}
 const out = {
+  after_expand: afterExpand,
   views: $('views').innerHTML, grid: $('grid').innerHTML, summary_html: $('summary').innerHTML,
   summary_text: $('summary').textContent, legend_html: $('legend').innerHTML, method: $('method').textContent,
   instructions: $('instructions').textContent,

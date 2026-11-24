@@ -5,7 +5,7 @@
 :root{color-scheme:light;--surface:#fcfcfb;--ink:#252524;--muted:#626260;--line:#d2d2ce;--neutral:#deded9;--empty:#efefec;--good:#0ca30c;--warning:#fab219;--serious:#ec835a;--critical:#d03b3b;font:13px system-ui,sans-serif;background:var(--surface);color:var(--ink)}
 @media(prefers-color-scheme:dark){:root{color-scheme:dark;--surface:#1a1a19;--ink:#f2f2ed;--muted:#b9b9b2;--line:#55554f;--neutral:#60605a;--empty:#30302d}}
 *{box-sizing:border-box}body{margin:0;padding:22px 28px;max-width:1400px}h1{font-size:25px;letter-spacing:-.6px;margin:0 0 6px}p{margin:5px 0;color:var(--muted)}button,select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:5px 8px}button{cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}a{color:inherit}#filters{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:16px 0 10px}label{display:flex;gap:6px;align-items:center}#summary,#legend{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0}#legend{color:var(--muted);font-size:12px}#summary span,#legend span{display:flex;align-items:center;gap:5px}.swatch,.cell{width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #555;border-radius:2px;font:11px/1 system-ui;color:#171717;padding:0;position:relative;flex-shrink:0}.kept,.covered{background:var(--good)}.lost-in-writer-or-converter,.changed,.partial{background:var(--warning)}.lost{background:var(--serious)}.unreadable-by-reader,.reader_error,.refused{background:var(--critical)}.source-not-readable,.not_scored,.not-run,.blocked{background:var(--neutral);color:var(--ink)}.no-source{background:var(--empty);color:var(--ink);border-style:dotted}.not-applicable{background:var(--empty);color:var(--muted);border-color:var(--line)}.planned{background:var(--surface);color:var(--ink);border-style:dashed}.wanted{background:repeating-linear-gradient(135deg,var(--empty) 0 2px,var(--surface) 2px 4px);color:var(--ink)}.self:after{content:"";position:absolute;right:-1px;top:-1px;border-top:5px solid var(--ink);border-left:5px solid transparent}.cell:hover{outline:2px solid var(--ink);z-index:1}#gridbox{overflow:auto;max-width:100%;border:1px solid var(--line);border-radius:5px;padding:8px;width:fit-content}table{border-collapse:separate;border-spacing:2px 2px}th{font-weight:500;text-align:left}thead th{font-size:10px;color:var(--muted);text-align:center}th.rowlabel{min-width:300px;max-width:300px;position:sticky;left:0;background:var(--surface);z-index:2;text-align:left}tbody th{font-size:12px;padding:0;height:16px;line-height:16px}tbody td{padding:0;height:16px;line-height:0}thead .group{border-bottom:1px solid var(--line);font-size:12px;padding-bottom:4px}.topic{border:0;padding:0;background:none;font-weight:600;font-size:12px;line-height:16px;height:16px;text-align:left;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}.feature{display:block;padding-left:16px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.boundary{border-left:8px solid var(--surface)}#tooltip{position:fixed;max-width:min(360px,calc(100vw - 16px));z-index:10;background:var(--ink);color:var(--surface);padding:10px;border-radius:5px;white-space:pre-line;pointer-events:none;font-size:12px}#panel{position:fixed;right:0;top:0;height:100dvh;width:min(480px,100%);background:var(--surface);border-left:1px solid var(--line);box-shadow:-10px 0 40px #0003;padding:20px;overflow:auto;z-index:20}#panel h2{font-size:19px;padding-right:65px}#panel h3{font-size:14px}#panel pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--empty);padding:8px;font:12px monospace}#panel a{overflow-wrap:anywhere}#panel li{margin:6px 0}#close{float:right}#texttable td{line-height:1.4;padding:5px;border-bottom:1px solid var(--line);min-width:95px}#texttable th{max-width:280px}small{color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){body{padding:16px 12px}h1{font-size:22px}#filters{gap:8px}th.rowlabel{min-width:210px;max-width:210px}.feature{max-width:210px}#summary{gap:9px;font-size:12px}}
-.view-scroll{max-width:100%;overflow:auto;border:1px solid var(--line);border-radius:5px;width:fit-content}.view-table{border-spacing:2px}.view-table th,.view-table td{vertical-align:middle}.view-table thead th{padding:2px 5px}.view-table tbody th{white-space:nowrap;max-width:300px;overflow:hidden;text-overflow:ellipsis}.view-table tbody td{text-align:center;padding:0 2px}.view-table small{display:block;color:var(--muted)}.main-table{min-width:720px}.main-table th:first-child{min-width:170px;text-align:left}.main-table td{min-width:24px}.view-table h2{font-size:18px}select{max-width:100%}label{max-width:100%}#view{min-width:0}@media(max-width:600px){#filters label{flex-wrap:wrap}#view{max-width:320px}}
+.view-scroll{max-width:100%;overflow:auto;border:1px solid var(--line);border-radius:5px;width:fit-content}.view-table{border-spacing:2px}.view-table th,.view-table td{vertical-align:middle}.view-table thead th{padding:2px 5px}.view-table tbody th{white-space:nowrap;max-width:300px;overflow:hidden;text-overflow:ellipsis}.view-table tbody td{text-align:center;padding:0 2px}.view-table small{display:block;color:var(--muted)}.comparison-table .topic small{display:inline}.comparison-table tbody th{width:300px;max-width:300px}.main-table{min-width:720px}.main-table th:first-child{min-width:170px;text-align:left}.main-table td{min-width:24px}.view-table h2{font-size:18px}select{max-width:100%}label{max-width:100%}#view{min-width:0}@media(max-width:600px){#filters label{flex-wrap:wrap}#view{max-width:320px}}
 </style>
 <h1>BMAS Gauge Blocks: CAD</h1><p>Open DWG and DXF interchange test files</p>
 <div id="filters"><label>View <select id="view"><option value="main" selected>Standard and programs</option><option value="comparison">Program A to program B</option><option value="detailed">Detailed coverage and compatibility</option></select></label><label id="mode-label">Detail mode <select id="mode"><option value="coverage">Coverage</option><option value="compatibility">Compatibility</option></select></label><label id="writer-label">Writer <select id="writer"></select></label><label id="resaver-label">Resaver <select id="resaver"></select></label><label>Program pair <select id="pair"><option value="all">All pairs</option></select></label><label>Format <select id="format"><option value="all">All formats</option><option>DWG</option><option>DXF</option></select></label><label>Status <select id="status"></select></label><button id="tabletoggle" aria-pressed="false">Table view</button></div>
@@ -36,11 +36,16 @@ function publicEvidence(value){
  return value;
 }
 function square(s,attributes,self=false){return `<button class="cell ${s.replaceAll(' ','-')}${self?' self':''}" ${attributes}>${icons[s]}</button>`}
+const palette={measured:'kept','native drawing':'kept',included:'kept',present:'kept',future:'wanted',omitted:'not run','not measured':'not run','no native drawing':'not run','not scored':'not_scored','lost by converter':'changed'};
+const squareStatus=s=>palette[s]||s;
 function viewButton(cell){
  const n=viewCells.push(cell)-1;
- const palette={measured:'kept','native drawing':'kept',included:'kept',present:'kept',future:'wanted',omitted:'not run','not measured':'not run','no native drawing':'not run','not scored':'not_scored','lost by converter':'changed'};
- const status=palette[cell.status]||cell.status;
+ const status=squareStatus(cell.status);
  return square(status,`data-evidence="${n}" aria-label="${esc(cell.label)}"`);
+}
+function topicButton(name,key,count){
+ const open=expanded.has(key);
+ return `<button class="topic" title="${esc(name)}" data-topic="${key}" aria-expanded="${open}">${open?'▾':'▸'} ${esc(name)} <small>(${count} feature${count===1?'':'s'})</small></button>`;
 }
 function renderViews(){
  viewCells=[]; $('instructions').textContent='Select a cell for the fields, files and statuses behind its label, then follow its link to detailed coverage and compatibility.'; $('views').hidden=false;$('gridbox').hidden=true;
@@ -51,6 +56,7 @@ function renderViews(){
  let html='<p><a href="#detailed">Detailed coverage and compatibility →</a></p>';
  if(!comparison){
  const data=DATA.main_view;
+ $('legend').innerHTML+=['included','partial','present','future','omitted'].map(s=>`<span>${swatch(squareStatus(s))} Dataset: ${s}</span>`).join('');
  for(const group of data.groups){
  html+=`<h2>${esc({entity:'Entities',object:'Objects',table:'Symbol tables',header:'Header variables'}[group.kind])}</h2><div class="view-scroll" tabindex="0"><table class="view-table main-table"><thead><tr><th>Standard item</th><th>Dataset</th>${data.programs.map(p=>`<th colspan="3">${esc(p.name)}${p.shared_engine?'<small>ODA library</small>':''}</th>`).join('')}</tr><tr><th></th><th></th>${data.programs.map(()=>'<th>R</th><th>W</th><th>T</th>').join('')}</tr></thead><tbody>`;
  for(const row of group.rows)html+=`<tr><th><a href="${esc(row.reference_url)}">${esc(row.name)}</a></th><td>${viewButton(row.dataset)}</td>${data.programs.map(p=>['reads','writes','round_trip'].map(k=>`<td>${viewButton(row.programs[p.id][k])}</td>`).join('')).join('')}</tr>`;
@@ -63,9 +69,23 @@ function renderViews(){
  if(!data){html+='<p>? not measured: this pair is not declared.</p>'}else{
  const summary=data.summary;
  $('summary').textContent=`${summary.label}: ${summary.kept} kept, ${summary.changed} changed, ${summary.lost} lost, ${summary.refused} refused, ${summary.source_not_readable} source not readable, ${summary.writer_or_converter} writer or converter, ${summary.unreadable_by_reader} unreadable by reader, ${summary.not_measured} not measured`;
- for(const group of data.groups){html+=`<h2>${esc(group.name)}</h2><div class="view-scroll" tabindex="0"><table class="view-table"><thead><tr><th>Feature</th><th>Round trip</th><th>Native reading path</th></tr></thead><tbody>`;
- for(const row of group.rows){const c=row.round_trip,notes=[row.intent_id,'Writer native drawing: '+(row.native?'yes':'no'),'Reader / converter: '+([...new Set(evidence(c).map(r=>(r.reader||'No reader recorded')+(r.converter?' / '+r.converter:'')))].join('; ')||'not measured')+(c.shared_engine?' · shared engine':'')];html+=`<tr><th>${esc(row.feature)}</th><td>${viewButton({...c,notes})}</td><td>${viewButton({...row.native_read,notes})}</td></tr>`}
- html+='</tbody></table></div>'}
+ html+='<div class="view-scroll" tabindex="0"><table class="view-table comparison-table"><thead><tr><th>Standard item / feature</th><th title="Round trip">Round trip</th><th title="Native reading path">Native read</th></tr></thead><tbody>';
+ data.groups.forEach((group,gi)=>{
+ const key='comparison:'+$('writer').value+'__'+$('resaver').value+':'+gi,open=expanded.has(key);
+ html+=`<tr><th>${topicButton(group.name,key,group.rows.length)}</th>`;
+ for(const column of ['round_trip','native_read']){
+ const status=worst(group.rows.map(r=>squareStatus(r[column].status)));
+ const cell=group.rows.find(r=>squareStatus(r[column].status)===status)[column];
+ const columnName=column==='round_trip'?'Round trip':'Native reading path';
+ html+=`<td>${viewButton({...cell,label:group.name+' / '+columnName+': '+cell.label})}</td>`;
+ }
+ html+='</tr>';
+ if(open){
+ for(const row of group.rows){const c=row.round_trip,notes=[row.intent_id,'Writer native drawing: '+(row.native?'yes':'no'),'Reader / converter: '+([...new Set(evidence(c).map(r=>(r.reader||'No reader recorded')+(r.converter?' / '+r.converter:'')))].join('; ')||'not measured')+(c.shared_engine?' · shared engine':'')];html+=`<tr><th><span class="feature" title="${esc(row.feature)}">${esc(row.feature)}</span></th><td>${viewButton({...c,notes})}</td><td>${viewButton({...row.native_read,notes})}</td></tr>`}
+ }
+ });
+ html+='</tbody></table></div>';
+
  }
  $('method').textContent='Counts in each row describe measured format/version/encoding slots, including not scored slots. The summary counts features. Source provenance and the reading path determine attribution. Source not readable, writer or converter, and unreadable by reader have separate summary buckets. DXF read directly supplies headline fidelity counts.';
  }
@@ -128,7 +148,7 @@ function render(){
   entries.forEach((f,fi)=>{
    const visible=cols.filter(({k})=>$('status').value==='all'||state(f.cells[k])===$('status').value);
    if(!visible.length && !(f.topic && t.features.some(ff=>cols.some(({k})=>state(ff.cells[k])===$('status').value))))return;
-   let label=f.topic?`<button class="topic" title="${esc(f.name)}" data-topic="${ti}" aria-expanded="${expanded.has(ti)}">${expanded.has(ti)?'▾':'▸'} ${esc(f.name)} <small>(${t.features.length} features)</small></button>`:`<span class="feature" title="${esc(f.name)}">${esc(f.name)}</span>`;
+   let label=f.topic?topicButton(f.name,ti,t.features.length):`<span class="feature" title="${esc(f.name)}">${esc(f.name)}</span>`;
    body+=`<tr><th class="rowlabel" scope="row">${label}</th>`;text+=`<tr><th scope="row">${esc(t.title===f.name?t.title:t.title+' / '+f.name)}</th>`;
    cols.forEach(({c,k},ci)=>{let cell=f.cells[k],s=state(cell),matches=$('status').value==='all'||s===$('status').value, self=view==='compatibility'&&runs(cell).some(r=>r.self), key=`${ti},${fi},${k}`;
     const title=`${f.name} • ${c.join(' ')} • ${view==='coverage'?'dataset':$('pair').selectedOptions[0].text} • ${detailDisplay(s)}${self?' • shared engine':''}`;
@@ -154,7 +174,7 @@ for(const id of ['view','mode','pair','format','status'])$(id).onchange=()=>{if(
   t={...t,features:detailFeatures(t)};
   if(detailFilter?.get("item")){const item=DATA.main_view.groups.filter(g=>!detailFilter.get("kind")||g.kind===detailFilter.get("kind")).flatMap(g=>g.rows).find(r=>r.name===detailFilter.get("item"));if(item&&!item.dataset.intents.includes(t.id))return;}if(t.features.some(f=>f.cells.some(c=>state(c)===$('status').value)))expanded.add(ti)});render()};
 $('tabletoggle').onclick=()=>{tableMode=!tableMode;$('tabletoggle').setAttribute('aria-pressed',tableMode);$('tabletoggle').textContent=tableMode?'Heatmap view':'Table view';render()};
-document.addEventListener('click',e=>{const topic=e.target.closest('[data-topic]'),cell=e.target.closest('[data-cell]');if(topic){let n=+topic.dataset.topic;expanded.has(n)?expanded.delete(n):expanded.add(n);render()}if(cell)panel(cell)});
+document.addEventListener('click',e=>{const topic=e.target.closest('[data-topic]'),cell=e.target.closest('[data-cell]');if(topic){let n=$('view').value==='comparison'?topic.dataset.topic:+topic.dataset.topic;expanded.has(n)?expanded.delete(n):expanded.add(n);render()}if(cell)panel(cell)});
 document.addEventListener('mouseover',e=>{const cell=e.target.closest('[data-cell], [data-evidence]');if(cell)tooltip(cell)});document.addEventListener('focusin',e=>{if(e.target.matches('[data-cell], [data-evidence]'))tooltip(e.target)});document.addEventListener('mouseout',e=>{if(e.target.closest('[data-cell], [data-evidence]'))$('tooltip').hidden=true});
 $('close').onclick=()=>{$('panel').hidden=true;lastCell?.focus()};document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('panel').hidden=true;$('tooltip').hidden=true;lastCell?.focus()}});
 initializeViews();resetStatus();render();

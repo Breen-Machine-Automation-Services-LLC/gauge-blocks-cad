@@ -15,6 +15,19 @@ Contract these tests rely on (the implementer may choose everything else):
   * the page's own document-level mouseover, focusin and click listeners must fill the shared
     tooltip (#tooltip) and the evidence panel (#panel > #details) for those buttons.
 Requirement 6 (layout) is checked by map/compact_check.py in Firefox, not here.
+
+WP10b (spec: wp10-compact-map/SPEC-b.md; tests named test_b_req<N>_...) adds, for the comparison view:
+  * #views holds exactly one <table>; its <tbody> has one group row per standard item, in DATA order:
+    a row header <th> holding a toggle <button class="topic" aria-expanded="false|true"> whose text has
+    the item name and "(N features)", then two <td>, each with one square (<button class="cell ...">)
+    showing the worst status of the item's features in that column (round trip, native reading path);
+  * groups start collapsed; clicking a toggle (the page's own document click listener) re-renders
+    #views.innerHTML with that group's feature rows right after its group row (aria-expanded="true");
+    clicking again collapses it; a feature row is a <th> with the feature name and the same two squares
+    as before (hover and click on those squares work after the re-render);
+  * the last two <th> of the <thead> are the column headers: short plain text, full label in a title attribute;
+  * the main view's #legend has one swatch item per dataset status in DATA: a span with class "swatch" and
+    the status's class and icon, followed directly by a text label naming the status.
 """
 import html
 import importlib.util
@@ -91,11 +104,26 @@ def main_render(built):
 
 
 @pytest.fixture(scope='module')
-def comparison_renders(built):
+def comparison_collapsed(built):
+    """The comparison view as first shown: every group collapsed."""
     out = {}
     for pair in built['data']['pairs']:
         writer, resaver = pair.split('__')
         out[pair] = run_harness(built['page'], dict(view='comparison', writer=writer, resaver=resaver), built['tmp'])
+    return out
+
+
+@pytest.fixture(scope='module')
+def comparison_renders(built, comparison_collapsed):
+    """The comparison view with every group expanded (WP10b: groups start collapsed, so the feature rows
+    the WP10 tests look at exist only after the toggles are clicked). 'expand' is replayed by the
+    hover and click scenarios so the page's cell indexes match."""
+    out = {}
+    for pair, collapsed in comparison_collapsed.items():
+        writer, resaver = pair.split('__')
+        toggles = group_toggles(collapsed['views'])
+        out[pair] = run_harness(built['page'], dict(view='comparison', writer=writer, resaver=resaver, expand=toggles), built['tmp'])
+        out[pair]['expand'] = toggles
     return out
 
 
@@ -198,11 +226,21 @@ def main_cells(built, render):
     return out
 
 
+def is_group_row(row):
+    return any('topic' in classes(b) for c in row['cells'] for b in c['buttons'])
+
+
+def group_toggles(markup):
+    """Attribute dicts of every group toggle button in a comparison render, in page order."""
+    return [b['attrs'] for r in body_rows(parse_tables(markup)) for c in r['cells'] for b in c['buttons'] if 'topic' in classes(b)]
+
+
 def comparison_cells(built, renders):
+    """Cell buttons of every FEATURE row (group rows excluded); the renders must be expanded."""
     out = []
     for pair, render in renders.items():
         rows = [r for g in built['data']['comparisons'][pair]['groups'] for r in g['rows']]
-        html_rows = body_rows(parse_tables(render['views']))
+        html_rows = [r for r in body_rows(parse_tables(render['views'])) if not is_group_row(r)]
         assert len(html_rows) == len(rows), (pair, len(html_rows), len(rows))
         for row, html_row in zip(rows, html_rows):
             holders = [c for c in html_row['cells'] if c['buttons']]
@@ -217,9 +255,9 @@ def hover_main(built, cells):
     return run_harness(built['page'], dict(view='main', hover=[b['attrs'] for *_, b, _ in cells]), built['tmp'])['tooltips']
 
 
-def hover_comparison(built, pair, buttons):
+def hover_comparison(built, pair, buttons, expand):
     writer, resaver = pair.split('__')
-    return run_harness(built['page'], dict(view='comparison', writer=writer, resaver=resaver,
+    return run_harness(built['page'], dict(view='comparison', writer=writer, resaver=resaver, expand=expand,
                                            hover=[b['attrs'] for b in buttons]), built['tmp'])['tooltips']
 
 
@@ -267,7 +305,7 @@ def test_req1_comparison_cells_tooltip_carries_full_label_on_hover_and_focus(bui
     bad = []
     for pair in comparison_renders:
         cells = [c for c in comparison_cells(built, {pair: comparison_renders[pair]})]
-        tips = hover_comparison(built, pair, [c[3] for c in cells])
+        tips = hover_comparison(built, pair, [c[3] for c in cells], comparison_renders[pair]['expand'])
         for (_, row, td, button, cell), tip in zip(cells, tips):
             for how in ('hover', 'focus'):
                 if cell['label'] not in tip[how]:
@@ -497,3 +535,220 @@ def test_req8_built_page_is_within_budget(built):
 
 def test_req8_committed_page_is_within_budget():
     assert (ROOT / 'map/index.html').stat().st_size <= SIZE_LIMIT
+
+
+# ------------------------------------------------ WP10b requirement 1: one grid, grouped like the detailed view
+
+# The detailed view's worst-status rule, copied from map/template.html (`rank`, `worst`, and the palette
+# in viewButton that maps a data status to the square's class). A group square shows the highest-ranked
+# status of its features; the first feature wins a tie, so any tied status is accepted here.
+RANK = {'source not readable': 1.2, 'lost in writer or converter': 1.5, 'unreadable by reader': 1.8, 'reader_error': 1.7,
+        'not applicable': -1, 'no source': -0.5, 'not_scored': 1, 'kept': 0, 'covered': 0, 'planned': 2, 'wanted': 3,
+        'not run': 1, 'partial': 1, 'changed': 2, 'lost': 3, 'blocked': 4, 'refused': 4}
+PALETTE = {'measured': 'kept', 'native drawing': 'kept', 'included': 'kept', 'present': 'kept', 'future': 'wanted',
+           'omitted': 'not run', 'not measured': 'not run', 'no native drawing': 'not run', 'not scored': 'not_scored',
+           'lost by converter': 'changed'}
+
+
+def square_status(status):
+    return PALETTE.get(status, status)
+
+
+def worst_statuses(statuses):
+    """The set of square statuses a group square may show for these feature statuses."""
+    mapped = [square_status(s) for s in statuses]
+    top = max(RANK[s] for s in mapped)
+    return {s for s in mapped if RANK[s] == top}
+
+
+def class_token(square):
+    return square.replace(' ', '-')
+
+
+def one_table(markup, where):
+    tables = parse_tables(markup)
+    assert len(tables) == 1 and markup.count('<table') == 1, (where, 'the comparison view is one table', len(tables), markup.count('<table'))
+    return tables[0]
+
+
+def comparison_groups(built, pair):
+    return built['data']['comparisons'][pair]['groups']
+
+
+def test_b_req1_comparison_view_is_one_table(comparison_collapsed, comparison_renders):
+    for renders in (comparison_collapsed, comparison_renders):
+        for pair, render in renders.items():
+            one_table(render['views'], pair)
+
+
+def test_b_req1_one_group_row_per_standard_item_with_feature_count(built, comparison_collapsed):
+    for pair, render in comparison_collapsed.items():
+        groups = comparison_groups(built, pair)
+        rows = body_rows([one_table(render['views'], pair)])
+        assert len(rows) == len(groups), (pair, 'groups start collapsed: one body row per standard item', len(rows), len(groups))
+        for group, row in zip(groups, rows):
+            where = (pair, group['name'])
+            assert is_group_row(row), (where, 'every row is a group row')
+            toggles = [b for c in row['cells'] for b in c['buttons'] if 'topic' in classes(b)]
+            assert len(toggles) == 1 and row['cells'][0]['tag'] == 'th' and toggles[0] in row['cells'][0]['buttons'], where
+            toggle = toggles[0]
+            assert toggle['attrs'].get('aria-expanded') == 'false', (where, toggle['attrs'])
+            text = ' '.join(toggle['pieces'])
+            assert group['name'] in text, (where, text)
+            assert re.search(rf'\b{len(group["rows"])}\s+features?\b', text), (where, len(group['rows']), text)
+            squares = [b for c in row['cells'][1:] for b in c['buttons']]
+            assert len(squares) == 2 and all('cell' in classes(b) for b in squares), (where, 'two squares: round trip, native reading path')
+
+
+def test_b_req1_group_squares_show_the_worst_feature_status(built, comparison_collapsed):
+    differs_from_first = 0
+    for pair, render in comparison_collapsed.items():
+        icons_table = render['icons']
+        rows = body_rows([one_table(render['views'], pair)])
+        for group, row in zip(comparison_groups(built, pair), rows):
+            squares = [b for c in row['cells'][1:] for b in c['buttons']]
+            for key, button in zip(('round_trip', 'native_read'), squares):
+                statuses = [r[key]['status'] for r in group['rows']]
+                allowed = worst_statuses(statuses)
+                differs_from_first += square_status(statuses[0]) not in allowed
+                where = (pair, group['name'], key, statuses)
+                assert 'cell' in classes(button), where
+                assert any(class_token(s) in classes(button) for s in allowed), (where, sorted(allowed), classes(button))
+                assert glyph(button) in {icons_table[s] for s in allowed} and 1 <= len(glyph(button)) <= 2, (where, glyph(button))
+                assert not re.search(r'[A-Za-z0-9]', glyph(button)), where
+                assert button['attrs'].get('aria-label') or button['attrs'].get('title'), (where, 'the square carries its label')
+    assert differs_from_first, 'the data has groups whose worst status is not the first feature status (the test must discriminate)'
+
+
+def feature_rows_after(rows, index, count):
+    return rows[index + 1:index + 1 + count]
+
+
+def test_b_req1_expanding_a_group_shows_its_feature_rows_and_collapses_again(built, comparison_collapsed):
+    pair = next(iter(comparison_collapsed))
+    writer, resaver = pair.split('__')
+    toggles = group_toggles(comparison_collapsed[pair]['views'])
+    groups = comparison_groups(built, pair)
+    index = next(i for i, g in enumerate(groups) if len(g['rows']) >= 2 and i > 0)
+    run = run_harness(built['page'], dict(view='comparison', writer=writer, resaver=resaver,
+                                          expand=[toggles[index], toggles[index]]), built['tmp'])
+    opened, closed = run['after_expand']
+    rows = body_rows([one_table(opened, pair)])
+    group, count = groups[index], len(groups[index]['rows'])
+    assert len(rows) == len(groups) + count, ('only the clicked group opens', len(rows), len(groups), count)
+    assert is_group_row(rows[index]) and rows[index]['cells'][0]['buttons'][0]['attrs'].get('aria-expanded') == 'true'
+    features = feature_rows_after(rows, index, count)
+    assert [r['cells'][0]['tag'] for r in features] == ['th'] * count
+    assert [' '.join(r['cells'][0]['pieces']) for r in features] == [r['feature'] for r in group['rows']]
+    assert not any(is_group_row(r) for r in features), 'feature rows follow their group row directly'
+    for r in features:
+        squares = [b for c in r['cells'][1:] for b in c['buttons']]
+        assert len(squares) == 2 and all('cell' in classes(b) for b in squares), r['cells'][0]['pieces']
+    assert all(is_group_row(r) for i, r in enumerate(rows) if i <= index or i > index + count)
+    assert all(r['cells'][0]['buttons'][0]['attrs'].get('aria-expanded') == 'false'
+               for i, r in enumerate(rows) if is_group_row(r) and i != index)
+    again = body_rows([one_table(closed, pair)])
+    assert len(again) == len(groups) and all(is_group_row(r) for r in again), 'a second click collapses the group'
+    assert again[index]['cells'][0]['buttons'][0]['attrs'].get('aria-expanded') == 'false'
+
+
+def test_b_req1_expanding_every_group_shows_every_feature_row_in_order(built, comparison_renders):
+    for pair, render in comparison_renders.items():
+        rows = body_rows([one_table(render['views'], pair)])
+        expected = []
+        for group in comparison_groups(built, pair):
+            expected.append(('group', group['name']))
+            expected += [('feature', r['feature']) for r in group['rows']]
+        got = [('group', ' '.join(r['cells'][0]['buttons'][0]['pieces'])) if is_group_row(r) else ('feature', ' '.join(r['cells'][0]['pieces'])) for r in rows]
+        assert len(got) == len(expected), (pair, len(got), len(expected))
+        for (kind, name), (got_kind, text) in zip(expected, got):
+            assert kind == got_kind and (name in text if kind == 'group' else name == text), (pair, kind, name, text)
+        assert all(r['cells'][0]['buttons'][0]['attrs'].get('aria-expanded') == 'true' for r in rows if is_group_row(r))
+
+
+def test_b_req1_comparison_view_has_no_other_table_elements(comparison_collapsed, comparison_renders):
+    for renders in (comparison_collapsed, comparison_renders):
+        for pair, render in renders.items():
+            markup = render['views']
+            assert markup.count('<table') == 1 and markup.count('</table>') == 1, pair
+            assert markup.count('<tbody') == 1 and markup.count('<thead') == 1, (pair, 'one head and one body, no per-item tables')
+
+
+# ------------------------------------------------ WP10b requirement 2: same columns, plain headers
+
+def comparison_headers(markup):
+    """(visible text, whole <th> markup) for the last two header cells of the comparison table."""
+    head = markup[markup.index('<thead'):markup.index('</thead>')]
+    cells = re.findall(r'<th\b[^>]*>.*?</th>', head, re.S)
+    assert len(cells) >= 3, head[:300]
+    return [(plain_text(c), c) for c in cells[-2:]]
+
+
+def test_b_req2_headers_are_short_plain_words(comparison_collapsed, comparison_renders):
+    for renders in (comparison_collapsed, comparison_renders):
+        for pair, render in renders.items():
+            (first, _), (second, _) = comparison_headers(render['views'])
+            for text in (first, second):
+                assert 3 <= len(text) <= 16 and re.fullmatch(r"[A-Za-z][A-Za-z -]*", text), (pair, text)
+            assert 'round' in first.lower(), (pair, first)
+            assert 'native' in second.lower() and 'read' in second.lower(), (pair, second)
+            assert first != second
+
+
+def test_b_req2_headers_carry_the_full_label_in_the_tooltip(comparison_collapsed):
+    for pair, render in comparison_collapsed.items():
+        (_, first), (_, second) = comparison_headers(render['views'])
+        titles = [re.search(r'\btitle="([^"]*)"', c) for c in (first, second)]
+        assert all(titles), (pair, 'each header has a title attribute')
+        assert re.search(r'round trip', html.unescape(titles[0].group(1)), re.I), titles[0].group(1)
+        assert re.search(r'native reading path', html.unescape(titles[1].group(1)), re.I), titles[1].group(1)
+
+
+def test_b_req2_columns_stay_round_trip_then_native_reading_path(built, comparison_renders):
+    for pair, render in comparison_renders.items():
+        rows = [r for r in body_rows([one_table(render['views'], pair)]) if not is_group_row(r)]
+        data_rows = [r for g in comparison_groups(built, pair) for r in g['rows']]
+        buttons = [[b for c in r['cells'][1:] for b in c['buttons']] for r in rows]
+        assert all(len(b) == 2 for b in buttons), pair
+        tips = hover_comparison(built, pair, [b for pair_ in buttons for b in pair_], render['expand'])
+        for data_row, (round_trip, native), (tip_a, tip_b) in zip(data_rows, buttons, zip(tips[0::2], tips[1::2])):
+            assert data_row['round_trip']['label'] in tip_a['hover'], (pair, data_row['feature'], 'first column is round trip')
+            assert data_row['native_read']['label'] in tip_b['hover'], (pair, data_row['feature'], 'second column is native reading path')
+
+
+# ------------------------------------------------ WP10b requirement 3: dataset marks in the legend
+
+DATASET_WORDS = {'included': ('included',), 'partial': ('partial',), 'present': ('present',), 'future': ('future', 'wanted'),
+                 'omitted': ('omitted',)}
+
+
+def legend_items(markup):
+    return [(set(m.group(1).split()), m.group(2).strip(), m.group(3).strip().lower())
+            for m in re.finditer(r'<span class="swatch ([^"]*)"[^>]*>([^<]*)</span>([^<]*)', markup)]
+
+
+def test_b_req3_main_legend_explains_every_dataset_status_with_its_square(built, main_render):
+    statuses = {r['dataset']['status'] for g in built['data']['main_view']['groups'] for r in g['rows']}
+    assert statuses >= {'included', 'partial', 'present', 'future', 'omitted'}, statuses
+    items = legend_items(main_render['legend_html'])
+    icons_table = main_render['icons']
+    missing = []
+    for status in sorted(statuses):
+        square = square_status(status)
+        words = DATASET_WORDS[status]
+        found = any(class_token(square) in cls and icon == icons_table[square] and any(w in label for w in words)
+                    for cls, icon, label in items)
+        if not found:
+            missing.append((status, class_token(square), icons_table[square], words))
+    assert not missing, (missing, items)
+
+
+def test_b_req3_dataset_legend_squares_match_the_squares_the_column_uses(built, main_render):
+    cells = [c for c in main_cells(built, main_render) if c[1] == 0]
+    used = {c[4]['status']: (classes(c[3]), glyph(c[3])) for c in cells}
+    items = legend_items(main_render['legend_html'])
+    for status, (cls, mark) in used.items():
+        words = DATASET_WORDS[status]
+        match = [(c, i) for c, i, label in items if any(w in label for w in words)]
+        assert match, (status, 'no legend item names this dataset status')
+        assert any(class_token(square_status(status)) in c and i == mark and class_token(square_status(status)) in cls for c, i in match), (status, match, cls, mark)
