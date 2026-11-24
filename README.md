@@ -88,18 +88,47 @@ To add a feature, drawing, or program, start with [CONTRIBUTING.md](CONTRIBUTING
 
 ## What is covered
 
-Our initial focus is 2D drafting for industrial automation schematics and panel layouts. We'll add 3D and other domains in the future.
+Our initial focus is 2D drafting for industrial automation schematics and panel layouts. Broader 3D coverage and other domains remain [planned work](DESIGN.md#later-releases).
 Formats include DWG, ASCII DXF, and binary DXF, with R12 inputs and versions 2000, 2004, 2007, 2010, 2013, and 2018 where supported.
 Features include text, geometry, blocks, attributes, dimensions, layouts, images, tables, regions, and background settings such as layers, styles, and metadata.
-See the [coverage table](COVERAGE.md) for details and planned work.
+See the [coverage table](COVERAGE.md) for details: **measured** means a file exists and every declared writable pair has results, whether or not they show loss; **partly measured** means some results are missing.
 
 ## Results
 
-Explore the [interactive map](map/index.html) or inspect `results/` for measurements.
-In [the ezdxf-to-BricsCAD results](results/cross_ezdxf__bricscad_checks.json), **97.4% of measured DXF fields match their intents after BricsCAD resaves ezdxf drawings**, read directly by ezdxf 1.4.4.
-This includes ASCII and binary DXF; it is a field count, not a drawing pass rate.
-BricsCAD and ODA File Converter use the same DWG library, so agreement between them is not independent confirmation.
-CADCraft, an open-source CAD program, is also measured as a resaver. See [open items](OPEN-ITEMS.md) for observations needing follow-up.
+Each program re-saves drawings written by another program; ezdxf 1.4.4 compares its fields (each value it reads, such as a text rotation) with the drawing's intent.
+A result tells you whether a feature survives a round trip through that program, as ezdxf reads it.
+
+For DXF read directly, with no DWG step, here is how much each re-saving program keeps; each program's counts cover only files it can write (CADCraft writes neither R12 nor binary DXF), so the rows are not a ranking:
+
+| Re-saving program | Measured features kept in every file | Files keeping every measured field |
+| --- | ---: | ---: |
+| BricsCAD | 166 of 173 | 88% (412 of 466) |
+| CADCraft | 167 of 177 | 74% (88 of 119) |
+| ODA File Converter | 169 of 177 | 88% (225 of 255) |
+
+Sources: the [ezdxf-to-BricsCAD](results/cross_ezdxf__bricscad_checks.json), [ODA-to-BricsCAD](results/cross_oda__bricscad_checks.json), [ezdxf-to-CADCraft](results/cross_ezdxf__cadcraft_checks.json), [BricsCAD-to-CADCraft](results/cross_bricscad__cadcraft_checks.json), [ezdxf-to-ODA](results/cross_ezdxf__oda_checks.json), and [BricsCAD-to-ODA](results/cross_bricscad__oda_checks.json) result files; counts combine every source program, DXF version and ASCII or binary file, and skip values the checker cannot score. They describe these drawings rather than full program support.
+A feature groups the values assigned to it by its intent and is kept only if every one of its scored values matches in every file. The file count also checks [identity values](DESIGN.md#identity-of-every-file), which identify the intent and its representation.
+
+Here is what you can answer today:
+
+- **Can your program read other programs' output and the standard's forms?** Partly: use [native drawings](native/) and the map's Reads columns. Reader-specific measurements are sparse. [AutoCAD drawing-load acceptance](OPEN-ITEMS.md#autocad-drawing-load-acceptance) remains unmeasured.
+- **Can other programs read your output?** The map's “Program A to program B” view shows round trips through the re-savers above. [An independent DWG engine](OPEN-ITEMS.md#independently-read-oda-written-dwg) is still missing.
+- **Does your program follow the standard?** The [standard inventory](standard/README.md) and “Standard and programs” view link tests to Reference items: 33 of 331 standard items have a tested property, and 7 more are tested in part. The inventory lists missing forms; these tests do not establish conformance.
+- **What does each program write for each feature?** Compare [native drawings](native/) from 2 writers and their provenance records. [More native writers](DESIGN.md#programs) and [alternative representations](DESIGN.md#later-releases), such as different encodings of center-justified text, remain gaps.
+- **Can you automatically check against read and write sets?** Partly: [drawings](native/), [intents](intent/), and the [checker](checker/check.py) give you a read set. The [compatible write set](#why-this-exists) has no derived manifest yet.
+
+A loss counts against a program only when the source drawing read cleanly. “Source not readable” means the source value did not match its intent; “lost in the DWG writer or converter” means the value survives in DXF but fails through DWG, leaving the writer and converter unresolved. Read failures are shown separately; [capability gaps](programs/CAPABILITIES.md), meaning formats a program does not write, are listed rather than counted as failures.
+
+### Limitations
+
+Read these before relying on a result: each is a way a result can be wrong. [OPEN-ITEMS.md](OPEN-ITEMS.md) tracks the work to close them.
+
+- **One reader judges every value.** Manfred Moitzi's [ezdxf](https://github.com/mozman/ezdxf) has been a strong foundation for this work: it writes the ezdxf version of every drawing from its intent, and it reads every saved file back, across every DXF version and encoding we test. Like any library, it doesn't yet cover every feature. Where we know ezdxf cannot read a feature, the map shows a failed read, meaning the other program's handling of that feature is unknown rather than lost. One example is 3D solid and region data in binary DXF written by BricsCAD at versions 2000 to 2010 ([details](OPEN-ITEMS.md#ezdxf-reads-of-bricscad-binary-dxf-acis-data-before-2013)). Gaps we have not found yet are not flagged.
+- **DWG is judged through a second program.** ezdxf does not read DWG, so another program opens each DWG file and saves it as DXF first: ODA File Converter for DWG written by BricsCAD or CADCraft, and BricsCAD for DWG written by ODA File Converter. A DWG result therefore reflects the writer and that conversion together.
+- **The two DWG programs share one library.** BricsCAD and ODA File Converter are both built on the Open Design Alliance's DWG library (long known as Teigha), and about three quarters of measured DWG rows are written and read inside it. When they agree, the library is consistent with itself; that does not tell you how a DWG program built on other code, such as AutoCAD, would read the same file.
+- **No AutoCAD results yet.** AutoCAD is the de facto reference for DWG and DXF. Until its results are added, BricsCAD, a commercial program built for AutoCAD compatibility, is the closest stand-in here.
+
+Explore the [map](map/index.html): “Standard and programs” separates reads, writes, and round trips; “Program A to program B” compares a pair; “Detailed coverage and compatibility” shows individual files and fields. You can inspect the evidence in [results/](results/) and follow the gaps in [OPEN-ITEMS.md](OPEN-ITEMS.md).
 
 ## Contributing and regenerating
 

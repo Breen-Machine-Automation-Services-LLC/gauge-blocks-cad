@@ -79,6 +79,8 @@ committed only when its digest or its program build changes.
 
 ## Later releases
 
+- First priority for the next release: AutoCAD as a measured program, the de facto reference for DWG and DXF.
+- Also first priority: a second, independent reader, LibreDWG, which reads DWG directly without the Open Design Alliance library, so results no longer rest on ezdxf alone or on a conversion step for DWG.
 - More than one representation per intent wherever several are acceptable.
 - A generator others can point at their own drawings to produce the full native and cross set from them.
 
