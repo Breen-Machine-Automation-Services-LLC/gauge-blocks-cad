@@ -52,7 +52,7 @@ def inputs(root):
 
 @pytest.mark.parametrize('source', [
     'generators/run_cross.py', 'generators/run_features.py',
-    'generators/run_bricscad.py', 'generators/run_independent.py',
+    'generators/run_bricscad.py',
     'checker/core.py', 'programs/adapters.py', 'regenerate.py',
     'generators/summarize_cross.py', 'generators/write_coverage.py',
 ])
@@ -312,7 +312,7 @@ DRAWING_MODULES = {
     'masters_ghijn.py',
 }
 EXCLUDED_MODULES = {
-    'run_bricscad.py', 'run_cross.py', 'run_features.py', 'run_independent.py',
+    'run_bricscad.py', 'run_cross.py', 'run_features.py',
     'summarize_cross.py', 'write_coverage.py',
 }
 

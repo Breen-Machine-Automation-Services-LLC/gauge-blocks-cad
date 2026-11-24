@@ -5,7 +5,22 @@ from datetime import datetime, timezone
 import json
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from checker.attribution import Attribution, outcome, counts, BUCKETS, reading_label
+from checker.attribution import Attribution, outcome, counts, BUCKETS, reading_label, display_program
+from checker.core import SAT_READ_CAUSE
+from generators.run_cross import gap_reason
+
+DISPLAY = {k: k.replace('_', ' ') for k in (
+    'reader_error', 'not_scored', 'partial', 'kept', 'changed', 'lost',
+    'refused', 'not run', 'not applicable', 'no source', 'planned', 'wanted', 'blocked',
+    'source not readable', 'lost in writer or converter', 'unreadable by reader',
+    'measured', 'not measured', 'native drawing', 'no native drawing', 'included',
+    'present', 'future', 'omitted', 'same', 'differs', 'absent', 'lost by converter')}
+DISPLAY.update(reader_error='read failed')
+COVERAGE_DISPLAY = {**{s: s for s in ('planned', 'wanted', 'blocked', 'no source', 'not applicable')},
+                    'covered': 'measured', 'partial': 'partly measured'}
+
+def display(status):
+    return DISPLAY.get(status, status.replace('_', ' '))
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSIONS = dict(zip(['R12','2000','2004','2007','2010','2013','2018'],
@@ -63,7 +78,7 @@ def _cell(status, item, program, evidence, label=None, pair=None, **extra):
     icons = {'kept': '✓', 'changed': '≠', 'lost': '−', 'refused': '×',
              'measured': '✓', 'native drawing': '✓', 'included': '✓', 'partial': '◐',
              'present': '□', 'future': '◇', 'omitted': '·'}
-    return dict(status=status, label=label or status, icon=icons.get(status, '?'),
+    return dict(status=status, label=label or display(status), icon=icons.get(status, '?'),
                 evidence=evidence, detail_link='#detailed?' + urlencode(query), **extra)
 
 
@@ -138,7 +153,7 @@ def comparison_rows(writer, resaver, root, _inputs=None):
                 native_rows = _feature_rows(intent, feature, native_by_intent[iid])
                 converter_evidence = attribution.native_converter(native_rows)
                 native_read = _cell('lost by converter' if converter_evidence else 'not measured', item, resaver, converter_evidence,
-                    'lost by converter: '+', '.join(sorted({r['converter'] for r in converter_evidence if r.get('converter')})) if converter_evidence else None)
+                    'lost by converter: '+', '.join(sorted({display_program(r['converter']) for r in converter_evidence if r.get('converter')})) if converter_evidence else None)
                 features.append(dict(intent_id=iid, feature=feature, native=native, native_read=native_read,
                                      round_trip=_cell(status, item, resaver, evidence, label,
                                                       pair, kept=kept, total=len(slots), shared_engine=shared,
@@ -201,18 +216,21 @@ def main_view_rows(root, _inputs=None):
                 kept, total = totals['kept'], totals['total']
                 status = _status(evidence) if total else 'not measured'
                 if total and kept == total:status = 'kept'
-                label = f'kept {kept} of {total}' if total else 'not measured'
+                label = f'kept {kept} of {total} measured feature' + ('s' if total != 1 else '') if total else 'not measured'
                 if status in ('source not readable','lost in writer or converter','unreadable by reader') or (total and len(set(measured))==1 and status!='kept'):
                     label += ' · '+reading_label(status, evidence)
                 public_errors = [r for r in reads if r.get('read_observation',{}).get('status')=='reader_error' or r['status']=='reader_error']
                 converted = [r for r in relevant if r.get('converter','') and r['converter'].split(' ')[0]==pid]
                 converter_evidence = attribution.native_converter(converted)
                 read_status = 'reader_error' if public_errors else 'lost by converter' if converter_evidence else 'measured' if reads else 'not measured'
-                read_label = read_status
+                read_label = display(read_status)
                 if public_errors:
-                    read_label += ': '+ '; '.join(sorted({r.get('read_observation',r).get('reader','')+' '+str(r.get('read_observation',r).get('detail','')) for r in public_errors}))
+                    observations = [r.get('read_observation', r) for r in public_errors]
+                    readers = sorted({r.get('reader', '') for r in observations})
+                    cause = next((SAT_READ_CAUSE for r in observations if SAT_READ_CAUSE in str(r.get('detail', ''))), '')
+                    read_label += ': ' + ', '.join(readers) + (' ' + cause if cause else '')
                 elif converter_evidence:
-                    read_label += ': '+', '.join(sorted({r['converter'] for r in converter_evidence if r.get('converter')}))
+                    read_label += ': '+', '.join(sorted({display_program(r['converter']) for r in converter_evidence if r.get('converter')}))
                 cells[pid] = dict(reads=_cell(read_status, item, pid, reads+converter_evidence, read_label, reader_error=len(public_errors)),
                                   writes=_cell('native drawing' if writes else 'no native drawing', item, pid, writes),
                                   round_trip=_cell(status, item, pid, evidence, label,
@@ -296,7 +314,7 @@ def _page_evidence(data):
     data['evidence_fields'] = fields
 
 
-def main():
+def main(output=None):
     intents = [read(p) for p in sorted((ROOT/'intent').glob('*.json')) if not p.name.endswith('.schema.json')]
     declared = read(ROOT/'programs/pairs.json')
     pairs = {p['writer']+'__'+p['resaver']: p for p in declared}
@@ -359,13 +377,19 @@ def main():
                 for pair, declaration in pairs.items():
                     sources = [s for s in fs if not s.get('unavailable') and
                                str(Path(s['path']).parent)==declaration['sources']]
-                    if not sources: continue
+                    if not sources:
+                        # DXF inputs can also supply a requested DWG output.
+                        if fmt == 'DWG' and [fmt,v,enc] not in capabilities[declaration['resaver']]['outputs'] and any(
+                                s['format']=='DXF' and s['version']==v and not s.get('unavailable') and
+                                str(Path(s['path']).parent)==declaration['sources'] for s in own):
+                            impossible.append(gap_reason(ROOT, declaration['resaver'], fmt, v, enc))
+                        continue
                     has_source = True
                     writer, resaver = declaration['writer'], declaration['resaver']
                     caps = capabilities[resaver]
                     label = capabilities[writer]['name']+' to '+caps['name']
                     if [fmt,v,enc] not in caps['outputs']:
-                        impossible.append('not possible: '+label+' cannot write '+fmt+' '+v+' '+enc)
+                        impossible.append(gap_reason(ROOT, resaver, fmt, v, enc))
                         continue
                     measured = any(s['pair']==pair and any(not ids or r.get('field') in ids or r['status']=='refused' for r in checks[s['path']]) for s in fs)
                     if not measured: missing.append('not yet run: '+label)
@@ -413,12 +437,12 @@ def main():
             topic['features'].append(dict(name=feature,cells=cells))
         topics.append(topic)
     inputs = _view_inputs(ROOT)
-    data = dict(main_view=main_view_rows(ROOT, inputs), comparisons={key: comparison_rows(p['writer'], p['resaver'], ROOT, inputs) for key, p in pairs.items()}, topics=topics, columns=columns, pairs=list(pairs), builds=sorted(builds), generated=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'))
+    data = dict(display=DISPLAY, coverage_display=COVERAGE_DISPLAY, main_view=main_view_rows(ROOT, inputs), comparisons={key: comparison_rows(p['writer'], p['resaver'], ROOT, inputs) for key, p in pairs.items()}, topics=topics, columns=columns, pairs=list(pairs), builds=sorted(builds), generated='')
     _page_evidence(data)
     from collections import Counter
     print('Coverage cells:', dict(Counter(c['coverage'] for t in topics for f in t['features'] for c in f['cells'])))
     template = (ROOT/'map/template.html').read_text()
-    (ROOT/'map/index.html').write_text(template.replace('/*DATA*/',json.dumps(data,ensure_ascii=False,separators=(',', ':')).replace('<','\\u003c')))
+    (Path(output) if output else ROOT/'map/index.html').write_text(template.replace('/*DATA*/',json.dumps(data,ensure_ascii=False,separators=(',', ':')).replace('<','\\u003c')))
     print(f'{len(topics)} topics; {sum(len(t["features"]) for t in topics)} features; {sum(map(len,checks.values()))} measured fields')
 
 if __name__=='__main__':

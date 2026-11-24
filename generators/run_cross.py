@@ -42,6 +42,10 @@ READER = {'bricscad': 'oda', 'cadcraft': 'oda', 'oda': 'bricscad'}   # DWG reade
 LOG = R / 'logs/run_cross.log'
 
 
+def gap_reason(root, program, fmt, version, encoding):
+    name = json.loads((root/'programs/capabilities.json').read_text())[program]['name']
+    return f'{name} does not write {fmt} {version}' + (f' {encoding}' if fmt != 'DWG' else '')
+
 def log(msg):
     LOG.parent.mkdir(parents=True, exist_ok=True)
     with LOG.open('a') as f:
@@ -78,10 +82,10 @@ def reader_for(pair, root, reader_name):
 
 
 def plan(pair, intent_id=None, force=False, root=None, reader_name=None):
-    from checker.scoring import empty_plan, file_current, refusal_current, writable
+    from checker.scoring import empty_plan, file_current, writable
     root=R if root is None else Path(root)
     work=empty_plan();resaver=ADAPTERS[pair.split('__')[1]]()
-    reader=ADAPTERS[reader_for(pair,root,reader_name)]
+    reader_name = reader_for(pair,root,reader_name)
     path=root/'results'/f'cross_{pair}_checks.json'
     previous=load_json(path,[])
     if pair.startswith('oda__'):
@@ -94,11 +98,11 @@ def plan(pair, intent_id=None, force=False, root=None, reader_name=None):
         rows=[r for r in previous if r['file']==rel]
         if not force and key in gaps and builds.get(key)==resaver.build and not writable(root,resaver.name,fmt,version,enc):
             kind='gaps'
-        elif not force and refusal_current(rows,side['content_digest'],resaver.build):
+        elif not force and current(rows,root,side['intent_id'],side['content_digest'],resaver.build) and all(r.get('status') == 'refused' for r in rows):
             kind='carried'
         elif force or key in gaps or not dest.exists() or old.get('build')!=resaver.build or old.get('made_by',{}).get('input_digest')!=side['content_digest']:
             kind='resave'
-        elif not file_current(rows,root,side['intent_id'],path,rel,current, f'ezdxf {ezdxf.__version__}',None if fmt=='DXF' else f'{reader.name} {reader.build}',reading_fn=reading_current):
+        elif not file_current(rows,root,side['intent_id'],path,rel,current, f'ezdxf {ezdxf.__version__}',None if fmt=='DXF' else f'{ADAPTERS[reader_name].name} {ADAPTERS[reader_name].build}',reading_fn=reading_current):
             kind='rescore'
         else:kind='carried'
         work[kind].append(rel)
@@ -154,7 +158,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
             doc=ezdxf.readfile(dest) if fmt=='DXF' else reader.read_dwg_many([dest])[dest]
         except Exception as ex:
             doc=str(ex)
-        converter=None if fmt=='DXF' else f'{reader.name} {reader.build}'
+        converter=None if fmt=='DXF' else f'{ADAPTERS[reader_name].name} {ADAPTERS[reader_name].build}'
         if isinstance(doc,str):
             rows=[dict(file=rel,intent_id=side['intent_id'],field='open',reader=f'ezdxf {ezdxf.__version__}',converter=converter,self_read=False,status='refused',expected=None,actual=None,tolerance=0,detail=doc)]
         else:
@@ -196,7 +200,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
             for src, dest, fmt, version, enc, side in chunk:
                 err = results.get(staged[dest])
                 if not writable(root,resaver_name,fmt,version,enc):
-                    err = f'Undeclared output: {fmt} {version} {enc}'
+                    err = gap_reason(root, resaver_name, fmt, version, enc)
                 if err is None and not staged[dest].exists():
                     err = f'{resaver.name} produced no output'
                 rel = dest.relative_to(root).as_posix()

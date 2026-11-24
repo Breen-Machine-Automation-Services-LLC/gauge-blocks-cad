@@ -241,8 +241,10 @@ def test_dwg_only_loss_has_reading_path_and_its_own_bucket(builder, attribution_
     rt = features(comparison)[('synthetic', 'field_1')]['round_trip']
     assert rt['status'] == 'lost in writer or converter'
     for cell in (rt, main):
-        assert 'ezdxf synthetic-public' in cell['label']
-        assert 'oda synthetic-public' in cell['label']
+        label = cell['label']
+        assert label.count('ezdxf synthetic-public') == 1
+        # the converter is shown by its display name; the program and version appear once
+        assert label.count('ODA File Converter synthetic-public') + label.count('oda synthetic-public') == 1
         assert any(r['converter'] == 'oda synthetic-public' for r in cell['evidence'])
     for summary in (comparison['summary'], main):
         assert summary['lost'] == 0

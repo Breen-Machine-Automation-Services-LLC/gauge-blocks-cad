@@ -88,9 +88,17 @@ class Attribution:
         elif row['status']=='reader_error':result['attribution']='unreadable by reader'
         return result
 
+def display_program(value):
+    names = {'oda': 'ODA File Converter', 'bricscad': 'BricsCAD', 'cadcraft': 'CADCraft'}
+    parts = value.split(' ', 1)
+    return names.get(parts[0], parts[0]) + (' ' + parts[1] if len(parts) > 1 else '')
+
 def reading_label(status, rows):
     paths=sorted({r.get('reader','unspecified')+(' through '+r['converter'] if r.get('converter') else '') for r in rows})
     if status=='lost in writer or converter':
-        return 'lost in writer or converter: lost in DWG write or DWG read (read through '+', '.join(paths)+')'
+        readers = sorted({r.get('reader', 'unspecified') for r in rows if r.get('converter')})
+        converters = sorted({display_program(r['converter'].split(' (', 1)[0]) for r in rows if r.get('converter')})
+        if not converters:readers = sorted({r.get('reader', 'unspecified') for r in rows})
+        return 'lost in DWG write or DWG read, read by '+', '.join(readers)+((' from '+', '.join(converters)+' output') if converters else '')
     if status=='unreadable by reader':return 'unreadable by '+', '.join(paths)
     return status

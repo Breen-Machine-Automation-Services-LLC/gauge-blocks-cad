@@ -98,7 +98,7 @@ def run_native(intent_id=None, force=False, root=None):
 
 def main():
  import argparse
- from generators import run_features,run_bricscad,run_cross,run_independent
+ from generators import run_features,run_bricscad,run_cross
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--intent')
  parser.add_argument('--pairs')
@@ -114,7 +114,7 @@ def main():
  native_ezdxf=not args.pairs or any(p.startswith('ezdxf__') for p in pairs)
  native_bricscad=(args.with_bricscad and not args.pairs) or (bool(args.pairs) and any(p.startswith('bricscad__') for p in pairs))
  pairs=[p for p in pairs if args.with_bricscad or p.split('__')[1]!='bricscad']
- reader=None if args.with_bricscad else 'oda'
+ reader=None
  if args.dry_run:
   def report(label,plans):
    combined={k:sum((p[k] for p in plans),[]) for k in ('resave','rescore','carried','gaps')}
@@ -124,20 +124,18 @@ def main():
   if native_ezdxf:report('native',[plan(args.intent,force=args.force,root=ROOT),run_features.plan(args.intent,force=args.force,root=ROOT)])
   if native_bricscad:report('native bricscad',[run_bricscad.plan(args.intent,force=args.force,root=ROOT)])
   for pair in pairs:report(pair,[run_cross.plan(pair,intent_id=args.intent,force=args.force,root=ROOT,reader_name=reader)])
-  if args.with_bricscad and 'ezdxf__oda' in pairs:report('read by bricscad',[run_independent.plan(args.intent,force=args.force,root=ROOT)])
   return
  if native_ezdxf and (not args.intent or args.intent.startswith('background_')):run_native(args.intent,force=args.force,root=ROOT)
  if native_ezdxf and (not args.intent or args.intent.startswith('feature_')):run_features.main(args.intent,force=args.force,root=ROOT)
  if native_bricscad and (not args.intent or args.intent in run_bricscad.TOPICS.values()):run_bricscad.main(args.intent,force=args.force,root=ROOT)
  for pair in pairs:run_cross.run_pair(pair,intent=args.intent,reader_name=reader,force=args.force,root=ROOT)
- if args.with_bricscad and 'ezdxf__oda' in pairs:run_independent.main(args.intent,force=args.force,root=ROOT)
  if not args.intent and not args.pairs:
   barriers=load_rows(ROOT/'results/barriers.json')
   write_json(ROOT/'results/barriers.json',barriers)
   rows=load_rows(ROOT/'results/checks.json');audits=load_rows(ROOT/'results/audits.json')
-  from map.build import main as map_main
-  map_main()
+  from checker.derived import rebuild
+  rebuild()
   from intent.validate import main as validate
-  validate();subprocess.run([SETTINGS['python'],'-I',str(ROOT/'measure_size.py')],check=True,cwd=ROOT)
+  validate()
   print(json.dumps(dict(files=len(audits),fields=len(rows),statuses={s:sum(r['status']==s for r in rows) for s in ('same','differs','absent')},barriers=barriers)))
 if __name__=='__main__':main()

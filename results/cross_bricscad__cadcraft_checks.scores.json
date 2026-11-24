@@ -1,7 +1,7 @@
 {
   "cross/bricscad__cadcraft/k_tables_2000_ASCII.dxf": {
     "scored_with": {
-      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "checker": "3126d9640a4c3d884370d984c343a95482ae2392374996f03b9b25e199de12d2",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",
@@ -20,7 +20,7 @@
   },
   "cross/bricscad__cadcraft/k_tables_2000_binary.dwg": {
     "scored_with": {
-      "checker": "ac1543419a2eb22cd192aa142da61cf614ebc55370bf975c3f0f61019b8a3796",
+      "checker": "3126d9640a4c3d884370d984c343a95482ae2392374996f03b9b25e199de12d2",
       "ezdxf": "1.4.4",
       "versions": {
         "2000": "AC1015",

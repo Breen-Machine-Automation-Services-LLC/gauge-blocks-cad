@@ -298,7 +298,8 @@ def test_native_secondary_table_loss_is_charged_to_converter(builder, table_conv
         assert feature['round_trip']['status'] == 'not measured'
         assert data['summary']['changed'] == data['summary']['lost'] == 0
     assert cell['status'] == 'lost by converter'
-    assert converted['converter'] in cell['label']
+    # The converter is shown by its display name with its build.
+    assert 'ODA File Converter' in cell['label'] and converted['converter'].split(' ', 1)[1] in cell['label']
     assert direct in cell['evidence'] and converted in cell['evidence']
 
 

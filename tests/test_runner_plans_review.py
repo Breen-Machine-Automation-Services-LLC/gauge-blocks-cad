@@ -95,8 +95,7 @@ def orchestration_spies(h, monkeypatch):
     for name, module, entry in [('background', h.regen, 'run_native'),
                                 ('feature', h.feature, 'main'),
                                 ('bricscad', h.bc, 'main'),
-                                ('cross', h.cross, 'run_pair'),
-                                ('reading', h.independent, 'main')]:
+                                ('cross', h.cross, 'run_pair')]:
         spies[name] = Mock()
         monkeypatch.setattr(module, entry, spies[name])
     return spies
@@ -111,7 +110,7 @@ def test_pairs_scope_matches_dry_run(corpus, monkeypatch, capsys, with_bricscad,
     spies = orchestration_spies(h, monkeypatch)
     planners = {}
     for name, module in [('background', h.regen), ('feature', h.feature),
-                         ('bricscad', h.bc), ('cross', h.cross), ('reading', h.independent)]:
+                         ('bricscad', h.bc), ('cross', h.cross)]:
         planners[name] = Mock(return_value=dict(resave=[], rescore=[], carried=[], gaps=[]))
         monkeypatch.setattr(module, 'plan', planners[name])
     args = ['--pairs', pair]
@@ -121,7 +120,6 @@ def test_pairs_scope_matches_dry_run(corpus, monkeypatch, capsys, with_bricscad,
         args.append('--dry-run')
     invoke(h, monkeypatch, *args)
     selected = {'cross'} | ({'background', 'feature'} if pair == 'ezdxf__oda' else {'bricscad'})
-    selected |= {'reading'} if with_bricscad and pair == 'ezdxf__oda' else set()
     for name in spies:
         assert spies[name].call_count == int(not dry and name in selected), name
         assert planners[name].call_count == int(dry and name in selected), name
@@ -130,7 +128,7 @@ def test_pairs_scope_matches_dry_run(corpus, monkeypatch, capsys, with_bricscad,
         assert ('native:' in output) == (pair == 'ezdxf__oda')
         assert ('native bricscad:' in output) == (pair == 'bricscad__oda')
         assert f'{pair}:' in output
-        assert ('read by bricscad:' in output) == ('reading' in selected)
+        assert 'read by bricscad' not in output
 
 
 def fake_full_run(h, monkeypatch):
@@ -302,7 +300,7 @@ def test_without_pairs_native_steps_remain_selected(corpus, monkeypatch, dry):
     spies = fake_full_run(h, monkeypatch)
     planners = {}
     for name, module in [('background', h.regen), ('feature', h.feature),
-                         ('bricscad', h.bc), ('cross', h.cross), ('reading', h.independent)]:
+                         ('bricscad', h.bc), ('cross', h.cross)]:
         planners[name] = Mock(return_value=dict(resave=[], rescore=[], carried=[], gaps=[]))
         monkeypatch.setattr(module, 'plan', planners[name])
     args = ['--with-bricscad'] + (['--dry-run'] if dry else [])

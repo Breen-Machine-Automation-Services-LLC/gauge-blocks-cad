@@ -9,7 +9,7 @@ from checker.attribution import Attribution, outcome, BUCKETS
 R = Path(__file__).resolve().parents[1]
 
 
-def main():
+def main(output=None):
     per_file = collections.defaultdict(list)
     for p in sorted((R / 'results').glob('cross_*checks.json')):
         for r in json.loads(p.read_text()):
@@ -30,7 +30,7 @@ def main():
     notrun = collections.Counter()
     for k in nr:
         pair, rel = k.split('|'); notrun[(pair, Path(rel).suffix[1:].upper())] += 1
-    (R / 'results/cross_summary.json').write_text(json.dumps({'outputs_by_pair_and_format': out, 'direct_dxf_fields': {p:attribution.direct_summary(p) for p in attribution.declarations}, 'not_run_capability_gap': {f'{a} {b}': n for (a, b), n in sorted(notrun.items())}}, indent=1) + '\n')
+    (Path(output) if output else R / 'results/cross_summary.json').write_text(json.dumps({'outputs_by_pair_and_format': out, 'direct_dxf_fields': {p:attribution.direct_summary(p) for p in attribution.declarations}, 'not_run_capability_gap': {f'{a} {b}': n for (a, b), n in sorted(notrun.items())}}, indent=1) + '\n')
     print('| Pair | Format | Kept | Changed | Lost | Refused | Source not readable | Writer or converter | Unreadable by reader | Not measured | Not run |\n| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |')
     for (pair, fmt), c in sorted(table.items()):
         print(f"| {pair} | {fmt} | {c['kept']} | {c['changed']} | {c['lost']} | {c['refused']} | {c['source_not_readable']} | {c['writer_or_converter']} | {c['unreadable_by_reader']} | {c['not_measured']} | {notrun[(pair, fmt)]} |")

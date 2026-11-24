@@ -173,11 +173,11 @@ def test_every_program_cell(builder, corpus, item, program):
     written = 'native drawing' if (program == 'ezdxf' and item in ('TEXT', 'LAYER') or
                                    program == 'bricscad' and item == 'LAYER') else 'no native drawing'
     expected_round_trip = {
-        ('TEXT', 'cadcraft'): ('refused', 'kept 1 of 4', 1, 4),
-        ('TEXT', 'oda'): ('kept', 'kept 4 of 4', 4, 4),
-        ('TEXT', 'bricscad'): ('kept', 'kept 4 of 4', 4, 4),
-        ('LAYER', 'cadcraft'): ('kept', 'kept 1 of 1', 1, 1),
-        ('LAYER', 'oda'): ('kept', 'kept 1 of 1', 1, 1),
+        ('TEXT', 'cadcraft'): ('refused', 'kept 1 of 4 measured features', 1, 4),
+        ('TEXT', 'oda'): ('kept', 'kept 4 of 4 measured features', 4, 4),
+        ('TEXT', 'bricscad'): ('kept', 'kept 4 of 4 measured features', 4, 4),
+        ('LAYER', 'cadcraft'): ('kept', 'kept 1 of 1 measured feature', 1, 1),
+        ('LAYER', 'oda'): ('kept', 'kept 1 of 1 measured feature', 1, 1),
     }.get((item, program), ('not measured', 'not measured', 0, 0))
     assert cells['reads']['status'] == cells['reads']['label'] == read
     assert cells['writes']['status'] == cells['writes']['label'] == written

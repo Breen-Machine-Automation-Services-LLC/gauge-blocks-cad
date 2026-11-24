@@ -1,6 +1,6 @@
 """WP7 acceptance tests: synthetic copies and fake CAD programs only."""
 # Expected API: plan(intent_id=None, force=False, root=None) in regenerate,
-# run_features, run_bricscad and run_independent; run_cross.plan additionally
+# run_features and run_bricscad; run_cross.plan additionally
 # takes pair and reader_name. Plans are dicts of root-relative file lists:
 # resave, rescore, carried, gaps. A resave includes its scoring; rescore is
 # scoring without a save. Reading-only plans have no resaves.
@@ -21,25 +21,20 @@ os.environ['CAD_DATASET_SETTINGS'] = str(Path(__file__).resolve().parents[1] / '
 from checker import scoring
 from test_drawing_inputs import tree, harness, dump, invoke, saved_bytes
 
-KINDS = ['background', 'feature', 'bricscad', 'cross', 'reading']
+KINDS = ['background', 'feature', 'bricscad', 'cross']
 
 
 @pytest.fixture
 def corpus(harness, monkeypatch):
     h = harness
-    from generators import run_independent as independent
     import ezdxf
     real_current = scoring.current
     real_reading_current = scoring.reading_current
-    h.independent = independent
-    modules = [h.regen, h.feature, h.bc, h.cross, independent]
+    modules = [h.regen, h.feature, h.bc, h.cross]
     for module in modules:
         monkeypatch.setattr(module, 'current', real_current)
         if hasattr(module, 'reading_current'):
             monkeypatch.setattr(module, 'reading_current', real_reading_current)
-    monkeypatch.setattr(independent, 'R', h.root)
-    monkeypatch.setattr(independent, 'BricsCad', h.bc.BricsCad)
-    monkeypatch.setattr(independent, 'VERSIONS', {'2000': 'AC1015'})
     h.scored = []
     h.published = []
     h.read = []
@@ -82,26 +77,30 @@ def corpus(harness, monkeypatch):
         'feature': sorted(p.relative_to(h.root).as_posix() for p in (h.root / 'native/ezdxf').glob('synthetic_*.dxf')),
         'bricscad': sorted(p.relative_to(h.root).as_posix() for p in (h.root / 'native/bricscad').glob('*.d[xw][fg]')),
         'cross': sorted(d.relative_to(h.root).as_posix() for _, d, *_ in h.cross.jobs_for('ezdxf__oda')),
-        'reading': sorted(p.relative_to(h.root).as_posix() for p in (h.root / 'cross/ezdxf__oda').glob('*.dwg')),
     }
     h.iids = dict(background='background_background', feature='feature_synthetic',
-                  bricscad='future_synthetic', cross='feature_synthetic', reading='feature_synthetic')
+                  bricscad='future_synthetic', cross='feature_synthetic')
     h.result = dict(background='checks', feature='features_checks', bricscad='native_bricscad_checks',
-                    cross='cross_ezdxf__oda_checks', reading='cross_ezdxf__oda_read_by_bricscad_checks')
+                    cross='cross_ezdxf__oda_checks')
     for kind, paths in h.paths.items():
         rows = []
         for rel in paths:
             side = json.loads((h.root / (rel + '.provenance.json')).read_text())
             iid = side['intent_id']
-            converter = ('bricscad ' if kind == 'reading' else 'oda ') + 'synthetic-build' if rel.endswith('.dwg') else None
+            converter = 'oda synthetic-build' if rel.endswith('.dwg') else None
             row = dict(file=rel, intent_id=iid, field='count', status='same',
                        reader='ezdxf ' + ezdxf.__version__, converter=converter,
-                       scored_with=scoring.stamp(h.root, iid))
-            if kind == 'reading':
-                row['read_input_digest'] = hashlib.sha256((h.root / rel).read_bytes()).hexdigest()
+                       scored_with=scoring.stamp(h.root, iid), **engines(kind, rel))
             rows.append(row)
         dump(result_path(h, kind), rows)
     return h
+
+
+def engines(kind, rel):
+    """Engine fields a real row carries: the writer by runner kind, the reader ODA for DWG and ezdxf otherwise."""
+    writer = scoring.ENGINES['bricscad' if kind == 'bricscad' else 'ezdxf']
+    reader = scoring.ENGINES['oda' if rel.endswith('.dwg') else 'ezdxf']
+    return dict(writer_engine=writer, reader_engine=reader, shared_engine=writer == reader)
 
 
 def result_path(h, kind):
@@ -110,7 +109,7 @@ def result_path(h, kind):
 
 def module_for(h, kind):
     return dict(background=h.regen, feature=h.feature, bricscad=h.bc,
-                cross=h.cross, reading=h.independent)[kind]
+                cross=h.cross)[kind]
 
 
 def plan(h, kind, iid=None, force=False):
@@ -138,34 +137,25 @@ def normalized(value):
 
 def mutate(h, kind, state):
     paths = h.paths[kind]
-    if kind == 'reading' and state in ('missing', 'deleted_output'):
-        rows = json.loads(result_path(h, kind).read_text())
-        dump(result_path(h, kind), [r for r in rows if r['file'] != paths[0]])
-    elif state == 'score':
+    if state == 'score':
         rows = json.loads(result_path(h, kind).read_text())
         for row in rows:
             if row['file'] == paths[0]:
                 row['scored_with']['checker'] = 'synthetic obsolete checker'
         dump(result_path(h, kind), rows)
     elif state == 'input':
-        if kind == 'reading':
-            (h.root / paths[0]).write_text('synthetic changed source bytes')
-        else:
-            sc = h.root / (paths[0] + '.provenance.json')
-            meta = json.loads(sc.read_text()); meta['made_by']['input_digest'] = 'obsolete'
-            dump(sc, meta)
+        sc = h.root / (paths[0] + '.provenance.json')
+        meta = json.loads(sc.read_text()); meta['made_by']['input_digest'] = 'obsolete'
+        dump(sc, meta)
     elif state in ('missing', 'deleted_output'):
         (h.root / paths[0]).unlink()
         if state == 'deleted_output':
             (h.root / (paths[0] + '.provenance.json')).unlink()
     elif state in ('empty', 'orphan_sidecars'):
-        if kind == 'reading':
-            dump(result_path(h, kind), [])
-        else:
-            for rel in paths:
-                (h.root / rel).unlink()
-                if state == 'empty':
-                    (h.root / (rel + '.provenance.json')).unlink()
+        for rel in paths:
+            (h.root / rel).unlink()
+            if state == 'empty':
+                (h.root / (rel + '.provenance.json')).unlink()
 
 
 @pytest.mark.parametrize('kind', KINDS)
@@ -178,9 +168,7 @@ def test_plan_lists_and_execution(corpus, monkeypatch, capsys, kind, state):
     if iid:
         paths = [p for p in paths if json.loads((h.root / (p + '.provenance.json')).read_text())['intent_id'] == iid]
     resave, rescore = [], []
-    if kind == 'reading':
-        rescore = paths if state in ('empty', 'orphan_sidecars', 'force') else paths[:1] if state in ('input', 'score', 'missing', 'deleted_output') else []
-    elif state in ('empty', 'orphan_sidecars', 'force') or kind == 'bricscad' and state in ('input', 'missing', 'deleted_output'):
+    if state in ('empty', 'orphan_sidecars', 'force') or kind == 'bricscad' and state in ('input', 'missing', 'deleted_output'):
         resave = paths
     elif state in ('input', 'missing', 'deleted_output'):
         resave = paths[:1]
@@ -208,7 +196,7 @@ def test_plan_lists_and_execution(corpus, monkeypatch, capsys, kind, state):
     invoke(h, monkeypatch, *arguments)
     output = capsys.readouterr().out
     label = {'background': 'native', 'feature': 'native', 'bricscad': 'native bricscad',
-             'cross': 'ezdxf__oda', 'reading': 'read by bricscad'}[kind]
+             'cross': 'ezdxf__oda'}[kind]
     assert f'{label}: {dry_save} resave, {dry_score} rescore' in output
     assert not h.published and not h.scored and not h.read
     runner_plan = Mock(wraps=module_for(h, kind).plan)
@@ -217,8 +205,6 @@ def test_plan_lists_and_execution(corpus, monkeypatch, capsys, kind, state):
     assert runner_plan.called, 'Real execution must consume its runner plan'
     assert sorted(h.published) == expected['resave']
     assert sorted({r['file'] for r in h.scored}) == sorted(resave + rescore)
-    if kind == 'reading':
-        assert sorted(h.read) == sorted(rescore)
     after = normalized(plan(h, kind, iid))
     assert after == dict(resave=[], rescore=[], carried=sorted(paths), gaps=[])
 
@@ -321,12 +307,10 @@ def test_capability_gaps_are_separate_from_resaves(corpus, monkeypatch, capsys):
 @pytest.mark.parametrize('with_bricscad', [False, True])
 @pytest.mark.parametrize('pair', ['ezdxf__oda', 'bricscad__oda'])
 @pytest.mark.parametrize('dry', [False, True])
-def test_reading_step_selection(corpus, monkeypatch, capsys, with_bricscad, pair, dry):
+def test_no_bricscad_reading_step_is_selected(corpus, monkeypatch, capsys, with_bricscad, pair, dry):
     h = corpus
     monkeypatch.setattr(h.cross, 'PAIRS', dict(h.cross.PAIRS, bricscad__oda=('native/bricscad', 'oda')))
     # This test isolates orchestration; runner execution is covered above.
-    reader = Mock()
-    monkeypatch.setattr(h.independent, 'main', reader)
     monkeypatch.setattr(h.feature, 'main', Mock())
     monkeypatch.setattr(h.bc, 'main', Mock())
     monkeypatch.setattr(h.cross, 'run_pair', Mock())
@@ -337,11 +321,9 @@ def test_reading_step_selection(corpus, monkeypatch, capsys, with_bricscad, pair
     if dry:
         arguments.append('--dry-run')
     invoke(h, monkeypatch, *arguments)
-    selected = with_bricscad and pair == 'ezdxf__oda'
-    assert reader.call_count == int(selected and not dry)
+    # ODA-written DWG is read through BricsCAD by run_cross; no separate step repeats it.
     output = capsys.readouterr().out
-    if dry:
-        assert ('read by bricscad:' in output) == selected
+    assert 'read by bricscad' not in output
 
 
 @pytest.mark.parametrize('kind', ['background', 'feature', 'bricscad'])
@@ -353,9 +335,8 @@ def test_regenerate_passes_intent_force_root(corpus, monkeypatch, kind, force):
         monkeypatch.setattr(h.regen, 'run_native', native, raising=False)
     else:
         monkeypatch.setattr(module_for(h, kind), 'main', native)
-    cross = Mock(); reading = Mock()
+    cross = Mock()
     monkeypatch.setattr(h.cross, 'run_pair', cross)
-    monkeypatch.setattr(h.independent, 'main', reading)
     pair = 'bricscad__oda' if kind == 'bricscad' else 'ezdxf__oda'
     monkeypatch.setattr(h.cross, 'PAIRS', dict(h.cross.PAIRS, bricscad__oda=('native/bricscad', 'oda')))
     arguments = ['--intent', h.iids[kind], '--pairs', pair, '--with-bricscad']
@@ -364,10 +345,6 @@ def test_regenerate_passes_intent_force_root(corpus, monkeypatch, kind, force):
     invoke(h, monkeypatch, *arguments)
     native.assert_called_once_with(h.iids[kind], force=force, root=h.root)
     cross.assert_called_once_with(pair, intent=h.iids[kind], reader_name=None, force=force, root=h.root)
-    if pair == 'ezdxf__oda':
-        reading.assert_called_once_with(h.iids[kind], force=force, root=h.root)
-    else:
-        reading.assert_not_called()
 
 
 @pytest.mark.parametrize('force', [False, True])
@@ -380,14 +357,13 @@ def test_dry_run_prints_runner_plans_without_deciding(corpus, monkeypatch, capsy
         'feature': dict(resave=[], rescore=h.paths['feature'], carried=[], gaps=[]),
         'bricscad': dict(resave=h.paths['bricscad'], rescore=[], carried=[], gaps=[]),
         'cross': dict(resave=h.paths['cross'][:2], rescore=h.paths['cross'][2:3], carried=h.paths['cross'][3:], gaps=[]),
-        'reading': dict(resave=[], rescore=h.paths['reading'][:1], carried=h.paths['reading'][1:], gaps=[]),
     }
     for kind in KINDS:
         spies[kind] = Mock(return_value=plans[kind])
         monkeypatch.setattr(module_for(h, kind), 'plan', spies[kind], raising=False)
     def forbidden(*args, **kwargs):
         pytest.fail('Dry-run duplicated a runner decision rule')
-    for module in [h.regen, h.feature, h.bc, h.cross, h.independent]:
+    for module in [h.regen, h.feature, h.bc, h.cross]:
         monkeypatch.setattr(module, 'current', forbidden)
     arguments = ['--pairs', 'ezdxf__oda', '--with-bricscad', '--dry-run']
     if force:
@@ -401,7 +377,8 @@ def test_dry_run_prints_runner_plans_without_deciding(corpus, monkeypatch, capsy
         assert spy.call_args.kwargs.get('root') == h.root
         assert spy.call_args.kwargs.get('force') is force
     for line in ['native: 1 resave, 2 rescore',
-                 'ezdxf__oda: 2 resave, 1 rescore', 'read by bricscad: 0 resave, 1 rescore']:
+                 'ezdxf__oda: 2 resave, 1 rescore']:
         assert line in output
+    assert 'read by bricscad' not in output
     assert 'native bricscad:' not in output
     assert not h.saved and not h.published and not h.scored and not h.read

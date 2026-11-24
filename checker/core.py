@@ -8,6 +8,7 @@ class CheckerLimit(Exception):
 
 VOLATILE={'$TDCREATE','$TDUPDATE','$TDUCREATE','$TDUUPDATE','$TDINDWG','$TDUSRTIMER','$VERSIONGUID','$FINGERPRINTGUID','$HANDSEED'}
 ACIS_TYPES={'REGION','3DSOLID','BODY'}
+SAT_READ_CAUSE='cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010'
 # ACIS data (SAT text or SAB binary) starts with a header that records the build time of the body, e.g. Sun Nov 22 13:24:09 2026.
 ACIS_DATE=re.compile(rb'(Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [ 0-9][0-9] [0-9]{2}:[0-9]{2}:[0-9]{2} [0-9]{4}')
 def acis_canonical(tags):
@@ -323,7 +324,7 @@ def compare(d,intent,reader,source_version=None,source_encoding=None):
    except Exception as ex:
     detail=f'ezdxf {ezdxf.__version__} {type(ex).__name__}: {ex}'
     if isinstance(ex,IndexError) and d.dxfversion<'AC1027' and unpadded_binary_sat(feature_entity(d,f['selector'])):
-     detail+='; cannot decode SAT from binary DXF written by Teigha programs, R2000 to R2010'
+     detail+='; '+SAT_READ_CAUSE
     observation.update(status='reader_error',detail=detail)
    row['read_observation']=observation
   rows.append(row)

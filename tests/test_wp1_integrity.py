@@ -124,19 +124,8 @@ def test_old_independent_result_name_is_gone():
     for folder in ('checker', 'generators', 'map', 'programs'):
         for p in (ROOT / folder).rglob('*.py'):
             assert old not in p.read_text(), p
-    new = 'cross_ezdxf__oda_read_by_bricscad_checks.json'
-    assert (ROOT / 'results' / new).is_file()
-    references = []
-    for p in ROOT.rglob('*'):
-        if not p.is_file() or any(part in {'.git', '__pycache__', '.pytest_cache', 'tests'} for part in p.relative_to(ROOT).parts):
-            continue
-        if p.suffix not in {'.py', '.md', '.json', '.html', '.sh'}:
-            continue
-        text = p.read_text(errors='replace')
-        assert old not in text, p
-        if new in text:
-            references.append(p)
-    assert references, 'renamed result must be referenced by its producers/consumers'
+    retired = 'cross_ezdxf__oda_' + 'read_by_bricscad_checks.json'
+    assert not (ROOT / 'results' / retired).exists()
 
 
 def test_viewport_color_basis_and_value():
@@ -225,7 +214,7 @@ def test_coverage_counts_duplicate_observation_once(builder_case, monkeypatch):
 def test_coverage_shows_not_scored_separately(builder_case, monkeypatch):
     cells = coverage_cells(builder_case, monkeypatch, 'not_scored')
     assert cells['Rows absent'] == '0'
-    assert cells['Rows not_scored'] == '1'
+    assert cells['Rows not scored'] == '1'
 
 
 @pytest.fixture(autouse=True)
@@ -503,6 +492,21 @@ def test_cross_rescore_replaces_rows_and_preserves_drawing(fresh_cross, fmt, cha
     assert before == (dest.read_bytes(), dest.stat().st_mtime_ns, dest.with_suffix(dest.suffix + '.provenance.json').read_bytes())
 
 
+def seed_derived(tmp_path):
+    """Give a minimal check_artifacts fixture its derived files.
+
+    The freshness check rebuilds every derived file with the repository's own generators
+    (checker/derived.py) and compares; those generators read the repository, not the
+    fixture. A fixture therefore holds the committed derived files, which are exactly what
+    that rebuild must reproduce, and the test keeps isolating its own subject."""
+    import shutil
+    from checker.derived import DERIVED
+    for names, _, _ in DERIVED:
+        for name in names:
+            (tmp_path / name).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(ROOT / name, tmp_path / name)
+
+
 @pytest.mark.parametrize('stamp_state', ['current', 'checker', 'intent', 'missing'])
 def test_artifact_stale_check_on_temporary_results(tmp_path, stamp_state):
     # Copy the entry point so its __file__-based root resolves to our fixture.
@@ -513,6 +517,7 @@ def test_artifact_stale_check_on_temporary_results(tmp_path, stamp_state):
     dump(tmp_path / 'results/audits.json', [dict(errors=0, fixes=0)] * 77)
     dump(tmp_path / 'results/digest_evidence.json', [dict(equal=True, one_field_changes_digest=True)] * 13)
     (tmp_path / 'README.md').write_text('Synthetic')
+    seed_derived(tmp_path)
     i = intent(ezdxf.new('R2000'))
     dump(tmp_path / 'intent/synthetic.json', i)
     stamp = expected_stamp(tmp_path, 'synthetic')
@@ -580,7 +585,8 @@ def test_dry_run_reports_native_and_pair_resave_and_rescore_counts(runner_case, 
             stamp[state] = '0' * 64
         pair_rows.append(dict(file=dest.relative_to(root).as_posix(), intent_id=iid, field='value',
                               reader='ezdxf ' + ezdxf.__version__, converter=None,
-                              status='same', scored_with=stamp))
+                              status='same', scored_with=stamp,
+                              writer_engine='ezdxf', reader_engine='ezdxf', shared_engine=True))
     dump(root / 'results/cross_ezdxf__oda_checks.json', pair_rows)
     monkeypatch.setattr(run_cross, 'jobs_for', lambda *a, **k: jobs)
     class FakeOda:
@@ -628,7 +634,7 @@ def test_builders_keep_distinct_reader_and_converter_observations(builder_case, 
         values = next(line for line in lines if line.startswith('| cross/ezdxf__oda |'))
         cells = dict(zip([x.strip() for x in header.split('|')[1:-1]],
                          [x.strip() for x in values.split('|')[1:-1]]))
-        assert cells['Rows not_scored'] == '3'
+        assert cells['Rows not scored'] == '3'
 
 
 @pytest.mark.parametrize('fmt', ['DXF', 'DWG'])
@@ -775,45 +781,6 @@ def test_bricscad_native_stale_scores_refresh_without_generation(runner_case, mo
     assert before == {p: p.read_bytes() for p in before}
 
 
-@pytest.fixture
-def brics_reader_case(tmp_path, monkeypatch):
-    from generators import run_independent
-    doc = ezdxf.new('R2000')
-    dump(tmp_path / 'intent/synthetic.json', intent(doc))
-    path = tmp_path / 'cross/ezdxf__oda/synthetic.dwg'
-    path.parent.mkdir(parents=True)
-    path.write_bytes(b'synthetic DWG')
-    dump(path.with_suffix('.dwg.provenance.json'), dict(intent_id='synthetic', version='2000'))
-    read = Mock(return_value={path: doc})
-    class FakeBrics:
-        name = 'bricscad'
-        build = 'synthetic-build'
-        read_dwg_many = read
-    monkeypatch.setattr(run_independent, 'R', tmp_path)
-    monkeypatch.setattr(run_independent, 'BricsCad', FakeBrics)
-    return tmp_path, run_independent, read
-
-
-def test_bricscad_reader_rescores_stale_and_skips_current(brics_reader_case):
-    root, runner, read = brics_reader_case
-    runner.main()
-    path = root / 'results/cross_ezdxf__oda_read_by_bricscad_checks.json'
-    rows = json.loads(path.read_text())
-    for row in rows:
-        row['scored_with']['checker'] = 'stale'
-        row['actual'] = 'obsolete'
-    dump(path, rows)
-    before = (root / 'cross/ezdxf__oda/synthetic.dwg').read_bytes()
-    read.reset_mock()
-    runner.main()
-    read.assert_called_once()
-    assert all(row['actual'] != 'obsolete' for row in json.loads(path.read_text()))
-    assert before == (root / 'cross/ezdxf__oda/synthetic.dwg').read_bytes()
-    read.reset_mock()
-    runner.main()
-    read.assert_not_called()
-
-
 @pytest.mark.parametrize('fresh', [True, False])
 def test_feature_failure_rule_applies_to_fresh_and_rescored(runner_case, fresh):
     from generators import run_features
@@ -862,6 +829,7 @@ def test_artifact_check_rejects_missing_engine_fields(tmp_path, missing):
     dump(tmp_path / 'results/audits.json', [dict(errors=0, fixes=0)] * 77)
     dump(tmp_path / 'results/digest_evidence.json', [dict(equal=True, one_field_changes_digest=True)] * 13)
     (tmp_path / 'README.md').write_text('Synthetic')
+    seed_derived(tmp_path)
     dump(tmp_path / 'intent/synthetic.json', intent(ezdxf.new()))
     row = dict(file='native/ezdxf/test.dxf', intent_id='synthetic', field='value', status='same',
                scored_with=expected_stamp(tmp_path, 'synthetic'), writer_engine='ezdxf', reader_engine='ezdxf', shared_engine=True)
@@ -916,7 +884,7 @@ def test_dry_run_and_feature_runner_agree_on_native_input_digest(runner_case, mo
     opens.assert_not_called()
 
 
-@pytest.mark.parametrize('cohort', ['native', 'reader'])
+@pytest.mark.parametrize('cohort', ['native'])
 def test_dry_run_counts_bricscad_stale_cohorts(runner_case, monkeypatch, capsys, cohort):
     import sys
     import re
@@ -924,28 +892,17 @@ def test_dry_run_counts_bricscad_stale_cohorts(runner_case, monkeypatch, capsys,
     from generators import run_bricscad
     from programs import adapters
     root, _, _, _, opens = runner_case
-    if cohort == 'native':
-        run_bricscad.main()
-        path = root / 'results/native_bricscad_checks.json'
-        rows = json.loads(path.read_text())
-        label = r'(?:native.*bricscad|bricscad.*native)'
-        count = 2
-    else:
-        dest = root / 'cross/ezdxf__oda/synthetic.dwg'
-        dest.parent.mkdir(parents=True)
-        dest.write_bytes(b'synthetic drawing')
-        dump(dest.with_suffix('.dwg.provenance.json'), dict(intent_id='synthetic', version='2000'))
-        path = root / 'results/cross_ezdxf__oda_read_by_bricscad_checks.json'
-        rows = [dict(file=dest.relative_to(root).as_posix(), intent_id='synthetic', field='value',
-                     status='same', scored_with=expected_stamp(root, 'synthetic'))]
-        label = r'(?:read.by.bricscad|bricscad.*reader)'
-        count = 1
+    run_bricscad.main()
+    path = root / 'results/native_bricscad_checks.json'
+    rows = json.loads(path.read_text())
+    label = r'(?:native.*bricscad|bricscad.*native)'
+    count = 2
     for row in rows:
         row['scored_with']['checker'] = 'stale'
     dump(path, rows)
     monkeypatch.setattr(regenerate, 'VERSIONS', {'2000': 'AC1015'})
     monkeypatch.setattr(run_cross, 'R', root)
-    monkeypatch.setattr(run_cross, 'PAIRS', {'ezdxf__oda': ('native/ezdxf', 'oda')} if cohort == 'reader' else {})
+    monkeypatch.setattr(run_cross, 'PAIRS', {})
     monkeypatch.setattr(adapters, 'BricsCad', run_bricscad.BricsCad)
     monkeypatch.setattr(adapters, 'Oda', run_bricscad.Oda)
     monkeypatch.setattr(run_bricscad, 'run_script', Mock(side_effect=AssertionError('dry run generated')))

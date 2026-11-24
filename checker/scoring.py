@@ -27,9 +27,18 @@ def annotate(rows, root, intent_id, writer, reader):
                    shared_engine=ENGINES[writer] == ENGINES[reader])
     return rows
 
-def current(rows, root, intent_id):
-    score = stamp(root, intent_id)
-    return bool(rows) and all(row.get('scored_with') == score for row in rows)
+def current(rows, root, intent_id, input_digest=None, build=None, score=None):
+    """Apply the same currency rule to completed refusals and scored rows."""
+    if not rows:
+        return False
+    if any(row.get('status') == 'refused' for row in rows):
+        return refusal_current(rows, input_digest, build) and input_digest is not None and build is not None
+    score = stamp(root, intent_id) if score is None else score
+    return all(row.get('scored_with') == score and
+               row.get('writer_engine') in ENGINES.values() and
+               row.get('reader_engine') in ENGINES.values() and
+               row.get('shared_engine') is (row['writer_engine'] == row['reader_engine'])
+               for row in rows)
 
 def load_rows(path):
     return json.loads(path.read_text()) if path.exists() else []
