@@ -77,6 +77,19 @@ One script rebuilds the native and cross sets from the generators. Programs writ
 identifiers, handle seeds), so the checker computes a content digest that ignores them, and a regenerated file is
 committed only when its digest or its program build changes.
 
+## Releases and versions
+
+Results describe the program builds that produced them, so the dataset is released in numbered versions.
+
+- A new release comes out whenever published drawings or results change. The minor version goes up (0.1.0 to 0.2.0)
+  for a newly measured program build, new drawings, or a checker change that moves results. The patch version goes up
+  (0.1.0 to 0.1.1) for corrections. Changes to documents alone need no release.
+- Each release's notes list the exact build of every program measured, and count the fields that improved, worsened or
+  stayed the same against the previous release. `compare_build.py` produces these counts.
+- Programs are re-measured in batches, when there is a reason such as a fix landing upstream or a new program, not on
+  every upstream commit.
+- Cite a result with its release tag or the program build, so a reader can tell whether a later fix has changed it.
+
 ## Later releases
 
 - First priority for the next release: AutoCAD as a measured program, the de facto reference for DWG and DXF.

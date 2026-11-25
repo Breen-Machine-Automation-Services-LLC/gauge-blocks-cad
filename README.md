@@ -98,6 +98,10 @@ See the [coverage table](COVERAGE.md) for details: **measured** means a file exi
 Each program re-saves drawings written by another program; ezdxf 1.4.4 compares its fields (each value it reads, such as a text rotation) with the drawing's intent.
 A result tells you whether a feature survives a round trip through that program, as ezdxf reads it.
 
+Measured with ezdxf 1.4.4, BricsCAD V26 (26.2.07-1), ODA File Converter 27.1.0.143450 and CADCraft upstream commit a70b9b02.
+A result holds for those builds only, so each [release](DESIGN.md#releases-and-versions) names the builds it measured, and each drawing's provenance record names the build that wrote it.
+[programs/CAPABILITIES.md](programs/CAPABILITIES.md) gives the full build details.
+
 For DXF read directly, with no DWG step, here is how much each re-saving program keeps; each program's counts cover only files it can write (CADCraft writes neither R12 nor binary DXF), so the rows are not a ranking:
 
 | Re-saving program | Measured features kept in every file | Files keeping every measured field |

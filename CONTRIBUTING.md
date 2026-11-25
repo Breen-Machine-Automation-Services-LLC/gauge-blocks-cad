@@ -29,8 +29,8 @@ additional terms.
 
 ## Report a result that looks wrong
 
-Open an issue with the drawing file, exact result row and field, program and exact
-public build, reader, and converter if used. Include expected and actual values,
+Open an issue with the dataset release tag or commit, the drawing file, exact result
+row and field, program and exact public build, reader, and converter if used. Include expected and actual values,
 the intent, reproduction steps, and any error message. Name the program and feature
 in the issue title. [Open items](OPEN-ITEMS.md) contains entries ready to copy into issues.
 
