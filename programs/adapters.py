@@ -12,9 +12,9 @@ from programs.settings import SETTINGS
 ROOT=Path(__file__).resolve().parents[1]
 SCRATCH_ROOT=ROOT/'results'
 VERSIONS={'2000':'AC1015','2004':'AC1018','2007':'AC1021','2010':'AC1024','2013':'AC1027','2018':'AC1032','R12':'AC1009'}
-def workdir(prefix='work-'):
+def workdir(prefix='work-', root=None):
  """A private scratch directory inside the repository results folder (callers remove it)."""
- return tempfile.mkdtemp(dir=SCRATCH_ROOT,prefix=prefix)
+ return tempfile.mkdtemp(dir=SCRATCH_ROOT if root is None else root,prefix=prefix)
 class Ezdxf:
  engine = 'ezdxf'
  name='ezdxf';build=ezdxf.__version__
@@ -25,22 +25,24 @@ class Ezdxf:
   doc.saveas(path,fmt='bin' if encoding=='binary' else 'asc')
 _identity_lock=threading.Lock()
 _identity_temp=None
-def identity_library():
+def identity_library(root=None):
  global _identity_temp
  with _identity_lock:
   if _identity_temp is None:
-   _identity_temp=tempfile.TemporaryDirectory(dir=SCRATCH_ROOT,prefix='oda-identity-')
+   _identity_temp=tempfile.TemporaryDirectory(dir=SCRATCH_ROOT if root is None else root,prefix='oda-identity-')
    lib=Path(_identity_temp.name)/'identity.so'
    subprocess.run(['cc','-shared','-fPIC','-o',str(lib),str(Path(__file__).with_name('oda_identity.c')),'-ldl'],check=True,capture_output=True,text=True,timeout=60)
   return str(Path(_identity_temp.name)/'identity.so')
 class Oda:
+ def __init__(self, scratch_root=None):
+  self.scratch_root = scratch_root
  engine = 'oda-teigha'
  name='oda';build=SETTINGS['oda_build']
  def open(self,path):return Path(path)
  def _run(self,inp,out,version,output_type,pattern,count=1,identity=True):
   command=[str(Path(__file__).with_name('oda.sh')),str(inp),str(out),'ACAD'+('12' if version=='R12' else version),output_type,'0','1',pattern]
   for attempt in range(3):
-   r=subprocess.run(command,capture_output=True,text=True,timeout=60+8*count,env={**os.environ,'ODA_IDENTITY_LIB':identity_library() if identity else ''})
+   r=subprocess.run(command,capture_output=True,text=True,timeout=60+8*count,env={**os.environ,'ODA_IDENTITY_LIB':identity_library(self.scratch_root) if identity else ''})
    if not r.returncode:break
    if not any(x in (r.stdout+r.stderr) for x in ('could not connect to display','X11 connection broke','Xvfb failed to start')):break
   if r.returncode:raise RuntimeError(f'ODA exited {r.returncode}: {r.stdout} {r.stderr}')
@@ -48,7 +50,7 @@ class Oda:
  def save(self,source,path,format,version,encoding):
   if format == 'DXF' and encoding not in ('ASCII','binary'):raise ValueError('Unsupported DXF encoding')
   if format == 'DWG' and encoding != 'binary':raise ValueError('DWG requires binary encoding')
-  with tempfile.TemporaryDirectory(dir=SCRATCH_ROOT) as tmp:
+  with tempfile.TemporaryDirectory(dir=self.scratch_root or SCRATCH_ROOT) as tmp:
    root=Path(tmp);inp=root/'in';out=root/'out';inp.mkdir();out.mkdir()
    shutil.copyfile(source,inp/Path(source).name)
    output_type='DXB' if format=='DXF' and encoding=='binary' else format
@@ -64,7 +66,7 @@ class Oda:
    if format=='DXF' and encoding not in ('ASCII','binary') or format=='DWG' and encoding!='binary':results[dest]='unsupported encoding';continue
    groups.setdefault((Path(source).suffix.lower(),'DXB' if format=='DXF' and encoding=='binary' else format,version),[]).append((source,dest,format))
   for (suffix,output_type,version),items in groups.items():
-   tmp=workdir('oda-');root=Path(tmp);inp=root/'in';out=root/'out';inp.mkdir();out.mkdir()
+   tmp=workdir('oda-', self.scratch_root);root=Path(tmp);inp=root/'in';out=root/'out';inp.mkdir();out.mkdir()
    try:
     for i,(source,dest,format) in enumerate(items):shutil.copyfile(source,inp/f'{i}{suffix}')
     try:self._run(inp,out,version,output_type,'*'+suffix,len(items))
@@ -80,11 +82,11 @@ class Oda:
    finally:shutil.rmtree(tmp,ignore_errors=True)
   return results
  def read_dwg(self,path):
-  with tempfile.TemporaryDirectory(dir=SCRATCH_ROOT) as tmp:
+  with tempfile.TemporaryDirectory(dir=self.scratch_root or SCRATCH_ROOT) as tmp:
    p=Path(tmp)/'read.dxf';self.save(path,p,'DXF','2018','ASCII');return ezdxf.readfile(p)
  def read_dwg_many(self,paths):
   """Convert DWG files to ASCII DXF 2018 for reading. Returns {path: ezdxf document or error string}."""
-  tmp=workdir('oda-read-');results={}
+  tmp=workdir('oda-read-', self.scratch_root);results={}
   try:
    jobs=[(p,Path(tmp)/f'{i}.dxf','DXF','2018','ASCII') for i,p in enumerate(paths)]
    status=self.save_many(jobs)
@@ -152,6 +154,10 @@ class BricsCad:
   finally:shutil.rmtree(tmp,ignore_errors=True)
   return results
 class CadCraft:
+ def __init__(self, binary=None, build=None, scratch_root=None):
+  if binary is not None: self.binary = str(binary)
+  if build is not None: self.build = build
+  self.scratch_root = scratch_root
  engine = 'cadcraft'
  """CADCraft command-line server. Public upstream commit only; never a local fix build."""
  name='cadcraft'
@@ -170,7 +176,7 @@ class CadCraft:
    if format=='DXF' and encoding=='binary':results[dest]='CADCraft cannot write binary DXF';continue
    by_source.setdefault(str(source),[]).append((dest,format,version))
   for source,items in by_source.items():
-   tmp=Path(workdir('cadcraft-'));m=None
+   tmp=Path(workdir('cadcraft-', self.scratch_root));m=None
    try:
     m=MCP(self.binary,tmp);(tmp/'in').mkdir();local=tmp/'in'/Path(source).name;shutil.copyfile(source,local)
     for k,(dest,format,version) in enumerate(items):

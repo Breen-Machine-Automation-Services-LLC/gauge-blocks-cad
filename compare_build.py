@@ -15,8 +15,15 @@ from programs import adapters
 from programs.cadcraft_mcp import HarnessError, launch_options
 from generators import run_cross as cross
 
-# map/template.html compatibility rank, mapped to checker statuses.
-RANK = {'same': 0, 'not run': 1, 'differs': 2, 'absent': 3, 'refused': 4}
+from checker.attribution import RAW, ORDER
+
+def status_rank(status):
+    if status == 'not run':
+        return len(ORDER) - ORDER.index('not scored')
+    try:
+        return len(ORDER) - ORDER.index(RAW[status])
+    except (KeyError, ValueError) as ex:
+        raise ValueError(f'Unknown checker status: {status}') from ex
 
 
 def snapshot():
@@ -70,23 +77,19 @@ def main():
     except HarnessError as ex:
         provenance['mcp_launch_options'] = None
         probe_error = str(ex)
-    adapters.CadCraft.binary = str(binary)
-    adapters.CadCraft.build = commit or baseline
-    adapters.SCRATCH_ROOT = run/'results'
-    original_jobs = cross.jobs_for
-    jobs = {pair: original_jobs(pair, intent=a.intent) for pair in pairs}
-    def isolated_jobs(pair, limit=None, intent=None):
-        return [(s, run/d.relative_to(ROOT), *rest) for s, d, *rest in jobs[pair]][:limit]
-    cross.jobs_for = isolated_jobs
-    cross.R = run
-    cross.LOG = run/'progress.log'
+    (run/'programs').mkdir()
+    shutil.copy2(ROOT/'programs/capabilities.json', run/'programs/capabilities.json')
+    resaver = adapters.CadCraft(binary=binary, build=commit or baseline, scratch_root=run/'results')
+    reader = adapters.Oda(scratch_root=run/'results')
+    jobs = {pair: cross.jobs_for(pair, intent=a.intent, root=run, source_root=ROOT) for pair in pairs}
     failures = {}
     for pair in pairs:
         if probe_error:
             failures[pair] = probe_error
             continue
         try:
-            cross.run_pair(pair, intent=a.intent, reader_name='oda', retain_unreadable=True)
+            cross.run_pair(pair, intent=a.intent, reader_name='oda', retain_unreadable=True,
+                           root=run, source_root=ROOT, resaver=resaver, reader=reader)
         except HarnessError as ex:
             failures[pair] = str(ex)
             print(f'{pair}: could not run this build: {ex}', flush=True)
@@ -98,7 +101,7 @@ def main():
         built = read(run/'results'/f'cross_{pair}_checks.json', [])
         old = {(r['file'], r['field']): r for r in published}
         new = {(r['file'], r['field']): r for r in built}
-        allowed = {str(d.relative_to(ROOT)): side for _, d, *_, side in jobs[pair]}
+        allowed = {str(d.relative_to(run)): side for _, d, *_, side in jobs[pair]}
         for file in sorted(allowed):
             side = allowed[file]
             intent = read(ROOT/'intent'/f"{side['intent_id']}.json")
@@ -107,7 +110,7 @@ def main():
             for field in sorted(fields):
                 b = old.get((file, field), old.get((file, 'open'), {'status': 'not run', 'actual': None}))
                 n = new.get((file, field), new.get((file, 'open'), {'status': 'not run', 'actual': None}))
-                delta = RANK[n['status']] - RANK[b['status']]
+                delta = status_rank(n['status']) - status_rank(b['status'])
                 change = 'improved' if delta < 0 else 'worsened' if delta > 0 else 'unchanged'
                 features = [f for f, ids in intent.get('feature_fields', {}).items() if field in ids] or [intent['title']]
                 row = dict(pair=pair, file=file, intent_id=side['intent_id'], field=field, features=features,
@@ -116,7 +119,7 @@ def main():
                 for feature in features:
                     cell = (pair, side['intent_id'], feature, Path(file).suffix[1:].upper(), side['version'], 'binary' if file.endswith('.dwg') else side['encoding'])
                     cells[cell][change] += 1
-    rows.sort(key=lambda r: (-RANK[r['published']['status']], -RANK[r['build']['status']], r['file'], r['field']))
+    rows.sort(key=lambda r: (-status_rank(r['published']['status']), -status_rank(r['build']['status']), r['file'], r['field']))
     counts = {k: sum(r['change'] == k for r in rows) for k in ('improved', 'worsened', 'unchanged')}
     after = snapshot()
     result = dict(label=a.label, provenance=provenance, failures=failures, counts=counts, rows=rows,

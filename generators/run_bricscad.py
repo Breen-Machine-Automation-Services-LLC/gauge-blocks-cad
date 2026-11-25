@@ -161,7 +161,7 @@ def main(intent_id=None, force=False, root=None):
                 meta['ezdxf_based'] = False; meta['made_by']['script'] = 'generators/run_bricscad.py'
                 if fmt == 'DWG':
                     meta['digest_reader'] = converter
-                before = dest.exists(); publish(p, dest, meta, force=force); written.append(dest.name)
+                before = dest.exists(); publish(p, dest, meta, force=force, doc=doc); written.append(dest.name)
                 if dest.exists() and json.loads(dest.with_suffix(dest.suffix + '.provenance.json').read_text()).get('content_digest') != meta['content_digest']:
                     raise RuntimeError('sidecar digest mismatch ' + p.name)
                 observations[p.name] = observe(doc)

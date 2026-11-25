@@ -57,10 +57,11 @@ def load_json(p, default):
     return json.loads(p.read_text()) if p.exists() else default
 
 
-def jobs_for(pair, limit=None, intent=None, root=None):
+def jobs_for(pair, limit=None, intent=None, root=None, source_root=None):
     root=R if root is None else Path(root)
+    source_root = root if source_root is None else Path(source_root)
     folder, resaver = PAIRS[pair]; writer = pair.split('__')[0]; out = []
-    for src in sorted((root / folder).glob('*.d[xw][fg]')):
+    for src in sorted((source_root / folder).glob('*.d[xw][fg]')):
         side = json.loads(src.with_suffix(src.suffix + '.provenance.json').read_text())
         if intent and side['intent_id'] != intent: continue
         if writer == 'ezdxf' and side['program'] != 'ezdxf':
@@ -81,10 +82,10 @@ def reader_for(pair, root, reader_name):
     return next(iter(names)) if len(names)==1 and names<=ADAPTERS.keys() else READER[pair.split('__')[1]]
 
 
-def plan(pair, intent_id=None, force=False, root=None, reader_name=None):
+def plan(pair, intent_id=None, force=False, root=None, reader_name=None, source_root=None, resaver=None):
     from checker.scoring import empty_plan, file_current, writable
     root=R if root is None else Path(root)
-    work=empty_plan();resaver=ADAPTERS[pair.split('__')[1]]()
+    work=empty_plan();resaver=resaver or ADAPTERS[pair.split('__')[1]]()
     reader_name = reader_for(pair,root,reader_name)
     path=root/'results'/f'cross_{pair}_checks.json'
     previous=load_json(path,[])
@@ -92,7 +93,7 @@ def plan(pair, intent_id=None, force=False, root=None, reader_name=None):
         previous += load_json(root/'results'/f'cross_{pair}_refused.json',[])
     gaps=load_json(root/'results/cross_not_run.json',{})
     builds=load_json(root/'results/cross_gap_builds.json',{})
-    for src,dest,fmt,version,enc,side in jobs_for(pair,intent=intent_id,root=root):
+    for src,dest,fmt,version,enc,side in jobs_for(pair,intent=intent_id,root=root,source_root=source_root):
         rel=dest.relative_to(root).as_posix();key=pair+'|'+rel
         sc=dest.with_suffix(dest.suffix+'.provenance.json');old=load_json(sc,{})
         rows=[r for r in previous if r['file']==rel]
@@ -124,10 +125,10 @@ def main():
             return
 
 
-def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None, retain_unreadable=False, force=False, root=None):
+def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None, retain_unreadable=False, force=False, root=None, source_root=None, resaver=None, reader=None):
     from checker.scoring import record_score, stamp_refusal, writable
     root=R if root is None else Path(root)
-    work_plan=plan(pair,intent_id=intent,force=force,root=root,reader_name=reader_name)
+    work_plan=plan(pair,intent_id=intent,force=force,root=root,reader_name=reader_name,source_root=source_root,resaver=resaver)
     def emit(message):
         if root==R:
             log(message)
@@ -137,7 +138,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
             print(message,flush=True)
 
     reader_name=reader_for(pair,root,reader_name)
-    writer_name, resaver_name = pair.split('__'); resaver = ADAPTERS[resaver_name](); reader = ADAPTERS[reader_name or READER[resaver_name]]()
+    writer_name, resaver_name = pair.split('__'); resaver = resaver or ADAPTERS[resaver_name](); reader = reader or ADAPTERS[reader_name or READER[resaver_name]]()
     folder = root / 'cross' / pair; folder.mkdir(parents=True, exist_ok=True)
     checks_path = root / 'results' / f'cross_{pair}_checks.json'
     refused_path = root / 'results' / (f'cross_{pair}_refused.json' if writer_name == 'oda' else f'cross_{pair}_refused_checks.json')
@@ -149,7 +150,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
     not_run = load_json(root/'results/cross_not_run.json',{})
     gap_builds = load_json(root/'results/cross_gap_builds.json',{})
     intents = {p.stem: json.loads(p.read_text()) for p in (root/'intent').glob('*.json') if not p.name.endswith('.schema.json')}
-    jobs=jobs_for(pair,limit,intent,root=root)
+    jobs=jobs_for(pair,limit,intent,root=root,source_root=source_root)
     todo=[job for job in jobs if job[1].relative_to(root).as_posix() in work_plan['resave']]
     rescore=[job for job in jobs if job[1].relative_to(root).as_posix() in work_plan['rescore']]
     for src,dest,fmt,version,enc,side in rescore:
@@ -179,7 +180,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
         if budget and time.time() - t0 > budget:
             emit(f'{pair}: time budget reached with {len(todo) - start} outputs left; run again to resume')
             return True
-        chunk = todo[start:start + size]; stage = Path(workdir('cross-'))
+        chunk = todo[start:start + size]; stage = Path(workdir('cross-', root/'results'))
         for job in chunk:
             key=pair+'|'+job[1].relative_to(root).as_posix()
             not_run.pop(key,None);gap_builds.pop(key,None)
@@ -242,7 +243,7 @@ def run_pair(pair, limit=None, t0=0, budget=None, intent=None, reader_name=None,
                 if digest_reader:
                     meta['digest_reader'] = digest_reader
                 privacy.assert_clean(staged[dest])
-                publish(staged[dest], dest, meta, force=force)
+                publish(staged[dest], dest, meta, force=force, doc=doc)
                 sc = dest.with_suffix(dest.suffix + '.provenance.json')
                 if json.loads(sc.read_text()) != meta:   # publish keeps an unchanged output; its sidecar must still name the current source
                     write_json(sc, meta)

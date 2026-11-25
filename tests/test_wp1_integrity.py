@@ -405,7 +405,7 @@ def fresh_cross(tmp_path, monkeypatch):
     dump(tmp_path / 'intent/synthetic.json', i)
     monkeypatch.setattr(run_cross, 'R', tmp_path)
     monkeypatch.setattr(run_cross, 'log', lambda *args: None)
-    monkeypatch.setattr(run_cross, 'workdir', lambda prefix: tempfile.mkdtemp(dir=tmp_path, prefix=prefix))
+    monkeypatch.setattr(run_cross, 'workdir', lambda prefix, root=None: tempfile.mkdtemp(dir=tmp_path, prefix=prefix))
     monkeypatch.setattr(run_cross.ezdxf, 'readfile', Mock(return_value=doc))
     monkeypatch.setattr(run_cross.privacy, 'assert_clean', lambda *args: None)
     saved = Mock()

@@ -13,10 +13,11 @@ def write_json(p,v):
  p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,indent=2)+'\n')
 def sidecar(p,doc,intent,adapter,version,encoding,input_digest):
  return {'intent_id':intent['intent_id'],'representation_id':intent['representation_id'],'program':adapter.name,'build':adapter.build,'format':p.suffix[1:].upper(),'version':version,'encoding':encoding,'made_by':{'script':'regenerate.py','input_digest':input_digest},'content_digest':digest(doc),'ezdxf_based':True}
-def publish(temp,dest,meta,force=False):
+def publish(temp,dest,meta,force=False,doc=None):
  sc=dest.with_suffix(dest.suffix+'.provenance.json');old=json.loads(sc.read_text()) if sc.exists() else {}
  if force or not dest.exists() or any(old.get(k)!=meta[k] for k in ['content_digest','build','encoding']):
   dest.parent.mkdir(parents=True,exist_ok=True);temp.replace(dest)
+ if getattr(doc, 'filename', None) and Path(doc.filename) == temp: doc.filename=str(dest)
  if old!=meta:write_json(sc,meta)
 def run_case(case, cross=True, force=False, root=None, action=None):
  root=ROOT if root is None else Path(root)
@@ -48,7 +49,7 @@ def run_case(case, cross=True, force=False, root=None, action=None):
    out=Path(tmp)/('cross.'+fmt.lower());oda.save(dest,out,fmt,version,encoding if fmt=='DXF' else 'binary')
    dd=ez.open(out) if fmt=='DXF' else oda.read_dwg(out)
    target=root/'cross/ezdxf__oda'/f'{topic}_{version}_{encoding}.{fmt.lower()}'
-   publish(out,target,sidecar(target,dd,intent,oda,version,encoding if fmt=='DXF' else 'binary',meta['content_digest']),force=force)
+   publish(out,target,sidecar(target,dd,intent,oda,version,encoding if fmt=='DXF' else 'binary',meta['content_digest']),force=force,doc=dd)
    for row in compare(dd, encoding_intent(intent, encoding if fmt=='DXF' else 'binary'), 'ezdxf '+ez.build, VERSIONS[version]):
     row.update(file=str(target.relative_to(root)),converter='oda '+oda.build if fmt=='DWG' else None,self_read=(fmt=='DWG'));rows.append(row)
  annotate(rows,root,intent['intent_id'],'ezdxf','ezdxf')
