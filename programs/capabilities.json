@@ -419,5 +419,129 @@
       ]
     ],
     "engine": "cadcraft"
+  },
+  "autocad": {
+    "name": "AutoCAD LT",
+    "versions": [
+      "R12",
+      "2000",
+      "2004",
+      "2007",
+      "2010",
+      "2013",
+      "2018"
+    ],
+    "formats": {
+      "DXF": [
+        "ASCII",
+        "binary"
+      ],
+      "DWG": [
+        "binary"
+      ]
+    },
+    "outputs": [
+      [
+        "DXF",
+        "R12",
+        "ASCII"
+      ],
+      [
+        "DXF",
+        "R12",
+        "binary"
+      ],
+      [
+        "DXF",
+        "2000",
+        "ASCII"
+      ],
+      [
+        "DXF",
+        "2000",
+        "binary"
+      ],
+      [
+        "DXF",
+        "2004",
+        "ASCII"
+      ],
+      [
+        "DXF",
+        "2004",
+        "binary"
+      ],
+      [
+        "DXF",
+        "2007",
+        "ASCII"
+      ],
+      [
+        "DXF",
+        "2007",
+        "binary"
+      ],
+      [
+        "DXF",
+        "2010",
+        "ASCII"
+      ],
+      [
+        "DXF",
+        "2010",
+        "binary"
+      ],
+      [
+        "DXF",
+        "2013",
+        "ASCII"
+      ],
+      [
+        "DXF",
+        "2013",
+        "binary"
+      ],
+      [
+        "DXF",
+        "2018",
+        "ASCII"
+      ],
+      [
+        "DXF",
+        "2018",
+        "binary"
+      ],
+      [
+        "DWG",
+        "2000",
+        "binary"
+      ],
+      [
+        "DWG",
+        "2004",
+        "binary"
+      ],
+      [
+        "DWG",
+        "2007",
+        "binary"
+      ],
+      [
+        "DWG",
+        "2010",
+        "binary"
+      ],
+      [
+        "DWG",
+        "2013",
+        "binary"
+      ],
+      [
+        "DWG",
+        "2018",
+        "binary"
+      ]
+    ],
+    "engine": "autocad"
   }
 }

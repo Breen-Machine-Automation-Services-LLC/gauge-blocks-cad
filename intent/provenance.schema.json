@@ -14,7 +14,8 @@
         "ezdxf",
         "oda",
         "bricscad",
-        "cadcraft"
+        "cadcraft",
+        "autocad"
       ]
     },
     "build": {

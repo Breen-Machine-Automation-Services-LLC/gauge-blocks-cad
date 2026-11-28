@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_c_layouts",
+  "representation_id": "reference_1",
+  "program": "autocad",
+  "build": "AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))",
+  "format": "DXF",
+  "version": "2007",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "a73f9c8cabbb7a15c8c2bd7e5c36ded8b788d0f5c47c8f092dbf51a103322e29"
+  },
+  "content_digest": "d4e049cdbd6df33ac8a58afd670336fb54cdcfad607e9190dc0ab38cf15a5239",
+  "ezdxf_based": true
+}

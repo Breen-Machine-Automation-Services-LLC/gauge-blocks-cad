@@ -30,6 +30,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
 import pytest
+from map.check_links import page_data
 
 ROOT = Path(__file__).resolve().parents[1]
 PROGRAMS = ('ezdxf', 'oda', 'bricscad', 'cadcraft')
@@ -400,7 +401,7 @@ def test_template_defaults_to_main_and_retains_linked_detailed_view(builder, cor
     selected = [o['value'] for o in parser.options if o['selected']]
     assert (selected or [parser.options[0]['value']]) == ['main']
     # Preserve the old drill-down payload and publish both computed views.
-    payload = json.loads(re.search(r'const DATA=(.*?);\s*\n', page).group(1))
+    payload = page_data(page)
     assert payload['topics'] and payload['columns']
     assert payload['main_view'] == main_rows(builder, corpus)
     assert payload['comparisons']['ezdxf__cadcraft'] == comparison(builder, corpus)

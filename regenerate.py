@@ -106,6 +106,7 @@ def main():
  parser.add_argument('--dry-run',action='store_true')
  parser.add_argument('--force',action='store_true')
  parser.add_argument('--with-bricscad',action='store_true')
+ parser.add_argument('--with-autocad',action='store_true')
  args=parser.parse_args()
  pairs=args.pairs.split(',') if args.pairs else list(run_cross.PAIRS)
  if any(p not in run_cross.PAIRS for p in pairs):parser.error('Unknown declared pair')
@@ -114,7 +115,7 @@ def main():
   parser.error('Intent has no native generator')
  native_ezdxf=not args.pairs or any(p.startswith('ezdxf__') for p in pairs)
  native_bricscad=(args.with_bricscad and not args.pairs) or (bool(args.pairs) and any(p.startswith('bricscad__') for p in pairs))
- pairs=[p for p in pairs if args.with_bricscad or p.split('__')[1]!='bricscad']
+ pairs=[p for p in pairs if (args.with_bricscad or p.split('__')[1]!='bricscad') and (args.with_autocad or p.split('__')[1]!='autocad')]
  reader=None
  if args.dry_run:
   def report(label,plans):

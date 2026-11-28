@@ -1,6 +1,6 @@
 # Map checks
 
-Build with `python map/build.py`. Open `map/index.html` directly; it needs no server or network. The builder reads intents, native/cross provenance records, and result checks, and writes only `map/index.html`. Its presentation template is `map/template.html`.
+Build with `python map/build.py`. Open `map/index.html` directly; it needs no server or network. The builder reads intents, native/cross provenance records, and result checks, and writes only `map/index.html`. Its JSON payload is embedded as base64-encoded gzip in the single inline script. The browser uses the standard `DecompressionStream` API before initializing any view; no side files or fetch requests are needed. Offline checks decode the same payload with `map.check_links.page_data`. Its presentation template is `map/template.html`.
 
 The default **Standard and programs** view groups the DXF inventory by kind, shows dataset coverage, and gives each program Reads, Writes and Round trip cells. **Program A to program B** offers writers and resavers from the declared pairs, with feature outcomes, slot counts, reader/converter evidence, and a feature summary. Select a cell in either view to inspect its evidence and follow its filtered link into **Detailed coverage and compatibility**.
 

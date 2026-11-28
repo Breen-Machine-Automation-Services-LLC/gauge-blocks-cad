@@ -9,6 +9,8 @@ import tempfile
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('coverage_builder',ROOT/'map/build.py')
 builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
+from map.check_links import page_data
+
 with tempfile.TemporaryDirectory(prefix='cad-coverage-') as tmp:
     root=Path(tmp)
     for directory in ['intent','native/ezdxf','cross/ezdxf__cadcraft','results','programs','map']:
@@ -44,7 +46,7 @@ with tempfile.TemporaryDirectory(prefix='cad-coverage-') as tmp:
     (root/(target+'.provenance.json')).write_text(json.dumps(dwg))
     builder.ROOT=root
     with contextlib.redirect_stdout(io.StringIO()):builder.main()
-    data=json.loads((root/'map/index.html').read_text().split('const DATA=')[1].split(';\nconst icons=')[0])
+    data=page_data((root/'map/index.html').read_text())
     def cell(name,encoding):
         topic=next(t for t in data['topics'] if t['id']==name)
         return topic['features'][0]['cells'][data['columns'].index(['DXF','2000',encoding])]
@@ -57,5 +59,5 @@ with tempfile.TemporaryDirectory(prefix='cad-coverage-') as tmp:
     dwg=topic['features'][0]['cells'][data['columns'].index(['DWG','2000','binary'])]
     assert dwg['coverage']=='partial' and dwg['missing']==['not yet run: CADCraft to ezdxf']
     gap=cell('gap','binary');assert gap['coverage']=='covered'
-    assert gap['impossible']==['not possible: ezdxf to CADCraft cannot write DXF 2000 binary']
+    assert gap['impossible']==[builder.gap_reason(root, 'cadcraft', 'DXF', '2000', 'binary')]
 print('Synthetic complete, missing-pair, and capability-gap coverage pass')

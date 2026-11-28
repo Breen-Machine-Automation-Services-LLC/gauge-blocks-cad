@@ -10,6 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('map_builder',ROOT/'map/build.py')
 builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
+from map.check_links import page_data
+
 with tempfile.TemporaryDirectory(prefix='cad-map-refusal-') as folder:
     root = Path(folder)
     for name in ('intent','native/ezdxf','cross','results','map','programs'):
@@ -22,7 +24,7 @@ with tempfile.TemporaryDirectory(prefix='cad-map-refusal-') as folder:
     with contextlib.redirect_stdout(io.StringIO()):
         builder.main()
     page = (root/'map/index.html').read_text()
-    data = json.loads(page.split('const DATA=')[1].split(';\nconst icons=')[0])
+    data = page_data(page)
     column = data['columns'].index(['DWG','2000','binary'])
     cell = data['topics'][0]['features'][0]['cells'][column]
     assert cell['coverage']=='planned', cell

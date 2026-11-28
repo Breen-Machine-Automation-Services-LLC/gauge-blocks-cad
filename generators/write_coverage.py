@@ -4,6 +4,7 @@ Usage: python -I generators/write_coverage.py
 from pathlib import Path
 import json, collections, sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from map.check_links import page_data
 from map.build import main as build_map, display, COVERAGE_DISPLAY
 R = Path(__file__).resolve().parents[1]
 def coverage_display(status):
@@ -18,7 +19,7 @@ def main(output=None, page_path=None):
         build_map()
         page_path = R/'map/index.html'
     page = Path(page_path).read_text()
-    data = json.loads(page.split('const DATA=')[1].split(';\nconst icons=')[0])
+    data = page_data(page)
     summaries = {}
     for t in data['topics']:
         cells = [c for f in t['features'] for c in f['cells'] if c['applicable'] and c['coverage'] != 'no source']

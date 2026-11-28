@@ -1,0 +1,16 @@
+{
+  "intent_id": "background_blocks",
+  "representation_id": "reference_1",
+  "program": "autocad",
+  "build": "AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))",
+  "format": "DWG",
+  "version": "2004",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "77dda3b83c161f42b9daaf0fb68cd02ca8144d49346b42ea38c005e1750c2469"
+  },
+  "content_digest": "20fa159d254671c9f62c796b8d475f2db1982d677f7e14c468071d5a0204c82c",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

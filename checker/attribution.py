@@ -89,12 +89,12 @@ class Attribution:
         return result
 
 def display_program(value):
-    names = {'oda': 'ODA File Converter', 'bricscad': 'BricsCAD', 'cadcraft': 'CADCraft'}
+    names = {'autocad': 'AutoCAD LT', 'oda': 'ODA File Converter', 'bricscad': 'BricsCAD', 'cadcraft': 'CADCraft'}
     parts = value.split(' ', 1)
     return names.get(parts[0], parts[0]) + (' ' + parts[1] if len(parts) > 1 else '')
 
 def reading_label(status, rows):
-    paths=sorted({r.get('reader','unspecified')+(' through '+r['converter'] if r.get('converter') else '') for r in rows})
+    paths=sorted({display_program(r.get('reader','unspecified'))+(' through '+display_program(r['converter']) if r.get('converter') else '') for r in rows})
     if status=='lost in writer or converter':
         readers = sorted({r.get('reader', 'unspecified') for r in rows if r.get('converter')})
         converters = sorted({display_program(r['converter'].split(' (', 1)[0]) for r in rows if r.get('converter')})

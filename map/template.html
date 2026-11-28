@@ -15,7 +15,10 @@
 <p id="method" style="font-size:12px"></p><p id="builds" style="font-size:11px"></p>
 <div id="tooltip" role="tooltip" hidden></div><aside id="panel" aria-label="Cell evidence" hidden><button id="close">Close ×</button><div id="details"></div></aside>
 <script>
-const DATA=/*DATA*/;
+(async () => {
+const DATA_GZIP=/*DATA*/;
+const compressed=Uint8Array.from(atob(DATA_GZIP), c=>c.charCodeAt(0));
+const DATA=JSON.parse(await new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'))).text());
 const icons={'source not readable':'×','lost in writer or converter':'≠','unreadable by reader':'×','reader_error':'×','not_scored':'·','kept':'✓','covered':'✓','changed':'≠','partial':'◐','lost':'−','refused':'×','not run':'·','no source':'−','not applicable':'/','planned':'□','wanted':'◇','blocked':'⚿','measured':'✓','native drawing':'✓','included':'✓','present':'✓','future':'◇','omitted':'·','not measured':'·','no native drawing':'·','not scored':'·','lost by converter':'≠'};
 const sets={coverage:['covered','partial','planned','wanted','blocked','no source','not applicable'],compatibility:['source not readable','lost in writer or converter','unreadable by reader','reader_error','not_scored','kept','changed','lost','refused','not run','not applicable']};
 const rank={'source not readable':1.2,'lost in writer or converter':1.5,'unreadable by reader':1.8,reader_error:1.7,'not applicable':-1,'no source':-0.5,not_scored:1,kept:0,covered:0,planned:2,wanted:3,'not run':1,partial:1,changed:2,lost:3,blocked:4,refused:4};
@@ -178,4 +181,5 @@ document.addEventListener('click',e=>{const topic=e.target.closest('[data-topic]
 document.addEventListener('mouseover',e=>{const cell=e.target.closest('[data-cell], [data-evidence]');if(cell)tooltip(cell)});document.addEventListener('focusin',e=>{if(e.target.matches('[data-cell], [data-evidence]'))tooltip(e.target)});document.addEventListener('mouseout',e=>{if(e.target.closest('[data-cell], [data-evidence]'))$('tooltip').hidden=true});
 $('close').onclick=()=>{$('panel').hidden=true;lastCell?.focus()};document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('panel').hidden=true;$('tooltip').hidden=true;lastCell?.focus()}});
 initializeViews();resetStatus();render();
+})().catch(error=>{document.getElementById('summary').textContent='Unable to load map: '+error.message; console.error(error);});
 </script></html>

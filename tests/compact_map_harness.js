@@ -5,6 +5,7 @@
 // hover/click entries are attribute dicts of an element the page rendered; each is turned into a
 // fake element that answers matches()/closest()/dataset/getAttribute from those attributes, then
 // the page's own document-level mouseover, focusin and click listeners are fired on it.
+async function main() {
 const fs = require('fs');
 const vm = require('vm');
 
@@ -42,9 +43,10 @@ const document = {
 const ctx = vm.createContext({
   document, window: {addEventListener() {}}, location: {hash: '', pathname: '/map.html'},
   history: {replaceState() {}}, Option, URLSearchParams, innerWidth: 1400, innerHeight: 900,
+  Blob, Response, DecompressionStream, Uint8Array, atob,
   matchMedia: () => ({matches: false}), console,
 });
-vm.runInContext(script, ctx);
+await vm.runInContext(script, ctx);
 
 function camel(s) { return s.replace(/-([a-z])/g, (_, c) => c.toUpperCase()); }
 function matchOne(el, sel) {
@@ -104,7 +106,7 @@ const out = {
   views: $('views').innerHTML, grid: $('grid').innerHTML, summary_html: $('summary').innerHTML,
   summary_text: $('summary').textContent, legend_html: $('legend').innerHTML, method: $('method').textContent,
   instructions: $('instructions').textContent,
-  icons: vm.runInContext('typeof icons==="undefined"?null:icons', ctx),
+  icons: vm.runInContext('(' + script.match(/const icons=(.*);/)[1] + ')', ctx),
   tooltips: [], panels: [],
 };
 const tip = $('tooltip');
@@ -125,3 +127,6 @@ for (const attrs of scenario.click || []) {
   out.panels.push(rec);
 }
 process.stdout.write(JSON.stringify(out));
+
+}
+main().catch(error=>{console.error(error);process.exitCode=1;});

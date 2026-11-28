@@ -1,0 +1,15 @@
+{
+  "intent_id": "future_k_regions_solids",
+  "representation_id": "reference_1",
+  "program": "autocad",
+  "build": "AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))",
+  "format": "DXF",
+  "version": "2010",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "8963a10abc7a0d0212a09324a4ae06ac1bd42f167d4f9a10be0f38b223681601"
+  },
+  "content_digest": "341e73f8b18020fa1d81ae7db64680a51e46ad83e0652985e88a912affe1c4af",
+  "ezdxf_based": false
+}

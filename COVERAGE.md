@@ -73,8 +73,10 @@ Each drawing has a sidecar. Rows are checker results per expected field.
 
 | Set | Drawings | Formats and encodings | Rows same | Rows differs | Rows absent | Rows not scored | Rows refused |
 | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: |
+| cross/bricscad__autocad | 40 | DWG, DXF ASCII, DXF binary | 164 | 0 | 0 | 0 | 0 |
 | cross/bricscad__cadcraft | 24 | DWG, DXF ASCII | 106 | 3 | 11 | 0 | 0 |
 | cross/bricscad__oda | 40 | DWG, DXF ASCII, DXF binary | 177 | 3 | 0 | 0 | 0 |
+| cross/ezdxf__autocad | 423 | DWG, DXF ASCII, DXF binary | 25068 | 16 | 92 | 0 | 26 |
 | cross/ezdxf__bricscad | 449 | DWG, DXF ASCII, DXF binary | 25846 | 3 | 91 | 0 | 0 |
 | cross/ezdxf__cadcraft | 322 | DWG, DXF ASCII | 18601 | 98 | 234 | 0 | 2 |
 | cross/ezdxf__oda | 466 | DWG, DXF ASCII, DXF binary | 26517 | 3 | 100 | 0 | 0 |
@@ -89,6 +91,7 @@ Capability gaps, recorded in `results/cross_not_run.json`; they are not failed r
 | Pair | Outputs not run | Reasons |
 | --- | ---: | --- |
 | bricscad__cadcraft | 16 | CADCraft does not write DXF 2000 binary; CADCraft does not write DXF 2004 binary; CADCraft does not write DXF 2007 binary; CADCraft does not write DXF 2010 binary; CADCraft does not write DXF 2013 binary; CADCraft does not write DXF 2018 binary; CADCraft does not write DXF R12 ASCII; CADCraft does not write DXF R12 binary |
+| ezdxf__autocad | 17 | AutoCAD LT does not write DWG R12 |
 | ezdxf__bricscad | 17 | BricsCAD does not write DWG R12 |
 | ezdxf__cadcraft | 142 | CADCraft does not write DWG R12; CADCraft does not write DXF 2000 binary; CADCraft does not write DXF 2004 binary; CADCraft does not write DXF 2007 binary; CADCraft does not write DXF 2010 binary; CADCraft does not write DXF 2013 binary; CADCraft does not write DXF 2018 binary; CADCraft does not write DXF R12 ASCII |
 | oda__bricscad | 17 | BricsCAD does not write DWG R12 |

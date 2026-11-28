@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_j_raster",
+  "representation_id": "reference_1",
+  "program": "autocad",
+  "build": "AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))",
+  "format": "DXF",
+  "version": "2007",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "ae0ae39c44c8b64c138ccc9ec5a1911f65c2076673b518f6040fea030ee72edb"
+  },
+  "content_digest": "f734c56a3aa243032c952d5bccc57c7286bbe48e4bba789b2000503ac7e634e5",
+  "ezdxf_based": true
+}

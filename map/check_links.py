@@ -14,6 +14,8 @@ tests/test_reference_links.py covers that case.
 from pathlib import Path
 import importlib.util
 import json
+import base64
+import gzip
 import os
 import re
 import socket
@@ -39,7 +41,8 @@ def catalog():
 
 
 def page_data(page):
-    return json.loads(page.split('const DATA=', 1)[1].split(';\nconst icons=', 1)[0])
+    encoded = json.loads(page.split('const DATA_GZIP=', 1)[1].split(';\n', 1)[0])
+    return json.loads(gzip.decompress(base64.b64decode(encoded)))
 
 
 def local_links(data):
@@ -67,6 +70,8 @@ def clean(url):
 
 
 def reference_links(page):
+    if 'const DATA_GZIP=' in page:
+        page += json.dumps(page_data(page))
     item = catalog().ITEM_URL
     refs = {clean(u) for u in URL.findall(page) if u.startswith(AUTODESK)}
     bad = sorted(u for u in refs if not item.fullmatch(u))
@@ -86,6 +91,8 @@ def tracked_text_files():
 
 
 def external_links(page):
+    if 'const DATA_GZIP=' in page:
+        page += json.dumps(page_data(page))
     found = {}
     for name, text in [('map/index.html', page), *tracked_text_files()]:
         for url in URL.findall(text):

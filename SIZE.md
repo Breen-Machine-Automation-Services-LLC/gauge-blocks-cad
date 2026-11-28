@@ -4,8 +4,10 @@ Measured by `measure_size.py`; bytes include drawings and identity sidecars, and
 
 | Set | Drawings | Drawing bytes | Sidecar bytes | Total bytes |
 | --- | ---: | ---: | ---: | ---: |
+| cross/bricscad__autocad | 40 | 4,244,555 | 21,062 | 4,265,617 |
 | cross/bricscad__cadcraft | 24 | 2,026,773 | 12,348 | 2,039,121 |
 | cross/bricscad__oda | 40 | 16,728,578 | 18,898 | 16,747,476 |
+| cross/ezdxf__autocad | 423 | 37,500,762 | 224,629 | 37,725,391 |
 | cross/ezdxf__bricscad | 449 | 248,594,577 | 225,670 | 248,820,247 |
 | cross/ezdxf__cadcraft | 322 | 10,245,892 | 167,086 | 10,412,978 |
 | cross/ezdxf__oda | 466 | 33,605,272 | 218,379 | 33,823,651 |
@@ -13,12 +15,15 @@ Measured by `measure_size.py`; bytes include drawings and identity sidecars, and
 | native/bricscad | 40 | 16,646,393 | 20,014 | 16,666,407 |
 | native/ezdxf | 233 | 8,650,203 | 102,569 | 8,752,772 |
 
-Measured total: **586,700,503 bytes** (559.52 MiB).
+Measured total: **628,691,511 bytes** (599.57 MiB).
 
 Mean drawing size by the program that wrote the file (sidecar program) and format:
 
 | Writer | Format | Files | Mean bytes |
 | --- | --- | ---: | ---: |
+| autocad | DWG | 216 | 56,674 |
+| autocad | DXF ASCII | 131 | 139,742 |
+| autocad | DXF binary | 116 | 96,529 |
 | bricscad | DWG | 444 | 425,071 |
 | bricscad | DXF ASCII | 264 | 1,154,120 |
 | bricscad | DXF binary | 230 | 91,454 |

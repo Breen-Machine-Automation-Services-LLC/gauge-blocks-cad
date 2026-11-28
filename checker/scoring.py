@@ -5,7 +5,7 @@ import json
 import ezdxf
 from checker.core import applicable_fields
 
-ENGINES = {'ezdxf': 'ezdxf', 'oda': 'oda-teigha', 'bricscad': 'oda-teigha', 'cadcraft': 'cadcraft'}
+ENGINES = {'autocad': 'autocad', 'ezdxf': 'ezdxf', 'oda': 'oda-teigha', 'bricscad': 'oda-teigha', 'cadcraft': 'cadcraft'}
 
 def scoring_intent(intent):
     """Serialize the expected fields that affect scoring and drawing inputs."""

@@ -42,13 +42,14 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 import pytest
+from map.check_links import page_data
 
 from checker.core import SAT_READ_CAUSE
 
 ROOT = Path(__file__).resolve().parents[1]
 HARNESS = ROOT / 'tests/compact_map_harness.js'
 BASELINE_TEMPLATE = ROOT / 'tests/fixtures/wp10_baseline_template.html'
-NAMES = {'ezdxf': 'ezdxf', 'oda': 'ODA File Converter', 'bricscad': 'BricsCAD', 'cadcraft': 'CADCraft'}
+NAMES = {'autocad': 'AutoCAD LT', 'ezdxf': 'ezdxf', 'oda': 'ODA File Converter', 'bricscad': 'BricsCAD', 'cadcraft': 'CADCraft'}
 CHECK, CROSS, DOT = {'✓', '✔'}, {'×', '✗', '✕', '✘'}, {'·', '•', '∙', '⋅'}
 CHECK_STATUSES = ('kept', 'measured', 'native drawing', 'included', 'present')
 CROSS_STATUSES = ('reader_error', 'refused', 'unreadable by reader', 'source not readable')
@@ -87,15 +88,22 @@ def built(tmp_path_factory):
     patch = pytest.MonkeyPatch()
     try:
         patch.setattr(module, 'ROOT', root)
+        serialized = []
+        serialize = module.serialize_data
+        def capture(data):
+            value = serialize(data)
+            serialized.append(value)
+            return value
+        patch.setattr(module, 'serialize_data', capture)
         with contextlib.redirect_stdout(io.StringIO()):
             module.main()
     finally:
         patch.undo()
     page = root / 'map/index.html'
     text = page.read_text()
-    data_json = re.search(r'const DATA=(.*?);\s*\n', text).group(1)
+    data_json = json.dumps(page_data(text))
     return dict(root=root, page=page, text=text, data=json.loads(data_json), data_json=data_json,
-                template=(ROOT / 'map/template.html').read_text(), tmp=root)
+                template=(ROOT / 'map/template.html').read_text(), tmp=root, serialized=serialized[0])
 
 
 @pytest.fixture(scope='module')
@@ -752,3 +760,10 @@ def test_b_req3_dataset_legend_squares_match_the_squares_the_column_uses(built, 
         match = [(c, i) for c, i, label in items if any(w in label for w in words)]
         assert match, (status, 'no legend item names this dataset status')
         assert any(class_token(square_status(status)) in c and i == mark and class_token(square_status(status)) in cls for c, i in match), (status, match, cls, mark)
+
+
+def test_compressed_payload_matches_serialized_data(built):
+    assert page_data(built['text']) == json.loads(built['serialized'])
+    runs = [r for t in built['data']['topics'] for f in t['features']
+            for c in f['cells'] for r in c['runs']]
+    assert runs and all('field_counts' in r for r in runs)

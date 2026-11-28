@@ -3,6 +3,8 @@ from pathlib import Path
 from collections import defaultdict
 from datetime import datetime, timezone
 import json
+import gzip
+import base64
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from checker.attribution import Attribution, outcome, counts, BUCKETS, reading_label, display_program
@@ -317,6 +319,10 @@ def _page_evidence(data):
     data['evidence_fields'] = fields
 
 
+def serialize_data(data):
+    return json.dumps(data, ensure_ascii=False, separators=(',', ':'))
+
+
 def main(output=None):
     intents = [read(p) for p in sorted((ROOT/'intent').glob('*.json')) if not p.name.endswith('.schema.json')]
     declared = read(ROOT/'programs/pairs.json')
@@ -445,7 +451,9 @@ def main(output=None):
     from collections import Counter
     print('Coverage cells:', dict(Counter(c['coverage'] for t in topics for f in t['features'] for c in f['cells'])))
     template = (ROOT/'map/template.html').read_text()
-    (Path(output) if output else ROOT/'map/index.html').write_text(template.replace('/*DATA*/',json.dumps(data,ensure_ascii=False,separators=(',', ':')).replace('<','\\u003c')))
+    compressed = gzip.compress(serialize_data(data).encode('utf-8'), mtime=0)
+    payload = json.dumps(base64.b64encode(compressed).decode('ascii'))
+    (Path(output) if output else ROOT/'map/index.html').write_text(template.replace('/*DATA*/', payload))
     print(f'{len(topics)} topics; {sum(len(t["features"]) for t in topics)} features; {sum(map(len,checks.values()))} measured fields')
 
 if __name__=='__main__':

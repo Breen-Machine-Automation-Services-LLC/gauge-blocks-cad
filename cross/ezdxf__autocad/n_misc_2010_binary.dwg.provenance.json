@@ -1,0 +1,16 @@
+{
+  "intent_id": "feature_n_misc",
+  "representation_id": "reference_1",
+  "program": "autocad",
+  "build": "AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))",
+  "format": "DWG",
+  "version": "2010",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "5fea4dfe9a3662ae78619481b4a2938de86d08fe84b55112d42b6b4385ec0508"
+  },
+  "content_digest": "872dacdd3996a73cedcb36684acd347216b2747b3deaa4c37b2c644afb29b81f",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

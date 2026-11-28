@@ -56,3 +56,7 @@ Program declarations in `capabilities.json` and adapter `engine` attributes
 identify ezdxf as `ezdxf`, ODA File Converter and BricsCAD as `oda-teigha`
 (ODA Teigha), and CADCraft as `cadcraft`. BricsCAD reading ODA-written DWG
 is a shared-engine observation, even though the programs differ.
+
+## AutoCAD LT
+
+AutoCAD LT 2027.1 is driven by script and inline AutoLISP through an interactive Windows VM session. The recorded author is the BMAS company account, not a person. It has no COM automation or console edition. One seat permits one run at a time.

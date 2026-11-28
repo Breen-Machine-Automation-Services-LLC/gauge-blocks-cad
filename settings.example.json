@@ -6,5 +6,11 @@
   "xvfb_reaper": "/opt/cad-tools/reap_xvfb.sh",
   "crash_dir": "results/bricscad-crash",
   "cadcraft_binary": "/opt/cadcraft/cadcraft-cli",
-  "privacy_tokens": []
+  "privacy_tokens": [],
+  "autocad_domain": "autocad",
+  "autocad_transfer": "/srv/vm-transfer/autocad",
+  "autocad_transfer_windows": "Z:\\",
+  "autocad_user": "bmas",
+  "autocad_stall_seconds": 120,
+  "autocad_chunk": 40
 }

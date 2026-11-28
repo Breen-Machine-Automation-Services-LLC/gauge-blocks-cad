@@ -137,6 +137,9 @@ def test_ruling16_committed_results_pass_the_check_and_plan_no_work(tmp_path):
     assert result.returncode == 0, output(result)[-1500:]
     for pair in run_cross.PAIRS:
         work = run_cross.plan(pair)
+        if pair.endswith('__autocad') and not (ROOT / 'results' / f'cross_{pair}_checks.json').exists():
+            assert work['resave'], pair
+            continue
         assert not work['resave'] and not work['rescore'], (pair, work['resave'][:3], work['rescore'][:3])
 
 

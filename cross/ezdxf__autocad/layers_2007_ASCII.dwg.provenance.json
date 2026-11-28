@@ -1,0 +1,16 @@
+{
+  "intent_id": "background_layers",
+  "representation_id": "reference_1",
+  "program": "autocad",
+  "build": "AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))",
+  "format": "DWG",
+  "version": "2007",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "d9818ab9adfe686b7b5115f5873f57dfc8d343a3cc027d62a05df0a986b20bc4"
+  },
+  "content_digest": "f1a5880391c2bf80df445183cc6fd0fe5eb7e0c4a4115ecd9f0c7084d7fcec14",
+  "ezdxf_based": true,
+  "digest_reader": "oda 27.1.0.143450"
+}

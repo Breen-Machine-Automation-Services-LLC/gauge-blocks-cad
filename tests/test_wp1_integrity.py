@@ -11,6 +11,7 @@ from unittest.mock import Mock
 
 import ezdxf
 import pytest
+from map.check_links import page_data
 
 ROOT = Path(__file__).resolve().parents[1]
 os.environ.setdefault('CAD_DATASET_SETTINGS', str(ROOT / 'settings.example.json'))
@@ -173,7 +174,7 @@ def builder_case(tmp_path, monkeypatch):
 
 
 def map_cell(root):
-    data = json.loads((root / 'map/index.html').read_text().split('const DATA=')[1].split(';\nconst icons=')[0])
+    data = page_data((root / 'map/index.html').read_text())
     return data['topics'][0]['features'][0]['cells'][data['columns'].index(['DXF', '2000', 'ASCII'])]
 
 

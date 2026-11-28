@@ -382,3 +382,27 @@ def test_dry_run_prints_runner_plans_without_deciding(corpus, monkeypatch, capsy
     assert 'read by bricscad' not in output
     assert 'native bricscad:' not in output
     assert not h.saved and not h.published and not h.scored and not h.read
+
+
+def test_autocad_pair_with_fake_resaver(corpus, monkeypatch):
+    h = corpus
+    import shutil
+    from programs import adapters
+    class FakeAutoCAD:
+        name = 'autocad'
+        build = 'synthetic AutoCAD build'
+        def save_many(self, jobs):
+            for source, dest, fmt, version, enc in jobs:
+                if fmt == 'DXF':
+                    shutil.copyfile(source, dest)
+                else:
+                    Path(dest).write_bytes(saved_bytes('autocad', fmt, version, enc))
+            return {job[1]: None for job in jobs}
+    monkeypatch.setitem(adapters.ADAPTERS, 'autocad', FakeAutoCAD)
+    monkeypatch.setitem(h.cross.PAIRS, 'ezdxf__autocad', ('native/ezdxf', 'autocad'))
+    h.cross.run_pair('ezdxf__autocad', limit=3, intent='feature_synthetic', reader_name='oda', root=h.root, resaver=FakeAutoCAD())
+    folder=h.root/'cross/ezdxf__autocad'
+    sidecars=list(folder.glob('*.provenance.json'))
+    assert len(sidecars)==3
+    assert all(json.loads(path.read_text())['program']=='autocad' and json.loads(path.read_text())['build']=='synthetic AutoCAD build' for path in sidecars)
+    assert json.loads((h.root/'results/cross_ezdxf__autocad_checks.json').read_text())

@@ -1,5 +1,12 @@
 {
  "outputs_by_pair_and_format": {
+  "bricscad__autocad DWG": {
+   "kept": 11
+  },
+  "bricscad__autocad DXF": {
+   "kept": 16,
+   "unreadable_by_reader": 6
+  },
   "bricscad__cadcraft DWG": {
    "writer_or_converter": 4,
    "kept": 7
@@ -13,6 +20,19 @@
   "bricscad__oda DXF": {
    "kept": 19,
    "changed": 3
+  },
+  "ezdxf__autocad DWG": {
+   "kept": 176,
+   "refused": 12,
+   "changed": 2,
+   "lost": 6,
+   "writer_or_converter": 20
+  },
+  "ezdxf__autocad DXF": {
+   "kept": 200,
+   "refused": 14,
+   "lost": 11,
+   "changed": 8
   },
   "ezdxf__bricscad DWG": {
    "kept": 184,
@@ -122,10 +142,33 @@
    "writer_or_converter": 0,
    "unreadable_by_reader": 0,
    "not_measured": 0
+  },
+  "ezdxf__autocad": {
+   "total": 12930,
+   "kept": 12876,
+   "changed": 12,
+   "lost": 28,
+   "refused": 14,
+   "source_not_readable": 0,
+   "writer_or_converter": 0,
+   "unreadable_by_reader": 0,
+   "not_measured": 0
+  },
+  "bricscad__autocad": {
+   "total": 120,
+   "kept": 104,
+   "changed": 0,
+   "lost": 0,
+   "refused": 0,
+   "source_not_readable": 0,
+   "writer_or_converter": 0,
+   "unreadable_by_reader": 16,
+   "not_measured": 0
   }
  },
  "not_run_capability_gap": {
   "bricscad__cadcraft DXF": 16,
+  "ezdxf__autocad DWG": 17,
   "ezdxf__bricscad DWG": 17,
   "ezdxf__cadcraft DWG": 17,
   "ezdxf__cadcraft DXF": 125,

@@ -1,5 +1,11 @@
 {
   "measured": {
+    "cross/bricscad__autocad": {
+      "drawings": 40,
+      "drawing_bytes": 4244555,
+      "sidecar_bytes": 21062,
+      "total_bytes": 4265617
+    },
     "cross/bricscad__cadcraft": {
       "drawings": 24,
       "drawing_bytes": 2026773,
@@ -11,6 +17,12 @@
       "drawing_bytes": 16728578,
       "sidecar_bytes": 18898,
       "total_bytes": 16747476
+    },
+    "cross/ezdxf__autocad": {
+      "drawings": 423,
+      "drawing_bytes": 37500762,
+      "sidecar_bytes": 224629,
+      "total_bytes": 37725391
     },
     "cross/ezdxf__bricscad": {
       "drawings": 449,
@@ -49,7 +61,7 @@
       "total_bytes": 8752772
     }
   },
-  "total_bytes": 586700503,
+  "total_bytes": 628691511,
   "estimated_four_program_bytes_by_intent_count": {
     "19": 1396167183,
     "40": 2939299333,

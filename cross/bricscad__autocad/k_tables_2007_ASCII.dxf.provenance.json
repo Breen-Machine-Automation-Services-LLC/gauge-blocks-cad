@@ -1,0 +1,15 @@
+{
+  "intent_id": "future_k_tables",
+  "representation_id": "reference_1",
+  "program": "autocad",
+  "build": "AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))",
+  "format": "DXF",
+  "version": "2007",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "3bc9289fe824628651951eb589812a1f5eef219a06543c397629853b2a78c7c4"
+  },
+  "content_digest": "2d1d0dc739fed27bd7837d179d0fe2f2f0ae2d07b0a1ec4c690bafe5781d9ae5",
+  "ezdxf_based": false
+}

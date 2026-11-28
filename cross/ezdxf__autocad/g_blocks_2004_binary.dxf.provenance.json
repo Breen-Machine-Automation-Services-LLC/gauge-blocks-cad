@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_g_blocks",
+  "representation_id": "reference_1",
+  "program": "autocad",
+  "build": "AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))",
+  "format": "DXF",
+  "version": "2004",
+  "encoding": "binary",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "6b48b174d926f927d56e9866eff187c4849688324a8271105300d28af3e7f580"
+  },
+  "content_digest": "433973481909d77722bd916baa16006312dfe091e7b25bddf1f2c4455ff03161",
+  "ezdxf_based": true
+}

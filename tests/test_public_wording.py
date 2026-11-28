@@ -60,10 +60,10 @@ class VisibleText(HTMLParser):
 
 
 def split_page(page):
-    data_text = page.split('const DATA=')[1]
-    data = json.loads(re.match(r'(.*?);\s*\n', data_text, re.S).group(1))
+    from map.check_links import page_data
+    data = page_data(page)
     script = re.search(r'<script>(.*)</script>', page, re.S).group(1)
-    script = script.replace(data_text.split(';\n')[0], '', 1)  # drop the DATA literal itself
+    script = re.sub(r'const DATA_GZIP=.*?;\n', '', script, count=1)
     visible = VisibleText()
     visible.feed(page)
     return data, script, '\n'.join(visible.parts)
@@ -424,7 +424,8 @@ def test_req6_phase2_check_leaves_the_working_tree_unchanged(tmp_path):
         shutil.copy(ROOT / 'results' / name, tmp_path / 'results' / name)
     (tmp_path / 'results/phase2_verification.json').write_text('{"committed": "sentinel"}\n')
     (tmp_path / 'map').mkdir()
-    shutil.copy(ROOT / 'map/index.html', tmp_path / 'map/index.html')
+    for name in ('index.html', 'check_links.py'):
+        shutil.copy(ROOT / 'map' / name, tmp_path / 'map' / name)
     for name in ('README.md', 'CONTRIBUTING.md', 'OPEN-ITEMS.md', 'COVERAGE.md'):
         shutil.copy(ROOT / name, tmp_path / name)
     git(tmp_path, 'init', '-q')

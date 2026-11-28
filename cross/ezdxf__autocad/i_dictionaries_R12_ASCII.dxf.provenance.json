@@ -1,0 +1,15 @@
+{
+  "intent_id": "feature_i_dictionaries",
+  "representation_id": "reference_1",
+  "program": "autocad",
+  "build": "AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))",
+  "format": "DXF",
+  "version": "R12",
+  "encoding": "ASCII",
+  "made_by": {
+    "script": "generators/run_cross.py",
+    "input_digest": "adee7e32aa40385f6c840fc8d2676cd7735648155a734cfb171455caa8dd18f6"
+  },
+  "content_digest": "c04310a227dc3e0f3c5d3b13a49d8a370110d774083de3afd8b9e8e2fd144290",
+  "ezdxf_based": true
+}

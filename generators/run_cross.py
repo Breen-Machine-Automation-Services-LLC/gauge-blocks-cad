@@ -36,9 +36,9 @@ class AdapterRegistry(Mapping):
 
 ADAPTERS = AdapterRegistry()
 
-CHUNK = {'bricscad': 40, 'cadcraft': 16, 'oda': 60}
+CHUNK = {'autocad': 40, 'bricscad': 40, 'cadcraft': 16, 'oda': 60}
 PAIRS = {p['writer']+'__'+p['resaver']: (p['sources'], p['resaver']) for p in json.loads((R/'programs/pairs.json').read_text())}
-READER = {'bricscad': 'oda', 'cadcraft': 'oda', 'oda': 'bricscad'}   # DWG reader program; engine families record shared implementations
+READER = {'autocad': 'oda', 'bricscad': 'oda', 'cadcraft': 'oda', 'oda': 'bricscad'}   # DWG reader program; engine families record shared implementations
 LOG = R / 'logs/run_cross.log'
 
 

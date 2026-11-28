@@ -3,6 +3,8 @@ from pathlib import Path
 from collections import Counter
 import json,sys
 R=Path(__file__).resolve().parents[1];sys.path.insert(0,str(R))
+sys.dont_write_bytecode = True
+from map.check_links import page_data
 from jsonschema import Draft202012Validator
 schema=json.loads((R/'intent/intent.schema.json').read_text());v=Draft202012Validator(schema)
 intents=[json.loads(p.read_text()) for p in (R/'intent').glob('*.json') if not p.name.endswith('.schema.json')]
@@ -18,7 +20,7 @@ assert not rotation_changes
 assert len([r for r in checks if r['field'].endswith('.alignment_rotation_error')])==76
 assert all(r['errors']==r['fixes']==0 for r in audits)
 page=(R/'map/index.html').read_text()
-data=json.loads(page.split('const DATA=')[1].split(';\nconst icons=')[0])
+data=page_data(page)
 assert {t['id'] for t in data['topics']}=={i['intent_id'] for i in intents}
 blocks=next(t for t in data['topics'] if t['id']=='background_blocks')
 assert len(blocks['features'])==2

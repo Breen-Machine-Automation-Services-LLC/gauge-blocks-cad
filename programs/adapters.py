@@ -153,6 +153,39 @@ class BricsCad:
      except Exception as ex:results[p]='read failed: '+str(ex)[:300]
   finally:shutil.rmtree(tmp,ignore_errors=True)
   return results
+class AutoCad:
+ engine='autocad'
+ name='autocad'
+ build='AutoCAD LT 2027.1 (ACADVER 26.0s (LMS Tech), _VERNUM X.118.0.0 (UNICODE))'
+ def open(self,path):return Path(path)
+ def save(self,source,path,format,version,encoding):
+  error=self.save_many([(source,path,format,version,encoding)])[path]
+  if error is not None:raise RuntimeError(error)
+ def save_many(self,jobs):
+  from programs.autocad_batch import run_batch, TRANSFER
+  TRANSFER.mkdir(parents=True,exist_ok=True)
+  work=Path(tempfile.mkdtemp(prefix='acb-',dir=TRANSFER));results={};tasks=[];planned={};groups={}
+  try:
+   for i,(source,dest,fmt,version,enc) in enumerate(jobs):
+    if fmt not in ('DXF','DWG') or version not in VERSIONS or (fmt=='DWG' and (version=='R12' or enc!='binary')) or (fmt=='DXF' and enc not in ('ASCII','binary')):
+     results[dest]='unsupported format, version or encoding';continue
+    groups.setdefault(str(source),[]).append((i,dest,fmt,version,enc))
+   for n,(source,items) in enumerate(groups.items()):
+    folder=work/str(n);folder.mkdir();local=folder/('i'+str(n)+Path(source).suffix.lower());shutil.copyfile(source,local);outs=[]
+    for i,dest,fmt,version,enc in items:
+     produced=work/('o'+str(i)+'.'+fmt.lower());outs.append((str(produced),(fmt,version,enc)));planned[dest]=(produced,str(local))
+    tasks.append((str(local),outs))
+   log=run_batch(tasks,work,'acb') if tasks else {}
+   for dest,(produced,local) in planned.items():
+    st=log.get(local);save=st['saves'].get(str(produced)) if st else None
+    if st is None or st['hang']:results[dest]='AutoCAD hung or did not reach the file';continue
+    if st['open']!='ok':results[dest]='AutoCAD refused to open: '+str(st['open']).removeprefix('err:');continue
+    if save!='OK' or not produced.exists():results[dest]='AutoCAD save failed: '+str(save);continue
+    try:privacy.assert_clean(produced)
+    except privacy.PrivacyError as ex:results[dest]=str(ex);continue
+    shutil.copyfile(produced,dest);results[dest]=None
+  finally:shutil.rmtree(work,ignore_errors=True)
+  return results
 class CadCraft:
  def __init__(self, binary=None, build=None, scratch_root=None):
   if binary is not None: self.binary = str(binary)
@@ -197,4 +230,4 @@ class CadCraft:
     if m:m.close()
     shutil.rmtree(tmp,ignore_errors=True)
   return results
-ADAPTERS={'ezdxf':Ezdxf,'oda':Oda,'bricscad':BricsCad,'cadcraft':CadCraft}
+ADAPTERS={'ezdxf':Ezdxf,'oda':Oda,'bricscad':BricsCad,'cadcraft':CadCraft,'autocad':AutoCad}

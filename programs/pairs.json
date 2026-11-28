@@ -28,5 +28,15 @@
     "writer": "bricscad",
     "resaver": "cadcraft",
     "sources": "native/bricscad"
+  },
+  {
+    "writer": "ezdxf",
+    "resaver": "autocad",
+    "sources": "native/ezdxf"
+  },
+  {
+    "writer": "bricscad",
+    "resaver": "autocad",
+    "sources": "native/bricscad"
   }
 ]
