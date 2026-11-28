@@ -53,7 +53,8 @@ def reason(source, logdir):
         encoding = 'utf-16' if data.startswith((b'\xff\xfe', b'\xfe\xff')) else ('utf-16-le' if b'\x00' in data[:100] else 'utf-8')
         lines = data.decode(encoding, errors='replace').splitlines()
         for index, line in enumerate(lines):
-            if 'error' in line.lower():
+            lowered = line.lower()
+            if not line.lstrip().startswith('[') and ('error' in lowered or 'invalid' in lowered):
                 selected = []
                 for part in lines[index:index + 4]:
                     selected.append(part.strip())

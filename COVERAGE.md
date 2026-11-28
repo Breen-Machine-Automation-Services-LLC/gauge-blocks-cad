@@ -76,7 +76,7 @@ Each drawing has a sidecar. Rows are checker results per expected field.
 | cross/bricscad__autocad | 40 | DWG, DXF ASCII, DXF binary | 164 | 0 | 0 | 0 | 0 |
 | cross/bricscad__cadcraft | 24 | DWG, DXF ASCII | 106 | 3 | 11 | 0 | 0 |
 | cross/bricscad__oda | 40 | DWG, DXF ASCII, DXF binary | 177 | 3 | 0 | 0 | 0 |
-| cross/ezdxf__autocad | 423 | DWG, DXF ASCII, DXF binary | 25068 | 16 | 92 | 0 | 26 |
+| cross/ezdxf__autocad | 447 | DWG, DXF ASCII, DXF binary | 25808 | 16 | 92 | 0 | 2 |
 | cross/ezdxf__bricscad | 449 | DWG, DXF ASCII, DXF binary | 25846 | 3 | 91 | 0 | 0 |
 | cross/ezdxf__cadcraft | 322 | DWG, DXF ASCII | 18601 | 98 | 234 | 0 | 2 |
 | cross/ezdxf__oda | 466 | DWG, DXF ASCII, DXF binary | 26517 | 3 | 100 | 0 | 0 |

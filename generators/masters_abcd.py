@@ -97,6 +97,7 @@ def master_b():
         h.paths.add_polyline_path(sq(x0 + 8, 8, 4), is_closed=True, flags=0 | 2)
     ln = lay(d, 'F23_hatch_flags7_22', 5)
     h = msp.add_hatch(color=5, dxfattribs={'layer': ln, 'hatch_style': 0})
+    h.dxf.pixel_size = 0.0
     h.paths.add_polyline_path(sq(100, 0, 20), is_closed=True, flags=7)
     h.paths.add_polyline_path(sq(104, 4, 12), is_closed=True, flags=22)
     ln = lay(d, 'F24_hatch_pattern', 6)

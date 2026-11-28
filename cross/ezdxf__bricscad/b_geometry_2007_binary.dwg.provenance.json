@@ -8,9 +8,9 @@
   "encoding": "binary",
   "made_by": {
     "script": "generators/run_cross.py",
-    "input_digest": "9e1392e99c405e9d9e51ab46be4c160dc729412d910fc8c866a011aad3d54778"
+    "input_digest": "81fd88979f0a18b527612085a576f092e13a8e4d9039d8638983965933720d27"
   },
   "content_digest": "4e7a4d0ad45fa19fe72a82472f5ecae13531f9ec4bcb1225535d786aa65e5075",
   "ezdxf_based": true,
-  "digest_reader": "oda Build 27.1.0.143450"
+  "digest_reader": "oda 27.1.0.143450"
 }

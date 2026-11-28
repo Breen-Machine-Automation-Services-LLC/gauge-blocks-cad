@@ -8,7 +8,7 @@
   "encoding": "ASCII",
   "made_by": {
     "script": "regenerate.py",
-    "input_digest": "ebcd3ad03c646dd4e7f4c86bd1699d310f130ac8ca10a588adcba47d90957dbf"
+    "input_digest": "4bcf519a1bab5fb1be270c862ea8b19192d5bdc149afbeb7ffdcfeaff0b1206c"
   },
   "content_digest": "d093e0f0d524e63a3f81158f68965c878ffe72e73cbf273fcb85907bb6e49e9c",
   "ezdxf_based": true

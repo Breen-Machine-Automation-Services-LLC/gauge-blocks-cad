@@ -8,7 +8,7 @@
   "encoding": "ASCII",
   "made_by": {
     "script": "generators/run_cross.py",
-    "input_digest": "a0de0baeb9af8b55ec85539d85c3c68522bf84e816fe1c2a4c64bfa715a331d7"
+    "input_digest": "878007c79ebf08287b46bc827dda2e22b1db857534bc1bfb78b67a9035af649f"
   },
   "content_digest": "e0436c4566805d6999470053c07a448aa6a301e2b48566d90ae7de9fd5b8b540",
   "ezdxf_based": true

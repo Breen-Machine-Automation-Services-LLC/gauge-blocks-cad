@@ -10,7 +10,7 @@
     "script": "generators/run_cross.py",
     "input_digest": "76077018f3f12950518d17511d01227d1ae8827c804e143d5c8a04842151ae0d"
   },
-  "content_digest": "07d19e8eafe3f6180b2703be72d811fe67ac095d7ed7214e43329637753d4eb8",
+  "content_digest": "36c28129ac0394ec87a84f3b9d6bb3e90b3537a1dd79e5e5d23bdddfc9a43e40",
   "ezdxf_based": true,
   "digest_reader": "oda 27.1.0.143450"
 }

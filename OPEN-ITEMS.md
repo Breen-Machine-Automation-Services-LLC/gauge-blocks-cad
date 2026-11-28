@@ -30,15 +30,15 @@ Acceptance requires a minimized reproduction for each feature, an independent in
 
 ## AutoCAD dynamic blocks
 
-Blocked on AutoCAD availability. See `intent/future_dynamic_blocks.json`. Author invented dynamic-block evaluation data and test preservation. Record exact public builds and measured evidence. Acceptance requires a native input, sidecar, reader-named results, and populated map cells.
+Blocked on a program that can author dynamic blocks. AutoCAD LT is available as a re-saver but cannot author them; full AutoCAD is needed. See `intent/future_dynamic_blocks.json`. Author invented dynamic-block evaluation data and test preservation. Record exact public builds and measured evidence. Acceptance requires a native input, sidecar, reader-named results, and populated map cells.
 
 ## AutoCAD AEC proxy objects
 
-Blocked on AutoCAD availability. See `intent/future_aec_proxy.json`. Author invented AEC objects and test class, payload, and proxy preservation. Record exact public builds and measured evidence. Acceptance requires a native input, sidecar, reader-named results, and populated map cells.
+Blocked on an AEC authoring product. AutoCAD LT is available as a re-saver but cannot author AEC objects. See `intent/future_aec_proxy.json`. Author invented AEC objects and test class, payload, and proxy preservation. Record exact public builds and measured evidence. Acceptance requires a native input, sidecar, reader-named results, and populated map cells.
 
 ## AutoCAD drawing-load acceptance
 
-Blocked on AutoCAD availability. See `intent/future_acceptance.json`. Verify that a successful open actually loads the intended drawing content. Record exact public builds and measured evidence. Acceptance requires a native input, sidecar, reader-named results, and populated map cells.
+Observation: opening and re-saving ezdxf and BricsCAD inputs is measured in `results/cross_ezdxf__autocad_checks.json` and `results/cross_bricscad__autocad_checks.json`; refused inputs have field `open`, status `refused`, and a diagnostic in `detail`. Saved fields are compared with the intents by ezdxf, with ODA conversion for DWG. This does not independently establish the content present in the AutoCAD session. See `intent/future_acceptance.json`. Verify that a successful open actually loads the intended drawing content. Record exact public builds and measured evidence. Acceptance requires a native input, sidecar, reader-named results, and populated map cells.
 
 ## BricsCAD and CADCraft measurements (phase 2b)
 
@@ -48,9 +48,30 @@ Each entry below is a measured observation with its evidence row in `results/`. 
 
 Observation: CADCraft wrote a DWG 2007 for `native/ezdxf/e_objects_2007_ASCII.dxf` that ODA File Converter produced no output for (refused rows `cross/ezdxf__cadcraft/e_objects_2007_ASCII.dwg` and `e_objects_2007_binary.dwg` in `results/cross_ezdxf__cadcraft_checks.json`, field `open`). BricsCAD also refused to open it (`results/dwg2007_second_reader.json`: BricsCAD `E_FAIL`, ODA no output); the 2004 and 2010 files from the same input read in both. The other 2007 files from CADCraft read. The refused drawing is not kept in the repository. This is one measured case of the DWG 2007 container report above, with the writer identified. Both readers use ODA libraries, so it is one engine's verdict. Acceptance: a third DWG reader's result for the same drawing, and the minimized entity that triggers it.
 
-## Per-viewport layer settings after BricsCAD and CADCraft resaves
+## Per-viewport layer settings after resaving
 
-Observation: per-viewport frozen layers and per-viewport layer color overrides are absent after the BricsCAD resave of the layers drawing (`cross/ezdxf__bricscad/layers_2000_ASCII.dxf` and `.dwg`, fields `vp.freeze` and `vp.color`, 12 rows each for DXF and DWG, from the 2000 version on) and the frozen layers of the viewport in the misc drawing differ (`cross/ezdxf__bricscad/n_misc_2000_ASCII.dxf` field `F168_viewport_frozen.frozen_layers`, expected `['F163_point']`, actual `[]`). CADCraft shows the same shape: `cross/ezdxf__cadcraft/layers_2000_ASCII.dxf` `vp.freeze` actual `[]`, and `n_misc_2000_ASCII.dxf` `frozen_layers` actual `[]`. ODA's resave also lacks the viewport fields (see the ezdxf to ODA entry above). Acceptance: whether the DXF Reference stores these in the layer extension dictionary or in the viewport, and an AutoCAD row.
+Observation: the direct DXF rows distinguish layer overrides from the viewport's frozen-layer list. All versions below refer to the measured versions in `results/cross_ezdxf__<program>_checks.json`.
+
+| Re-saver | `vp.freeze` | `vp.color` | `F168_viewport_frozen.frozen_layers` |
+| --- | --- | --- | --- |
+| BricsCAD | Absent from 2000 through 2018 | Absent from 2000 through 2018 | Empty at 2000; matches from 2004 through 2018 |
+| CADCraft | Empty at 2000; matches from 2004 through 2018 | Matches from 2000 through 2018 | Empty at 2000; matches from 2004 through 2018 |
+| ODA | Absent from 2000 through 2018 | Absent from 2000 through 2018 | Empty at 2000; matches from 2004 through 2018 |
+| AutoCAD LT | Empty at 2000; matches from 2004 through 2018 | Matches from 2000 through 2018 | Empty at 2000; matches from 2004 through 2018 |
+
+Evidence: `layers_2000_ASCII.dxf` and `n_misc_2000_ASCII.dxf` under each `cross/ezdxf__<program>/` folder, compared with their later-version rows. ASCII and binary DXF agree wherever both are writable. AutoCAD DWG rows still show `vp.freeze` and `vp.color` absent through ODA conversion, even where direct DXF matches. Acceptance: a minimized input and an independent reading of how the DXF Reference stores each setting, with separate direct DXF and converted DWG evidence.
+
+## AutoCAD refusal of R12 anonymous dimension blocks
+
+Observation: AutoCAD refuses the dimensions and nested-blocks R12 ASCII DXF inputs with "Invalid anonymous block *D1" and "drawing discarded". Evidence: `results/cross_ezdxf__autocad_checks.json`, files `cross/ezdxf__autocad/d_dimensions_R12_ASCII.dxf` and `g_blocks_R12_ASCII.dxf`, field `open`, status `refused`, diagnostic in `detail`. Raw BLOCK records in `native/ezdxf/d_dimensions_R12_ASCII.dxf` name `*D1` through `*D6` and give each block group 70 a value of 0. This is a file observation, not a finding that the flags caused the refusal. Acceptance: minimize the input, establish the applicable block-flag rule, and measure AutoCAD acceptance with only that representation changed.
+
+## AutoCAD object-drawing dictionary entries
+
+Observation: entries selected by `F70_plain.description`, `F71_marker.description`, `F71_marker.acad_marker`, `F72_xrecord.tags`, and `F73_dictionaryvar.value` are absent at 2013 and 2018 in ASCII DXF, binary DXF, and DWG read through ODA. `F70_plain.end` still matches, so the rows do not show the whole drawing lost. At 2007 the descriptions are empty; at 2010 they match. Marker tags differ in direct DXF at 2007 and 2010 but match through the DWG conversion. Evidence: `results/cross_ezdxf__autocad_checks.json`, `cross/ezdxf__autocad/e_objects_2013_ASCII.dxf` and the corresponding version, encoding, and format rows. Acceptance: minimized dictionary entries with version-specific AutoCAD observations and an independent DWG read before attributing the DWG loss to its writer.
+
+## ezdxf reads of AutoCAD ACIS data
+
+Observation: ezdxf reports `reader_error` for regions and solids at DXF 2007 and 2010, and for solids at DXF 2013, in both ASCII and binary output. Evidence: `results/cross_bricscad__autocad_checks.json`, `cross/bricscad__autocad/k_regions_solids_2007_ASCII.dxf` and the corresponding rows, fields `F152_region.acis_body_count`, `F154_solid3d.acis_body_count`, and `F154_solid3d.acis_bbox_size`. The diagnostic is a parsing error in `detail`. This leaves preservation unknown to this reader. Acceptance: a minimized ACIS payload, an independent read, and a successful ezdxf read against the intent; keep reader failures distinct from measured loss.
 
 ## CADCraft: scale list entries and polyline widths
 
@@ -75,3 +96,4 @@ Observation: two runs of the BricsCAD table generator give different content dig
 Compared fields for the unresolved table digest: `results/bricscad_generator_rerun_evidence.json`, `k_tables:k_tables_2004_binary.dwg`, handle `38C`, two group-330 pointers swap from `95, AC` to `AC, 95`; both entities have 12 tags. Header changes are already excluded volatile fields. The evidence does not establish whether pointer order is meaningful, so no additional digest exclusion is applied.
 
 The ODA resaves of the BricsCAD table drawing vary the same way. Two ODA runs from unchanged inputs gave different content digests for 9 of the 20 `cross/bricscad__oda/k_tables_*` outputs (DWG 2000, 2004, 2007, 2010, 2013 and 2018; DXF 2004 binary, 2010 ASCII and 2018 ASCII), while every field check stayed the same and none of the 20 `k_regions_solids_*` outputs changed.
+

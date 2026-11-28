@@ -195,71 +195,6 @@
     "fixes": 0
   },
   {
-    "file": "native/ezdxf/d_dimensions_2000_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2000_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2004_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2004_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2007_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2007_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2010_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2010_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2013_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2013_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2018_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_2018_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/d_dimensions_R12_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
     "file": "native/ezdxf/e_objects_2000_ASCII.dxf",
     "errors": 0,
     "fixes": 0
@@ -386,71 +321,6 @@
   },
   {
     "file": "native/ezdxf/f_extents_R12_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2000_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2000_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2004_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2004_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2007_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2007_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2010_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2010_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2013_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2013_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2018_ASCII.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_2018_binary.dxf",
-    "errors": 0,
-    "fixes": 0
-  },
-  {
-    "file": "native/ezdxf/g_blocks_R12_ASCII.dxf",
     "errors": 0,
     "fixes": 0
   },
@@ -776,6 +646,136 @@
   },
   {
     "file": "native/ezdxf/n_misc_R12_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2000_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2000_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2004_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2004_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2007_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2007_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2010_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2010_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2013_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2013_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2018_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_2018_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/d_dimensions_R12_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2000_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2000_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2004_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2004_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2007_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2007_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2010_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2010_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2013_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2013_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2018_ASCII.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_2018_binary.dxf",
+    "errors": 0,
+    "fixes": 0
+  },
+  {
+    "file": "native/ezdxf/g_blocks_R12_ASCII.dxf",
     "errors": 0,
     "fixes": 0
   }

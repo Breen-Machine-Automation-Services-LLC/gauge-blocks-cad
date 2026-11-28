@@ -22,16 +22,15 @@
    "changed": 3
   },
   "ezdxf__autocad DWG": {
-   "kept": 176,
-   "refused": 12,
+   "kept": 188,
    "changed": 2,
    "lost": 6,
    "writer_or_converter": 20
   },
   "ezdxf__autocad DXF": {
-   "kept": 200,
-   "refused": 14,
+   "kept": 212,
    "lost": 11,
+   "refused": 2,
    "changed": 8
   },
   "ezdxf__bricscad DWG": {
@@ -144,11 +143,11 @@
    "not_measured": 0
   },
   "ezdxf__autocad": {
-   "total": 12930,
-   "kept": 12876,
+   "total": 13288,
+   "kept": 13246,
    "changed": 12,
    "lost": 28,
-   "refused": 14,
+   "refused": 2,
    "source_not_readable": 0,
    "writer_or_converter": 0,
    "unreadable_by_reader": 0,

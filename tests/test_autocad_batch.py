@@ -48,6 +48,15 @@ def test_multiple_saves_and_multiline_refusal(tmp_path, monkeypatch):
     assert 'expected group code 47' in reason and 'drawing discarded' in reason
     assert 'This line' not in reason
 
+    (tmp_path/'i0.log').write_bytes(
+        b'[ AutoCAD LT - Sat Nov 28 01:15:58 2026  ]----------------------------------------\r\n'
+        b'Invalid anonymous block *D1 on line 1224.\r\n'
+        b'Invalid or incomplete DXF input -- drawing discarded.\r\n')
+    expected = ('Invalid anonymous block *D1 on line 1224. '
+                'Invalid or incomplete DXF input -- drawing discarded.')
+    assert batch.reason(source, tmp_path) == expected
+    assert batch.parse_log(log, tasks, tmp_path)[source]['open'] == 'err:' + expected
+
 
 def test_adapter_outcomes(tmp_path, monkeypatch):
     monkeypatch.setattr(batch,'TRANSFER',tmp_path)

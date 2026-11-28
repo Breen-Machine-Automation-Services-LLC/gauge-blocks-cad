@@ -8,7 +8,7 @@
   "encoding": "binary",
   "made_by": {
     "script": "regenerate.py",
-    "input_digest": "a6bfe131391e2976238e4089b7a68648ee5d969c2afb91d5cda052fc182675aa"
+    "input_digest": "a2aa57c2d7cd48301e803c9c30edb6a95672aa6c9882351ec166b5c08f9df284"
   },
   "content_digest": "7ef7ba93d109323350750f653d0804bb742dca0b86f2b80edb6f7f4c6a85dfc5",
   "ezdxf_based": true
